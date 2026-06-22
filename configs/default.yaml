@@ -1,0 +1,42 @@
+# Default experiment config for training an SAE on a recommender / multimodal
+# item-embedding stream. Copy + edit per experiment under configs/.
+
+experiment:
+  name: baby_item_fused_topk
+  dataset: baby            # baby | sports | clothing | electronics
+  representation: item_fused   # item_fused | item_image | item_text | cf_node
+  seed: 0
+  out_dir: results/baby_item_fused_topk
+
+# Where the [N, d] activation tensor comes from.
+activations:
+  source: precomputed       # precomputed | hook
+  path: data/processed/baby/item_fused.pt
+  # For source=hook (capturing from a live model), set instead:
+  # model_ckpt: ckpts/freedom_baby.pt
+  # layer_names: ["item_proj"]
+
+sae:
+  variant: topk             # topk | relu
+  expansion: 16             # d_sae = expansion * d_in
+  k: 20                     # active latents per example (topk)
+  l1_coeff: 1.0e-3          # sparsity penalty (relu)
+  aux_k: 256
+  dead_steps_threshold: 1000
+  normalize_decoder: true
+
+train:
+  lr: 3.0e-4
+  batch_size: 4096
+  epochs: 20
+  device: cuda
+  normalize: true
+  log_every: 50
+  ckpt_path: results/baby_item_fused_topk/sae.pt
+  wandb_project: null
+
+# Interpretability / evaluation knobs (consumed by src/interp/*).
+eval:
+  metadata_path: data/processed/baby/item_meta.parquet  # category/brand/price/popularity
+  autointerp_model: google/gemma-2-2b                   # latent labeler
+  steering_targets: [category, price_band, popularity]

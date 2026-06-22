@@ -1,0 +1,10 @@
+# Reference environment spec. The canonical env is built by scripts/setup_env.sh
+# (conda create -n mechinterp python=3.11 + pip install -r requirements.txt).
+name: mechinterp
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - -r requirements.txt

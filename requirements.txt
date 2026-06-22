@@ -1,0 +1,37 @@
+# Core DL
+torch
+torchvision
+
+# Mechanistic interpretability toolchain
+transformer-lens      # HookedTransformer, activation hooks (LM-side reference)
+sae-lens              # SAE eval + SAE-Bench + pretrained SAE hub
+nnsight               # tracing / intervention on ARBITRARY torch.nn.Module (our capture path)
+# NOTE: EleutherAI top-k SAE ('eai-sparsify') and saprmarks 'dictionary_learning'
+# are installed FROM GIT in scripts/setup_env.sh. Do NOT `pip install sparsify`
+# — that PyPI name is a different (Neural Magic) package and will fail to build.
+
+# Models / data
+transformers
+datasets
+accelerate
+sentence-transformers # text-embedding baselines / encoders
+open_clip_torch       # CLIP encoders for multimodal item embeddings
+
+# Numerics / utils
+einops
+jaxtyping
+numpy
+pandas
+scikit-learn
+scipy
+
+# Viz / tracking
+matplotlib
+seaborn
+plotly
+tqdm
+wandb
+
+# Notebooks
+jupyter
+ipykernel
