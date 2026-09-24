@@ -53,7 +53,7 @@ between 0.5× and 2× of it is flagged *borderline*).
 | Table 4 — deletion across eleven architectures | `scripts/exp_exact_crossarch.py`, `scripts/exact_ko/*.py`, `scripts/rejudge_exact.py` | `results/phase_exact/exact_crossarch.json` |
 | Table 5 — test-time averaging vs deletion | `scripts/phasex_crossarch_knockout.py` | `results/phase_exact/screen_vs_exact.json` |
 | Dataset statistics, feature storage | `scripts/dataset_stats.py` | `results/phase0/dataset_stats.json` |
-| Registered rule and predictions (Threats to Validity) | — | `docs/prereg/` (redacted for double-blind review) |
+| Registered rule and predictions (Threats to Validity) | — | `results/phase_micro/PREREG.md`, `results/phase_holdout/PREREG_HOLDOUT.md` (redacted for double-blind review) |
 
 Every number in the paper, with its artifact, is in `results/FACTS.md` (regenerate with `scripts/gen_facts.py`).
 

@@ -1,0 +1,269 @@
+{
+  "model": "cohesion",
+  "dataset": "baby",
+  "class": "C1+C2",
+  "class_parts": {
+    "graph_path": "C1",
+    "branch_path": "C2"
+  },
+  "exactness": "EXACT",
+  "arm_exactness": {
+    "baseline": "EXACT",
+    "image_knockout": "EXACT",
+    "text_knockout": "EXACT",
+    "both_knockout": "EXACT",
+    "graph_image_knockout": "EXACT",
+    "graph_text_knockout": "EXACT",
+    "graph_both_knockout": "EXACT",
+    "block_image_knockout": "EXACT",
+    "block_text_knockout": "EXACT",
+    "block_both_knockout": "EXACT",
+    "image_knockout_contentzero": "DELETE_PLUS_RENORM",
+    "text_knockout_contentzero": "DELETE_PLUS_RENORM",
+    "both_knockout_contentzero": "DELETE_PLUS_RENORM"
+  },
+  "checkpoint": "/workspace/Recsys/ckpts/cohesion_baby_20260616_095811.pt",
+  "logged_test_R@20": 0.09922553604219841,
+  "recon_error": 5.7220458984375e-06,
+  "attribution": {
+    "||item_block_id||": 1.0265090465545654,
+    "||item_block_v||": 2.0269052982330322,
+    "||item_block_t||": 2.10630464553833,
+    "||item_block_v_contentzero||": 1.1526399850845337,
+    "||item_block_t_contentzero||": 2.1063740253448486,
+    "||item_ego(192)||": 3.103505849838257,
+    "||h_i_img(192)||": 0.22531406581401825,
+    "||h_i_txt(192)||": 2.1930315494537354,
+    "||user_ego(192)||": 2.3817226886749268,
+    "||h_u(192)||": 1.3255692720413208,
+    "mm_image_weight": 0.1,
+    "n_mm_layers": 1,
+    "gcn_num_layer": 2,
+    "knn_k": 10,
+    "user_graph_k": 40,
+    "content_energy_share_v": 0.9991126656532288,
+    "content_energy_share_t": 1.9045675799134187e-05,
+    "drift_cos(image_embedding, raw v_feat)": 1.0,
+    "drift_cos(text_embedding, raw t_feat)": 1.0,
+    "gcn_replay_max_err": 4.76837158203125e-07,
+    "mm_adj_decomposition_max_err": 0.0,
+    "H1_user_graph_seed": 12345,
+    "H1_n_users_randomly_padded": 665,
+    "H1_n_users_no_neighbours": 0,
+    "H2_numpy_version": "1.26.4",
+    "H2_note": "user_graph_dict top-200 selection uses np.argpartition over TIED shared-item counts; the tie order changed between numpy 1.26 and 2.x, so the absolute baseline moves ~6e-4 across envs (deltas are paired)",
+    "dropout_original": 0.0,
+    "training_only_not_ablated": [
+      "adaptive_optimization (forward() only)",
+      "weight_u",
+      "reg loss"
+    ]
+  },
+  "arms": {
+    "baseline": {
+      "metrics": {
+        "Recall@10": 0.06301487304444361,
+        "Recall@20": 0.09917410894011562,
+        "NDCG@10": 0.03443096968460346,
+        "NDCG@20": 0.04375902198081072
+      }
+    },
+    "image_knockout": {
+      "metrics": {
+        "Recall@10": 0.059692806550610614,
+        "Recall@20": 0.09161348636792195,
+        "NDCG@10": 0.03162037528974135,
+        "NDCG@20": 0.03988108832227138
+      },
+      "dR@20": -0.00756062257219367,
+      "dN@20": -0.003877933658539341,
+      "ranking_change": {
+        "overlap@20": 0.67825,
+        "rbo": 0.5539390559448705,
+        "n_sampled": 4000
+      },
+      "exactness": "EXACT"
+    },
+    "text_knockout": {
+      "metrics": {
+        "Recall@10": 0.05684686745499294,
+        "Recall@20": 0.09049456100883203,
+        "NDCG@10": 0.030841155527959966,
+        "NDCG@20": 0.0394503470764052
+      },
+      "dR@20": -0.008679547931283588,
+      "dN@20": -0.004308674904405521,
+      "ranking_change": {
+        "overlap@20": 0.6055875,
+        "rbo": 0.47928253807108967,
+        "n_sampled": 4000
+      },
+      "exactness": "EXACT"
+    },
+    "both_knockout": {
+      "metrics": {
+        "Recall@10": 0.001041398817176652,
+        "Recall@20": 0.0021072867305832075,
+        "NDCG@10": 0.00046100134371599815,
+        "NDCG@20": 0.0007365073296112904
+      },
+      "dR@20": -0.09706682220953242,
+      "dN@20": -0.04302251465119943,
+      "ranking_change": {
+        "overlap@20": 0.0037125000000000005,
+        "rbo": 0.0013898256632074435,
+        "n_sampled": 4000
+      },
+      "exactness": "EXACT"
+    },
+    "graph_image_knockout": {
+      "metrics": {
+        "Recall@10": 0.0632848653303783,
+        "Recall@20": 0.09896803319534098,
+        "NDCG@10": 0.03453458039535411,
+        "NDCG@20": 0.04376192000666758
+      },
+      "dR@20": -0.00020607574477464474,
+      "dN@20": 2.8980258568594985e-06,
+      "ranking_change": {
+        "overlap@20": 0.9700249999999999,
+        "rbo": 0.845783937182104,
+        "n_sampled": 4000
+      },
+      "exactness": "EXACT"
+    },
+    "graph_text_knockout": {
+      "metrics": {
+        "Recall@10": 0.06088521960597044,
+        "Recall@20": 0.09446693730828469,
+        "NDCG@10": 0.03316049624528203,
+        "NDCG@20": 0.04178188243263101
+      },
+      "dR@20": -0.004707171631830931,
+      "dN@20": -0.0019771395481797127,
+      "ranking_change": {
+        "overlap@20": 0.7204125,
+        "rbo": 0.5937597302529714,
+        "n_sampled": 4000
+      },
+      "exactness": "EXACT"
+    },
+    "graph_both_knockout": {
+      "metrics": {
+        "Recall@10": 0.06050204873552778,
+        "Recall@20": 0.09417857820017758,
+        "NDCG@10": 0.032840372679873726,
+        "NDCG@20": 0.04149840149096652
+      },
+      "dR@20": -0.004995530739938039,
+      "dN@20": -0.002260620489844198,
+      "ranking_change": {
+        "overlap@20": 0.7076875,
+        "rbo": 0.5803222626288617,
+        "n_sampled": 4000
+      },
+      "exactness": "EXACT"
+    },
+    "block_image_knockout": {
+      "metrics": {
+        "Recall@10": 0.05946781297899837,
+        "Recall@20": 0.09186205069465547,
+        "NDCG@10": 0.03159249104176731,
+        "NDCG@20": 0.03997273462809603
+      },
+      "dR@20": -0.0073120582454601485,
+      "dN@20": -0.00378628735271469,
+      "ranking_change": {
+        "overlap@20": 0.6810375000000001,
+        "rbo": 0.557197317517419,
+        "n_sampled": 4000
+      },
+      "exactness": "EXACT"
+    },
+    "block_text_knockout": {
+      "metrics": {
+        "Recall@10": 0.05830796856638975,
+        "Recall@20": 0.09341733464387104,
+        "NDCG@10": 0.0315313418750815,
+        "NDCG@20": 0.040550022769619894
+      },
+      "dR@20": -0.005756774296244577,
+      "dN@20": -0.003208999211190826,
+      "ranking_change": {
+        "overlap@20": 0.6954874999999999,
+        "rbo": 0.5675539210856322,
+        "n_sampled": 4000
+      },
+      "exactness": "EXACT"
+    },
+    "block_both_knockout": {
+      "metrics": {
+        "Recall@10": 0.0013413902459929715,
+        "Recall@20": 0.002960119506789602,
+        "NDCG@10": 0.0005424534013778782,
+        "NDCG@20": 0.0009577929918974746
+      },
+      "dR@20": -0.09621398943332601,
+      "dN@20": -0.04280122898891325,
+      "ranking_change": {
+        "overlap@20": 0.00515,
+        "rbo": 0.0019140406157938583,
+        "n_sampled": 4000
+      },
+      "exactness": "EXACT"
+    },
+    "image_knockout_contentzero": {
+      "metrics": {
+        "Recall@10": 0.05806560628879992,
+        "Recall@20": 0.08998449209428895,
+        "NDCG@10": 0.030965846782872973,
+        "NDCG@20": 0.03916412810514412
+      },
+      "dR@20": -0.00918961684582667,
+      "dN@20": -0.0045948938756665975,
+      "ranking_change": {
+        "overlap@20": 0.6666875,
+        "rbo": 0.5409110676688261,
+        "n_sampled": 4000
+      },
+      "exactness": "DELETE_PLUS_RENORM"
+    },
+    "text_knockout_contentzero": {
+      "metrics": {
+        "Recall@10": 0.06088521960597044,
+        "Recall@20": 0.09446693730828469,
+        "NDCG@10": 0.03316003330091301,
+        "NDCG@20": 0.04178069671895853
+      },
+      "dR@20": -0.004707171631830931,
+      "dN@20": -0.0019783252618521888,
+      "ranking_change": {
+        "overlap@20": 0.7204125,
+        "rbo": 0.5937283817234074,
+        "n_sampled": 4000
+      },
+      "exactness": "DELETE_PLUS_RENORM"
+    },
+    "both_knockout_contentzero": {
+      "metrics": {
+        "Recall@10": 0.05488018709669519,
+        "Recall@20": 0.08579604033576776,
+        "NDCG@10": 0.02911402725009167,
+        "NDCG@20": 0.0371239588512438
+      },
+      "dR@20": -0.013378068604347856,
+      "dN@20": -0.006635063129566916,
+      "ranking_change": {
+        "overlap@20": 0.5607749999999999,
+        "rbo": 0.4446538386189829,
+        "n_sampled": 4000
+      },
+      "exactness": "DELETE_PLUS_RENORM"
+    }
+  },
+  "env": {
+    "numpy": "1.26.4",
+    "torch": "2.4.0+cu121"
+  },
+  "seconds": 15.691790580749512
+}

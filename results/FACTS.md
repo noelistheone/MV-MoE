@@ -147,7 +147,7 @@ cell's own noise floor. Both counts are reported; only the second is citable as 
 | vbpr | microlens | +0.000020 | +0.000010 | 2.00 | — | no floor |
 | vbpr | sports | -0.000130 | -0.000084 | 1.54 | 0.00142 | no |
 
-Restricted to the two architectures measured by exact knockout in the screen-based analysis
+Restricted to the two architectures measured by exact knockout in the single-checkpoint analysis
 (FREEDOM and LGMRec, 10 cells), LGMRec/MicroLens is the only image-dominant cell.
 
 ## 1b. CANONICAL content-interface taxonomy (overrides the legacy CLASS strings in scripts/exact_ko/)
@@ -618,13 +618,13 @@ was below both floors).
 - **Positive deltas among the 13: 2** (damrs/baby +0.002738; damrs/sports +0.001444). Removing image RAISES Recall@20 there -- evidence image is net-harmful, NOT that the model uses it.
 - **Reliability flags, BOTH directions:** borderline (0.5-2x a floor of fewer than 5 seeds) on 3 of the clearing (cohesion/baby 1.94x; damrs/sports 1.46x; vbpr/clothing 1.03x) and 3 of the non-clearing (freedom/baby 0.59x; smore/sports 0.63x; lgmrec/clothing 0.66x). FREEDOM/baby is in the second set: disclosing only the first is the flattering half.
 - **Floor thinness:** 30 of 32 rest on n=3; distribution {2: 1, 3: 30, 8: 1}.
-- **Band vs floor:** the screen-based analysis's single fixed band 2.6e-03 is 0.63x the cell's own floor at one extreme (freedom/clothing) and 21.1x at the other (vbpr/clothing); looser than the cell's own floor in 22 of 32.
+- **Band vs floor:** the screen's single fixed band 2.6e-03 is 0.63x the cell's own floor at one extreme (freedom/clothing) and 21.1x at the other (vbpr/clothing); looser than the cell's own floor in 22 of 32.
 
 ## 20a. Screen vs exact: the direction of the error (refutes 'the screen over-states image')
 
 - Cells measured both ways: **36**.
 - |screen| **larger in 8**, **smaller in 14**, identical in 14; **7 sign flips**.
-- Band disagreements: **7**, of which **6** put the cell wrongly INSIDE the 2.6e-03 band. the screen-based analysis's claim that the screen over-states image, so a within-band reading is conservative, is therefore false as a general statement.
+- Band disagreements: **7**, of which **6** put the cell wrongly INSIDE the 2.6e-03 band. The earlier claim that the screen over-states image, so a within-band reading is conservative, is therefore false as a general statement.
 
 ## 21. Additional certified numbers
 
@@ -663,7 +663,7 @@ incomplete-beta code at the top of this file. Every line or table row names its 
 - `[PM]` results/phase_micro/PREREG.md
 - `[CM]` results/phase_micro/controls_microlens.json
 - `[VD]` results/phase_micro/video_feat_degeneracy.json
-- `[BL]` results/bai/_microlens_run.log
+- `[DS]` results/phase0/dataset_stats.json
 - `[CS]` results/_scratch/exact_ko/cohesion_baby_np*.json
 
 Two-floor rule: SIGNIFICANT if |d| exceeds both floors, BELOW-FLOOR if it is under both (the
@@ -767,7 +767,7 @@ Image-minus-text contrast, per seed R(no_image) - R(no_text), judged against its
 | microlens | no_image | 8 | 800.5 | 556 | 865 | 5/8 | 100 | 965 | 3000 | HO |
 | microlens | no_text | 8 | 675 | 541 | 859 | 2/8 | 100 | 959 | 3000 | HO |
 
-- Registered H-var value: pattern not found [PR].
+- Registered H-var value, quoted from the artifact: sd(no_image)/sd(full) = 7.9 on Baby (0.00197 vs 0.00025) [PR].
 - H-var at convergence, sd(arm R@20)/sd(full R@20) over the 8 seeds: baby image-withheld 1.42, text-withheld 1.73; sports image-withheld 0.63, text-withheld 0.95; clothing image-withheld 1.56, text-withheld 0.99; microlens image-withheld 0.35, text-withheld 0.97 [HO].
 
 | dataset | arm | Pearson r(full, arm) over seeds | Welch t | Welch df | Welch p | paired p | same call at 0.05 | src |
@@ -1041,6 +1041,8 @@ COHESION: frozen-graph path vs live block, and the averaging (input-mean) measur
 | clothing | 1.98e-03 | -7.61 | +0.14 | -7.18 | 94% | -4.85 | +0.10 | EX |
 | microlens | none | (-9.2e-04) | (-9.0e-04) | (9.7e-05) | -11% | (-4.1e-03) | -- | EX |
 
+- COHESION/Baby baseline in cohesion_baby_np1.26.4.json (numpy 1.26.4): 0.099174 vs trainer-logged 0.099226, difference -5.1e-05; EX's COHESION/Baby baseline is 0.098621 [CS, EX].
+- COHESION/Baby baseline in cohesion_baby_np2.4.6.json (numpy 2.4.6): 0.098621 vs trainer-logged 0.099226, difference -6.0e-04; EX's COHESION/Baby baseline is 0.098621 [CS, EX].
 - Trainer-logged COHESION values for Sports, Clothing and MicroLens are not stored under results/, so the drift is certified on Baby only [CS].
 
 LGMRec (renormalized deletion, one fixed Gumbel draw):
@@ -1093,6 +1095,8 @@ Band = K1 LightGCN floor (2.585e-03):
 ### 21l. Data, reproduction, datasets per instrument, ranks (3.1, 3.6, R27)
 
 - Users / items: baby 19,445 / 7,050 [K1]; sports 35,598 / 18,357 [K1]; clothing 39,387 / 23,033 [K1]; elec 192,403 / 63,001 [K1]; microlens 98,129 / 17,228 [KM].
+- MicroLens split: 500,064 / 101,121 / 103,989 = 705,174 interactions; proportions 0.709 / 0.143 / 0.147 (users 98,129, items 17,228) [DS].
+- Cross-check: the K=1000 rank statistic on FREEDOM/MicroLens counts n_positives = 103,989, equal to the logged test-split size [CM, DS].
 - NOT certifiable from results/: the Amazon interaction counts and the Baby split proportions (no artifact under results/ records n_train/n_valid/n_test for an Amazon dataset); the data release year and last timestamp are likewise not recorded under results/ [absent from results/].
 - Feature dimensions: Amazon raw_image_cnn 4096-d, raw_image_clip 768-d, raw_text_bert 384-d, raw_text_clip 768-d [AL]; MicroLens raw_image_cnn 1024-d, raw_text_bert 1024-d, raw_video 768-d [AM].
 - Mean pairwise cosine of the raw features, 2 dp from full precision: microlens/image (1024d, released) 0.51; microlens/text (1024d, released) 0.38; microlens/video (768d, released) 0.98; baby/image (4096d CNN, reference) 0.22; baby/text (384d sBERT, reference) 0.26 [VD].
@@ -1115,11 +1119,13 @@ Band = K1 LightGCN floor (2.585e-03):
 
 ### 21n. Outcomes of the registered MicroLens and holdout hypotheses (R18, R19; E.2)
 
+- H1 as registered: "**H1 (primary, causal).** FREEDOM's exact structural image knockout on MicroLens is within its own MicroLens noise floor, while the text knockout clears it." [PM].
 - H1 outcome, converged models: image deletion MARGINAL (0.68x F_l, 2.67x F_p), text deletion SIGNIFICANT [CK]; default-patience models: image MARGINAL (0.28x F_l, 1.71x F_p), text SIGNIFICANT [SF].
+- H2 as registered: "**H2 (mechanism, directional).** The propagated behavioral-alignment ordering INVERTS on MicroLens relative to all four Amazon datasets: `h_img > h_txt` with non-overlapping 95% bootstrap CIs, while the knockout ordering `|d_img| << |d_txt|` is preserved." The file also states: "H2's direction (`h_img > h_txt`) was already visible in the dry run." [PM].
 - H2 outcome (AM): h_img 0.319 [0.310, 0.329] vs h_txt 0.217 [0.210, 0.225]; intervals separate, image higher [AM].
 - H2 outcome (AD): h_img 0.330 [0.320, 0.340] vs h_txt 0.228 [0.222, 0.236]; intervals separate, image higher [AD].
 - H2's second half, deletion ordering on the converged models: |d_image| 9.8e-04 vs |d_text| 5.7e-03 [CK].
-- H3 (the lambda retrain on MicroLens): NOT run (WR has no MicroLens entry) [WR].
+- H3 (the lambda retrain on MicroLens): NOT run (WR has no MicroLens entry) [WR]. Its registered falsifier: "Image-only FREEDOM does NOT collapse relative to text-only on MicroLens" is a reachable falsifier [PM].
 - The falsifier on the holdout arms: image-only vs text-only retrained FREEDOM +0.66% (per-seed difference -6.5e-04, 0.42x its paired floor, p = 4.98e-02) [HO].
 - H-var at convergence (registered value in 21b): baby 1.42, sports 0.63, clothing 1.56, microlens 0.35; at the default patience, 8 seeds: baby 1.83, sports 0.73, clothing 1.27, microlens 0.66 [HO, HD].
 

@@ -466,7 +466,7 @@ def _imgdom_block(rows):
         out.append(f"| {m} | {ds} | {i:+.6f} | {t:+.6f} | {abs(i/t) if t else float('inf'):.2f} | "
                    f"{(f'{mde:.5f}' if mde else '—')} | {'**YES**' if ok else 'no' if mde else 'no floor'} |")
     out.append("")
-    out.append("Restricted to the two architectures measured by exact knockout in the screen-based analysis")
+    out.append("Restricted to the two architectures measured by exact knockout in the single-checkpoint analysis")
     out.append("(FREEDOM and LGMRec, 10 cells), LGMRec/MicroLens is the only image-dominant cell.")
     out.append("")
     return out
@@ -1036,7 +1036,7 @@ if _ex:
       f"{dict(sorted({r['n']: sum(1 for q in _rows if q['n'] == r['n']) for r in _rows}.items(), key=lambda kv: (kv[0] is None, kv[0])))}.")
     _B = 2.6e-3
     _rt = sorted((_B / r["f"], f"{r['m']}/{r['d']}") for r in _rows)
-    w(f"- **Band vs floor:** the screen-based analysis's single fixed band {_B:.1e} is {_rt[0][0]:.2f}x "
+    w(f"- **Band vs floor:** the screen's single fixed band {_B:.1e} is {_rt[0][0]:.2f}x "
       f"the cell's own floor at one extreme ({_rt[0][1]}) and {_rt[-1][0]:.1f}x at the other "
       f"({_rt[-1][1]}); looser than the cell's own floor in {sum(1 for x, _ in _rt if x > 1)} of {len(_rt)}.")
     w()
@@ -1061,7 +1061,7 @@ if _sv:
     w(f"- Cells measured both ways: **{len(_pairs)}**.")
     w(f"- |screen| **larger in {_lg}**, **smaller in {_sm}**, identical in {_eq}; **{_fl} sign flips**.")
     w(f"- Band disagreements: **{len(_dis)}**, of which **{len(_inside)}** put the cell wrongly "
-      f"INSIDE the {_BAND:.1e} band. the screen-based analysis's claim that the screen over-states image, "
+      f"INSIDE the {_BAND:.1e} band. The earlier claim that the screen over-states image, "
       "so a within-band reading is conservative, is therefore false as a general statement.")
     w()
 # ===================================================================== s.21 (added 2026-09-23)
@@ -1101,7 +1101,7 @@ _S21 = [
     ("PM", "results/phase_micro/PREREG.md"),
     ("CM", "results/phase_micro/controls_microlens.json"),
     ("VD", "results/phase_micro/video_feat_degeneracy.json"),
-    ("BL", "results/bai/_microlens_run.log"),
+    ("DS", "results/phase0/dataset_stats.json"),
     ("CS", "results/_scratch/exact_ko/cohesion_baby_np*.json"),
 ]
 
@@ -2202,20 +2202,20 @@ for _r in (_rj("phase_micro/knockout_microlens.json") or []):
     if _r.get("model") == "freedom" and _r.get("n_users") is not None:
         _sizes[_r["dataset"]] = (_r["n_users"], _r["n_items"], "KM")
 w("- Users / items: " + "; ".join(f"{d_} {v[0]:,} / {v[1]:,} [{v[2]}]" for d_, v in _sizes.items()) + ".")
-_blp = ROOT / "results" / "bai" / "_microlens_run.log"
-_blm = re.search(r"RecDataset\(name='microlens', n_users=(\d+), n_items=(\d+), n_train=(\d+), n_valid=(\d+), n_test=(\d+)\)",
-                 _blp.read_text()) if _blp.is_file() else None
+_dsm = (jload("results/phase0/dataset_stats.json") or {}).get("microlens")
+_blm = bool(_dsm)
 if _blm:
-    _u, _i, _tr_, _va, _te = (int(x) for x in _blm.groups())
+    _u, _i = _dsm["users"], _dsm["items"]
+    _tr_, _va, _te = (_dsm["split_counts"][k] for k in ("train", "valid", "test"))
     _tot = _tr_ + _va + _te
     w(f"- MicroLens split: {_tr_:,} / {_va:,} / {_te:,} = {_tot:,} interactions; proportions "
-      f"{fx(D(_tr_) / _tot, 3)} / {fx(D(_va) / _tot, 3)} / {fx(D(_te) / _tot, 3)} (users {_u:,}, items {_i:,}) [BL].")
+      f"{fx(D(_tr_) / _tot, 3)} / {fx(D(_va) / _tot, 3)} / {fx(D(_te) / _tot, 3)} (users {_u:,}, items {_i:,}) [DS].")
     _cmj = _rj("phase_micro/controls_microlens.json") or {}
     _npos = sorted({v.get("n_positives") for v in (_cmj.get("freedom_rank_stat") or {}).values()} - {None})
     if _npos:
         w(f"- Cross-check: the K=1000 rank statistic on FREEDOM/MicroLens counts n_positives = "
           f"{', '.join(f'{x:,}' for x in _npos)}, {'equal to' if _npos == [_te] else 'NOT equal to'} the logged "
-          f"test-split size [CM, BL].")
+          f"test-split size [CM, DS].")
 w("- NOT certifiable from results/: the Amazon interaction counts and the Baby split proportions "
   "(no artifact under results/ records n_train/n_valid/n_test for an Amazon dataset); the data "
   "release year and last timestamp are likewise not recorded under results/ [absent from results/].")
