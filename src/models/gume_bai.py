@@ -1,6 +1,6 @@
 """GUME + Behavior-Aligned Image (BAI) / Co-purchase-Supervised Image (CSI).
 
-Constructive follow-up to the measurement analysis. Analysis (results/bai/) established:
+Constructive follow-up to the measurement paper. Analysis (results/bai/) established:
   * raw image cosine ~= chance at predicting co-purchase (held-out AUC 0.54), which is what
     every graph MM-rec uses to route image -> image ignored;
   * a projection trained DIRECTLY on co-purchase pairs generalizes (held-out AUC 0.74, image >

@@ -55,11 +55,18 @@ def main() -> int:
     ap.add_argument("--weights", nargs="+", type=float,
                     default=[0.0, 0.1, 0.3, 0.5, 0.7, 0.9, 1.0])
     ap.add_argument("--gpu", type=int, default=0)
+    ap.add_argument("--ckpt-map", default=None)
+    ap.add_argument("--out", default=None)
     args = ap.parse_args()
     device = f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu"
     OUT.mkdir(parents=True, exist_ok=True)
 
-    cfg, ds, model, test_loader = load_frozen("freedom", args.dataset, device)
+    pin = None
+    if args.ckpt_map:
+        raw = json.loads(Path(args.ckpt_map).read_text())
+        e = raw.get(f"freedom/{args.dataset}")
+        pin = (e["path"] if isinstance(e, dict) else e) if e else None
+    cfg, ds, model, test_loader = load_frozen("freedom", args.dataset, device, ckpt_path=pin)
     trained_w = model.mm_image_weight
     u, cf, g_img, g_txt = freedom_components(model)
 
@@ -79,23 +86,34 @@ def main() -> int:
         print(f"  w={w:.2f}  R@20={m['Recall@20']:.4f}  N@20={m['NDCG@20']:.4f}"
               f"  overlap_vs_trained={rc['overlap@20']:.3f}", flush=True)
 
-    mde = None
-    sv = ROOT / "results" / "phase0" / "seed_variance.json"
-    if sv.is_file():
-        mde = json.loads(sv.read_text()).get("summary", {}).get("freedom", {}).get("Recall@20", {}).get("MDE_2std")
+    # per-(model,dataset) floor only; never borrow another dataset's (Exp A1)
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from phase1_knockout import load_mde  # noqa: E402
+    mde, mde_src = load_mde("freedom", args.dataset)
 
     r20 = [r["Recall@20"] for r in rows]
+    # locate the trained weight by VALUE, not by position (rows[1] was hard-coded)
+    i_trained = min(range(len(rows)), key=lambda k: abs(rows[k]["weight"] - trained_w))
     out = {"model": "freedom", "dataset": args.dataset, "trained_weight": trained_w,
-           "checkpoint": getattr(model, "_ckpt_name", None), "MDE_R@20": mde,
+           "checkpoint": getattr(model, "_ckpt_name", None),
+           "checkpoint_pinned": getattr(model, "_ckpt_pinned", False),
+           "MDE_R@20": mde, "MDE_source": mde_src,
            "sweep": rows,
            "interpretation": {
                "R@20_at_w0_textonly": rows[0]["Recall@20"] if rows[0]["weight"] == 0.0 else None,
                "R@20_at_w1_imageonly": rows[-1]["Recall@20"] if rows[-1]["weight"] == 1.0 else None,
                "R@20_range": max(r20) - min(r20),
                "argmax_weight": args.weights[int(torch.tensor(r20).argmax())],
-               "image_helps_when_upweighted": bool(max(r20) - rows[1]["Recall@20"] > (mde or 0)) if len(rows) > 1 else None,
+               # NEVER use `(mde or 0)`: a missing floor must yield None (unjudged), not 0.
+               # A falsy default here silently adjudicates against a zero floor -- the exact
+               # single-floor failure Exp A1 and PREREG s.3 forbid.
+               "image_helps_when_upweighted": (
+                   None if mde is None else
+                   bool(max(r20) - rows[i_trained]["Recall@20"] > mde)) if len(rows) > 1 else None,
+               "_trained_weight_row_index": i_trained,
            }}
-    out_path = OUT / "weight_sweep_frozen.json"
+    out_path = Path(args.out) if args.out else OUT / "weight_sweep_frozen.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     existing = {}
     if out_path.is_file():
         for r in json.loads(out_path.read_text()):

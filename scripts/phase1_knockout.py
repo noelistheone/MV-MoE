@@ -4,9 +4,13 @@ FREEDOM: modality enters scoring ONLY through the frozen item-item graph, and wi
 n_mm_layers=1 the fused item embed decomposes EXACTLY linearly:
     fused = item_e(CF) + h_img + h_txt,   h_img = w·(imgKNN·E),  h_txt = (1-w)·(txtKNN·E)
 so structural knockout = drop h_img / h_txt (exact, deterministic).
-LGMRec: modality is used as live features at inference (+ stochastic gumbel hypergraph),
-so knockout = replace v_feat/t_feat with their per-dim mean, with the gumbel draw PAIRED
-across conditions (same seed) for a clean Δ.
+LGMRec: modality is used as live features at inference (+ stochastic gumbel hypergraph).
+Knockout is EXACT AND STRUCTURAL -- we delete the modality's additive terms in
+_lgmrec_combine (NOT input-mean substitution, which leaks through constant-direction user
+vectors and over-states image ~2x; see paper Sec. ttv). The gumbel draw is PAIRED across
+conditions (drawn once under GUMBEL_SEED and reused) for a clean, deterministic Δ.
+CAVEAT: the draw is a random variable -- see phase_micro_controls.py, which measures
+sd[d_img - d_txt] across gumbel seeds.
 LightGCN: no modality -> negative control (knockout undefined; baseline only).
 
 Outputs -> MechInterp/results/phase1/. Recsys is read-only.
@@ -161,16 +165,77 @@ def lightgcn_variants(model):
     return {"baseline": (u.detach(), i.detach())}
 
 
-def load_mde(model_name: str) -> float | None:
-    f = ROOT / "results" / "phase0" / "seed_variance.json"
-    if not f.is_file():
-        return None
-    summ = json.loads(f.read_text()).get("summary", {})
-    return summ.get(model_name, {}).get("Recall@20", {}).get("MDE_2std")
+# A floor estimated from few seeds is not WRONG, it is IMPRECISE: MDE=2*sd does not shrink
+# with n (extra seeds only stabilise sigma-hat). sd_hat's relative standard error is
+# ~1/sqrt(2(n-1)): 71% at n=2, 50% at n=3, 35% at n=5, 27% at n=8. So a small-n floor is
+# safe for an effect far from it and dangerous for one near it. The paper's published
+# LGMRec floors are n=3 and its effects are 4.4-12.8x MDE -- fine. The MicroLens image
+# effect sits near 1x -- not fine. Hence: never refuse a floor, but mark any verdict
+# UNRELIABLE when the effect is borderline AND the floor is thin.
+MIN_SEEDS_FOR_RELIABLE_FLOOR = 5
+BORDERLINE_BAND = (0.5, 2.0)   # |delta|/MDE inside this band = too close to call on a thin floor
 
 
-def run_model(model_name: str, dataset: str, device: str) -> dict:
-    cfg, ds, model, test_loader = load_frozen(model_name, dataset, device)
+def sd_rel_se(n: int) -> float | None:
+    """Relative standard error of the sd estimate itself."""
+    return (1.0 / (2.0 * (n - 1))) ** 0.5 if n and n > 1 else None
+
+
+def verdict_reliability(delta: float, mde: float | None, n: int | None) -> dict:
+    if mde is None or not n:
+        return {"reliable": None, "reason": "no floor measured"}
+    ratio = abs(delta) / mde if mde else None
+    borderline = ratio is not None and BORDERLINE_BAND[0] <= ratio <= BORDERLINE_BAND[1]
+    thin = n < MIN_SEEDS_FOR_RELIABLE_FLOOR
+    return {"reliable": not (borderline and thin),
+            "abs_delta_over_MDE": ratio, "n_seeds": n,
+            "sd_relative_se": sd_rel_se(n),
+            "reason": ("effect is borderline (|d|/MDE in %.1f-%.1f) and the floor is thin "
+                       "(n=%d < %d, sd rel-SE %.0f%%) -- report MARGINAL, not a verdict"
+                       % (*BORDERLINE_BAND, n, MIN_SEEDS_FOR_RELIABLE_FLOOR,
+                          100 * (sd_rel_se(n) or 0))) if (borderline and thin)
+                      else "effect is far from the floor, or the floor is well estimated"}
+
+
+def load_mde(model_name: str, dataset: str = "baby") -> tuple[float | None, str | None]:
+    """Per-(model,dataset) noise floor. Returns (MDE, provenance).
+
+    Exp A1 established that a floor borrowed across datasets is miscalibrated (the Baby
+    floor is 4.7-6.8x too strict for Sports/Clothing and flipped two CLIP calls), so we
+    NEVER fall back to another dataset's floor: an unmeasured cell returns None and the
+    delta is reported unjudged.
+
+    The seed count is carried in the provenance string and adjudicated by
+    verdict_reliability(): exp_mde_perdataset.summarize() emits a summary as soon as 2
+    seeds exist, and a 2-seed floor is 71% relative-SE -- fine for an effect 10x away,
+    useless for one at 1.2x. See verdict_reliability."""
+    # Several tag files can cover the same (model,dataset). Prefer the one built from the
+    # MOST seeds -- taking the first match alphabetically silently preferred a 3-seed floor
+    # over a 7-seed one (audit 2026-09-06).
+    best = None
+    for f in sorted((ROOT / "results" / "phase_mde").glob("*_mde.json")):
+        summ = json.loads(f.read_text()).get("summary", {})
+        cell = summ.get(model_name, {}).get(dataset, {}).get("Recall@20", {})
+        v = cell.get("MDE_2std")
+        if v is None:
+            continue
+        n = int(cell.get("n", 0))
+        if best is None or n > best[2]:
+            best = (float(v), f.name, n)
+    if best is not None:
+        return best[0], f"{best[1]}:summary.{model_name}.{dataset} (n={best[2]})"
+    if dataset == "baby":  # the original 5-seed Baby floor lives in phase0
+        f = ROOT / "results" / "phase0" / "seed_variance.json"
+        if f.is_file():
+            summ = json.loads(f.read_text()).get("summary", {})
+            v = summ.get(model_name, {}).get("Recall@20", {}).get("MDE_2std")
+            if v is not None:
+                return float(v), "phase0/seed_variance.json"
+    return None, None
+
+
+def run_model(model_name: str, dataset: str, device: str, ckpt_path: str | None = None) -> dict:
+    cfg, ds, model, test_loader = load_frozen(model_name, dataset, device, ckpt_path=ckpt_path)
     if model_name == "freedom":
         streams = freedom_streams(model)
         variants = freedom_variants(streams)
@@ -188,7 +253,12 @@ def run_model(model_name: str, dataset: str, device: str) -> dict:
 
     # Evaluate every variant; compare to baseline.
     base_metrics, base_topk, _ = evaluate_item_matrix(*variants["baseline"], test_loader, device)
-    mde = load_mde(model_name)
+    mde, mde_src = load_mde(model_name, dataset)
+    mde_n = None
+    if mde_src and "(n=" in mde_src:
+        mde_n = int(mde_src.split("(n=")[1].split(")")[0])
+    elif mde_src:
+        mde_n = 5  # phase0/seed_variance.json is the original 5-seed Baby floor
     rows = {"baseline": {"metrics": {k: float(v) for k, v in base_metrics.items()}}}
     for name, (u, i) in variants.items():
         if name == "baseline":
@@ -201,12 +271,17 @@ def run_model(model_name: str, dataset: str, device: str) -> dict:
             "delta": delta,
             "dR@20": delta.get("Recall@20"), "dN@20": delta.get("NDCG@20"),
             "MDE_R@20": mde,
+            "MDE_n_seeds": mde_n,
             "significant_vs_MDE": (abs(delta.get("Recall@20", 0)) > mde) if mde else None,
+            "verdict_reliability": verdict_reliability(delta.get("Recall@20", 0.0), mde, mde_n),
             "ranking_change": rc,
         }
     return {"model": model_name, "dataset": dataset, "checkpoint": getattr(model, "_ckpt_name", None),
+            "checkpoint_path": getattr(model, "_ckpt_path", None),
+            "checkpoint_pinned": getattr(model, "_ckpt_pinned", False),
             "n_users": ds.n_users, "n_items": ds.n_items,
-            "MDE_R@20": mde, "attribution": attribution, "recon_max_err": recon_err,
+            "MDE_R@20": mde, "MDE_source": mde_src, "MDE_n_seeds": mde_n,
+            "attribution": attribution, "recon_max_err": recon_err,
             "variants": rows}
 
 
@@ -215,11 +290,23 @@ def main() -> int:
     ap.add_argument("--models", nargs="+", default=["freedom", "lgmrec", "lightgcn"])
     ap.add_argument("--dataset", default="baby")
     ap.add_argument("--gpu", type=int, default=0)
+    ap.add_argument("--ckpt-map", default=None,
+                    help='JSON of {"model/dataset": {"path": ...}} pinning exact checkpoints')
+    ap.add_argument("--out", default=None,
+                    help="output JSON (default results/phase1/knockout_modality.json). Keep an "
+                         "unjudged (MDE=None) delta OUT of the canonical file.")
     args = ap.parse_args()
     device = f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu"
     OUT.mkdir(parents=True, exist_ok=True)
 
-    out_path = OUT / "knockout_modality.json"
+    pins = {}
+    if args.ckpt_map:
+        raw = json.loads(Path(args.ckpt_map).read_text())
+        pins = {k: (v["path"] if isinstance(v, dict) else v)
+                for k, v in raw.items() if not k.startswith("_")}
+
+    out_path = Path(args.out) if args.out else OUT / "knockout_modality.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     existing = {}
     if out_path.is_file():
         for r in json.loads(out_path.read_text()):
@@ -228,14 +315,16 @@ def main() -> int:
     for m in args.models:
         print(f"\n=== {m} / {args.dataset} ===", flush=True)
         try:
-            r = run_model(m, args.dataset, device)
+            r = run_model(m, args.dataset, device, ckpt_path=pins.get(f"{m}/{args.dataset}"))
         except Exception as e:  # noqa: BLE001
             import traceback; traceback.print_exc()
             existing[f"{m}/{args.dataset}"] = {"model": m, "dataset": args.dataset, "error": repr(e)}
             continue
         existing[f"{m}/{args.dataset}"] = r
         base = r["variants"]["baseline"]["metrics"]
-        print(f"  baseline R@20={base['Recall@20']:.4f} N@20={base['NDCG@20']:.4f} | MDE={r['MDE_R@20']}")
+        print(f"  ckpt={r['checkpoint']} pinned={r['checkpoint_pinned']}")
+        print(f"  baseline R@20={base['Recall@20']:.4f} N@20={base['NDCG@20']:.4f} "
+              f"| MDE={r['MDE_R@20']} ({r['MDE_source']})")
         for name, v in r["variants"].items():
             if name == "baseline":
                 continue

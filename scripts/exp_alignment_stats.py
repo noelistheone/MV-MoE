@@ -82,6 +82,33 @@ def copurchase_pairs(ds, n_pairs: int, seed: int = PAIR_SEED):
     return torch.from_numpy(p[:, 0]).long(), torch.from_numpy(p[:, 1]).long()
 
 
+def copurchase_item_marginal(ds, n_items: int) -> "torch.Tensor":
+    """The EXACT item marginal induced by copurchase_pairs().
+
+    copurchase_pairs samples ONE pair per eligible user (|H_u| >= 2), drawing two positions
+    uniformly WITHIN that user's history. So each eligible user contributes total mass 1,
+    spread evenly over its own items:
+        p*(i) proportional to  sum_{u : i in H_u, |H_u| >= 2}  1 / |H_u|
+    NOT to deg(i) = |{u : i in H_u}|. The two coincide only if E_{u ~ i}[1/|H_u|] is constant
+    across items, which it is not. Using raw degree over-weights items that live in long
+    histories; on MicroLens that over-tilts the null's top-1% mass by ~1.29x (which shrinks
+    every gap, i.e. it errs conservatively -- but it is still the wrong distribution)."""
+    users = np.asarray(ds.train_users)
+    items = np.asarray(ds.train_items)
+    order = np.argsort(users, kind="stable")
+    u_s, i_s = users[order], items[order]
+    starts = np.searchsorted(u_s, np.unique(u_s))
+    bounds = np.append(starts, len(u_s))
+    w = np.zeros(n_items, dtype=np.float64)
+    for k in range(len(starts)):
+        lo, hi = bounds[k], bounds[k + 1]
+        d_u = hi - lo
+        if d_u < 2:                      # skipped by copurchase_pairs
+            continue
+        np.add.at(w, i_s[lo:hi], 1.0 / d_u)
+    return torch.from_numpy(w / w.sum()).float()
+
+
 @torch.no_grad()
 def pair_dists(X: torch.Tensor, ia: torch.Tensor, ib: torch.Tensor) -> torch.Tensor:
     f = F.normalize(X.float(), dim=-1)
@@ -131,12 +158,23 @@ def perm_pvalue(co_d, rand_d, obs_gap, B=B_PERM, seed=PERM_SEED, chunk=250):
 
 
 @torch.no_grad()
-def analyze_stream(name, X, ia, ib, dev):
+def analyze_stream(name, X, ia, ib, dev, deg_p=None):
+    """deg_p: if given, the random (null) pairs are drawn from this item distribution
+    instead of uniformly. Co-consumption pairs are sampled one per user from that user's
+    history, so items enter them in proportion to DEGREE, while a uniform null draws them
+    flat. The gap then mixes 'co-consumed items are similar' with 'popular items are
+    similar to each other'. Passing the empirical degree distribution as deg_p matches the
+    null's item marginal to the co-consumption sample's and removes that confound."""
     X = X.to(dev)
     co_d = pair_dists(X, ia, ib)
     g = torch.Generator(device=dev).manual_seed(RAND_SEED)
-    ra = torch.randint(0, X.shape[0], (N_RAND,), generator=g, device=dev)
-    rb = torch.randint(0, X.shape[0], (N_RAND,), generator=g, device=dev)
+    if deg_p is None:
+        ra = torch.randint(0, X.shape[0], (N_RAND,), generator=g, device=dev)
+        rb = torch.randint(0, X.shape[0], (N_RAND,), generator=g, device=dev)
+    else:
+        pp = deg_p.to(dev)
+        ra = torch.multinomial(pp, N_RAND, replacement=True, generator=g)
+        rb = torch.multinomial(pp, N_RAND, replacement=True, generator=g)
     keep = ra != rb
     rand_d = pair_dists(X, ra[keep], rb[keep])
     mean_co = float(co_d.mean().item()); mean_rand = float(rand_d.mean().item())
@@ -153,14 +191,19 @@ def analyze_stream(name, X, ia, ib, dev):
         "gap_abs_boot_std": boot["gap_abs_boot_std"],
         "perm_p_value": pval, "n_co": int(co_d.numel()), "n_rand": int(rand_d.numel()),
         "significant_gap>0": bool(sig),
+        "null": "user-uniform co-consumption marginal (sum 1/d_u)" if deg_p is not None else "uniform",
     }
 
 
 @torch.no_grad()
-def run_dataset(dataset: str, dev: str) -> dict:
-    cfg, ds, model, _ = load_frozen("freedom", dataset, dev)
+def run_dataset(dataset: str, dev: str, ckpt_path: str | None = None,
+                degree_matched: bool = False) -> dict:
+    cfg, ds, model, _ = load_frozen("freedom", dataset, dev, ckpt_path=ckpt_path)
     ia, ib = copurchase_pairs(ds, N_PAIRS)
     ia, ib = ia.to(dev), ib.to(dev)
+    deg_p = None
+    if degree_matched:
+        deg_p = copurchase_item_marginal(ds, int(model.v_feat.shape[0]))
     s = freedom_streams(model)
     streams = {
         "raw_image_cnn": model.v_feat.to(dev),
@@ -173,12 +216,19 @@ def run_dataset(dataset: str, dev: str) -> dict:
         streams["raw_image_clip"] = torch.from_numpy(np.load(ci)).float()
     if ct.exists():
         streams["raw_text_clip"] = torch.from_numpy(np.load(ct)).float()
+    # A third released modality exists on MicroLens only. Reported as a DECLARED
+    # side-cell (PREREG s.6): no claim is built on it -- see the degeneracy check.
+    vf = Path("/workspace/Recsys/data") / dataset / "video_feat.npy"
+    if vf.exists():
+        V = np.load(vf)
+        if V.shape[0] == model.v_feat.shape[0]:
+            streams["raw_video"] = torch.from_numpy(V).float()
     order = ["raw_image_cnn", "raw_image_clip", "raw_text_bert", "raw_text_clip",
-             "h_img_graph", "h_txt_graph", "cf", "fused"]
+             "raw_video", "h_img_graph", "h_txt_graph", "cf", "fused"]
     res = {}
     for nm in order:
         if nm in streams:
-            res[nm] = analyze_stream(nm, streams[nm], ia, ib, dev)
+            res[nm] = analyze_stream(nm, streams[nm], ia, ib, dev, deg_p=deg_p)
             r = res[nm]
             print(f"    {nm:16s} dim{r['dim']:>5d}  gap={r['gap_abs']:.4f} "
                   f"CI[{r['gap_abs_ci95'][0]:.4f},{r['gap_abs_ci95'][1]:.4f}]  "
@@ -210,7 +260,21 @@ def run_dataset(dataset: str, dev: str) -> dict:
             res["raw_image_cnn"]["gap_abs"] < res["raw_image_clip"]["gap_abs"]
             if "raw_image_clip" in res else None),
     }
+    ordering["graph: h_img > h_txt  [INVERSION, CIs separate]"] = below("h_txt_graph", "h_img_graph")
+    ordering["raw: image > text  [INVERSION, CIs separate]"] = below("raw_text_bert", "raw_image_cnn")
     return {"dataset": dataset, "n_copurchase_pairs": int(ia.numel()),
+            "null_distribution": ("user-uniform co-consumption marginal p*(i) ~ sum_{u:i in H_u,d_u>=2} 1/d_u"
+                                  if degree_matched else "uniform"),
+            "checkpoint": getattr(model, "_ckpt_name", None),
+            "checkpoint_pinned": getattr(model, "_ckpt_pinned", False),
+            "image_weight": float(model.mm_image_weight),
+            "feature_note": ("MicroLens ships precomputed 1024-d image/text and 768-d video "
+                             "features of UNDOCUMENTED provenance (readme.txt is a single URL); "
+                             "text arrives pre-L2-normalized (mean norm 1.000), image does not "
+                             "(2.186). The stream keys 'raw_image_cnn'/'raw_text_bert' are legacy "
+                             "Amazon names, NOT the encoders used here."
+                             if dataset == "microlens" else
+                             "Amazon: 4096-d CNN image, 384-d sentence-BERT text (MMRec release)."),
             "streams": res, "ordering_tests": ordering}
 
 
@@ -247,9 +311,21 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--datasets", nargs="+", default=["baby", "sports", "clothing", "elec"])
     ap.add_argument("--gpu", type=int, default=0)
+    ap.add_argument("--ckpt-map", default=None)
+    ap.add_argument("--out", default=None, help="output JSON (default results/phase_align/alignment_stats.json)")
+    ap.add_argument("--degree-matched-null", action="store_true",
+                    help="draw the null pairs from the empirical item-degree distribution "
+                         "instead of uniformly (removes the popularity confound)")
     args = ap.parse_args()
     dev = f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu"
     OUT.mkdir(parents=True, exist_ok=True)
+    pins = {}
+    if args.ckpt_map:
+        raw = json.loads(Path(args.ckpt_map).read_text())
+        pins = {k: (v["path"] if isinstance(v, dict) else v)
+                for k, v in raw.items() if not k.startswith("_")}
+    out_path = Path(args.out) if args.out else OUT / "alignment_stats.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     out = {"metric": "||f(x)-f(y)||^2, f=L2-normalize (Wang&Isola alignment, =2-2cos)",
            "headline": "absolute gap = mean_dist(random) - mean_dist(co-purchased); higher=more predictive",
            "config": {"n_pairs": N_PAIRS, "n_rand": N_RAND, "B_boot": B_BOOT, "B_perm": B_PERM,
@@ -258,13 +334,15 @@ def main() -> int:
     for d in args.datasets:
         print(f"\n=== {d} ===", flush=True)
         try:
-            out["datasets"].append(run_dataset(d, dev))
+            out["datasets"].append(run_dataset(d, dev, ckpt_path=pins.get(f"freedom/{d}"),
+                                               degree_matched=args.degree_matched_null))
         except Exception as e:  # noqa: BLE001
             import traceback; traceback.print_exc()
             out["datasets"].append({"dataset": d, "error": repr(e)})
-        (OUT / "alignment_stats.json").write_text(json.dumps(out, indent=2))
-        write_summary(out)
-    print(f"\nWrote {OUT/'alignment_stats.json'} and SUMMARY.md")
+        out_path.write_text(json.dumps(out, indent=2))
+        if out_path.parent == OUT:
+            write_summary(out)
+    print(f"\nWrote {out_path}")
     return 0
 
 

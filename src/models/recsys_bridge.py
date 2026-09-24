@@ -62,8 +62,14 @@ def latest_ckpt(model: str, dataset: str) -> Path | None:
     return sorted(cands)[-1][1] if cands else None
 
 
-def load_frozen(model_name: str, dataset_name: str, device: str, load_ckpt: bool = True):
-    """Returns (cfg, dataset, model, test_loader); model is eval() and on device."""
+def load_frozen(model_name: str, dataset_name: str, device: str, load_ckpt: bool = True,
+                ckpt_path: str | Path | None = None):
+    """Returns (cfg, dataset, model, test_loader); model is eval() and on device.
+
+    ckpt_path pins an EXPLICIT checkpoint. Without it we fall back to latest_ckpt(),
+    which resolves by max timestamp and can therefore silently load an ABORTED run
+    (verified on MicroLens/LGMRec, 2026-09-04). Pin whenever the dataset has more
+    than one run on disk."""
     cfg = Config(model_name, dataset_name, cli_overrides={
         "ckpt_dir": str(SCRATCH / "ckpts"), "log_dir": str(SCRATCH / "logs")})
     set_seed(int(cfg.get("seed", 2024)), deterministic=bool(cfg.get("cudnn_deterministic", True)))
@@ -80,17 +86,40 @@ def load_frozen(model_name: str, dataset_name: str, device: str, load_ckpt: bool
     ml = model_name.lower()
     if ml not in ("lightgcn", "mllmrec", "falcon"):
         kwargs.update(v_feat=v_feat, t_feat=t_feat)
-    if ml in ("freedom", "mllmrec", "histllm", "grcn", "dragon"):
+    # Models whose __init__ needs the raw interaction index. This list MUST stay in sync
+    # across recsys_bridge.load_frozen, phase0_repro.build_model and
+    # phasex_crossarch_knockout.build_eval -- it was previously short in two of the three,
+    # making smore/gume/damrs/cohesion unloadable there (audit finding D3, 2026-09-04).
+    if ml in ("freedom", "mllmrec", "histllm", "grcn", "dragon",
+              "smore", "gume", "damrs", "cohesion"):
         kwargs.update(train_user_idx=torch.from_numpy(np.asarray(dataset.train_users)),
                       train_item_idx=torch.from_numpy(np.asarray(dataset.train_items)))
     model = ModelCls(**kwargs).to(device)
 
     if load_ckpt:
-        ck = latest_ckpt(model_name, dataset_name)
+        if ckpt_path is not None:
+            ck = Path(ckpt_path)
+            if not ck.is_file():
+                raise FileNotFoundError(f"pinned checkpoint missing: {ck}")
+        else:
+            ck = latest_ckpt(model_name, dataset_name)
         if ck is None:
             raise FileNotFoundError(f"no checkpoint for {model_name}/{dataset_name}")
         state = torch.load(ck, map_location=device, weights_only=False)
-        model.load_state_dict(state["model_state_dict"], strict=False)
+        # strict=False is needed (frozen non-persistent buffers such as FREEDOM's mm_adj are
+        # rebuilt, not stored), but an UNCHECKED strict=False silently leaves a renamed
+        # parameter at random init and still returns a plausible number. Assert that every
+        # missing key is a rebuildable buffer, never a learnable parameter.
+        inc = model.load_state_dict(state["model_state_dict"], strict=False)
+        param_names = {n for n, _ in model.named_parameters()}
+        bad = [k for k in inc.missing_keys if k in param_names]
+        if bad:
+            raise RuntimeError(f"checkpoint {ck.name} is missing LEARNABLE parameters {bad} "
+                               f"-- they would stay at random init. Refusing to proceed.")
+        model._missing_keys = list(inc.missing_keys)
+        model._unexpected_keys = list(inc.unexpected_keys)
         model._ckpt_name = ck.name
+        model._ckpt_path = str(ck)
+        model._ckpt_pinned = ckpt_path is not None
     model.eval()
     return cfg, dataset, model, test_loader

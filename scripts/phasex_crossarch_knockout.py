@@ -1,7 +1,7 @@
 """Cross-architecture modality knockout across PUBLISHED multimodal recommenders.
 
-Reproduces & extends the standard knockout protocol (arXiv:2508.07399 / MKF4MMRec:
-replace a modality's input feature with its per-dim mean) uniformly across many
+Applies test-time mean replacement (replace a modality's input feature with its
+per-dimension mean over items, then re-run inference) uniformly across many
 published models, via each model's own full_sort_predict. This tests how universal
 "image ignored" is across the published multimodal-recsys literature — no architecture
 invention; every model is a searchable paper. Re-instantiating with the knocked-out

@@ -46,7 +46,12 @@ _MODEL_FILES = {"freedom": ("freedom.py", "FREEDOM"),
                 "vbpr": ("vbpr.py", "VBPR"), "mmgcn": ("mmgcn.py", "MMGCN"),
                 "lattice": ("lattice.py", "LATTICE"), "bm3": ("bm3.py", "BM3"),
                 "mgcn": ("mgcn.py", "MGCN"), "mentor": ("mentor.py", "MENTOR"),
-                "diffmm": ("diffmm.py", "DiffMM")}
+                "diffmm": ("diffmm.py", "DiffMM"),
+                # 2024-25 models. Were MISSING here, so their noise floors silently
+                # KeyError'd out of the screen-floor run (audit 2026-09-06).
+                "smore": ("smore.py", "SMORE"), "gume": ("gume.py", "GUME"),
+                "dragon": ("dragon.py", "DRAGON"), "damrs": ("damrs.py", "DAMRS"),
+                "cohesion": ("cohesion.py", "COHESION"), "grcn": ("grcn.py", "GRCN")}
 
 
 def load_recsys_model(model_name: str):
@@ -88,7 +93,12 @@ def build_model(model_name: str, cfg, dataset, norm_adj, device):
     ml = model_name.lower()
     if ml not in ("lightgcn", "mllmrec", "falcon"):
         kwargs.update(v_feat=v_feat, t_feat=t_feat)
-    if ml in ("freedom", "mllmrec", "histllm", "grcn", "dragon"):
+    # Models whose __init__ needs the raw interaction index. This list MUST stay in sync
+    # across recsys_bridge.load_frozen, phase0_repro.build_model and
+    # phasex_crossarch_knockout.build_eval -- it was previously short in two of the three,
+    # making smore/gume/damrs/cohesion unloadable there (audit finding D3, 2026-09-04).
+    if ml in ("freedom", "mllmrec", "histllm", "grcn", "dragon",
+              "smore", "gume", "damrs", "cohesion"):
         kwargs.update(train_user_idx=torch.from_numpy(dataset.train_users),
                       train_item_idx=torch.from_numpy(dataset.train_items))
     return ModelCls(**kwargs).to(device)

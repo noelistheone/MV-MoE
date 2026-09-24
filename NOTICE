@@ -1,0 +1,20 @@
+Third-party code
+================
+
+recsys/src/models/ contains implementations of published recommenders, adapted to one training and
+evaluation framework so that all models share the same data split, early-stopping rule and
+full-ranking evaluator. They follow the original papers and, where one exists, the authors' public
+implementation; those implementations remain under their original licenses, and credit belongs to
+their authors:
+
+  FREEDOM   Zhou & Shen, ACM MM 2023            LGMRec    Guo et al., AAAI 2024
+  LightGCN  He et al., SIGIR 2020               VBPR      He & McAuley, AAAI 2016
+  MMGCN     Wei et al., ACM MM 2019             LATTICE   Zhang et al., ACM MM 2021
+  BM3       Zhou et al., WWW 2023               MGCN      Yu et al., ACM MM 2023
+  MENTOR    Xu et al., AAAI 2025                DA-MRS    Xv et al., KDD 2024
+  SMORE     Ong & Khong, WSDM 2025              COHESION  Xu et al., SIGIR 2025
+  GUME      Lin et al., CIKM 2024
+
+GUME, DA-MRS, SMORE and COHESION are ports of the official code; MENTOR and MMGCN are
+re-implementations from the papers (MENTOR adds a normalization of its content residual).
+The datasets (Amazon review data; MicroLens) are not redistributed; see README.md.

@@ -36,14 +36,18 @@ from src.data.graph_utils import build_norm_adj              # noqa: E402
 from src.common.trainer import Trainer                       # noqa: E402
 
 
-def train_one(model_name: str, dataset_name: str, seed: int, device: str) -> dict:
+def train_one(model_name: str, dataset_name: str, seed: int, device: str,
+              extra_overrides: dict | None = None, run_prefix: str = "nf") -> dict:
     scratch = OUT_DIR / "_scratch"
-    cfg = Config(model_name, dataset_name, cli_overrides={
+    ov = {
         "seed": seed,
         "ckpt_dir": str(scratch / "ckpts"),
         "log_dir": str(scratch / "logs"),
         "show_progress": False,
-    })
+    }
+    if extra_overrides:
+        ov.update(extra_overrides)
+    cfg = Config(model_name, dataset_name, cli_overrides=ov)
     set_seed(seed, deterministic=bool(cfg.get("cudnn_deterministic", True)))
 
     dataset = RecDataset(cfg)
@@ -58,13 +62,16 @@ def train_one(model_name: str, dataset_name: str, seed: int, device: str) -> dic
 
     model = build_model(model_name, cfg, dataset, norm_adj, device)
     trainer = Trainer(cfg, model, train_loader, valid_loader, test_loader,
-                      run_name=f"nf_{model_name}_{dataset_name}_s{seed}")
+                      run_name=f"{run_prefix}_{model_name}_{dataset_name}_s{seed}")
     t0 = time.time()
     result = trainer.fit()
+    ckpt = scratch / "ckpts" / f"{run_prefix}_{model_name}_{dataset_name}_s{seed}.pt"
     return {
         "model": model_name, "dataset": dataset_name, "seed": seed,
         "best_epoch": int(result["best_epoch"]),
         "train_min": (time.time() - t0) / 60.0,
+        "ckpt_path": str(ckpt) if ckpt.is_file() else None,
+        "overrides": extra_overrides or {},
         "test_result": {k: float(v) for k, v in result["test_result"].items()},
     }
 
