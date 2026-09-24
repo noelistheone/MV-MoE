@@ -67,8 +67,28 @@ def feature_sizes(ds: str) -> dict:
     return out
 
 
+def freedom_config() -> dict:
+    """FREEDOM's training configuration as used for every dataset (model yaml + framework defaults),
+    and whether any dataset config overrides a model/training key (it would mean per-dataset tuning)."""
+    import yaml
+    cfg_dir = DATA.parent / "configs"
+    model = yaml.safe_load((cfg_dir / "model" / "freedom.yaml").read_text())
+    overall = yaml.safe_load((cfg_dir / "overall.yaml").read_text())
+    keys = ["embedding_size", "n_layers", "n_mm_layers", "knn_k", "mm_image_weight", "dropout",
+            "reg_weight", "learning_rate", "train_batch_size", "learner", "valid_metric"]
+    merged = {k: model.get(k, overall.get(k)) for k in keys}
+    overrides = {}
+    for ds in DATASETS:
+        dcfg = yaml.safe_load((cfg_dir / "dataset" / f"{ds}.yaml").read_text()) or {}
+        hit = sorted(k for k in dcfg if k in keys or k in overall and k not in
+                     ("dataset", "data_path", "inter_file_name", "USER_ID_FIELD", "ITEM_ID_FIELD"))
+        overrides[ds] = hit
+    return {"freedom": merged, "dataset_overrides_of_training_keys": overrides}
+
+
 def main() -> int:
     out = {ds: stats(ds) for ds in DATASETS}
+    (OUT.parent / "freedom_config.json").write_text(json.dumps(freedom_config(), indent=1))
     OUT.write_text(json.dumps(out, indent=1))
     for ds, s in out.items():
         sh = s["split_share"]

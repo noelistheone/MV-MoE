@@ -2392,6 +2392,15 @@ if _dsx:
               f"{_f['bytes_on_disk'] / 1e6:,.1f} MB; at float32 = {_f['bytes_float32'] / 1e6:,.1f} MB")
     w()
 
+_fcfg = jload("results/phase0/freedom_config.json")
+if _fcfg:
+    w("## 21p. FREEDOM configuration (one configuration for every dataset)")
+    w()
+    w("- " + "; ".join(f"{k} = {v}" for k, v in _fcfg["freedom"].items()) + " [recsys configs].")
+    _ov = {k: v for k, v in _fcfg["dataset_overrides_of_training_keys"].items() if v}
+    w(f"- Dataset configs overriding a model/training key: {_ov or 'none (no per-dataset tuning)'}.")
+    w()
+
 OUT.parent.mkdir(parents=True, exist_ok=True)
 OUT.write_text("\n".join(L))
 print(f"wrote {OUT}  ({len(L)} lines)")
