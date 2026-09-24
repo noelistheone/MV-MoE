@@ -1,0 +1,67 @@
+{
+  "purpose": "DECLARED NEGATIVE SIDE-CELL (PREREG s.6). No claim is built on this.",
+  "verdict": "The released MicroLens video features are near-degenerate: effective rank 11.75/768 (1.53% of dimensions) with mean all-pairs cosine 0.9757 \u2014 every item points in nearly the same direction. They cannot support a third-modality knockout, so this study tests the COVER-FRAME image interface only.",
+  "method": "effective rank = exp(entropy of normalized covariance eigenspectrum) (Roy & Vetterli) on a 4000-item random subsample (seed 0); cosine over the same subsample, off-diagonal only.",
+  "streams": {
+    "microlens/image (1024d, released)": {
+      "file": "/workspace/Recsys/data/microlens/image_feat.npy",
+      "n_items": 17228,
+      "dim": 1024,
+      "effective_rank": 99.45040815292222,
+      "effective_rank_frac_of_dim": 0.09711953921183811,
+      "mean_pairwise_cosine": 0.507543683052063,
+      "p95_pairwise_cosine": 0.7067556977272034,
+      "mean_L2_norm": 2.1863913536071777,
+      "sd_L2_norm": 0.280499666929245,
+      "n_subsampled_for_cosine": 4000
+    },
+    "microlens/text (1024d, released)": {
+      "file": "/workspace/Recsys/data/microlens/text_feat.npy",
+      "n_items": 17228,
+      "dim": 1024,
+      "effective_rank": 292.88323487640827,
+      "effective_rank_frac_of_dim": 0.28601878405899245,
+      "mean_pairwise_cosine": 0.37999987602233887,
+      "p95_pairwise_cosine": 0.4947141706943512,
+      "mean_L2_norm": 1.0,
+      "sd_L2_norm": 5.6653117752603066e-08,
+      "n_subsampled_for_cosine": 4000
+    },
+    "microlens/video (768d, released)": {
+      "file": "/workspace/Recsys/data/microlens/video_feat.npy",
+      "n_items": 17228,
+      "dim": 768,
+      "effective_rank": 11.751103216062011,
+      "effective_rank_frac_of_dim": 0.015300915645914077,
+      "mean_pairwise_cosine": 0.9757038354873657,
+      "p95_pairwise_cosine": 0.9973950982093811,
+      "mean_L2_norm": 90.05350494384766,
+      "sd_L2_norm": 5.248584747314453,
+      "n_subsampled_for_cosine": 4000
+    },
+    "baby/image (4096d CNN, reference)": {
+      "file": "/workspace/Recsys/data/baby/image_feat.npy",
+      "n_items": 7050,
+      "dim": 4096,
+      "effective_rank": 382.71737788718286,
+      "effective_rank_frac_of_dim": 0.093436859835738,
+      "mean_pairwise_cosine": 0.22405382990837097,
+      "p95_pairwise_cosine": 0.4089181423187256,
+      "mean_L2_norm": 76.7965316772461,
+      "sd_L2_norm": 12.108753204345703,
+      "n_subsampled_for_cosine": 4000
+    },
+    "baby/text (384d sBERT, reference)": {
+      "file": "/workspace/Recsys/data/baby/text_feat.npy",
+      "n_items": 7050,
+      "dim": 384,
+      "effective_rank": 143.84797319645102,
+      "effective_rank_frac_of_dim": 0.37460409686575785,
+      "mean_pairwise_cosine": 0.2621774673461914,
+      "p95_pairwise_cosine": 0.43915802240371704,
+      "mean_L2_norm": 1.0,
+      "sd_L2_norm": 3.823389249646425e-08,
+      "n_subsampled_for_cosine": 4000
+    }
+  }
+}

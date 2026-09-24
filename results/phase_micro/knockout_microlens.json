@@ -1,0 +1,222 @@
+[
+  {
+    "model": "freedom",
+    "dataset": "microlens",
+    "checkpoint": "freedom_microlens_20260620_180853.pt",
+    "checkpoint_path": "/workspace/Recsys/ckpts/freedom_microlens_20260620_180853.pt",
+    "checkpoint_pinned": true,
+    "n_users": 98129,
+    "n_items": 17228,
+    "MDE_R@20": null,
+    "MDE_source": null,
+    "attribution": {
+      "||cf||": 7.810365200042725,
+      "||h_img||": 0.4507331848144531,
+      "||h_txt||": 4.526930332183838,
+      "||fused||": 11.904777526855469,
+      "image_weight": 0.1
+    },
+    "recon_max_err": 1.430511474609375e-06,
+    "variants": {
+      "baseline": {
+        "metrics": {
+          "Recall@10": 0.06206332725837664,
+          "Recall@20": 0.09784604753472265,
+          "NDCG@10": 0.031438978926782726,
+          "NDCG@20": 0.04063048951213669
+        }
+      },
+      "image_knockout": {
+        "metrics": {
+          "Recall@10": 0.06187786115585237,
+          "Recall@20": 0.096998252754706,
+          "NDCG@10": 0.031173845313696234,
+          "NDCG@20": 0.040196657156316914
+        },
+        "delta": {
+          "Recall@10": -0.00018546610252426904,
+          "Recall@20": -0.0008477947800166474,
+          "NDCG@10": -0.000265133613086492,
+          "NDCG@20": -0.00043383235581977847
+        },
+        "dR@20": -0.0008477947800166474,
+        "dN@20": -0.00043383235581977847,
+        "MDE_R@20": null,
+        "significant_vs_MDE": null,
+        "ranking_change": {
+          "overlap@20": 0.9477749999999998,
+          "rbo": 0.8140767444878593,
+          "n_sampled": 4000
+        }
+      },
+      "text_knockout": {
+        "metrics": {
+          "Recall@10": 0.057139156337915116,
+          "Recall@20": 0.09098534247317991,
+          "NDCG@10": 0.028655692843933066,
+          "NDCG@20": 0.03735525535695974
+        },
+        "delta": {
+          "Recall@10": -0.004924170920461525,
+          "Recall@20": -0.006860705061542738,
+          "NDCG@10": -0.0027832860828496606,
+          "NDCG@20": -0.0032752341551769495
+        },
+        "dR@20": -0.006860705061542738,
+        "dN@20": -0.0032752341551769495,
+        "MDE_R@20": null,
+        "significant_vs_MDE": null,
+        "ranking_change": {
+          "overlap@20": 0.6677375000000001,
+          "rbo": 0.49750920698079526,
+          "n_sampled": 4000
+        }
+      },
+      "both_knockout": {
+        "metrics": {
+          "Recall@10": 0.0565002089584527,
+          "Recall@20": 0.0900526699480118,
+          "NDCG@10": 0.028312635294636387,
+          "NDCG@20": 0.03692980686162291
+        },
+        "delta": {
+          "Recall@10": -0.005563118299923939,
+          "Recall@20": -0.007793377586710851,
+          "NDCG@10": -0.003126343632146339,
+          "NDCG@20": -0.0037006826505137855
+        },
+        "dR@20": -0.007793377586710851,
+        "dN@20": -0.0037006826505137855,
+        "MDE_R@20": null,
+        "significant_vs_MDE": null,
+        "ranking_change": {
+          "overlap@20": 0.6610999999999999,
+          "rbo": 0.49184451006244684,
+          "n_sampled": 4000
+        }
+      }
+    }
+  },
+  {
+    "model": "lgmrec",
+    "dataset": "microlens",
+    "checkpoint": "lgmrec_microlens_20260621_204213.pt",
+    "checkpoint_path": "/workspace/MechInterp/ckpts_microlens/lgmrec_microlens_20260621_204213.pt",
+    "checkpoint_pinned": true,
+    "n_users": 98129,
+    "n_items": 17228,
+    "MDE_R@20": null,
+    "MDE_source": null,
+    "attribution": {
+      "||cge_i||": 1.9047726392745972,
+      "||norm(v)_i||": 0.9999419450759888,
+      "||norm(t)_i||": 0.9999419450759888,
+      "||av_i||": 811.7030029296875,
+      "||at_i||": 528.6266479492188,
+      "alpha": 0.2
+    },
+    "recon_max_err": null,
+    "variants": {
+      "baseline": {
+        "metrics": {
+          "Recall@10": 0.06901965008284242,
+          "Recall@20": 0.10528876138914965,
+          "NDCG@10": 0.03574247213059628,
+          "NDCG@20": 0.045078808156347364
+        }
+      },
+      "image_knockout": {
+        "metrics": {
+          "Recall@10": 0.06462682541262778,
+          "Recall@20": 0.09877878880645648,
+          "NDCG@10": 0.03325098259334732,
+          "NDCG@20": 0.04206006405795996
+        },
+        "delta": {
+          "Recall@10": -0.004392824670214637,
+          "Recall@20": -0.006509972582693174,
+          "NDCG@10": -0.00249148953724896,
+          "NDCG@20": -0.003018744098387406
+        },
+        "dR@20": -0.006509972582693174,
+        "dN@20": -0.003018744098387406,
+        "MDE_R@20": null,
+        "significant_vs_MDE": null,
+        "ranking_change": {
+          "overlap@20": 0.6392125000000001,
+          "rbo": 0.5006447653952664,
+          "n_sampled": 4000
+        }
+      },
+      "text_knockout": {
+        "metrics": {
+          "Recall@10": 0.0667266737085547,
+          "Recall@20": 0.10222986677245866,
+          "NDCG@10": 0.03437396304593038,
+          "NDCG@20": 0.043479692227971004
+        },
+        "delta": {
+          "Recall@10": -0.002292976374287714,
+          "Recall@20": -0.0030588946166909964,
+          "NDCG@10": -0.0013685090846659032,
+          "NDCG@20": -0.00159911592837636
+        },
+        "dR@20": -0.0030588946166909964,
+        "dN@20": -0.00159911592837636,
+        "MDE_R@20": null,
+        "significant_vs_MDE": null,
+        "ranking_change": {
+          "overlap@20": 0.671025,
+          "rbo": 0.5244958536285254,
+          "n_sampled": 4000
+        }
+      },
+      "both_knockout": {
+        "metrics": {
+          "Recall@10": 0.060409712920438605,
+          "Recall@20": 0.09590956228825766,
+          "NDCG@10": 0.030912102670729948,
+          "NDCG@20": 0.04003263223879534
+        },
+        "delta": {
+          "Recall@10": -0.00860993716240381,
+          "Recall@20": -0.009379199100891994,
+          "NDCG@10": -0.0048303694598663335,
+          "NDCG@20": -0.0050461759175520204
+        },
+        "dR@20": -0.009379199100891994,
+        "dN@20": -0.0050461759175520204,
+        "MDE_R@20": null,
+        "significant_vs_MDE": null,
+        "ranking_change": {
+          "overlap@20": 0.49023749999999994,
+          "rbo": 0.3597873547367394,
+          "n_sampled": 4000
+        }
+      }
+    }
+  },
+  {
+    "model": "lightgcn",
+    "dataset": "microlens",
+    "checkpoint": "lightgcn_microlens_20260620_212753.pt",
+    "checkpoint_path": "/workspace/Recsys/ckpts/lightgcn_microlens_20260620_212753.pt",
+    "checkpoint_pinned": true,
+    "n_users": 98129,
+    "n_items": 17228,
+    "MDE_R@20": null,
+    "MDE_source": null,
+    "attribution": {},
+    "recon_max_err": null,
+    "variants": {
+      "baseline": {
+        "metrics": {
+          "Recall@10": 0.07261639621021149,
+          "Recall@20": 0.1100152875875394,
+          "NDCG@10": 0.03797312247959255,
+          "NDCG@20": 0.04762769123144598
+        }
+      }
+    }
+  }
+]

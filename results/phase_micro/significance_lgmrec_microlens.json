@@ -1,0 +1,62 @@
+{
+  "model": "lgmrec",
+  "dataset": "microlens",
+  "n_seeds": 3,
+  "seeds": [
+    2024,
+    2025,
+    2026
+  ],
+  "F_level": 0.00016418459543457588,
+  "sd_R@20": 8.209229771728794e-05,
+  "mean_R@20": 0.10522829807292097,
+  "note": "F_level = 2*sd(R@20) across seeds (published convention). F_paired = 2*sd(per-seed delta) -- the correct floor for a knockout that is deterministic within a checkpoint. PREREG s.3 requires the verdict to hold against max(F_paired, F_level).",
+  "streams": {
+    "image": {
+      "mean_delta": -0.0063650291730166135,
+      "sd_delta": 0.00024972289911586826,
+      "F_paired": 0.0004994457982317365,
+      "abs_mean_over_F_paired": 12.744184044698521,
+      "abs_mean_over_F_level": 38.76751747731988,
+      "verdict": "SIGNIFICANT",
+      "per_seed": [
+        -0.006509972582693174,
+        -0.006076675365315837,
+        -0.0065084395710408305
+      ]
+    },
+    "text": {
+      "mean_delta": -0.003800900563835072,
+      "sd_delta": 0.0006339280473060692,
+      "F_paired": 0.0012678560946121384,
+      "abs_mean_over_F_paired": 2.997895881076188,
+      "abs_mean_over_F_level": 23.15016554247716,
+      "verdict": "SIGNIFICANT",
+      "per_seed": [
+        -0.003069085284077802,
+        -0.004152681406602271,
+        -0.004180935000825142
+      ]
+    },
+    "both": {
+      "mean_delta": -0.010238198307984017,
+      "sd_delta": 0.0009011760722633222,
+      "F_paired": 0.0018023521445266445,
+      "abs_mean_over_F_paired": 5.680465018489989,
+      "abs_mean_over_F_level": 62.357849595358196,
+      "verdict": "SIGNIFICANT",
+      "per_seed": [
+        -0.0093893897682788,
+        -0.011183909934788905,
+        -0.010141295220884347
+      ]
+    }
+  },
+  "admissibility_gate": {
+    "rule": "cell yields a verdict only if the TEXT knockout clears both floors",
+    "text_verdict": "SIGNIFICANT",
+    "passes": true,
+    "caveat": "text carries 0.9 of FREEDOM's mm_adj by construction, so a passing gate is partly mechanical; the informative quantity is the ratio",
+    "abs_ratio_txt_over_img": 0.5971536752648834
+  }
+}

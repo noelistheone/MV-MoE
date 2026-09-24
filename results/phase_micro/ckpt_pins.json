@@ -1,0 +1,71 @@
+{
+  "_note": "Explicit checkpoint pins. recsys_bridge.latest_ckpt() resolves by max timestamp over /workspace/Recsys/ckpts and (a) silently loads ABORTED runs on MicroLens, (b) on Amazon now resolves to July 2026 re-runs rather than the May/June checkpoints the PAPER's results/phase1 table and results/phase_align were computed from. Any artifact that is compared against the paper MUST pin, or it describes a different model.",
+  "_verified": "2026-09-04 (Amazon pins added after the Step-1b audit found artifacts split across two checkpoint generations)",
+  "freedom/microlens": {
+    "path": "/workspace/Recsys/ckpts/freedom_microlens_20260620_180853.pt",
+    "test_R@20": 0.09784604753472265,
+    "best_epoch": 350,
+    "seed": 2024,
+    "why": "only completed FREEDOM/MicroLens run; latest_ckpt agrees"
+  },
+  "lgmrec/microlens": {
+    "path": "/workspace/MechInterp/ckpts_microlens/lgmrec_microlens_20260621_204213.pt",
+    "test_R@20": 0.10525,
+    "best_epoch": 289,
+    "why": "COMPLETED run. latest_ckpt would take /workspace/Recsys/ckpts/lgmrec_microlens_20260620_193139.pt, ABORTED at epoch 179 with no result.json (log verified)"
+  },
+  "lightgcn/microlens": {
+    "path": "/workspace/Recsys/ckpts/lightgcn_microlens_20260620_212753.pt",
+    "test_R@20": 0.11002,
+    "best_epoch": 202,
+    "why": "completed; the two runs under MechInterp/logs_microlens are best_epoch=1 and aborted"
+  },
+  "freedom/baby": {
+    "path": "/workspace/Recsys/ckpts/freedom_baby_20260523_000823.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  },
+  "freedom/clothing": {
+    "path": "/workspace/Recsys/ckpts/freedom_clothing_20260523_041549.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  },
+  "freedom/elec": {
+    "path": "/workspace/Recsys/ckpts/freedom_elec_20260530_191717.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  },
+  "freedom/sports": {
+    "path": "/workspace/Recsys/ckpts/freedom_sports_20260523_011740.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  },
+  "lgmrec/baby": {
+    "path": "/workspace/Recsys/ckpts/lgmrec_baby_20260523_003610.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  },
+  "lgmrec/clothing": {
+    "path": "/workspace/Recsys/ckpts/lgmrec_clothing_20260523_051731.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  },
+  "lgmrec/elec": {
+    "path": "/workspace/Recsys/ckpts/lgmrec_elec_20260531_054852.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  },
+  "lgmrec/sports": {
+    "path": "/workspace/Recsys/ckpts/lgmrec_sports_20260523_021127.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  },
+  "lightgcn/baby": {
+    "path": "/workspace/Recsys/ckpts/lightgcn_baby_20260523_000310.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  },
+  "lightgcn/clothing": {
+    "path": "/workspace/Recsys/ckpts/lightgcn_clothing_20260523_053039.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  },
+  "lightgcn/elec": {
+    "path": "/workspace/Recsys/ckpts/lightgcn_elec_20260531_081233.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  },
+  "lightgcn/sports": {
+    "path": "/workspace/Recsys/ckpts/lightgcn_sports_20260523_022847.pt",
+    "why": "the checkpoint behind the paper's results/phase1 knockout table; latest_ckpt() would now return a July 2026 re-run instead"
+  }
+}

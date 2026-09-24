@@ -1,0 +1,398 @@
+{
+  "baby/cnnimg_berttxt": {
+    "variant": "cnnimg_berttxt",
+    "image_src": "cnn",
+    "text_src": "bert",
+    "v_dim": 4096,
+    "t_dim": 384,
+    "train_min": 4.880591217676798,
+    "best_epoch": 133,
+    "baseline_R@20": 0.09245440111729646,
+    "image_knockout_dR@20": 0.00013113911031115144,
+    "text_knockout_dR@20": 0.0043326893956875945,
+    "both_knockout_dR@20": 0.0034305723133185168,
+    "norms": {
+      "h_img": 0.28980833292007446,
+      "h_txt": 4.5613603591918945,
+      "cf": 4.090595245361328,
+      "fused": 8.465657234191895
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.03832602500915527,
+      "raw_text": 0.06510758399963379,
+      "h_img(graph)": 0.09322285652160645,
+      "h_txt(graph)": 0.19062280654907227,
+      "cf": 0.5233631134033203
+    },
+    "alignment_relative": {
+      "raw_image": 0.02466353471131186,
+      "raw_text": 0.04417948212899737,
+      "h_img(graph)": 0.04666634959416012,
+      "h_txt(graph)": 0.09532900058715453,
+      "cf": 0.26308916046085645
+    }
+  },
+  "baby/clipimg_berttxt": {
+    "variant": "clipimg_berttxt",
+    "image_src": "clip",
+    "text_src": "bert",
+    "v_dim": 768,
+    "t_dim": 384,
+    "train_min": 4.271561435858408,
+    "best_epoch": 171,
+    "baseline_R@20": 0.092690103673647,
+    "image_knockout_dR@20": 0.0002914202451358566,
+    "text_knockout_dR@20": 0.00310107651840745,
+    "both_knockout_dR@20": 0.002316813211644786,
+    "norms": {
+      "h_img": 0.3404373228549957,
+      "h_txt": 4.749523162841797,
+      "cf": 4.366104602813721,
+      "fused": 8.95984172821045
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.025284111499786377,
+      "raw_text": 0.06510758399963379,
+      "h_img(graph)": 0.11884260177612305,
+      "h_txt(graph)": 0.18068981170654297,
+      "cf": 0.5108261108398438
+    },
+    "alignment_relative": {
+      "raw_image": 0.0347134183286181,
+      "raw_text": 0.04417948212899737,
+      "h_img(graph)": 0.05962311847657958,
+      "h_txt(graph)": 0.09035522464575894,
+      "cf": 0.2564868557609195
+    }
+  },
+  "baby/clipimg_cliptxt": {
+    "variant": "clipimg_cliptxt",
+    "image_src": "clip",
+    "text_src": "clip",
+    "v_dim": 768,
+    "t_dim": 768,
+    "train_min": 3.118824541568756,
+    "best_epoch": 117,
+    "baseline_R@20": 0.08760653962762474,
+    "image_knockout_dR@20": 0.00034619419037007493,
+    "text_knockout_dR@20": 0.004100739978857737,
+    "both_knockout_dR@20": 0.003166480957686915,
+    "norms": {
+      "h_img": 0.3264791965484619,
+      "h_txt": 4.15938138961792,
+      "cf": 3.9625675678253174,
+      "fused": 8.00844955444336
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.025284111499786377,
+      "raw_text": 0.04603850841522217,
+      "h_img(graph)": 0.1312093734741211,
+      "h_txt(graph)": 0.18545472621917725,
+      "cf": 0.521399974822998
+    },
+    "alignment_relative": {
+      "raw_image": 0.0347134183286181,
+      "raw_text": 0.040911114705761774,
+      "h_img(graph)": 0.06578962626181602,
+      "h_txt(graph)": 0.09282141709868179,
+      "cf": 0.26162393200225437
+    }
+  },
+  "sports/cnnimg_berttxt": {
+    "variant": "cnnimg_berttxt",
+    "image_src": "cnn",
+    "text_src": "bert",
+    "v_dim": 4096,
+    "t_dim": 384,
+    "train_min": 30.21784150203069,
+    "best_epoch": 348,
+    "baseline_R@20": 0.10643161912966397,
+    "image_knockout_dR@20": -6.788770904733732e-05,
+    "text_knockout_dR@20": -0.008796708750357846,
+    "both_knockout_dR@20": -0.009791224671976406,
+    "norms": {
+      "h_img": 0.30808964371681213,
+      "h_txt": 4.75295352935791,
+      "cf": 5.034545421600342,
+      "fused": 9.487649917602539
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.05144643783569336,
+      "raw_text": 0.18617463111877441,
+      "h_img(graph)": 0.14217305183410645,
+      "h_txt(graph)": 0.34993600845336914,
+      "cf": 0.7115504741668701
+    },
+    "alignment_relative": {
+      "raw_image": 0.0329231857685516,
+      "raw_text": 0.11747663380572088,
+      "h_img(graph)": 0.07130858829642146,
+      "h_txt(graph)": 0.17536792617173974,
+      "cf": 0.3563799727824416
+    }
+  },
+  "sports/clipimg_berttxt": {
+    "variant": "clipimg_berttxt",
+    "image_src": "clip",
+    "text_src": "bert",
+    "v_dim": 768,
+    "t_dim": 384,
+    "train_min": 15.555980706214905,
+    "best_epoch": 290,
+    "baseline_R@20": 0.10617994412027784,
+    "image_knockout_dR@20": -1.9507962369935683e-06,
+    "text_knockout_dR@20": -0.008496208098011562,
+    "both_knockout_dR@20": -0.009835624794330339,
+    "norms": {
+      "h_img": 0.3584205210208893,
+      "h_txt": 4.671774387359619,
+      "cf": 4.817054271697998,
+      "fused": 9.31248664855957
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.051644206047058105,
+      "raw_text": 0.18617463111877441,
+      "h_img(graph)": 0.26121973991394043,
+      "h_txt(graph)": 0.37029826641082764,
+      "cf": 0.7360869646072388
+    },
+    "alignment_relative": {
+      "raw_image": 0.0734888782302877,
+      "raw_text": 0.11747663380572088,
+      "h_img(graph)": 0.13107622875253536,
+      "h_txt(graph)": 0.1854459290887094,
+      "cf": 0.36821262924275244
+    }
+  },
+  "clothing/cnnimg_berttxt": {
+    "variant": "cnnimg_berttxt",
+    "image_src": "cnn",
+    "text_src": "bert",
+    "v_dim": 4096,
+    "t_dim": 384,
+    "train_min": 25.472177799542745,
+    "best_epoch": 261,
+    "baseline_R@20": 0.09009867892113303,
+    "image_knockout_dR@20": -0.0006156853784243521,
+    "text_knockout_dR@20": -0.009852416859805091,
+    "both_knockout_dR@20": -0.010817202195067988,
+    "norms": {
+      "h_img": 0.33364543318748474,
+      "h_txt": 4.87713623046875,
+      "cf": 4.867979526519775,
+      "fused": 9.549650192260742
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.11664676666259766,
+      "raw_text": 0.13962435722351074,
+      "h_img(graph)": 0.25175249576568604,
+      "h_txt(graph)": 0.3630843162536621,
+      "cf": 0.6812242269515991
+    },
+    "alignment_relative": {
+      "raw_image": 0.07494736855005277,
+      "raw_text": 0.11397740116842858,
+      "h_img(graph)": 0.12578266744285693,
+      "h_txt(graph)": 0.1814545090591064,
+      "cf": 0.3408092996997944
+    }
+  },
+  "clothing/clipimg_berttxt": {
+    "variant": "clipimg_berttxt",
+    "image_src": "clip",
+    "text_src": "bert",
+    "v_dim": 768,
+    "t_dim": 384,
+    "train_min": 21.351336069901784,
+    "best_epoch": 393,
+    "baseline_R@20": 0.0936573222733631,
+    "image_knockout_dR@20": -6.3472719425139434e-06,
+    "text_knockout_dR@20": -0.009160503767861525,
+    "both_knockout_dR@20": -0.01167583696336838,
+    "norms": {
+      "h_img": 0.3994646668434143,
+      "h_txt": 4.9604902267456055,
+      "cf": 5.247565746307373,
+      "fused": 10.031840324401855
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.08365309238433838,
+      "raw_text": 0.13962435722351074,
+      "h_img(graph)": 0.29657983779907227,
+      "h_txt(graph)": 0.340368390083313,
+      "cf": 0.6584916114807129
+    },
+    "alignment_relative": {
+      "raw_image": 0.13384125899087446,
+      "raw_text": 0.11397740116842858,
+      "h_img(graph)": 0.14831356637418575,
+      "h_txt(graph)": 0.17016608019952556,
+      "cf": 0.32924494226113205
+    }
+  },
+  "elec/cnnimg_berttxt": {
+    "variant": "cnnimg_berttxt",
+    "image_src": "cnn",
+    "text_src": "bert",
+    "v_dim": 4096,
+    "t_dim": 384,
+    "train_min": 135.13621188402175,
+    "best_epoch": 165,
+    "baseline_R@20": 0.05765634131972901,
+    "image_knockout_dR@20": -0.0001658432049330416,
+    "text_knockout_dR@20": -0.004622046922942824,
+    "both_knockout_dR@20": -0.005070559878017522,
+    "norms": {
+      "h_img": 0.3612406849861145,
+      "h_txt": 5.3884148597717285,
+      "cf": 5.464587211608887,
+      "fused": 10.446062088012695
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.03136444091796875,
+      "raw_text": 0.11924386024475098,
+      "h_img(graph)": 0.08518612384796143,
+      "h_txt(graph)": 0.19223010540008545,
+      "cf": 0.6348456144332886
+    },
+    "alignment_relative": {
+      "raw_image": 0.02051069369681898,
+      "raw_text": 0.07347951419440363,
+      "h_img(graph)": 0.04298626964433416,
+      "h_txt(graph)": 0.09635864274239483,
+      "cf": 0.3207382965418315
+    }
+  },
+  "elec/clipimg_berttxt": {
+    "variant": "clipimg_berttxt",
+    "image_src": "clip",
+    "text_src": "bert",
+    "v_dim": 768,
+    "t_dim": 384,
+    "train_min": 88.62448008060456,
+    "best_epoch": 190,
+    "baseline_R@20": 0.05911100373923203,
+    "image_knockout_dR@20": -0.00017333707660097813,
+    "text_knockout_dR@20": -0.004723679903835619,
+    "both_knockout_dR@20": -0.005213438132038679,
+    "norms": {
+      "h_img": 0.4384748637676239,
+      "h_txt": 5.410374641418457,
+      "cf": 5.573176383972168,
+      "fused": 10.656064987182617
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.04194927215576172,
+      "raw_text": 0.11924386024475098,
+      "h_img(graph)": 0.13321125507354736,
+      "h_txt(graph)": 0.18559253215789795,
+      "cf": 0.621099591255188
+    },
+    "alignment_relative": {
+      "raw_image": 0.057996079987375534,
+      "raw_text": 0.07347951419440363,
+      "h_img(graph)": 0.06720274974765675,
+      "h_txt(graph)": 0.09296371164334716,
+      "cf": 0.31259523060415534
+    }
+  },
+  "sports/clipimg_cliptxt": {
+    "variant": "clipimg_cliptxt",
+    "image_src": "clip",
+    "text_src": "clip",
+    "v_dim": 768,
+    "t_dim": 768,
+    "train_min": 22.98449648618698,
+    "best_epoch": 362,
+    "baseline_R@20": 0.10804058012889968,
+    "image_knockout_dR@20": -0.00010768395228194505,
+    "text_knockout_dR@20": -0.010383876568774583,
+    "both_knockout_dR@20": -0.011305510742979127,
+    "norms": {
+      "h_img": 0.36470431089401245,
+      "h_txt": 4.589166641235352,
+      "cf": 5.109579563140869,
+      "fused": 9.46230411529541
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.051644206047058105,
+      "raw_text": 0.10579097270965576,
+      "h_img(graph)": 0.23698389530181885,
+      "h_txt(graph)": 0.3265889883041382,
+      "cf": 0.7018712759017944
+    },
+    "alignment_relative": {
+      "raw_image": 0.0734888782302877,
+      "raw_text": 0.09854424324367542,
+      "h_img(graph)": 0.11901208412985428,
+      "h_txt(graph)": 0.16368235301638642,
+      "cf": 0.3516116701151672
+    }
+  },
+  "clothing/clipimg_cliptxt": {
+    "variant": "clipimg_cliptxt",
+    "image_src": "clip",
+    "text_src": "clip",
+    "v_dim": 768,
+    "t_dim": 768,
+    "train_min": 15.823889668782552,
+    "best_epoch": 250,
+    "baseline_R@20": 0.08953981673914646,
+    "image_knockout_dR@20": -0.0011739430583211502,
+    "text_knockout_dR@20": -0.008015032757968249,
+    "both_knockout_dR@20": -0.010185195260220006,
+    "norms": {
+      "h_img": 0.40799304842948914,
+      "h_txt": 4.795164108276367,
+      "cf": 4.820736885070801,
+      "fused": 9.535001754760742
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.08365309238433838,
+      "raw_text": 0.15227580070495605,
+      "h_img(graph)": 0.3202158212661743,
+      "h_txt(graph)": 0.3585106134414673,
+      "cf": 0.6828447580337524
+    },
+    "alignment_relative": {
+      "raw_image": 0.13384125899087446,
+      "raw_text": 0.13347205260214612,
+      "h_img(graph)": 0.1602277097935468,
+      "h_txt(graph)": 0.17928506785118375,
+      "cf": 0.3415228375913807
+    }
+  },
+  "elec/clipimg_cliptxt": {
+    "variant": "clipimg_cliptxt",
+    "image_src": "clip",
+    "text_src": "clip",
+    "v_dim": 768,
+    "t_dim": 768,
+    "train_min": 133.61435968081156,
+    "best_epoch": 279,
+    "baseline_R@20": 0.057444251616391814,
+    "image_knockout_dR@20": -0.00029141068508957424,
+    "text_knockout_dR@20": -0.00467091721425323,
+    "both_knockout_dR@20": -0.005010232224337406,
+    "norms": {
+      "h_img": 0.44545263051986694,
+      "h_txt": 5.446195602416992,
+      "cf": 5.952713966369629,
+      "fused": 10.946282386779785
+    },
+    "alignment_behavioral_gap": {
+      "raw_image": 0.04194927215576172,
+      "raw_text": 0.07440435886383057,
+      "h_img(graph)": 0.10513389110565186,
+      "h_txt(graph)": 0.15354418754577637,
+      "cf": 0.5752488374710083
+    },
+    "alignment_relative": {
+      "raw_image": 0.057996079987375534,
+      "raw_text": 0.07325471520401321,
+      "h_img(graph)": 0.05380554761590275,
+      "h_txt(graph)": 0.07749486951211977,
+      "cf": 0.2894666152863115
+    }
+  }
+}

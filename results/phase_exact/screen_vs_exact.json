@@ -1,0 +1,413 @@
+{
+  "purpose": "Does the input-mean screen measure what an exact structural knockout measures? Grouped by content-interface class.",
+  "cells": [
+    {
+      "model": "vbpr",
+      "dataset": "baby",
+      "class": "C2",
+      "screen": -0.00021856518385188206,
+      "exact": -0.00021856518385188206,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "damrs",
+      "dataset": "baby",
+      "class": "C1",
+      "screen": 0.0021247574744617664,
+      "exact": 0.0027377176978616857,
+      "sign_flip": false,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": true
+    },
+    {
+      "model": "mmgcn",
+      "dataset": "baby",
+      "class": "C3",
+      "screen": 0.00015891382695188555,
+      "exact": 0.00046579987824523633,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "lattice",
+      "dataset": "baby",
+      "class": "C1",
+      "screen": 0.0004975349498363146,
+      "exact": 0.0005232485008777182,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "mgcn",
+      "dataset": "baby",
+      "class": "C1+C2",
+      "screen": -0.0005699837147510184,
+      "exact": 8.081401755857809e-06,
+      "sign_flip": true,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "mentor",
+      "dataset": "baby",
+      "class": "C2",
+      "screen": -0.0013443901602811226,
+      "exact": -0.0013443901602811226,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "gume",
+      "dataset": "baby",
+      "class": "C1+C2",
+      "screen": -9.685437558926147e-05,
+      "exact": -3.2141938801744097e-05,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "smore",
+      "dataset": "baby",
+      "class": "C4",
+      "screen": -0.0025160097466603165,
+      "exact": -0.005077118390309457,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "cohesion",
+      "dataset": "baby",
+      "class": "C1+C2",
+      "screen": -0.0002974200737122096,
+      "exact": -0.006747707022842039,
+      "sign_flip": false,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "class": "C1",
+      "screen": -0.0002897060083997538,
+      "exact": -0.0002897060083997538,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "baby",
+      "class": "C3",
+      "screen": -0.018005339564866427,
+      "exact": -0.0083552510744591,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "vbpr",
+      "dataset": "sports",
+      "class": "C2",
+      "screen": -0.0001296889338352411,
+      "exact": -0.0001296889338352411,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "lattice",
+      "dataset": "sports",
+      "class": "C1",
+      "screen": -0.00015925185738097092,
+      "exact": -0.00015925185738097092,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "mgcn",
+      "dataset": "sports",
+      "class": "C1+C2",
+      "screen": -4.213719871902499e-05,
+      "exact": 9.129726389123238e-05,
+      "sign_flip": true,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "mentor",
+      "dataset": "sports",
+      "class": "C2",
+      "screen": 0.0014049300076605029,
+      "exact": 0.0014049300076605029,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "gume",
+      "dataset": "sports",
+      "class": "C1+C2",
+      "screen": -0.0004614023259734007,
+      "exact": 8.169934640521459e-05,
+      "sign_flip": true,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "damrs",
+      "dataset": "sports",
+      "class": "C1",
+      "screen": 0.0011284631649539911,
+      "exact": 0.0014440239642498215,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "smore",
+      "dataset": "sports",
+      "class": "C4",
+      "screen": -0.000411272436386223,
+      "exact": -0.0005962970989096122,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "cohesion",
+      "dataset": "sports",
+      "class": "C1+C2",
+      "screen": 0.000564248303587575,
+      "exact": -0.00795872471879551,
+      "sign_flip": true,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "class": "C1",
+      "screen": -2.356561854285899e-05,
+      "exact": -2.356561854285899e-05,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "sports",
+      "class": "C3",
+      "screen": -0.009969148436197159,
+      "exact": -0.00481038483524579,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "vbpr",
+      "dataset": "clothing",
+      "class": "C2",
+      "screen": -0.00012694543885038295,
+      "exact": -0.00012694543885038295,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "mmgcn",
+      "dataset": "clothing",
+      "class": "C3",
+      "screen": -0.0052265855183061365,
+      "exact": -0.0052293057777100735,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "lattice",
+      "dataset": "clothing",
+      "class": "C1",
+      "screen": -0.0013532383781450635,
+      "exact": -0.0013532383781450635,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "mgcn",
+      "dataset": "clothing",
+      "class": "C1+C2",
+      "screen": 0.00016926058513384856,
+      "exact": 0.000575485989455074,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "mentor",
+      "dataset": "clothing",
+      "class": "C2",
+      "screen": -0.00038778809058342967,
+      "exact": -0.00038778809058342967,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "gume",
+      "dataset": "clothing",
+      "class": "C1+C2",
+      "screen": -0.0007870617208723674,
+      "exact": 0.0,
+      "sign_flip": false,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "damrs",
+      "dataset": "clothing",
+      "class": "C1",
+      "screen": -0.0007627607368638628,
+      "exact": 0.00012881939532864706,
+      "sign_flip": true,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "smore",
+      "dataset": "clothing",
+      "class": "C4",
+      "screen": 0.000711861660905741,
+      "exact": -0.0033318946183597126,
+      "sign_flip": true,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "cohesion",
+      "dataset": "clothing",
+      "class": "C1+C2",
+      "screen": 0.0001946496729039321,
+      "exact": -0.015055910398282232,
+      "sign_flip": true,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "class": "C1",
+      "screen": -0.0002158072460456545,
+      "exact": -0.0002158072460456545,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "clothing",
+      "class": "C3",
+      "screen": -0.01904477788779716,
+      "exact": -0.0023527221333604076,
+      "sign_flip": false,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "vbpr",
+      "dataset": "elec",
+      "class": "C2",
+      "screen": 5.935169641037297e-05,
+      "exact": 5.935169641037297e-05,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "lattice",
+      "dataset": "elec",
+      "class": "C1",
+      "screen": 0.00049081559017735,
+      "exact": 0.00049081559017735,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "mgcn",
+      "dataset": "elec",
+      "class": "C1+C2",
+      "screen": 2.9987281160596957e-05,
+      "exact": 0.00033285170536148656,
+      "sign_flip": false,
+      "materially_misreported": true,
+      "screen_artifact_img_eq_both": false
+    },
+    {
+      "model": "mentor",
+      "dataset": "elec",
+      "class": "C2",
+      "screen": 0.000804640161630378,
+      "exact": 0.000804640161630378,
+      "sign_flip": false,
+      "materially_misreported": false,
+      "screen_artifact_img_eq_both": false
+    }
+  ],
+  "by_class": {
+    "C2": {
+      "n": 8,
+      "misreported": 0,
+      "sign_flips": 0,
+      "cells": []
+    },
+    "C1": {
+      "n": 10,
+      "misreported": 2,
+      "sign_flips": 1,
+      "cells": [
+        "damrs/baby",
+        "damrs/clothing"
+      ]
+    },
+    "C3": {
+      "n": 5,
+      "misreported": 1,
+      "sign_flips": 0,
+      "cells": [
+        "lgmrec/clothing"
+      ]
+    },
+    "C1+C2": {
+      "n": 10,
+      "misreported": 8,
+      "sign_flips": 5,
+      "cells": [
+        "mgcn/baby",
+        "cohesion/baby",
+        "mgcn/sports",
+        "gume/sports",
+        "cohesion/sports",
+        "gume/clothing",
+        "cohesion/clothing",
+        "mgcn/elec"
+      ]
+    },
+    "C4": {
+      "n": 3,
+      "misreported": 1,
+      "sign_flips": 1,
+      "cells": [
+        "smore/clothing"
+      ]
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "metric": "||f(x)-f(y)||^2, f=L2-normalize (Wang&Isola alignment, =2-2cos)",
+  "headline": "absolute gap = mean_dist(random) - mean_dist(co-purchased); higher=more predictive",
+  "config": {
+    "n_pairs": 20000,
+    "n_rand": 20000,
+    "B_boot": 2000,
+    "B_perm": 2000,
+    "pair_seed": 0,
+    "boot_seed": 1234,
+    "perm_seed": 5678
+  },
+  "datasets": [
+    {
+      "dataset": "microlens",
+      "n_copurchase_pairs": 20000,
+      "checkpoint": "freedom_microlens_20260620_180853.pt",
+      "checkpoint_pinned": true,
+      "image_weight": 0.1,
+      "feature_note": "MicroLens ships precomputed 1024-d image/text and 768-d video features of UNDOCUMENTED provenance (readme.txt is a single URL); text arrives pre-L2-normalized (mean norm 1.000), image does not (2.186). The stream keys 'raw_image_cnn'/'raw_text_bert' are legacy Amazon names, NOT the encoders used here.",
+      "streams": {
+        "raw_image_cnn": {
+          "dim": 1024,
+          "align_copurchased": 0.8375507593154907,
+          "align_random": 0.9848438501358032,
+          "gap_abs": 0.1472930908203125,
+          "gap_rel": 0.14955984220239765,
+          "gap_abs_ci95": [
+            0.14206789433956146,
+            0.15249179303646088
+          ],
+          "gap_rel_ci95": [
+            0.14454211294651031,
+            0.15444190800189972
+          ],
+          "gap_abs_boot_std": 0.002702758414670825,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 20000,
+          "n_rand": 20000,
+          "significant_gap>0": true
+        },
+        "raw_text_bert": {
+          "dim": 1024,
+          "align_copurchased": 1.183078408241272,
+          "align_random": 1.2354109287261963,
+          "gap_abs": 0.052332520484924316,
+          "gap_rel": 0.04236041568685423,
+          "gap_abs_ci95": [
+            0.0490654893219471,
+            0.05550400912761688
+          ],
+          "gap_rel_ci95": [
+            0.03976375609636307,
+            0.044903241097927094
+          ],
+          "gap_abs_boot_std": 0.0016301142750307918,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 20000,
+          "n_rand": 20000,
+          "significant_gap>0": true
+        },
+        "raw_video": {
+          "dim": 768,
+          "align_copurchased": 0.04436968266963959,
+          "align_random": 0.04799099639058113,
+          "gap_abs": 0.0036213137209415436,
+          "gap_rel": 0.07545818993773329,
+          "gap_abs_ci95": [
+            0.0028040206525474787,
+            0.004417732357978821
+          ],
+          "gap_rel_ci95": [
+            0.058969687670469284,
+            0.09136008471250534
+          ],
+          "gap_abs_boot_std": 0.0004098199133295566,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 20000,
+          "n_rand": 20000,
+          "significant_gap>0": true
+        },
+        "h_img_graph": {
+          "dim": 64,
+          "align_copurchased": 1.6561781167984009,
+          "align_random": 1.9756712913513184,
+          "gap_abs": 0.3194931745529175,
+          "gap_rel": 0.16171373039205866,
+          "gap_abs_ci95": [
+            0.31005460023880005,
+            0.32949623465538025
+          ],
+          "gap_rel_ci95": [
+            0.15711304545402527,
+            0.16646303236484528
+          ],
+          "gap_abs_boot_std": 0.0049966140650212765,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 20000,
+          "n_rand": 20000,
+          "significant_gap>0": true
+        },
+        "h_txt_graph": {
+          "dim": 64,
+          "align_copurchased": 1.7624362707138062,
+          "align_random": 1.9798202514648438,
+          "gap_abs": 0.2173839807510376,
+          "gap_rel": 0.10979985712854384,
+          "gap_abs_ci95": [
+            0.21042391657829285,
+            0.22456613183021545
+          ],
+          "gap_rel_ci95": [
+            0.10636869072914124,
+            0.11328297108411789
+          ],
+          "gap_abs_boot_std": 0.0036057347897440195,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 20000,
+          "n_rand": 20000,
+          "significant_gap>0": true
+        },
+        "cf": {
+          "dim": 64,
+          "align_copurchased": 1.3667261600494385,
+          "align_random": 2.0009570121765137,
+          "gap_abs": 0.6342308521270752,
+          "gap_rel": 0.31696375697606777,
+          "gap_abs_ci95": [
+            0.6262586116790771,
+            0.6419160962104797
+          ],
+          "gap_rel_ci95": [
+            0.31333133578300476,
+            0.3205920159816742
+          ],
+          "gap_abs_boot_std": 0.004055702593177557,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 20000,
+          "n_rand": 20000,
+          "significant_gap>0": true
+        },
+        "fused": {
+          "dim": 64,
+          "align_copurchased": 1.481834053993225,
+          "align_random": 1.9968191385269165,
+          "gap_abs": 0.5149850845336914,
+          "gap_rel": 0.25790271867766834,
+          "gap_abs_ci95": [
+            0.507282555103302,
+            0.5228489637374878
+          ],
+          "gap_rel_ci95": [
+            0.2543916404247284,
+            0.2615923583507538
+          ],
+          "gap_abs_boot_std": 0.003948308993130922,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 20000,
+          "n_rand": 20000,
+          "significant_gap>0": true
+        }
+      },
+      "ordering_tests": {
+        "raw: image_cnn < text_bert (CIs separate)": false,
+        "raw: text_bert < cf? (n/a - cf is graph)": null,
+        "graph: h_img < h_txt (CIs separate)": false,
+        "graph: h_txt < cf (CIs separate)": true,
+        "graph: h_img < cf (CIs separate)": true,
+        "CNN-vs-CLIP image CIs OVERLAP (sign-flip is within noise)": null,
+        "image_cnn gap < image_clip gap (point est)": null,
+        "graph: h_img > h_txt  [INVERSION, CIs separate]": true,
+        "raw: image > text  [INVERSION, CIs separate]": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+ "baby": {
+  "users": 19445,
+  "items": 7050,
+  "interactions": 160792,
+  "density": 0.0011729172479570493,
+  "split_counts": {
+   "train": 118551,
+   "valid": 20559,
+   "test": 21682
+  },
+  "split_share": {
+   "train": 0.737294143987263,
+   "valid": 0.12786083884770386,
+   "test": 0.13484501716503308
+  },
+  "first_interaction_utc": "2001-02-18",
+  "last_interaction_utc": "2014-07-22",
+  "users_with_train_and_test": 19445,
+  "share_users_test_after_last_train": 0.37279506299820003,
+  "source": "baby/baby.inter (x_label split)",
+  "features": {
+   "image": {
+    "shape": [
+     7050,
+     4096
+    ],
+    "dtype": "float64",
+    "bytes_on_disk": 231014528,
+    "bytes_float32": 115507200
+   },
+   "text": {
+    "shape": [
+     7050,
+     384
+    ],
+    "dtype": "float32",
+    "bytes_on_disk": 10828928,
+    "bytes_float32": 10828800
+   }
+  }
+ },
+ "sports": {
+  "users": 35598,
+  "items": 18357,
+  "interactions": 296337,
+  "density": 0.00045348045456958995,
+  "split_counts": {
+   "train": 218409,
+   "valid": 37899,
+   "test": 40029
+  },
+  "split_share": {
+   "train": 0.7370291256238675,
+   "valid": 0.12789155589750859,
+   "test": 0.135079318478624
+  },
+  "first_interaction_utc": "2002-03-07",
+  "last_interaction_utc": "2014-07-23",
+  "users_with_train_and_test": 35598,
+  "share_users_test_after_last_train": 0.3337266138547109,
+  "source": "sports/sports.inter (x_label split)",
+  "features": {
+   "image": {
+    "shape": [
+     18357,
+     4096
+    ],
+    "dtype": "float64",
+    "bytes_on_disk": 601522304,
+    "bytes_float32": 300761088
+   },
+   "text": {
+    "shape": [
+     18357,
+     384
+    ],
+    "dtype": "float32",
+    "bytes_on_disk": 28196480,
+    "bytes_float32": 28196352
+   }
+  }
+ },
+ "clothing": {
+  "users": 39387,
+  "items": 23033,
+  "interactions": 278677,
+  "density": 0.0003071833809100676,
+  "split_counts": {
+   "train": 197338,
+   "valid": 40150,
+   "test": 41189
+  },
+  "split_share": {
+   "train": 0.7081244594997076,
+   "valid": 0.1440736049261331,
+   "test": 0.14780193557415933
+  },
+  "first_interaction_utc": "2003-03-29",
+  "last_interaction_utc": "2014-07-23",
+  "users_with_train_and_test": 39387,
+  "share_users_test_after_last_train": 0.3396298271003123,
+  "source": "clothing/clothing.inter (x_label split)",
+  "features": {
+   "image": {
+    "shape": [
+     23033,
+     4096
+    ],
+    "dtype": "float64",
+    "bytes_on_disk": 754745472,
+    "bytes_float32": 377372672
+   },
+   "text": {
+    "shape": [
+     23033,
+     384
+    ],
+    "dtype": "float32",
+    "bytes_on_disk": 35378816,
+    "bytes_float32": 35378688
+   }
+  }
+ },
+ "elec": {
+  "users": 192403,
+  "items": 63001,
+  "interactions": 1689188,
+  "density": 0.00013935376448339807,
+  "split_counts": {
+   "train": 1254441,
+   "valid": 211296,
+   "test": 223451
+  },
+  "split_share": {
+   "train": 0.7426295948112347,
+   "valid": 0.12508732006147333,
+   "test": 0.13228308512729192
+  },
+  "first_interaction_utc": "1999-06-13",
+  "last_interaction_utc": "2014-07-23",
+  "users_with_train_and_test": 192403,
+  "share_users_test_after_last_train": 0.29892985036615854,
+  "source": "elec/elec.inter (x_label split)",
+  "features": {
+   "image": {
+    "shape": [
+     63001,
+     4096
+    ],
+    "dtype": "float64",
+    "bytes_on_disk": 2064416896,
+    "bytes_float32": 1032208384
+   },
+   "text": {
+    "shape": [
+     63001,
+     384
+    ],
+    "dtype": "float32",
+    "bytes_on_disk": 96769664,
+    "bytes_float32": 96769536
+   }
+  }
+ },
+ "microlens": {
+  "users": 98129,
+  "items": 17228,
+  "interactions": 705174,
+  "density": 0.0004171229210485462,
+  "split_counts": {
+   "train": 500064,
+   "valid": 101121,
+   "test": 103989
+  },
+  "split_share": {
+   "train": 0.7091356175922539,
+   "valid": 0.14339865054582274,
+   "test": 0.14746573186192344
+  },
+  "first_interaction_utc": "2020-03-05",
+  "last_interaction_utc": "2022-09-12",
+  "users_with_train_and_test": 98129,
+  "share_users_test_after_last_train": 0.19114634817434195,
+  "source": "microlens/microlens.inter (x_label split)",
+  "features": {
+   "image": {
+    "shape": [
+     17228,
+     1024
+    ],
+    "dtype": "float32",
+    "bytes_on_disk": 70566016,
+    "bytes_float32": 70565888
+   },
+   "text": {
+    "shape": [
+     17228,
+     1024
+    ],
+    "dtype": "float32",
+    "bytes_on_disk": 70566016,
+    "bytes_float32": 70565888
+   }
+  }
+ }
+}

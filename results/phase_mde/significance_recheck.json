@@ -1,0 +1,673 @@
+{
+  "freedom_per_dataset_mde": {
+    "baby": {
+      "Recall@20": {
+        "n": 5,
+        "mean": 0.0928815342253244,
+        "std": 0.0003067861442715968,
+        "MDE": 0.0006135722885431936,
+        "values": [
+          0.092454,
+          0.092949,
+          0.092706,
+          0.093237,
+          0.093062
+        ]
+      },
+      "NDCG@20": {
+        "n": 5,
+        "mean": 0.04033050140639142,
+        "std": 0.00025026652666473897,
+        "MDE": 0.0005005330533294779,
+        "values": [
+          0.040342,
+          0.03992,
+          0.040402,
+          0.040602,
+          0.040385
+        ]
+      },
+      "source": "phase0 5-seed canonical"
+    },
+    "sports": {
+      "Recall@20": {
+        "n": 3,
+        "mean": 0.1074240170439395,
+        "std": 0.0014406543024347404,
+        "MDE": 0.002881308604869481,
+        "values": [
+          0.106389,
+          0.109069,
+          0.106813
+        ]
+      },
+      "NDCG@20": {
+        "n": 3,
+        "mean": 0.047401536925632745,
+        "std": 0.0009882770146497398,
+        "MDE": 0.0019765540292994797,
+        "values": [
+          0.046755,
+          0.048539,
+          0.046911
+        ]
+      },
+      "source": "phase2 weight_sweep_retrain (w=0.1)"
+    },
+    "clothing": {
+      "Recall@20": {
+        "n": 3,
+        "mean": 0.09123062923428525,
+        "std": 0.0020717723562675757,
+        "MDE": 0.004143544712535151,
+        "values": [
+          0.090099,
+          0.093622,
+          0.089971
+        ]
+      },
+      "NDCG@20": {
+        "n": 3,
+        "mean": 0.040505967797632735,
+        "std": 0.0008675151369795865,
+        "MDE": 0.001735030273959173,
+        "values": [
+          0.03995,
+          0.041506,
+          0.040062
+        ]
+      },
+      "source": "phase2 weight_sweep_retrain (w=0.1)"
+    },
+    "elec": {
+      "Recall@20": {
+        "n": 2,
+        "mean": 0.05839681465144157,
+        "std": 0.0007704679459246429,
+        "MDE": 0.0015409358918492858,
+        "values": [
+          0.058942,
+          0.057852
+        ]
+      },
+      "NDCG@20": {
+        "n": 2,
+        "mean": 0.026152497628497355,
+        "std": 0.00038349582423926405,
+        "MDE": 0.0007669916484785281,
+        "values": [
+          0.026424,
+          0.025881
+        ]
+      },
+      "source": "phase2 weight_sweep_retrain (w=0.1)"
+    }
+  },
+  "lgmrec_per_dataset_mde": {
+    "baby": {
+      "Recall@20": {
+        "n": 3,
+        "mean": 0.09549168082852834,
+        "std": 0.00045046593333169366,
+        "MDE": 0.0009009318666633873,
+        "values": [
+          0.095404,
+          0.09598,
+          0.095092
+        ]
+      },
+      "NDCG@20": {
+        "n": 3,
+        "mean": 0.04202176924249769,
+        "std": 0.00025019105720208983,
+        "MDE": 0.0005003821144041797,
+        "values": [
+          0.042187,
+          0.042144,
+          0.041734
+        ]
+      },
+      "source": "phase_mde new multi-seed"
+    },
+    "clothing": {
+      "Recall@20": {
+        "n": 3,
+        "mean": 0.08076488455420591,
+        "std": 0.0017766792509450377,
+        "MDE": 0.0035533585018900755,
+        "values": [
+          0.078713,
+          0.081784,
+          0.081797
+        ]
+      },
+      "NDCG@20": {
+        "n": 3,
+        "mean": 0.035926206527818874,
+        "std": 0.0005997806721158202,
+        "MDE": 0.0011995613442316404,
+        "values": [
+          0.035237,
+          0.036326,
+          0.036216
+        ]
+      },
+      "source": "phase_mde new multi-seed"
+    },
+    "elec": {
+      "Recall@20": {
+        "n": 3,
+        "mean": 0.05973974149624347,
+        "std": 0.00017389758365953407,
+        "MDE": 0.00034779516731906813,
+        "values": [
+          0.059705,
+          0.059929,
+          0.059586
+        ]
+      },
+      "NDCG@20": {
+        "n": 3,
+        "mean": 0.02705389069335487,
+        "std": 0.00010541022302347844,
+        "MDE": 0.00021082044604695687,
+        "values": [
+          0.027001,
+          0.027175,
+          0.026985
+        ]
+      },
+      "source": "phase_mde new multi-seed"
+    },
+    "sports": {
+      "Recall@20": {
+        "n": 3,
+        "mean": 0.10561970888323492,
+        "std": 0.000550737606960369,
+        "MDE": 0.001101475213920738,
+        "values": [
+          0.106209,
+          0.105119,
+          0.105531
+        ]
+      },
+      "NDCG@20": {
+        "n": 3,
+        "mean": 0.046543943554572996,
+        "std": 0.00022646833712782906,
+        "MDE": 0.0004529366742556581,
+        "values": [
+          0.046796,
+          0.046357,
+          0.04648
+        ]
+      },
+      "source": "phase_mde new multi-seed"
+    }
+  },
+  "knockout_significance": [
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "stream": "image",
+      "dR@20": -0.0002897060083997538,
+      "dN@20": -0.00010501756177827559,
+      "own_MDE_R@20": 0.0006135722885431936,
+      "own_MDE_N@20": 0.0005005330533294779,
+      "own_n_seeds": 5,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_MDE_R@20": false,
+      "new_sig_vs_own_MDE_N@20": false
+    },
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "stream": "text",
+      "dR@20": 0.002533170666366852,
+      "dN@20": 0.0008514211251674994,
+      "own_MDE_R@20": 0.0006135722885431936,
+      "own_MDE_N@20": 0.0005005330533294779,
+      "own_n_seeds": 5,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": true,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "stream": "both",
+      "dR@20": 0.0026222497539031275,
+      "dN@20": 0.0008485662825514148,
+      "own_MDE_R@20": 0.0006135722885431936,
+      "own_MDE_N@20": 0.0005005330533294779,
+      "own_n_seeds": 5,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": true,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "stream": "image",
+      "dR@20": -0.0002158072460456545,
+      "dN@20": -8.664662917186317e-05,
+      "own_MDE_R@20": 0.004143544712535151,
+      "own_MDE_N@20": 0.001735030273959173,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_MDE_R@20": false,
+      "new_sig_vs_own_MDE_N@20": false
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "stream": "text",
+      "dR@20": -0.010755845232956973,
+      "dN@20": -0.004140612694621688,
+      "own_MDE_R@20": 0.004143544712535151,
+      "own_MDE_N@20": 0.001735030273959173,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": true,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "stream": "both",
+      "dR@20": -0.01141596151497895,
+      "dN@20": -0.004495556620859445,
+      "own_MDE_R@20": 0.004143544712535151,
+      "own_MDE_N@20": 0.001735030273959173,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": true,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "freedom",
+      "dataset": "elec",
+      "stream": "image",
+      "dR@20": -0.0002839396856542595,
+      "dN@20": -0.0001164337728909795,
+      "own_MDE_R@20": 0.0015409358918492858,
+      "own_MDE_N@20": 0.0007669916484785281,
+      "own_n_seeds": 2,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_MDE_R@20": false,
+      "new_sig_vs_own_MDE_N@20": false
+    },
+    {
+      "model": "freedom",
+      "dataset": "elec",
+      "stream": "text",
+      "dR@20": -0.0044337152884575196,
+      "dN@20": -0.0021381177775352013,
+      "own_MDE_R@20": 0.0015409358918492858,
+      "own_MDE_N@20": 0.0007669916484785281,
+      "own_n_seeds": 2,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": true,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "freedom",
+      "dataset": "elec",
+      "stream": "both",
+      "dR@20": -0.004700369475567172,
+      "dN@20": -0.0022815042027394643,
+      "own_MDE_R@20": 0.0015409358918492858,
+      "own_MDE_N@20": 0.0007669916484785281,
+      "own_n_seeds": 2,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": true,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "stream": "image",
+      "dR@20": -2.356561854285899e-05,
+      "dN@20": -8.13421290440236e-06,
+      "own_MDE_R@20": 0.002881308604869481,
+      "own_MDE_N@20": 0.0019765540292994797,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_MDE_R@20": false,
+      "new_sig_vs_own_MDE_N@20": false
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "stream": "text",
+      "dR@20": -0.0095397503159175,
+      "dN@20": -0.00381965969947954,
+      "own_MDE_R@20": 0.002881308604869481,
+      "own_MDE_N@20": 0.0019765540292994797,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": true,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "stream": "both",
+      "dR@20": -0.010281833204469307,
+      "dN@20": -0.004020383605017892,
+      "own_MDE_R@20": 0.002881308604869481,
+      "own_MDE_N@20": 0.0019765540292994797,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": true,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "baby",
+      "stream": "image",
+      "dR@20": -0.0083552510744591,
+      "dN@20": -0.00332082820423564,
+      "own_MDE_R@20": 0.0009009318666633873,
+      "own_MDE_N@20": 0.0005003821144041797,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "baby",
+      "stream": "text",
+      "dR@20": -0.011536285776450342,
+      "dN@20": -0.004912574530496525,
+      "own_MDE_R@20": 0.0009009318666633873,
+      "own_MDE_N@20": 0.0005003821144041797,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "baby",
+      "stream": "both",
+      "dR@20": -0.020818367512890512,
+      "dN@20": -0.009341719423801971,
+      "own_MDE_R@20": 0.0009009318666633873,
+      "own_MDE_N@20": 0.0005003821144041797,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "clothing",
+      "stream": "image",
+      "dR@20": -0.0023527221333604076,
+      "dN@20": -0.001799248094427823,
+      "own_MDE_R@20": 0.0035533585018900755,
+      "own_MDE_N@20": 0.0011995613442316404,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": false,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "clothing",
+      "stream": "text",
+      "dR@20": -0.010877712854253332,
+      "dN@20": -0.005106228028799582,
+      "own_MDE_R@20": 0.0035533585018900755,
+      "own_MDE_N@20": 0.0011995613442316404,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "clothing",
+      "stream": "both",
+      "dR@20": -0.02078870596655652,
+      "dN@20": -0.009660332820845673,
+      "own_MDE_R@20": 0.0035533585018900755,
+      "own_MDE_N@20": 0.0011995613442316404,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "elec",
+      "stream": "image",
+      "dR@20": -6.009843875219578e-05,
+      "dN@20": -0.00021871426290940785,
+      "own_MDE_R@20": 0.00034779516731906813,
+      "own_MDE_N@20": 0.00021082044604695687,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": false,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "elec",
+      "stream": "text",
+      "dR@20": -0.0047192725262001425,
+      "dN@20": -0.0024019451766956225,
+      "own_MDE_R@20": 0.00034779516731906813,
+      "own_MDE_N@20": 0.00021082044604695687,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "elec",
+      "stream": "both",
+      "dR@20": -0.007313078912745213,
+      "dN@20": -0.0037099439059518208,
+      "own_MDE_R@20": 0.00034779516731906813,
+      "own_MDE_N@20": 0.00021082044604695687,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "sports",
+      "stream": "image",
+      "dR@20": -0.00481038483524579,
+      "dN@20": -0.0027513490918946795,
+      "own_MDE_R@20": 0.001101475213920738,
+      "own_MDE_N@20": 0.0004529366742556581,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "sports",
+      "stream": "text",
+      "dR@20": -0.013363645362634083,
+      "dN@20": -0.005708871527667497,
+      "own_MDE_R@20": 0.001101475213920738,
+      "own_MDE_N@20": 0.0004529366742556581,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    },
+    {
+      "model": "lgmrec",
+      "dataset": "sports",
+      "stream": "both",
+      "dR@20": -0.022581202172049966,
+      "dN@20": -0.009582737587403634,
+      "own_MDE_R@20": 0.001101475213920738,
+      "own_MDE_N@20": 0.0004529366742556581,
+      "own_n_seeds": 3,
+      "reused_baby_MDE_R@20": 0.0006135722885431936,
+      "old_sig_vs_baby_MDE": null,
+      "new_sig_vs_own_MDE_R@20": true,
+      "new_sig_vs_own_MDE_N@20": true
+    }
+  ],
+  "trackA_clip_significance": [
+    {
+      "dataset": "baby",
+      "variant": "cnnimg_berttxt",
+      "image_dR@20": 0.00013113911031115144,
+      "text_dR@20": 0.0043326893956875945,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.0006135722885431936
+    },
+    {
+      "dataset": "baby",
+      "variant": "clipimg_berttxt",
+      "image_dR@20": 0.0002914202451358566,
+      "text_dR@20": 0.00310107651840745,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.0006135722885431936
+    },
+    {
+      "dataset": "baby",
+      "variant": "clipimg_cliptxt",
+      "image_dR@20": 0.00034619419037007493,
+      "text_dR@20": 0.004100739978857737,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.0006135722885431936
+    },
+    {
+      "dataset": "sports",
+      "variant": "cnnimg_berttxt",
+      "image_dR@20": -6.788770904733732e-05,
+      "text_dR@20": -0.008796708750357846,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.002881308604869481
+    },
+    {
+      "dataset": "sports",
+      "variant": "clipimg_berttxt",
+      "image_dR@20": -1.9507962369935683e-06,
+      "text_dR@20": -0.008496208098011562,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.002881308604869481
+    },
+    {
+      "dataset": "clothing",
+      "variant": "cnnimg_berttxt",
+      "image_dR@20": -0.0006156853784243521,
+      "text_dR@20": -0.009852416859805091,
+      "old_sig_vs_baby_MDE": true,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.004143544712535151
+    },
+    {
+      "dataset": "clothing",
+      "variant": "clipimg_berttxt",
+      "image_dR@20": -6.3472719425139434e-06,
+      "text_dR@20": -0.009160503767861525,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.004143544712535151
+    },
+    {
+      "dataset": "elec",
+      "variant": "cnnimg_berttxt",
+      "image_dR@20": -0.0001658432049330416,
+      "text_dR@20": -0.004622046922942824,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.0015409358918492858
+    },
+    {
+      "dataset": "elec",
+      "variant": "clipimg_berttxt",
+      "image_dR@20": -0.00017333707660097813,
+      "text_dR@20": -0.004723679903835619,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.0015409358918492858
+    },
+    {
+      "dataset": "sports",
+      "variant": "clipimg_cliptxt",
+      "image_dR@20": -0.00010768395228194505,
+      "text_dR@20": -0.010383876568774583,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.002881308604869481
+    },
+    {
+      "dataset": "clothing",
+      "variant": "clipimg_cliptxt",
+      "image_dR@20": -0.0011739430583211502,
+      "text_dR@20": -0.008015032757968249,
+      "old_sig_vs_baby_MDE": true,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.004143544712535151
+    },
+    {
+      "dataset": "elec",
+      "variant": "clipimg_cliptxt",
+      "image_dR@20": -0.00029141068508957424,
+      "text_dR@20": -0.00467091721425323,
+      "old_sig_vs_baby_MDE": false,
+      "new_sig_vs_own_freedom_MDE": false,
+      "own_freedom_MDE_R@20": 0.0015409358918492858
+    }
+  ],
+  "flips_vs_reused_baby_mde": [
+    {
+      "trackA": true,
+      "dataset": "clothing",
+      "variant": "cnnimg_berttxt",
+      "image_dR@20": -0.0006156853784243521,
+      "flip": "trackA clothing/cnnimg_berttxt image-KO: True -> False"
+    },
+    {
+      "trackA": true,
+      "dataset": "clothing",
+      "variant": "clipimg_cliptxt",
+      "image_dR@20": -0.0011739430583211502,
+      "flip": "trackA clothing/clipimg_cliptxt image-KO: True -> False"
+    }
+  ],
+  "note": "MDE=2*std(metric across seeds) per (model,dataset). 'old' used the single reused Baby FREEDOM MDE (0.000614) as the threshold everywhere; 'new' uses each model+dataset's own MDE. trackA CLIP uses FREEDOM's own per-dataset MDE as proxy."
+}

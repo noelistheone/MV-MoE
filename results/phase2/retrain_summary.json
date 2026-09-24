@@ -1,0 +1,105 @@
+{
+  "by_dataset": {
+    "baby": {
+      "0.0": {
+        "mean": 0.0914,
+        "std": 0.0007,
+        "n": 3
+      },
+      "0.1": {
+        "mean": 0.0927,
+        "std": 0.0002,
+        "n": 3
+      },
+      "0.5": {
+        "mean": 0.0933,
+        "std": 0.0007,
+        "n": 3
+      },
+      "0.9": {
+        "mean": 0.0747,
+        "std": 0.0008,
+        "n": 3
+      },
+      "1.0": {
+        "mean": 0.0691,
+        "std": 0.0011,
+        "n": 3
+      }
+    },
+    "sports": {
+      "0.0": {
+        "mean": 0.1063,
+        "std": 0.0009,
+        "n": 3
+      },
+      "0.1": {
+        "mean": 0.1074,
+        "std": 0.0014,
+        "n": 3
+      },
+      "0.5": {
+        "mean": 0.1048,
+        "std": 0.0006,
+        "n": 3
+      },
+      "0.9": {
+        "mean": 0.0876,
+        "std": 0.0008,
+        "n": 3
+      },
+      "1.0": {
+        "mean": 0.0833,
+        "std": 0.0004,
+        "n": 3
+      }
+    },
+    "clothing": {
+      "0.0": {
+        "mean": 0.0916,
+        "std": 0.0015,
+        "n": 3
+      },
+      "0.1": {
+        "mean": 0.0912,
+        "std": 0.0021,
+        "n": 3
+      },
+      "0.5": {
+        "mean": 0.0886,
+        "std": 0.0009,
+        "n": 3
+      },
+      "0.9": {
+        "mean": 0.0652,
+        "std": 0.0034,
+        "n": 3
+      },
+      "1.0": {
+        "mean": 0.0603,
+        "std": 0.0006,
+        "n": 3
+      }
+    },
+    "elec": {
+      "0.1": {
+        "mean": 0.0584,
+        "std": 0.0008,
+        "n": 2
+      },
+      "0.9": {
+        "mean": 0.0526,
+        "std": 0.0,
+        "n": 2
+      },
+      "1.0": {
+        "mean": 0.0506,
+        "std": 0.0003,
+        "n": 2
+      }
+    }
+  },
+  "verdict": "COMPLETE on all 4 datasets. Peak always at low image weight; image-only (w=1.0) collapses on every dataset: Baby -0.0242, Sports -0.0241, Clothing -0.0309 below peak (3 seeds each), Elec -0.0078 below w=0.1 (2 seeds, reduced cost-cap scope; w=1.0=0.0506 < LightGCN-CF 0.0533). H1 (low weight near-optimal) + H2 (image-similarity graph behaviorally weak) confirmed on 4/4.",
+  "total_runs": 51,
+  "regenerated": "2026-06-10 final (Elec endpoints complete)"
+}

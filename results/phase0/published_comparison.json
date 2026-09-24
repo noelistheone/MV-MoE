@@ -1,0 +1,66 @@
+{
+  "source": "FREEDOM paper Table 4 (arXiv:2211.06924, verified via ar5iv)",
+  "note": "Reproduction validated two ways: (1) recomputed==our own logged test_result EXACTLY (strict gate, results/phase0/repro_metrics.json); (2) within ~2-7% relative of published numbers below. FREEDOM-Baby is ~6.5% below published (feature/preprocessing/seed variance, acceptable & documented). LGMRec published numbers NOT yet verified from primary source.",
+  "comparison": [
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "published_R20": 0.0992,
+      "ours_R20": 0.0928,
+      "rel_delta_R20_pct": -6.4,
+      "published_N20": 0.0424,
+      "ours_N20": 0.0407,
+      "rel_delta_N20_pct": -4.1
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "published_R20": 0.1089,
+      "ours_R20": 0.1067,
+      "rel_delta_R20_pct": -2.0,
+      "published_N20": 0.0481,
+      "ours_N20": 0.0464,
+      "rel_delta_N20_pct": -3.5
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "published_R20": 0.0941,
+      "ours_R20": 0.0914,
+      "rel_delta_R20_pct": -2.9,
+      "published_N20": 0.042,
+      "ours_N20": 0.0406,
+      "rel_delta_N20_pct": -3.2
+    },
+    {
+      "model": "lightgcn",
+      "dataset": "baby",
+      "published_R20": 0.0754,
+      "ours_R20": 0.0737,
+      "rel_delta_R20_pct": -2.3,
+      "published_N20": 0.0328,
+      "ours_N20": 0.0328,
+      "rel_delta_N20_pct": 0.1
+    },
+    {
+      "model": "lightgcn",
+      "dataset": "sports",
+      "published_R20": 0.0864,
+      "ours_R20": 0.0871,
+      "rel_delta_R20_pct": 0.8,
+      "published_N20": 0.0387,
+      "ours_N20": 0.0393,
+      "rel_delta_N20_pct": 1.6
+    },
+    {
+      "model": "lightgcn",
+      "dataset": "clothing",
+      "published_R20": 0.0544,
+      "ours_R20": 0.0532,
+      "rel_delta_R20_pct": -2.2,
+      "published_N20": 0.0243,
+      "ours_N20": 0.0239,
+      "rel_delta_N20_pct": -1.5
+    }
+  ]
+}

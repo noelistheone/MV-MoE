@@ -1,11 +1,8 @@
-# Heavy artifacts — never commit
-data/
-results/
-activations/
-ckpts/
-ckpts_microlens/
-logs/
-logs_microlens/
+# Heavy artifacts are not redistributed (see README "Data")
+/data/
+/ckpts/
+/logs/
+/activations/
 *.pt
 *.pth
 *.npy
@@ -13,33 +10,16 @@ logs_microlens/
 *.h5
 *.safetensors
 *.parquet
-*.csv
 
-# Paper / writeup — excluded from this code release
-paper/
-docs/
-*.tex
-*.pdf
-*.aux
-*.bbl
-*.blg
-*.synctex.gz
-
-# Python
+# Python / tooling
 __pycache__/
 *.py[cod]
 *.egg-info/
 .ipynb_checkpoints/
 .venv/
-env/
-
-# Tracking / tooling
-wandb/
-*.workflow.js
+*.log
 
 # OS / editor
 .DS_Store
 .vscode/
 .idea/
-*.log
-*.out

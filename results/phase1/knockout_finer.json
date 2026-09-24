@@ -1,0 +1,94 @@
+{
+  "baby": {
+    "lgmrec_finer": {
+      "baseline_R@20": 0.09656595397402802,
+      "ghe_knockout(keep mge)": {
+        "R@20": 0.09372681060261416,
+        "dR@20": -0.0028391433714138603
+      },
+      "mge_knockout(keep ghe)": {
+        "R@20": 0.06656719883641972,
+        "dR@20": -0.0299987551376083
+      },
+      "cge_only": {
+        "R@20": 0.07574758646113751,
+        "dR@20": -0.020818367512890512
+      }
+    },
+    "freedom_aux_sanity": {
+      "baseline_R@20": 0.09281745068451162,
+      "aux_zeroed_R@20": 0.09281745068451162,
+      "dR@20": 0.0,
+      "expected": "exactly 0 (aux projections are not on the inference path)"
+    }
+  },
+  "sports": {
+    "lgmrec_finer": {
+      "baseline_R@20": 0.10644409307817364,
+      "ghe_knockout(keep mge)": {
+        "R@20": 0.10652214722246746,
+        "dR@20": 7.805414429382096e-05
+      },
+      "mge_knockout(keep ghe)": {
+        "R@20": 0.07733248345501842,
+        "dR@20": -0.02911160962315522
+      },
+      "cge_only": {
+        "R@20": 0.08386289090612367,
+        "dR@20": -0.022581202172049966
+      }
+    },
+    "freedom_aux_sanity": {
+      "baseline_R@20": 0.10674673403267705,
+      "aux_zeroed_R@20": 0.10674673403267705,
+      "dR@20": 0.0,
+      "expected": "exactly 0 (aux projections are not on the inference path)"
+    }
+  },
+  "clothing": {
+    "lgmrec_finer": {
+      "baseline_R@20": 0.07909716403889608,
+      "ghe_knockout(keep mge)": {
+        "R@20": 0.07956474640532832,
+        "dR@20": 0.0004675823664322398
+      },
+      "mge_knockout(keep ghe)": {
+        "R@20": 0.054607998529850904,
+        "dR@20": -0.024489165509045174
+      },
+      "cge_only": {
+        "R@20": 0.05830845807233956,
+        "dR@20": -0.02078870596655652
+      }
+    },
+    "freedom_aux_sanity": {
+      "baseline_R@20": 0.09135332300843764,
+      "aux_zeroed_R@20": 0.09135332300843764,
+      "dR@20": 0.0,
+      "expected": "exactly 0 (aux projections are not on the inference path)"
+    }
+  },
+  "elec": {
+    "lgmrec_finer": {
+      "baseline_R@20": 0.059666837786135775,
+      "ghe_knockout(keep mge)": {
+        "R@20": 0.0590349738566336,
+        "dR@20": -0.000631863929502173
+      },
+      "mge_knockout(keep ghe)": {
+        "R@20": 0.04901355999024276,
+        "dR@20": -0.010653277795893014
+      },
+      "cge_only": {
+        "R@20": 0.05234856144923397,
+        "dR@20": -0.007318276336901804
+      }
+    },
+    "freedom_aux_sanity": {
+      "baseline_R@20": 0.05884486042729655,
+      "aux_zeroed_R@20": 0.05884486042729655,
+      "dR@20": 0.0,
+      "expected": "exactly 0 (aux projections are not on the inference path)"
+    }
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "dataset": "microlens",
+  "purpose": "controls demanded by the 2026-09-04 adversarial audit (Attacks 1-2, PREREG s.5)",
+  "rbo_params": {
+    "p": 0.9,
+    "k": 20,
+    "identical_list_ceiling": 0.8784233454094307
+  },
+  "freedom_checkpoint": "freedom_microlens_20260620_180853.pt",
+  "freedom_allocation_sweep": [
+    {
+      "allocation_lambda": 0.1,
+      "alloc_ratio_img_over_txt": 0.11111111111111112,
+      "R@20": 0.09784604753472265,
+      "d_img": -0.0008477947800166474,
+      "d_txt": -0.006860705061542738,
+      "abs_ratio_img_over_txt": 0.12357254428104032,
+      "image_dominant": false,
+      "norm_h_img": 0.4507331848144531,
+      "norm_h_txt": 4.526930332183838
+    },
+    {
+      "allocation_lambda": 0.2,
+      "alloc_ratio_img_over_txt": 0.25,
+      "R@20": 0.09824746277578773,
+      "d_img": -0.001489539926953956,
+      "d_txt": -0.006569390089552332,
+      "abs_ratio_img_over_txt": 0.22673945475134055,
+      "image_dominant": false,
+      "norm_h_img": 0.9014663696289062,
+      "norm_h_txt": 4.023938179016113
+    },
+    {
+      "allocation_lambda": 0.3,
+      "alloc_ratio_img_over_txt": 0.4285714285714286,
+      "R@20": 0.09801323513860072,
+      "d_img": -0.0015177219749772097,
+      "d_txt": -0.005859711203951942,
+      "abs_ratio_img_over_txt": 0.259009688728963,
+      "image_dominant": false,
+      "norm_h_img": 1.352199673652649,
+      "norm_h_txt": 3.5209455490112305
+    },
+    {
+      "allocation_lambda": 0.5,
+      "alloc_ratio_img_over_txt": 1.0,
+      "R@20": 0.09641298897736851,
+      "d_img": -0.0011676159354215704,
+      "d_txt": -0.0046550523792215776,
+      "abs_ratio_img_over_txt": 0.2508276685850784,
+      "image_dominant": false,
+      "norm_h_img": 2.2536659240722656,
+      "norm_h_txt": 2.5149612426757812
+    },
+    {
+      "allocation_lambda": 0.7,
+      "alloc_ratio_img_over_txt": 2.333333333333333,
+      "R@20": 0.09408496274203659,
+      "d_img": -0.0005011577979304183,
+      "d_txt": -0.0036456222914864195,
+      "abs_ratio_img_over_txt": 0.1374683820374827,
+      "image_dominant": false,
+      "norm_h_img": 3.155132293701172,
+      "norm_h_txt": 1.5089768171310425
+    },
+    {
+      "allocation_lambda": 0.9,
+      "alloc_ratio_img_over_txt": 9.000000000000002,
+      "R@20": 0.09011387398892623,
+      "d_img": 0.0012882910438678785,
+      "d_txt": -0.001302917264559611,
+      "abs_ratio_img_over_txt": 0.9887742521420374,
+      "image_dominant": false,
+      "norm_h_img": 4.056598663330078,
+      "norm_h_txt": 0.5029922723770142
+    }
+  ],
+  "freedom_rank_stat": {
+    "image_knockout": {
+      "K_cap": 1000,
+      "n_positives": 103989,
+      "n_censored_either_condition": 49523,
+      "n_censored_both_conditions": 48572,
+      "frac_contributing_exactly_zero": 0.4670878650626509,
+      "mean_delta_log2_rank": 0.0118831018461759,
+      "sd": 0.1267856463817973,
+      "se": 0.00039316639297049054,
+      "t_stat": 30.224103734796575,
+      "ci95": [
+        0.011112495715953739,
+        0.012653707976398062
+      ],
+      "mean_rank_degradation_pct": 0.8270753799337616,
+      "note": "POSITIVE = knockout pushed held-out items DOWN in rank (the stream was helping). Only the both-censored set contributes exactly 0; one-sided censoring truncates the effect toward 0, so the estimate is conservative."
+    },
+    "text_knockout": {
+      "K_cap": 1000,
+      "n_positives": 103989,
+      "n_censored_either_condition": 51723,
+      "n_censored_both_conditions": 44983,
+      "frac_contributing_exactly_zero": 0.4325745992364577,
+      "mean_delta_log2_rank": 0.040118563182018334,
+      "sd": 0.7179736671854823,
+      "se": 0.002226459579856976,
+      "t_stat": 18.01899461592538,
+      "ci95": [
+        0.03575470240549866,
+        0.044482423958538006
+      ],
+      "mean_rank_degradation_pct": 2.819832230641417,
+      "note": "POSITIVE = knockout pushed held-out items DOWN in rank (the stream was helping). Only the both-censored set contributes exactly 0; one-sided censoring truncates the effect toward 0, so the estimate is conservative."
+    }
+  },
+  "freedom_rank_stat_nulls": {
+    "permuted_h_img": {
+      "K_cap": 1000,
+      "n_positives": 103989,
+      "n_censored_either_condition": 49654,
+      "n_censored_both_conditions": 48793,
+      "frac_contributing_exactly_zero": 0.46921308984604143,
+      "mean_delta_log2_rank": -0.0013682673663120244,
+      "sd": 0.10251070610667805,
+      "se": 0.000317889017495336,
+      "t_stat": -4.3042297500324915,
+      "ci95": [
+        -0.001991329840602883,
+        -0.0007452048920211659
+      ],
+      "mean_rank_degradation_pct": -0.09479610679606898,
+      "note": "POSITIVE = knockout pushed held-out items DOWN in rank (the stream was helping). Only the both-censored set contributes exactly 0; one-sided censoring truncates the effect toward 0, so the estimate is conservative."
+    },
+    "gaussian_matched_norm": {
+      "K_cap": 1000,
+      "n_positives": 103989,
+      "n_censored_either_condition": 49509,
+      "n_censored_both_conditions": 48897,
+      "frac_contributing_exactly_zero": 0.47021319562646047,
+      "mean_delta_log2_rank": -0.0007055032954326475,
+      "sd": 0.08178925790391063,
+      "se": 0.0002536311359487654,
+      "t_stat": -2.7816115430526724,
+      "ci95": [
+        -0.0012026203218922279,
+        -0.0002083862689730673
+      ],
+      "mean_rank_degradation_pct": -0.04888980704765844,
+      "note": "POSITIVE = knockout pushed held-out items DOWN in rank (the stream was helping). Only the both-censored set contributes exactly 0; one-sided censoring truncates the effect toward 0, so the estimate is conservative."
+    }
+  },
+  "lgmrec_checkpoint": "lgmrec_microlens_20260621_204213.pt",
+  "lgmrec_gumbel_spread": {
+    "per_seed": [
+      {
+        "gumbel_seed": 12345,
+        "R@20": 0.10528876138914965,
+        "d_img": -0.006509972582693174,
+        "d_txt": -0.0030588946166909964,
+        "gap_img_minus_txt": 0.003451077966002178,
+        "image_dominant": true
+      },
+      {
+        "gumbel_seed": 1000,
+        "R@20": 0.10522124821771206,
+        "d_img": -0.006452997487757864,
+        "d_txt": -0.002856820152675618,
+        "gap_img_minus_txt": 0.0035961773350822457,
+        "image_dominant": true
+      },
+      {
+        "gumbel_seed": 1001,
+        "R@20": 0.10485887293813596,
+        "d_img": -0.006024637636852195,
+        "d_txt": -0.0027658724901639953,
+        "gap_img_minus_txt": 0.0032587651466882,
+        "image_dominant": true
+      },
+      {
+        "gumbel_seed": 1002,
+        "R@20": 0.10536237682927245,
+        "d_img": -0.006541049706678639,
+        "d_txt": -0.0034163888901020817,
+        "gap_img_minus_txt": 0.0031246608165765577,
+        "image_dominant": true
+      },
+      {
+        "gumbel_seed": 1003,
+        "R@20": 0.10550835813958845,
+        "d_img": -0.006698063186461087,
+        "d_txt": -0.0032073952864442867,
+        "gap_img_minus_txt": 0.0034906679000168,
+        "image_dominant": true
+      },
+      {
+        "gumbel_seed": 1004,
+        "R@20": 0.10504731536256365,
+        "d_img": -0.0060883293080196965,
+        "d_txt": -0.0028702419086505393,
+        "gap_img_minus_txt": 0.0032180873993691572,
+        "image_dominant": true
+      },
+      {
+        "gumbel_seed": 1005,
+        "R@20": 0.10527414263414833,
+        "d_img": -0.006194567015527175,
+        "d_txt": -0.0035480304755952236,
+        "gap_img_minus_txt": 0.0026465365399319513,
+        "image_dominant": true
+      },
+      {
+        "gumbel_seed": 1006,
+        "R@20": 0.10513292910035972,
+        "d_img": -0.006062772128868771,
+        "d_txt": -0.002674419338198647,
+        "gap_img_minus_txt": 0.003388352790670124,
+        "image_dominant": true
+      },
+      {
+        "gumbel_seed": 1007,
+        "R@20": 0.10503051289312232,
+        "d_img": -0.00605428762624903,
+        "d_txt": -0.0025504126654143644,
+        "gap_img_minus_txt": 0.003503874960834666,
+        "image_dominant": true
+      },
+      {
+        "gumbel_seed": 1008,
+        "R@20": 0.10553861471632976,
+        "d_img": -0.006561447584743446,
+        "d_txt": -0.003205522953507761,
+        "gap_img_minus_txt": 0.003355924631235685,
+        "image_dominant": true
+      },
+      {
+        "gumbel_seed": 1009,
+        "R@20": 0.10499722337965875,
+        "d_img": -0.00604885260364274,
+        "d_txt": -0.002720357597611023,
+        "gap_img_minus_txt": 0.0033284950060317176,
+        "image_dominant": true
+      },
+      {
+        "gumbel_seed": 1010,
+        "R@20": 0.10508248529679504,
+        "d_img": -0.005957638410328245,
+        "d_txt": -0.00288590803779995,
+        "gap_img_minus_txt": 0.0030717303725282946,
+        "image_dominant": true
+      }
+    ],
+    "n_seeds": 12,
+    "mean_R@20": 0.105195236741403,
+    "sd_R@20": 0.00020834817006559205,
+    "mean_d_img": -0.006266217939818505,
+    "sd_d_img": 0.00026412793388937725,
+    "mean_d_txt": -0.0029800220344045406,
+    "sd_d_txt": 0.00030883217793759574,
+    "mean_gap": 0.0032861959054139647,
+    "sd_gap": 0.00025516469822132364,
+    "gap_over_sd": 12.878724715139077,
+    "n_image_dominant": 12
+  },
+  "lgmrec_allocation_sweep": [
+    {
+      "w_img": 0.2,
+      "w_txt": 1.8,
+      "alloc_ratio_img_over_txt": 0.11111111111111112,
+      "R@20": 0.09976739272869875,
+      "d_img": -0.0014250799118167429,
+      "d_txt": -0.0016263941196937443,
+      "abs_ratio_img_over_txt": 0.87622052647675,
+      "image_dominant": false
+    },
+    {
+      "w_img": 0.5,
+      "w_txt": 1.5,
+      "alloc_ratio_img_over_txt": 0.3333333333333333,
+      "R@20": 0.10312318795463432,
+      "d_img": -0.004200185028992026,
+      "d_txt": -0.002645590263674627,
+      "abs_ratio_img_over_txt": 1.5876173595975231,
+      "image_dominant": true
+    },
+    {
+      "w_img": 1.0,
+      "w_txt": 1.0,
+      "alloc_ratio_img_over_txt": 1.0,
+      "R@20": 0.10528876138914965,
+      "d_img": -0.006509972582693174,
+      "d_txt": -0.0030588946166909964,
+      "abs_ratio_img_over_txt": 2.128210807646401,
+      "image_dominant": true
+    },
+    {
+      "w_img": 1.5,
+      "w_txt": 0.5,
+      "alloc_ratio_img_over_txt": 3.0,
+      "R@20": 0.10431907894813865,
+      "d_img": -0.0062509391994049895,
+      "d_txt": -0.0022942710494300717,
+      "abs_ratio_img_over_txt": 2.724586182159169,
+      "image_dominant": true
+    },
+    {
+      "w_img": 1.8,
+      "w_txt": 0.19999999999999996,
+      "alloc_ratio_img_over_txt": 9.000000000000002,
+      "R@20": 0.10298484155702714,
+      "d_img": -0.008664344003285598,
+      "d_txt": -0.0012419997195140114,
+      "abs_ratio_img_over_txt": 6.976123961345108,
+      "image_dominant": true
+    }
+  ]
+}

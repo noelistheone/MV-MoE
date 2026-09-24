@@ -1,0 +1,738 @@
+{
+  "summary": {
+    "freedom": {
+      "microlens": {
+        "Recall@20": {
+          "full_mean": 0.0979090131986065,
+          "full_sd": 0.0020513132674237684,
+          "F_level": 0.004102626534847537,
+          "n_full_seeds": 5,
+          "no_image": {
+            "mean": 0.09492227762420569,
+            "n_seeds": 5,
+            "delta_unpaired": -0.002986735574400809,
+            "paired_seeds": [
+              2027,
+              2028,
+              2029,
+              2030,
+              2031
+            ],
+            "delta_paired_mean": -0.0029867355744008033,
+            "F_paired": 0.005870153745336679,
+            "paired_t": {
+              "t": -2.275423801457532,
+              "df": 4,
+              "n": 5,
+              "sd": 0.0029350768726683395,
+              "se": 0.0013126062812947802,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.5088002297680027,
+            "abs_over_F_level": 0.7280057175644913,
+            "sd_ratio_vs_full": 0.5789863306056284
+          },
+          "no_text": {
+            "mean": 0.09628043321808671,
+            "n_seeds": 5,
+            "delta_unpaired": -0.0016285799805197815,
+            "paired_seeds": [
+              2027,
+              2028,
+              2029,
+              2030,
+              2031
+            ],
+            "delta_paired_mean": -0.0016285799805197843,
+            "F_paired": 0.004505297220502817,
+            "paired_t": {
+              "t": -1.6165928084234567,
+              "df": 4,
+              "n": 5,
+              "sd": 0.0022526486102514083,
+              "se": 0.0010074150843885157,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.3614811411572144,
+            "abs_over_F_level": 0.39696032936137243,
+            "sd_ratio_vs_full": 0.5572132306958573
+          }
+        },
+        "NDCG@20": {
+          "full_mean": 0.04100168642123496,
+          "full_sd": 0.0008995198229255412,
+          "F_level": 0.0017990396458510824,
+          "n_full_seeds": 5,
+          "no_image": {
+            "mean": 0.03969875703873452,
+            "n_seeds": 5,
+            "delta_unpaired": -0.0013029293825004423,
+            "paired_seeds": [
+              2027,
+              2028,
+              2029,
+              2030,
+              2031
+            ],
+            "delta_paired_mean": -0.001302929382500441,
+            "F_paired": 0.002669994406225831,
+            "paired_t": {
+              "t": -2.1823556351723603,
+              "df": 4,
+              "n": 5,
+              "sd": 0.0013349972031129155,
+              "se": 0.0005970288991865145,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.48798955513251285,
+            "abs_over_F_level": 0.7242360586689887,
+            "sd_ratio_vs_full": 0.6629153973292621
+          },
+          "no_text": {
+            "mean": 0.04001109103892064,
+            "n_seeds": 5,
+            "delta_unpaired": -0.000990595382314316,
+            "paired_seeds": [
+              2027,
+              2028,
+              2029,
+              2030,
+              2031
+            ],
+            "delta_paired_mean": -0.0009905953823143119,
+            "F_paired": 0.0021002899110686623,
+            "paired_t": {
+              "t": -2.1092693931240625,
+              "df": 4,
+              "n": 5,
+              "sd": 0.0010501449555343312,
+              "se": 0.0004696391013606517,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.4716469745885131,
+            "abs_over_F_level": 0.550624542710222,
+            "sd_ratio_vs_full": 0.5352900468959513
+          }
+        },
+        "Recall@10": {
+          "full_mean": 0.06223495333962168,
+          "full_sd": 0.0013906576825409383,
+          "F_level": 0.0027813153650818765,
+          "n_full_seeds": 5,
+          "no_image": {
+            "mean": 0.06025138357596142,
+            "n_seeds": 5,
+            "delta_unpaired": -0.0019835697636602576,
+            "paired_seeds": [
+              2027,
+              2028,
+              2029,
+              2030,
+              2031
+            ],
+            "delta_paired_mean": -0.0019835697636602576,
+            "F_paired": 0.0038541673616380306,
+            "paired_t": {
+              "t": -2.301610912802953,
+              "df": 4,
+              "n": 5,
+              "sd": 0.0019270836808190153,
+              "se": 0.0008618180217283652,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.5146558458782744,
+            "abs_over_F_level": 0.7131768617694546,
+            "sd_ratio_vs_full": 0.6124959230183676
+          },
+          "no_text": {
+            "mean": 0.06102855152504084,
+            "n_seeds": 5,
+            "delta_unpaired": -0.001206401814580843,
+            "paired_seeds": [
+              2027,
+              2028,
+              2029,
+              2030,
+              2031
+            ],
+            "delta_paired_mean": -0.0012064018145808402,
+            "F_paired": 0.004066990010460952,
+            "paired_t": {
+              "t": -1.3265813088516096,
+              "df": 4,
+              "n": 5,
+              "sd": 0.002033495005230476,
+              "se": 0.0009094066127203269,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.2966325984272843,
+            "abs_over_F_level": 0.43375225611832985,
+            "sd_ratio_vs_full": 0.6356571775707935
+          }
+        },
+        "NDCG@10": {
+          "full_mean": 0.031832984856168416,
+          "full_sd": 0.0007342800506800726,
+          "F_level": 0.0014685601013601452,
+          "n_full_seeds": 5,
+          "no_image": {
+            "mean": 0.030791106605647073,
+            "n_seeds": 5,
+            "delta_unpaired": -0.0010418782505213428,
+            "paired_seeds": [
+              2027,
+              2028,
+              2029,
+              2030,
+              2031
+            ],
+            "delta_paired_mean": -0.0010418782505213441,
+            "F_paired": 0.002160883612244318,
+            "paired_t": {
+              "t": -2.156257356243836,
+              "df": 4,
+              "n": 5,
+              "sd": 0.001080441806122159,
+              "se": 0.0004831882648443591,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.4821538025545197,
+            "abs_over_F_level": 0.7094556426777369,
+            "sd_ratio_vs_full": 0.7074808044177147
+          },
+          "no_text": {
+            "mean": 0.030966769038389838,
+            "n_seeds": 5,
+            "delta_unpaired": -0.0008662158177785775,
+            "paired_seeds": [
+              2027,
+              2028,
+              2029,
+              2030,
+              2031
+            ],
+            "delta_paired_mean": -0.0008662158177785796,
+            "F_paired": 0.001994376112157347,
+            "paired_t": {
+              "t": -1.942379313441818,
+              "df": 4,
+              "n": 5,
+              "sd": 0.0009971880560786736,
+              "se": 0.00044595605594855727,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.43432921829452753,
+            "abs_over_F_level": 0.5898402230704152,
+            "sd_ratio_vs_full": 0.5818352465510814
+          }
+        }
+      }
+    }
+  },
+  "note": "Train-time modality holdout (ROAR-style). The withheld modality is absent from the constructor, so it enters neither the item-item graph nor the auxiliary loss. Verdict uses the same two-floor rule as results/phase_micro/PREREG.md s.3.",
+  "runs": [
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2027,
+      "condition": "full",
+      "best_epoch": 347,
+      "train_min": 60.915367205937706,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_full_s2027.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03660918806747257,
+        "Recall@10": 0.06227715676298664,
+        "Recall@20": 0.09854473505764154,
+        "Recall@50": 0.16092363949508628,
+        "NDCG@5": 0.023431515568153444,
+        "NDCG@10": 0.03182442046350474,
+        "NDCG@20": 0.04115826493579815,
+        "NDCG@50": 0.05371663397341742,
+        "Precision@5": 0.007914072292594443,
+        "Precision@10": 0.0067533552772371065,
+        "Precision@20": 0.005367424512631332,
+        "Precision@50": 0.003524340409053389,
+        "MAP@5": 0.018667510793615207,
+        "MAP@10": 0.02209499422080808,
+        "MAP@20": 0.024662438174059862,
+        "MAP@50": 0.02668410825807726
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2028,
+      "condition": "full",
+      "best_epoch": 253,
+      "train_min": 53.866550759474435,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_full_s2028.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.036058576603165866,
+        "Recall@10": 0.06045154784976855,
+        "Recall@20": 0.09560635721454644,
+        "Recall@50": 0.15962510645721012,
+        "NDCG@5": 0.023047253297358357,
+        "NDCG@10": 0.031039060511415317,
+        "NDCG@20": 0.040073710489831466,
+        "NDCG@50": 0.05297112652152447,
+        "Precision@5": 0.007814203752203732,
+        "Precision@10": 0.006567885130797216,
+        "Precision@20": 0.005209978701505162,
+        "Precision@50": 0.0034968256071090096,
+        "MAP@5": 0.018350241348972608,
+        "MAP@10": 0.021624321129910286,
+        "MAP@20": 0.024105770025405,
+        "MAP@50": 0.02618135674180691
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2029,
+      "condition": "full",
+      "best_epoch": 289,
+      "train_min": 64.14261639912924,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_full_s2029.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03570634750790464,
+        "Recall@10": 0.06149844077189714,
+        "Recall@20": 0.096176648394265,
+        "Recall@50": 0.15907941239430912,
+        "NDCG@5": 0.02283546533948951,
+        "NDCG@10": 0.0312662690846795,
+        "NDCG@20": 0.040190134542550215,
+        "NDCG@50": 0.05287436561877367,
+        "Precision@5": 0.0077306402796319135,
+        "Precision@10": 0.006685077805745498,
+        "Precision@20": 0.005253289037899092,
+        "Precision@50": 0.0034894883265905088,
+        "MAP@5": 0.01818078753477565,
+        "MAP@10": 0.02162132763259851,
+        "MAP@20": 0.024072036600366685,
+        "MAP@50": 0.02612027625655886
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2030,
+      "condition": "full",
+      "best_epoch": 405,
+      "train_min": 83.99913133382798,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_full_s2030.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03757549321679192,
+        "Recall@10": 0.0627877300407847,
+        "Recall@20": 0.09852550219490676,
+        "Recall@50": 0.16051926348563939,
+        "NDCG@5": 0.02391952563777227,
+        "NDCG@10": 0.03215169621292398,
+        "NDCG@20": 0.041324435776870706,
+        "NDCG@50": 0.05382774809207036,
+        "Precision@5": 0.008109733106421138,
+        "Precision@10": 0.006808384881125865,
+        "Precision@20": 0.005365386379153971,
+        "Precision@50": 0.003518226008621305,
+        "MAP@5": 0.01900087583124708,
+        "MAP@10": 0.022356606136143597,
+        "MAP@20": 0.02486467644457551,
+        "MAP@50": 0.026884448331214252
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2031,
+      "condition": "full",
+      "best_epoch": 480,
+      "train_min": 117.26098407904307,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_full_s2031.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03830218143367162,
+        "Recall@10": 0.06415989127267138,
+        "Recall@20": 0.10069182313167273,
+        "Recall@50": 0.1611907381004692,
+        "NDCG@5": 0.024425101893664362,
+        "NDCG@10": 0.032883478008318555,
+        "NDCG@20": 0.04226188636112425,
+        "NDCG@50": 0.05448834751029634,
+        "Precision@5": 0.008301317653293115,
+        "Precision@10": 0.006965321158882695,
+        "Precision@20": 0.005484107654210276,
+        "Precision@50": 0.003534123449744724,
+        "MAP@5": 0.019413931887843777,
+        "MAP@10": 0.02287731276252763,
+        "MAP@20": 0.025448849068408788,
+        "MAP@50": 0.02743129596710776
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2027,
+      "condition": "no_image",
+      "best_epoch": 270,
+      "train_min": 54.87157457669576,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_image_s2027.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03549698590792457,
+        "Recall@10": 0.06019152003086416,
+        "Recall@20": 0.09462093585390469,
+        "Recall@50": 0.15645800210200134,
+        "NDCG@5": 0.022538802535742333,
+        "NDCG@10": 0.03062675575911406,
+        "NDCG@20": 0.03947656271541265,
+        "NDCG@50": 0.05192345596983139,
+        "Precision@5": 0.007689877610084686,
+        "Precision@10": 0.006537313128636794,
+        "Precision@20": 0.005154439564247063,
+        "Precision@50": 0.003429363389008346,
+        "MAP@5": 0.017846168478907017,
+        "MAP@10": 0.021158706165472642,
+        "MAP@20": 0.02358861194022784,
+        "MAP@50": 0.02559172743586416
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2028,
+      "condition": "no_image",
+      "best_epoch": 281,
+      "train_min": 45.28700511058172,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_image_s2028.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03566152474706521,
+        "Recall@10": 0.060477376338895356,
+        "Recall@20": 0.09498002343007386,
+        "Recall@50": 0.15554999973864428,
+        "NDCG@5": 0.022884729639893346,
+        "NDCG@10": 0.030976433664419895,
+        "NDCG@20": 0.03983090408746842,
+        "NDCG@50": 0.05204689726513288,
+        "Precision@5": 0.007732678413109275,
+        "Precision@10": 0.006573999531229301,
+        "Precision@20": 0.005183992499668804,
+        "Precision@50": 0.003414077387928135,
+        "MAP@5": 0.01826333477134973,
+        "MAP@10": 0.021554084657309385,
+        "MAP@20": 0.02397570378291318,
+        "MAP@50": 0.025947757009936137
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2029,
+      "condition": "no_image",
+      "best_epoch": 329,
+      "train_min": 44.31181322733561,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_image_s2029.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.035894148971705044,
+        "Recall@10": 0.060181788970042185,
+        "Recall@20": 0.0957209888042007,
+        "Recall@50": 0.15601567316669376,
+        "NDCG@5": 0.022874856404376066,
+        "NDCG@10": 0.030819029743432723,
+        "NDCG@20": 0.03994739441905208,
+        "NDCG@50": 0.05211224248695833,
+        "Precision@5": 0.007806051218294286,
+        "Precision@10": 0.006555656329933048,
+        "Precision@20": 0.005222207502369331,
+        "Precision@50": 0.0034240642419672064,
+        "MAP@5": 0.018145369304124616,
+        "MAP@10": 0.021394211413613716,
+        "MAP@20": 0.02389954720576315,
+        "MAP@50": 0.025866503047036794
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2030,
+      "condition": "no_image",
+      "best_epoch": 354,
+      "train_min": 46.71171205838521,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_image_s2030.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.036484574807343816,
+        "Recall@10": 0.06139431398834836,
+        "Recall@20": 0.09618682895186272,
+        "Recall@50": 0.15698764244199334,
+        "NDCG@5": 0.023342468057494913,
+        "NDCG@10": 0.0314794482255611,
+        "NDCG@20": 0.040419803186401475,
+        "NDCG@50": 0.05266353170129971,
+        "Precision@5": 0.007901843491730275,
+        "Precision@10": 0.006676925271836053,
+        "Precision@20": 0.005246665104097667,
+        "Precision@50": 0.003444037950045349,
+        "MAP@5": 0.01858348591027004,
+        "MAP@10": 0.021902460332647464,
+        "MAP@20": 0.024355007935344623,
+        "MAP@50": 0.026325707123677055
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2031,
+      "condition": "no_image",
+      "best_epoch": 222,
+      "train_min": 31.530362709363303,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_image_s2031.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.034684894859002405,
+        "Recall@10": 0.05901191855165706,
+        "Recall@20": 0.09310261108098648,
+        "Recall@50": 0.1549277318568252,
+        "NDCG@5": 0.022102827341485085,
+        "NDCG@10": 0.030053865635707593,
+        "NDCG@20": 0.038819120785337946,
+        "NDCG@50": 0.05126082706074623,
+        "Precision@5": 0.00752682693189577,
+        "Precision@10": 0.006414006053256429,
+        "Precision@20": 0.005085652559386115,
+        "Precision@50": 0.0033973646934137717,
+        "MAP@5": 0.017551273210660343,
+        "MAP@10": 0.020802905697356162,
+        "MAP@20": 0.023202549774862632,
+        "MAP@50": 0.025205732821495512
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2027,
+      "condition": "no_text",
+      "best_epoch": 382,
+      "train_min": 51.8188480814298,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_text_s2027.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.03708913148400965,
+        "Recall@10": 0.062106399003748404,
+        "Recall@20": 0.09814643969748474,
+        "Recall@50": 0.16020983746987272,
+        "NDCG@5": 0.023290390096982656,
+        "NDCG@10": 0.031462777102943956,
+        "NDCG@20": 0.040704846238665424,
+        "NDCG@50": 0.0532219235988031,
+        "Precision@5": 0.008032284034281405,
+        "Precision@10": 0.00674418367658898,
+        "Precision@20": 0.005354176645028484,
+        "Precision@50": 0.003512519234884693,
+        "MAP@5": 0.018322154737358196,
+        "MAP@10": 0.021649749333974153,
+        "MAP@20": 0.024170215916675238,
+        "MAP@50": 0.026196321676737227
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2028,
+      "condition": "no_text",
+      "best_epoch": 365,
+      "train_min": 49.102865636348724,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_text_s2028.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.03623863132443674,
+        "Recall@10": 0.06187200152210496,
+        "Recall@20": 0.09652453572395688,
+        "Recall@50": 0.15919393991676395,
+        "NDCG@5": 0.023014304033211957,
+        "NDCG@10": 0.03138982454352768,
+        "NDCG@20": 0.04028570686340995,
+        "NDCG@50": 0.05293834496014237,
+        "Precision@5": 0.007877385890001936,
+        "Precision@10": 0.006721764208338005,
+        "Precision@20": 0.005256855771484475,
+        "Precision@50": 0.0034874501931131474,
+        "MAP@5": 0.01821421858528626,
+        "MAP@10": 0.021632629433203168,
+        "MAP@20": 0.02407039726344523,
+        "MAP@50": 0.026121444724318023
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2029,
+      "condition": "no_text",
+      "best_epoch": 292,
+      "train_min": 40.01965333620707,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_text_s2029.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.035677724673077726,
+        "Recall@10": 0.060506379301791466,
+        "Recall@20": 0.09525086001331556,
+        "Recall@50": 0.15697819056688506,
+        "NDCG@5": 0.02249150639994271,
+        "NDCG@10": 0.030579528033642556,
+        "NDCG@20": 0.03949652431122061,
+        "NDCG@50": 0.051948606730267306,
+        "Precision@5": 0.0077306402796319135,
+        "Precision@10": 0.006568904197535898,
+        "Precision@20": 0.005189087833362208,
+        "Precision@50": 0.003441184563177043,
+        "MAP@5": 0.017741501832621687,
+        "MAP@10": 0.021024062916204768,
+        "MAP@20": 0.023466150031742832,
+        "MAP@50": 0.025477895782455694
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2030,
+      "condition": "no_text",
+      "best_epoch": 309,
+      "train_min": 42.24103418191274,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_text_s2030.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.03558349677284957,
+        "Recall@10": 0.06035234251154112,
+        "Recall@20": 0.09559768239337989,
+        "Recall@50": 0.1578765858734064,
+        "NDCG@5": 0.022709016093988708,
+        "NDCG@10": 0.0307837093219271,
+        "NDCG@20": 0.03982243954016737,
+        "NDCG@50": 0.05238370985024076,
+        "Precision@5": 0.007726564012677191,
+        "Precision@10": 0.006560751663626451,
+        "Precision@20": 0.005208450101397141,
+        "Precision@50": 0.003461769711298393,
+        "MAP@5": 0.018036886819051114,
+        "MAP@10": 0.02131641318787284,
+        "MAP@20": 0.02378887047254848,
+        "MAP@50": 0.02581738110326139
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2031,
+      "condition": "no_text",
+      "best_epoch": 301,
+      "train_min": 41.53712793588638,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_text_s2031.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.03507075657841486,
+        "Recall@10": 0.060305635286018254,
+        "Recall@20": 0.09588264826229648,
+        "Recall@50": 0.15861964930448763,
+        "NDCG@5": 0.022364703226168785,
+        "NDCG@10": 0.0306180061899079,
+        "NDCG@20": 0.039745938241139867,
+        "NDCG@50": 0.05238321714554957,
+        "Precision@5": 0.007600199737080782,
+        "Precision@10": 0.006564827930581174,
+        "Precision@20": 0.005224755169216032,
+        "Precision@50": 0.003475629018944451,
+        "MAP@5": 0.017775391463164703,
+        "MAP@10": 0.021140278353265485,
+        "MAP@20": 0.02363552137748318,
+        "MAP@50": 0.02567105244903727
+      }
+    }
+  ]
+}

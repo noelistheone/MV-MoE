@@ -1,0 +1,35 @@
+{
+  "datasets": [
+    "baby",
+    "sports",
+    "clothing",
+    "elec",
+    "microlens"
+  ],
+  "log_align_ratio": [
+    -0.7290987613710741,
+    -1.3854206288889157,
+    -0.2722692334715515,
+    -1.5260291947815028,
+    1.0192279161795108
+  ],
+  "log_freedom_causal_ratio": [
+    -2.168360380264734,
+    -6.003433783362081,
+    -3.908818998523667,
+    -2.7482313359720267,
+    -2.090926892282421
+  ],
+  "log_lgmrec_causal_ratio": [
+    -0.3226071404140926,
+    -1.0217608991296647,
+    -1.531142991325243,
+    -4.363426077193106,
+    0.7552816303165188
+  ],
+  "pearson_lgmrec": 0.7295757163609826,
+  "spearman_lgmrec": 0.7,
+  "pearson_freedom": 0.48150444657967023,
+  "spearman_freedom": 0.5,
+  "note": "causal ratio = |dR_img|/|dR_txt| normalised by own base R@20; alignment ratio = raw image gap / raw text gap under the corrected co-consumption marginal. n=5, so these are descriptive, not inferential."
+}

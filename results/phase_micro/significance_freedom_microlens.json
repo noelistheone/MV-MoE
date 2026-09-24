@@ -1,0 +1,82 @@
+{
+  "model": "freedom",
+  "dataset": "microlens",
+  "n_seeds": 8,
+  "seeds": [
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031
+  ],
+  "F_level": 0.003144742976139225,
+  "sd_R@20": 0.0015723714880696124,
+  "mean_R@20": 0.0980089983151164,
+  "note": "F_level = 2*sd(R@20) across seeds (published convention). F_paired = 2*sd(per-seed delta) -- the correct floor for a knockout that is deterministic within a checkpoint. PREREG s.3 requires the verdict to hold against max(F_paired, F_level).",
+  "streams": {
+    "image": {
+      "mean_delta": -0.0008731746985092097,
+      "sd_delta": 0.000255120946118194,
+      "F_paired": 0.000510241892236388,
+      "abs_mean_over_F_paired": 1.7112955870441935,
+      "abs_mean_over_F_level": 0.2776617056256849,
+      "verdict": "MARGINAL",
+      "per_seed": [
+        -0.0008477947800166474,
+        -0.0005975977200080168,
+        -0.0004867620804296091,
+        -0.0009042518861226839,
+        -0.0012085403615939988,
+        -0.0009066570261527934,
+        -0.0008247559705334695,
+        -0.0012090377632164584
+      ]
+    },
+    "text": {
+      "mean_delta": -0.006591572755436141,
+      "sd_delta": 0.0003963074026247771,
+      "F_paired": 0.0007926148052495542,
+      "abs_mean_over_F_paired": 8.316237233747847,
+      "abs_mean_over_F_level": 2.096060888107479,
+      "verdict": "SIGNIFICANT",
+      "per_seed": [
+        -0.006860705061542738,
+        -0.00660099770174262,
+        -0.006984010737106139,
+        -0.007126216430040994,
+        -0.006084099994411951,
+        -0.0065377353501914065,
+        -0.006025443620344212,
+        -0.0065133731481090695
+      ]
+    },
+    "both": {
+      "mean_delta": -0.007923398779806547,
+      "sd_delta": 0.0004885517347140516,
+      "F_paired": 0.0009771034694281032,
+      "abs_mean_over_F_paired": 8.109068310282531,
+      "abs_mean_over_F_level": 2.5195695927856208,
+      "verdict": "SIGNIFICANT",
+      "per_seed": [
+        -0.007793377586710851,
+        -0.008031539953805539,
+        -0.008515349353684601,
+        -0.008684781952878029,
+        -0.007390429701622125,
+        -0.007492746465297906,
+        -0.007443761483087272,
+        -0.008035203741366057
+      ]
+    }
+  },
+  "admissibility_gate": {
+    "rule": "cell yields a verdict only if the TEXT knockout clears both floors",
+    "text_verdict": "SIGNIFICANT",
+    "passes": true,
+    "caveat": "text carries 0.9 of FREEDOM's mm_adj by construction, so a passing gate is partly mechanical; the informative quantity is the ratio",
+    "abs_ratio_txt_over_img": 7.5489736093934905
+  }
+}

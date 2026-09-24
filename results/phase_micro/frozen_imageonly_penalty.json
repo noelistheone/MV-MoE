@@ -1,0 +1,27 @@
+{
+  "baby": {
+    "text_only_w0": 0.09160667209137253,
+    "image_only_w1": 0.08816629286544432,
+    "pct_image_below_text": 3.7555989617182317
+  },
+  "sports": {
+    "text_only_w0": 0.10629649026117928,
+    "image_only_w1": 0.09340179401910398,
+    "pct_image_below_text": 12.130876767795407
+  },
+  "clothing": {
+    "text_only_w0": 0.09122003029764475,
+    "image_only_w1": 0.08008522270461489,
+    "pct_image_below_text": 12.206537924508176
+  },
+  "elec": {
+    "text_only_w0": 0.058847208960720584,
+    "image_only_w1": 0.05495754905511599,
+    "pct_image_below_text": 6.609761064795561
+  },
+  "microlens": {
+    "text_only_w0": 0.09717091582034666,
+    "image_only_w1": 0.08808685319171516,
+    "pct_image_below_text": 9.34854071502883
+  }
+}

@@ -1,0 +1,2069 @@
+{
+  "summary": {
+    "freedom": {
+      "baby": {
+        "Recall@20": {
+          "full_mean": 0.09270308560614551,
+          "full_sd": 0.000247279697442454,
+          "F_level": 0.000494559394884908,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.088712772898939,
+            "n_seeds": 3,
+            "delta_unpaired": -0.003990312707206511,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.003990312707206507,
+            "F_paired": 0.0044256148651107075,
+            "paired_t": {
+              "t": -3.1233736136668964,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0022128074325553537,
+              "se": 0.0012775649668506383,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "MARGINAL",
+            "abs_over_F_paired": 0.9016402983151786,
+            "abs_over_F_level": 8.068419584133302,
+            "sd_ratio_vs_full": 7.986783339185676
+          },
+          "no_text": {
+            "mean": 0.06900427991196827,
+            "n_seeds": 3,
+            "delta_unpaired": -0.023698805694177247,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.023698805694177247,
+            "F_paired": 0.0029611592429446914,
+            "paired_t": {
+              "t": -27.72396360568461,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0014805796214723457,
+              "se": 0.000854813043013733,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 8.003218925372698,
+            "abs_over_F_level": 47.91902841051547,
+            "sd_ratio_vs_full": 6.983459842182385
+          }
+        },
+        "NDCG@20": {
+          "full_mean": 0.040221618650418116,
+          "full_sd": 0.00026270927145380114,
+          "F_level": 0.0005254185429076023,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.03896490021689386,
+            "n_seeds": 3,
+            "delta_unpaired": -0.001256718433524255,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.001256718433524255,
+            "F_paired": 0.0017346448256700584,
+            "paired_t": {
+              "t": -2.5096782297569935,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0008673224128350292,
+              "se": 0.0005007488285244998,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "MARGINAL",
+            "abs_over_F_paired": 0.7244817007647719,
+            "abs_over_F_level": 2.391842561493411,
+            "sd_ratio_vs_full": 3.877594446160714
+          },
+          "no_text": {
+            "mean": 0.030870750467375044,
+            "n_seeds": 3,
+            "delta_unpaired": -0.009350868183043072,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.009350868183043074,
+            "F_paired": 0.0017347930167264458,
+            "paired_t": {
+              "t": -18.672174296011477,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0008673965083632229,
+              "se": 0.0005007916075976483,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 5.390192428078919,
+            "abs_over_F_level": 17.796989294090206,
+            "sd_ratio_vs_full": 2.5124048833743102
+          }
+        },
+        "Recall@10": {
+          "full_mean": 0.05977731310336093,
+          "full_sd": 0.00110007574092648,
+          "F_level": 0.00220015148185296,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.05726009992788085,
+            "n_seeds": 3,
+            "delta_unpaired": -0.002517213175480079,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.002517213175480079,
+            "F_paired": 0.003941020677229276,
+            "paired_t": {
+              "t": -2.212594893807324,
+              "df": 2,
+              "n": 3,
+              "sd": 0.001970510338614638,
+              "se": 0.001137674674440102,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "MARGINAL",
+            "abs_over_F_paired": 0.638721128773625,
+            "abs_over_F_level": 1.1441090289656288,
+            "sd_ratio_vs_full": 1.8613531260744076
+          },
+          "no_text": {
+            "mean": 0.044821289964000165,
+            "n_seeds": 3,
+            "delta_unpaired": -0.014956023139360765,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.014956023139360763,
+            "F_paired": 0.00309828194088967,
+            "paired_t": {
+              "t": -16.721907464050954,
+              "df": 2,
+              "n": 3,
+              "sd": 0.001549140970444835,
+              "se": 0.0008943969562990036,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 4.827198887866915,
+            "abs_over_F_level": 6.797724276132502,
+            "sd_ratio_vs_full": 0.5504439473632152
+          }
+        },
+        "NDCG@10": {
+          "full_mean": 0.031749420563928855,
+          "full_sd": 0.0002946432862969897,
+          "F_level": 0.0005892865725939793,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.03086613578282731,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0008832847811015461,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0008832847811015449,
+            "F_paired": 0.0014633167820546078,
+            "paired_t": {
+              "t": -2.090995110808669,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0007316583910273039,
+              "se": 0.0004224231690144624,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "MARGINAL",
+            "abs_over_F_paired": 0.6036182950497883,
+            "abs_over_F_level": 1.4989053241335797,
+            "sd_ratio_vs_full": 3.450717275577658
+          },
+          "no_text": {
+            "mean": 0.02463489156792144,
+            "n_seeds": 3,
+            "delta_unpaired": -0.007114528996007414,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.007114528996007414,
+            "F_paired": 0.0013461002513882932,
+            "paired_t": {
+              "t": -18.30877853309641,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0006730501256941466,
+              "se": 0.00038858567124762703,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 5.285289107308228,
+            "abs_over_F_level": 12.073122529654771,
+            "sd_ratio_vs_full": 1.284677313494679
+          }
+        }
+      },
+      "clothing": {
+        "Recall@20": {
+          "full_mean": 0.09123909226354195,
+          "full_sd": 0.0020864238877223275,
+          "F_level": 0.004172847775444655,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.08864070048090157,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0025983917826403746,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0025983917826403794,
+            "F_paired": 0.005025008028578699,
+            "paired_t": {
+              "t": -1.7912594606443097,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0025125040142893497,
+              "se": 0.0014505948689899715,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.5170920658957281,
+            "abs_over_F_level": 0.6226902878966144,
+            "sd_ratio_vs_full": 1.1265461969841
+          },
+          "no_text": {
+            "mean": 0.06020572818120232,
+            "n_seeds": 3,
+            "delta_unpaired": -0.03103336408233963,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.031033364082339625,
+            "F_paired": 0.0022003765806384882,
+            "paired_t": {
+              "t": -48.856512829088715,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0011001882903192441,
+              "se": 0.0006351940055750898,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 14.10366041677039,
+            "abs_over_F_level": 7.436974879591129,
+            "sd_ratio_vs_full": 0.7892315068533412
+          }
+        },
+        "NDCG@20": {
+          "full_mean": 0.04050845195142935,
+          "full_sd": 0.0008687265552094104,
+          "F_level": 0.0017374531104188207,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.039044464247390144,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0014639877040392088,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0014639877040392112,
+            "F_paired": 0.002339906686469845,
+            "paired_t": {
+              "t": -2.167352313418589,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0011699533432349225,
+              "se": 0.0006754728776559852,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.6256607207904904,
+            "abs_over_F_level": 0.8426055904819846,
+            "sd_ratio_vs_full": 1.145210814850459
+          },
+          "no_text": {
+            "mean": 0.026166702088029157,
+            "n_seeds": 3,
+            "delta_unpaired": -0.014341749863400196,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.014341749863400196,
+            "F_paired": 0.0004515828203230325,
+            "paired_t": {
+              "t": -110.01587445281373,
+              "df": 2,
+              "n": 3,
+              "sd": 0.00022579141016151625,
+              "se": 0.00013036073143745663,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 31.758847365232043,
+            "abs_over_F_level": 8.254467287432611,
+            "sd_ratio_vs_full": 1.0212562766594506
+          }
+        },
+        "Recall@10": {
+          "full_mean": 0.06030347616911712,
+          "full_sd": 0.0008026856462877866,
+          "F_level": 0.0016053712925755731,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.058180908131399416,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0021225680377177022,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0021225680377177022,
+            "F_paired": 0.0037912707618252646,
+            "paired_t": {
+              "t": -1.9394002247831403,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0018956353809126323,
+              "se": 0.0010944455974552872,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "MARGINAL",
+            "abs_over_F_paired": 0.5598566209224835,
+            "abs_over_F_level": 1.3221664343532429,
+            "sd_ratio_vs_full": 2.243835412045949
+          },
+          "no_text": {
+            "mean": 0.039831448697318146,
+            "n_seeds": 3,
+            "delta_unpaired": -0.02047202747179897,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.02047202747179897,
+            "F_paired": 0.00030966235009140497,
+            "paired_t": {
+              "t": -229.0145489410328,
+              "df": 2,
+              "n": 3,
+              "sd": 0.00015483117504570248,
+              "se": 8.93918205915824e-05,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 66.110805739723,
+            "abs_over_F_level": 12.752207272222197,
+            "sd_ratio_vs_full": 1.1854146135755803
+          }
+        },
+        "NDCG@10": {
+          "full_mean": 0.03266302260333514,
+          "full_sd": 0.0005471350143970415,
+          "F_level": 0.001094270028794083,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.03130781632575528,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0013552062775798596,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0013552062775798596,
+            "F_paired": 0.001949964050940092,
+            "paired_t": {
+              "t": -2.4075173348687775,
+              "df": 2,
+              "n": 3,
+              "sd": 0.000974982025470046,
+              "se": 0.0005629061348601777,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "MARGINAL",
+            "abs_over_F_paired": 0.6949903906825896,
+            "abs_over_F_level": 1.2384569090988773,
+            "sd_ratio_vs_full": 1.561193026181103
+          },
+          "no_text": {
+            "mean": 0.020992872194319563,
+            "n_seeds": 3,
+            "delta_unpaired": -0.011670150409015576,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.011670150409015574,
+            "F_paired": 0.00035403093191735017,
+            "paired_t": {
+              "t": -114.18942029113182,
+              "df": 2,
+              "n": 3,
+              "sd": 0.00017701546595867509,
+              "se": 0.0001021999269219681,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 32.96364627184614,
+            "abs_over_F_level": 10.664781180086248,
+            "sd_ratio_vs_full": 1.3227567058261895
+          }
+        }
+      },
+      "microlens": {
+        "Recall@20": {
+          "full_mean": 0.09817564017596628,
+          "full_sd": 0.0004132956230379176,
+          "F_level": 0.0008265912460758352,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.09592671869929358,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0022489214766727023,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0022489214766727023,
+            "F_paired": 0.001111922223226018,
+            "paired_t": {
+              "t": -7.006328641456009,
+              "df": 2,
+              "n": 3,
+              "sd": 0.000555961111613009,
+              "se": 0.00032098429744873433,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 2.022552863587806,
+            "abs_over_F_level": 2.7207177517899535,
+            "sd_ratio_vs_full": 0.4661267169427281
+          },
+          "no_text": {
+            "mean": 0.09629094515901677,
+            "n_seeds": 3,
+            "delta_unpaired": -0.001884695016949503,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0018846950169494985,
+            "F_paired": 0.001225020346014325,
+            "paired_t": {
+              "t": -5.329523769542755,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0006125101730071626,
+              "se": 0.00035363291326706954,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 1.538500991499009,
+            "abs_over_F_level": 2.2800810266221814,
+            "sd_ratio_vs_full": 0.5478535298576263
+          }
+        },
+        "NDCG@20": {
+          "full_mean": 0.04101999436914425,
+          "full_sd": 0.0005493034517952357,
+          "F_level": 0.0010986069035904713,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.04016167819265171,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0008583161764925337,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.000858316176492536,
+            "F_paired": 0.0014751931170669187,
+            "paired_t": {
+              "t": -2.0155289628780033,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0007375965585334594,
+              "se": 0.00042585157162263436,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.5818330946385513,
+            "abs_over_F_level": 0.781276882283721,
+            "sd_ratio_vs_full": 0.4803888346176449
+          },
+          "no_text": {
+            "mean": 0.0401405611539002,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0008794332152440437,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.000879433215244046,
+            "F_paired": 0.001648443633229477,
+            "paired_t": {
+              "t": -1.8480741227192437,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0008242218166147385,
+              "se": 0.00047586468769448165,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.5334930461171684,
+            "abs_over_F_level": 0.8004985335244835,
+            "sd_ratio_vs_full": 0.6445001354055647
+          }
+        },
+        "Recall@10": {
+          "full_mean": 0.06240174211632701,
+          "full_sd": 0.00044905560229200074,
+          "F_level": 0.0008981112045840015,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.06079113815333485,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0016106039629921534,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0016106039629921534,
+            "F_paired": 0.0011188977231536767,
+            "paired_t": {
+              "t": -4.986421613070071,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0005594488615768383,
+              "se": 0.00032299795082921733,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 1.439455930299487,
+            "abs_over_F_level": 1.793323538078086,
+            "sd_ratio_vs_full": 0.2689086367221284
+          },
+          "no_text": {
+            "mean": 0.061106149952464495,
+            "n_seeds": 3,
+            "delta_unpaired": -0.001295592163862512,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0012955921638625075,
+            "F_paired": 0.00258253492101441,
+            "paired_t": {
+              "t": -1.7378517792251327,
+              "df": 2,
+              "n": 3,
+              "sd": 0.001291267460507205,
+              "se": 0.0007455136159196393,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "MARGINAL",
+            "abs_over_F_paired": 0.5016745962736503,
+            "abs_over_F_level": 1.44257432403665,
+            "sd_ratio_vs_full": 1.9285736675336123
+          }
+        },
+        "NDCG@10": {
+          "full_mean": 0.03181491658133295,
+          "full_sd": 0.0005432446502991831,
+          "F_level": 0.0010864893005983662,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.031127757861652273,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0006871587196806798,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0006871587196806798,
+            "F_paired": 0.0014448513500505522,
+            "paired_t": {
+              "t": -1.647496561233479,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0007224256750252761,
+              "se": 0.0004170926579453403,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.475591291558566,
+            "abs_over_F_level": 0.6324578799830227,
+            "sd_ratio_vs_full": 0.4556824268439527
+          },
+          "no_text": {
+            "mean": 0.031115175528515282,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0006997410528176706,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0006997410528176694,
+            "F_paired": 0.0019820325594466313,
+            "paired_t": {
+              "t": -1.2229739111453533,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0009910162797233156,
+              "se": 0.0005721635158695578,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.3530421584058296,
+            "abs_over_F_level": 0.6440386043675703,
+            "sd_ratio_vs_full": 0.925928603716226
+          }
+        }
+      },
+      "sports": {
+        "Recall@20": {
+          "full_mean": 0.10744742659878341,
+          "full_sd": 0.00144172665114865,
+          "F_level": 0.0028834533022973,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.105542018887572,
+            "n_seeds": 3,
+            "delta_unpaired": -0.001905407711211407,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0019054077112114025,
+            "F_paired": 0.0031067636378438795,
+            "paired_t": {
+              "t": -2.1245664940523676,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0015533818189219398,
+              "se": 0.0008968454113088525,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.6133095186261971,
+            "abs_over_F_level": 0.6608075496465746,
+            "sd_ratio_vs_full": 0.6675018036460316
+          },
+          "no_text": {
+            "mean": 0.08408639641784763,
+            "n_seeds": 3,
+            "delta_unpaired": -0.023361030180935785,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.02336103018093579,
+            "F_paired": 0.002929235603922534,
+            "paired_t": {
+              "t": -27.626655320143932,
+              "df": 2,
+              "n": 3,
+              "sd": 0.001464617801961267,
+              "se": 0.0008455974822222555,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 7.975128442947053,
+            "abs_over_F_level": 8.101754296601102,
+            "sd_ratio_vs_full": 0.448070938612403
+          }
+        },
+        "NDCG@20": {
+          "full_mean": 0.047406264627221445,
+          "full_sd": 0.00099056294061858,
+          "F_level": 0.00198112588123716,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.046173793928564535,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0012324706986569095,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.001232470698656905,
+            "F_paired": 0.0016508602310939245,
+            "paired_t": {
+              "t": -2.5861691119655035,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0008254301155469622,
+              "se": 0.0004765622994082626,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.7465627164815896,
+            "abs_over_F_level": 0.6221062025030233,
+            "sd_ratio_vs_full": 0.6469594093965951
+          },
+          "no_text": {
+            "mean": 0.037364346024923036,
+            "n_seeds": 3,
+            "delta_unpaired": -0.01004191860229841,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.01004191860229841,
+            "F_paired": 0.002189641712200096,
+            "paired_t": {
+              "t": -15.88672076143063,
+              "df": 2,
+              "n": 3,
+              "sd": 0.001094820856100048,
+              "se": 0.0006320951159837794,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 4.586101254076196,
+            "abs_over_F_level": 5.068793809319931,
+            "sd_ratio_vs_full": 0.18206856113085718
+          }
+        },
+        "Recall@10": {
+          "full_mean": 0.07055651720520534,
+          "full_sd": 0.001100627427795494,
+          "F_level": 0.002201254855590988,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.06855097976790206,
+            "n_seeds": 3,
+            "delta_unpaired": -0.0020055374373032786,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0020055374373032695,
+            "F_paired": 0.004423786131547217,
+            "paired_t": {
+              "t": -1.570461425844663,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0022118930657736087,
+              "se": 0.0012770370569430596,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.4533531634816699,
+            "abs_over_F_level": 0.9110882514168617,
+            "sd_ratio_vs_full": 1.8405469343770706
+          },
+          "no_text": {
+            "mean": 0.05554000863849731,
+            "n_seeds": 3,
+            "delta_unpaired": -0.015016508566708026,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.015016508566708019,
+            "F_paired": 0.0023651631439509336,
+            "paired_t": {
+              "t": -21.99370969935185,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0011825815719754668,
+              "se": 0.0006827637889187266,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 6.349037107699639,
+            "abs_over_F_level": 6.821794636167388,
+            "sd_ratio_vs_full": 0.2262022564491169
+          }
+        },
+        "NDCG@10": {
+          "full_mean": 0.03789724454669096,
+          "full_sd": 0.0008683773960032,
+          "F_level": 0.0017367547920064,
+          "n_full_seeds": 3,
+          "no_image": {
+            "mean": 0.036641135789336636,
+            "n_seeds": 3,
+            "delta_unpaired": -0.001256108757354324,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.0012561087573543215,
+            "F_paired": 0.0018978425586722342,
+            "paired_t": {
+              "t": -2.2927551894420706,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0009489212793361171,
+              "se": 0.0005478599560644713,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "NULL",
+            "abs_over_F_paired": 0.6618614129051456,
+            "abs_over_F_level": 0.7232504917422405,
+            "sd_ratio_vs_full": 1.0618368272318204
+          },
+          "no_text": {
+            "mean": 0.03000071992050586,
+            "n_seeds": 3,
+            "delta_unpaired": -0.007896524626185099,
+            "paired_seeds": [
+              2024,
+              2025,
+              2026
+            ],
+            "delta_paired_mean": -0.007896524626185097,
+            "F_paired": 0.001963831656056535,
+            "paired_t": {
+              "t": -13.929077692164142,
+              "df": 2,
+              "n": 3,
+              "sd": 0.0009819158280282676,
+              "se": 0.0005669093676336746,
+              "note": "two-sided; with df<=2 this is weak evidence whatever t is"
+            },
+            "verdict": "SIGNIFICANT",
+            "abs_over_F_paired": 4.020978377567089,
+            "abs_over_F_level": 4.546712444686894,
+            "sd_ratio_vs_full": 0.15007936353319784
+          }
+        }
+      }
+    }
+  },
+  "note": "Train-time modality holdout (ROAR-style). The withheld modality is absent from the constructor, so it enters neither the item-item graph nor the auxiliary loss. Verdict uses the same two-floor rule as results/phase_micro/PREREG.md s.3.",
+  "runs": [
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "seed": 2024,
+      "condition": "full",
+      "best_epoch": 133,
+      "train_min": 5.73019855817159,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_baby_full_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03778747137836878,
+        "Recall@10": 0.060565414272022645,
+        "Recall@20": 0.09245440111729646,
+        "Recall@50": 0.1537534851651591,
+        "NDCG@5": 0.024583948138397524,
+        "NDCG@10": 0.032086058965366586,
+        "NDCG@20": 0.04034236889959879,
+        "NDCG@50": 0.05274946297145696,
+        "Precision@5": 0.008310619696580097,
+        "Precision@10": 0.006680380560555413,
+        "Precision@20": 0.005134996142967344,
+        "Precision@50": 0.00343327333504757,
+        "MAP@5": 0.01966562383931888,
+        "MAP@10": 0.022686234815059707,
+        "MAP@20": 0.024906450306050692,
+        "MAP@50": 0.026847924436087273
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "seed": 2025,
+      "condition": "full",
+      "best_epoch": 122,
+      "train_min": 5.249004964033762,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_baby_full_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03520460639900084,
+        "Recall@10": 0.060246013379209575,
+        "Recall@20": 0.0929489361528446,
+        "Recall@50": 0.1545012769864917,
+        "NDCG@5": 0.023391764314470386,
+        "NDCG@10": 0.03153843280138777,
+        "NDCG@20": 0.03992024416006121,
+        "NDCG@50": 0.05238888021077446,
+        "Precision@5": 0.007858061198251479,
+        "Precision@10": 0.006695808691180253,
+        "Precision@20": 0.005163281049112883,
+        "Precision@50": 0.0034497300077140657,
+        "MAP@5": 0.018831004828433473,
+        "MAP@10": 0.022057734631618232,
+        "MAP@20": 0.024288123014414437,
+        "MAP@50": 0.026253608285322406
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "seed": 2026,
+      "condition": "full",
+      "best_epoch": 110,
+      "train_min": 4.960986566543579,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_baby_full_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03659150554882105,
+        "Recall@10": 0.05852051165885057,
+        "Recall@20": 0.09270591954829548,
+        "Recall@50": 0.15311268900237784,
+        "NDCG@5": 0.024355766648617383,
+        "NDCG@10": 0.031623769925032214,
+        "NDCG@20": 0.04040224289159436,
+        "NDCG@50": 0.05270669748819095,
+        "Precision@5": 0.00804319876574955,
+        "Precision@10": 0.006495242993057342,
+        "Precision@20": 0.005124710722550784,
+        "Precision@50": 0.0034199022885060427,
+        "MAP@5": 0.01971735093283049,
+        "MAP@10": 0.022650116021952337,
+        "MAP@20": 0.02500431991639114,
+        "MAP@50": 0.026955691943990178
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "seed": 2024,
+      "condition": "no_image",
+      "best_epoch": 202,
+      "train_min": 5.670813802878062,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_baby_no_image_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03684513095544209,
+        "Recall@10": 0.059500628367946444,
+        "Recall@20": 0.09093840547041883,
+        "Recall@50": 0.1513653289083991,
+        "NDCG@5": 0.02445449651032545,
+        "NDCG@10": 0.03196437628287654,
+        "NDCG@20": 0.04008348740155097,
+        "NDCG@50": 0.05229805915126111,
+        "Precision@5": 0.008176909231164825,
+        "Precision@10": 0.0066032399074312164,
+        "Precision@20": 0.005065569555155568,
+        "Precision@50": 0.003388017485214708,
+        "MAP@5": 0.019678937744635867,
+        "MAP@10": 0.022739783285103416,
+        "MAP@20": 0.024916755921836533,
+        "MAP@50": 0.026820152482511097
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "seed": 2025,
+      "condition": "no_image",
+      "best_epoch": 64,
+      "train_min": 2.3581152240435284,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_baby_no_image_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.034732334178207154,
+        "Recall@10": 0.055485763486534896,
+        "Recall@20": 0.08716934803718038,
+        "Recall@50": 0.1476717795218695,
+        "NDCG@5": 0.023202876810194367,
+        "NDCG@10": 0.029957652033061367,
+        "NDCG@20": 0.03809051774904718,
+        "NDCG@50": 0.0503646922242163,
+        "Precision@5": 0.007755206994085884,
+        "Precision@10": 0.006150681409102597,
+        "Precision@20": 0.004816148110053999,
+        "Precision@50": 0.003280020570840833,
+        "MAP@5": 0.018734950429987716,
+        "MAP@10": 0.021438269596573238,
+        "MAP@20": 0.02361984423425867,
+        "MAP@50": 0.02555937624223894
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "seed": 2026,
+      "condition": "no_image",
+      "best_epoch": 97,
+      "train_min": 5.897798681259156,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_baby_no_image_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03527154326202925,
+        "Recall@10": 0.05679390792916121,
+        "Recall@20": 0.0880305651892178,
+        "Recall@50": 0.14829202953270837,
+        "NDCG@5": 0.0236625671036045,
+        "NDCG@10": 0.030676379032544027,
+        "NDCG@20": 0.03872069550008344,
+        "NDCG@50": 0.05093651338939023,
+        "Precision@5": 0.007806634096168681,
+        "Precision@10": 0.006268963743893032,
+        "Precision@20": 0.004880431987657496,
+        "Precision@50": 0.003305734121882232,
+        "MAP@5": 0.019199337161795376,
+        "MAP@10": 0.021996701454788367,
+        "MAP@20": 0.0241531352212827,
+        "MAP@50": 0.026079626766064207
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "seed": 2024,
+      "condition": "no_text",
+      "best_epoch": 51,
+      "train_min": 2.9696846922238667,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_baby_no_text_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.028453085013897563,
+        "Recall@10": 0.0441220881629727,
+        "Recall@20": 0.06719240860279688,
+        "Recall@50": 0.11948214152636884,
+        "NDCG@5": 0.019050596496587163,
+        "NDCG@10": 0.02420036444859961,
+        "NDCG@20": 0.03016475742385687,
+        "NDCG@50": 0.04074427535187697,
+        "Precision@5": 0.006438673180766264,
+        "Precision@10": 0.0049730007714065315,
+        "Precision@20": 0.003803034199022886,
+        "Precision@50": 0.002712265363846747,
+        "MAP@5": 0.015351589954572725,
+        "MAP@10": 0.01741043385154982,
+        "MAP@20": 0.018993898212023665,
+        "MAP@50": 0.02064858662808472
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "seed": 2025,
+      "condition": "no_text",
+      "best_epoch": 91,
+      "train_min": 3.823398200670878,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_baby_no_text_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.028828073015524803,
+        "Recall@10": 0.04517295295773053,
+        "Recall@20": 0.07063126639367318,
+        "Recall@50": 0.12085397117667623,
+        "NDCG@5": 0.019530013685271363,
+        "NDCG@10": 0.024892998698954255,
+        "NDCG@20": 0.031472388664032874,
+        "NDCG@50": 0.04165885092089652,
+        "Precision@5": 0.0064798148624325026,
+        "Precision@10": 0.005096425816405246,
+        "Precision@20": 0.003993314476729236,
+        "Precision@50": 0.0027318076626382105,
+        "MAP@5": 0.015863946744378733,
+        "MAP@10": 0.01800435157634952,
+        "MAP@20": 0.019753324954034545,
+        "MAP@50": 0.02136060454395278
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "baby",
+      "seed": 2026,
+      "condition": "no_text",
+      "best_epoch": 48,
+      "train_min": 2.6880843877792358,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_baby_no_text_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.028203272685144627,
+        "Recall@10": 0.04516882877129727,
+        "Recall@20": 0.06918916473943473,
+        "Recall@50": 0.11988606505063176,
+        "NDCG@5": 0.019240643017379416,
+        "NDCG@10": 0.02481131155621046,
+        "NDCG@20": 0.030975105314235387,
+        "NDCG@50": 0.04127453053733338,
+        "Precision@5": 0.006335818976600669,
+        "Precision@10": 0.005075854975572127,
+        "Precision@20": 0.0038904602725636415,
+        "Precision@50": 0.0027102082797634355,
+        "MAP@5": 0.01571439387446073,
+        "MAP@10": 0.01795028543402161,
+        "MAP@20": 0.019575810688163234,
+        "MAP@50": 0.021190773680627436
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "seed": 2024,
+      "condition": "full",
+      "best_epoch": 348,
+      "train_min": 34.829370351632434,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_sports_full_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.043302949960627356,
+        "Recall@10": 0.07018245852941624,
+        "Recall@20": 0.10643161912966397,
+        "Recall@50": 0.17588581755529334,
+        "NDCG@5": 0.028634897713082176,
+        "NDCG@10": 0.037435434205429816,
+        "NDCG@20": 0.04676503665411107,
+        "NDCG@50": 0.06087609820491836,
+        "Precision@5": 0.009438732513062532,
+        "Precision@10": 0.0076914433395134565,
+        "Precision@20": 0.005862688915107591,
+        "Precision@50": 0.003918759480869712,
+        "MAP@5": 0.02316510446904008,
+        "MAP@10": 0.02669518897976255,
+        "MAP@20": 0.029195663559155028,
+        "MAP@50": 0.031420025350142954
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "seed": 2025,
+      "condition": "full",
+      "best_epoch": 385,
+      "train_min": 51.07937494913737,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_sports_full_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.045865047706443285,
+        "Recall@10": 0.07179542144778955,
+        "Recall@20": 0.10909755497232321,
+        "Recall@50": 0.17711071693879715,
+        "NDCG@5": 0.03043913742612761,
+        "NDCG@10": 0.03889894651831223,
+        "NDCG@20": 0.04854714378687768,
+        "NDCG@50": 0.062350516082778654,
+        "Precision@5": 0.01002865329512894,
+        "Precision@10": 0.00785999213438957,
+        "Precision@20": 0.006028428563402439,
+        "Precision@50": 0.003950221922579921,
+        "MAP@5": 0.024680537608230177,
+        "MAP@10": 0.028068687572662513,
+        "MAP@20": 0.03066479492769159,
+        "MAP@50": 0.03284015893001491
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "seed": 2026,
+      "condition": "full",
+      "best_epoch": 338,
+      "train_min": 1384.3455180128415,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_sports_full_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.043821237504871415,
+        "Recall@10": 0.06969167163841021,
+        "Recall@20": 0.10681310569436306,
+        "Recall@50": 0.17620602682333678,
+        "NDCG@5": 0.02885335614690429,
+        "NDCG@10": 0.03735735291633083,
+        "NDCG@20": 0.04690661344067558,
+        "NDCG@50": 0.06096460429710673,
+        "Precision@5": 0.009607281307938649,
+        "Precision@10": 0.007699870779257262,
+        "Precision@20": 0.005910444406989157,
+        "Precision@50": 0.003923254115399742,
+        "MAP@5": 0.023244135126193104,
+        "MAP@10": 0.02665274405067839,
+        "MAP@20": 0.029211882344124942,
+        "MAP@50": 0.03143074062620744
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "seed": 2024,
+      "condition": "no_image",
+      "best_epoch": 259,
+      "train_min": 18.702480979760487,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_sports_no_image_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.04217258058906466,
+        "Recall@10": 0.06626026564716941,
+        "Recall@20": 0.10453729565688102,
+        "Recall@50": 0.17296127301605138,
+        "NDCG@5": 0.027693988607172367,
+        "NDCG@10": 0.03557671078333326,
+        "NDCG@20": 0.04543379992113365,
+        "NDCG@50": 0.05930880943940649,
+        "Precision@5": 0.009253328838698805,
+        "Precision@10": 0.007292544524973314,
+        "Precision@20": 0.005774200797797629,
+        "Precision@50": 0.003850778133603011,
+        "MAP@5": 0.022266302413993293,
+        "MAP@10": 0.025426937958316794,
+        "MAP@20": 0.028069742331174763,
+        "MAP@50": 0.030258606715888856
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "seed": 2025,
+      "condition": "no_image",
+      "best_epoch": 294,
+      "train_min": 17.02790245215098,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_sports_no_image_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.04403098711627281,
+        "Recall@10": 0.06928626273814205,
+        "Recall@20": 0.10563325298282318,
+        "Recall@50": 0.1727878193620651,
+        "NDCG@5": 0.0288741791112051,
+        "NDCG@10": 0.037151621737991726,
+        "NDCG@20": 0.046543069608232436,
+        "NDCG@50": 0.06013132748084099,
+        "Precision@5": 0.009601663014776112,
+        "Precision@10": 0.007612787235237934,
+        "Precision@20": 0.005840215742457442,
+        "Precision@50": 0.00384909264565425,
+        "MAP@5": 0.02321992184329956,
+        "MAP@10": 0.026541170962707483,
+        "MAP@20": 0.029068740002698167,
+        "MAP@50": 0.031201484729356754
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "seed": 2026,
+      "condition": "no_image",
+      "best_epoch": 313,
+      "train_min": 18.892817715803783,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_sports_no_image_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.04280214155066675,
+        "Recall@10": 0.07010641091839473,
+        "Recall@20": 0.10645550802301182,
+        "Recall@50": 0.177480777411251,
+        "NDCG@5": 0.028229020437815167,
+        "NDCG@10": 0.037195074846684925,
+        "NDCG@20": 0.046544512256327525,
+        "NDCG@50": 0.060929666678066194,
+        "Precision@5": 0.009376931288274623,
+        "Precision@10": 0.0077195348053261436,
+        "Precision@20": 0.005872520928142031,
+        "Precision@50": 0.003945727288049891,
+        "MAP@5": 0.02274477030544787,
+        "MAP@10": 0.026349752200572472,
+        "MAP@20": 0.02886161887195292,
+        "MAP@50": 0.031125968176892397
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "seed": 2024,
+      "condition": "no_text",
+      "best_epoch": 160,
+      "train_min": 17.69326464732488,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_sports_no_text_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.03477625370428336,
+        "Recall@10": 0.05529184134653543,
+        "Recall@20": 0.08342028310846784,
+        "Recall@50": 0.13728943662788262,
+        "NDCG@5": 0.023274116533812172,
+        "NDCG@10": 0.029990154820411768,
+        "NDCG@20": 0.03727719590298953,
+        "NDCG@50": 0.04818898494749275,
+        "Precision@5": 0.007680206753188381,
+        "Precision@10": 0.006143603573234451,
+        "Precision@20": 0.004674419911230968,
+        "Precision@50": 0.0030883757514467104,
+        "MAP@5": 0.01885205005274953,
+        "MAP@10": 0.021521705785147553,
+        "MAP@20": 0.023471729897830123,
+        "MAP@50": 0.025183016121507938
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "seed": 2025,
+      "condition": "no_text",
+      "best_epoch": 169,
+      "train_min": 18.62101723353068,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_sports_no_text_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.03474020298982375,
+        "Recall@10": 0.05553842199089123,
+        "Recall@20": 0.08412871197507975,
+        "Recall@50": 0.1374828552879286,
+        "NDCG@5": 0.023041158924847645,
+        "NDCG@10": 0.02987599852078043,
+        "NDCG@20": 0.03724412274067606,
+        "NDCG@50": 0.04807470812499907,
+        "Precision@5": 0.00770267992583853,
+        "Precision@10": 0.006180122478790943,
+        "Precision@20": 0.00470110680375302,
+        "Precision@50": 0.003092308556660487,
+        "MAP@5": 0.01854982489652977,
+        "MAP@10": 0.021292724202596248,
+        "MAP@20": 0.0232568937871838,
+        "MAP@50": 0.02496293272163132
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "sports",
+      "seed": 2026,
+      "condition": "no_text",
+      "best_epoch": 220,
+      "train_min": 23.99894107580185,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_sports_no_text_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.03516754998720278,
+        "Recall@10": 0.05578976257806529,
+        "Recall@20": 0.08471019416999527,
+        "Recall@50": 0.13861027059661815,
+        "NDCG@5": 0.02336129882736434,
+        "NDCG@10": 0.030136006420325386,
+        "NDCG@20": 0.03757171943110351,
+        "NDCG@50": 0.04851270433614603,
+        "Precision@5": 0.007815045789089276,
+        "Precision@10": 0.006219450530928704,
+        "Precision@20": 0.004726389122984437,
+        "Precision@50": 0.003118152705208158,
+        "MAP@5": 0.018852174903708697,
+        "MAP@10": 0.021564571652708628,
+        "MAP@20": 0.02354676441715127,
+        "MAP@50": 0.02526233975951336
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "seed": 2024,
+      "condition": "full",
+      "best_epoch": 261,
+      "train_min": 35.589362212022145,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_clothing_full_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.038243341107230204,
+        "Recall@10": 0.059666472016993766,
+        "Recall@20": 0.09009867892113303,
+        "Recall@50": 0.14312904789711856,
+        "NDCG@5": 0.025304646937750343,
+        "NDCG@10": 0.03224859397085962,
+        "NDCG@20": 0.03994932295403388,
+        "NDCG@50": 0.050532549117909456,
+        "Precision@5": 0.007921395384263844,
+        "Precision@10": 0.006207631959783686,
+        "Precision@20": 0.004679208876025085,
+        "Precision@50": 0.0029822022494731763,
+        "MAP@5": 0.020801667498864543,
+        "MAP@10": 0.023621694767282143,
+        "MAP@20": 0.025698857446155885,
+        "MAP@50": 0.027373156290000818
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "seed": 2025,
+      "condition": "full",
+      "best_epoch": 380,
+      "train_min": 46.98241373300552,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_clothing_full_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03963581167100094,
+        "Recall@10": 0.0612050507358604,
+        "Recall@20": 0.09364716663825505,
+        "Recall@50": 0.146702138849294,
+        "NDCG@5": 0.026271364109437544,
+        "NDCG@10": 0.033283205932233176,
+        "NDCG@20": 0.04150927708327551,
+        "NDCG@50": 0.05209043334560067,
+        "Precision@5": 0.00821590880239673,
+        "Precision@10": 0.006367583212735167,
+        "Precision@20": 0.004874704851854673,
+        "Precision@50": 0.003058877294538807,
+        "MAP@5": 0.021653175187526623,
+        "MAP@10": 0.024514471981529642,
+        "MAP@20": 0.02673637390118198,
+        "MAP@50": 0.02841215630504618
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "seed": 2026,
+      "condition": "full",
+      "best_epoch": 297,
+      "train_min": 35.729421428839366,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_clothing_full_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.038505150962306875,
+        "Recall@10": 0.06003890575449719,
+        "Recall@20": 0.08997143123123776,
+        "Recall@50": 0.14505375232582177,
+        "NDCG@5": 0.025463998379747336,
+        "NDCG@10": 0.03245726790691262,
+        "NDCG@20": 0.04006675581697867,
+        "NDCG@50": 0.051063286279529684,
+        "Precision@5": 0.00797725137735801,
+        "Precision@10": 0.006225404321222738,
+        "Precision@20": 0.004677939421636581,
+        "Precision@50": 0.003025363698682306,
+        "MAP@5": 0.020956604406981435,
+        "MAP@10": 0.0238134987465985,
+        "MAP@20": 0.025877878710403444,
+        "MAP@50": 0.027617685047739926
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "seed": 2024,
+      "condition": "no_image",
+      "best_epoch": 278,
+      "train_min": 14.248077893257141,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_clothing_no_image_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03791781673189244,
+        "Recall@10": 0.059538015322918976,
+        "Recall@20": 0.0904009299660149,
+        "Recall@50": 0.14354796784532484,
+        "NDCG@5": 0.02498380938353995,
+        "NDCG@10": 0.03199539115990145,
+        "NDCG@20": 0.039836280898541826,
+        "NDCG@50": 0.05044972604518308,
+        "Precision@5": 0.007845228120953614,
+        "Precision@10": 0.006187320689567624,
+        "Precision@20": 0.004703328509406657,
+        "Precision@50": 0.002991850102825805,
+        "MAP@5": 0.020536591317496185,
+        "MAP@10": 0.02338440234154556,
+        "MAP@20": 0.025512805573575055,
+        "MAP@50": 0.02719590732152489
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "seed": 2025,
+      "condition": "no_image",
+      "best_epoch": 293,
+      "train_min": 14.879848130544026,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_clothing_no_image_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03672114439499618,
+        "Recall@10": 0.0588671389036992,
+        "Recall@20": 0.08954967012320962,
+        "Recall@50": 0.14435642894017484,
+        "NDCG@5": 0.024365239211367837,
+        "NDCG@10": 0.031576450220539565,
+        "NDCG@20": 0.0393693514203561,
+        "NDCG@50": 0.05027829774338167,
+        "Precision@5": 0.007586259425698835,
+        "Precision@10": 0.006123847970142433,
+        "Precision@20": 0.004657628151420519,
+        "Precision@50": 0.0030050524284662454,
+        "MAP@5": 0.020084700817810726,
+        "MAP@10": 0.02302720061741349,
+        "MAP@20": 0.025144292735311196,
+        "MAP@50": 0.026865007543497
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "seed": 2026,
+      "condition": "no_image",
+      "best_epoch": 188,
+      "train_min": 9.75010797182719,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_clothing_no_image_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03511020677598482,
+        "Recall@10": 0.05613757016758007,
+        "Recall@20": 0.08597150135348018,
+        "Recall@50": 0.13850908022589034,
+        "NDCG@5": 0.023513661810229545,
+        "NDCG@10": 0.03035160759682482,
+        "NDCG@20": 0.0379277604232725,
+        "NDCG@50": 0.04840868528174255,
+        "Precision@5": 0.007251123467133826,
+        "Precision@10": 0.005842029095894585,
+        "Precision@20": 0.004469748901921955,
+        "Precision@50": 0.0028852159341914846,
+        "MAP@5": 0.019497155011664873,
+        "MAP@10": 0.02228266202032927,
+        "MAP@20": 0.024339433968118475,
+        "MAP@50": 0.025999171239458857
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "seed": 2024,
+      "condition": "no_text",
+      "best_epoch": 142,
+      "train_min": 17.811592245101927,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_clothing_no_text_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.024029683470615754,
+        "Recall@10": 0.039038261355269506,
+        "Recall@20": 0.05856198624878647,
+        "Recall@50": 0.09618269020356002,
+        "NDCG@5": 0.015562793732388435,
+        "NDCG@10": 0.020432515011125175,
+        "NDCG@20": 0.025398225566300905,
+        "NDCG@50": 0.032933776497117616,
+        "Precision@5": 0.005032117196029148,
+        "Precision@10": 0.004072409678320258,
+        "Precision@20": 0.0030593850762942088,
+        "Precision@50": 0.0020143702236778633,
+        "MAP@5": 0.012598728288803695,
+        "MAP@10": 0.01458961250283804,
+        "MAP@20": 0.015933003549760693,
+        "MAP@50": 0.017135321069352054
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "seed": 2025,
+      "condition": "no_text",
+      "best_epoch": 255,
+      "train_min": 26.62402297258377,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_clothing_no_text_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.026088617588351,
+        "Recall@10": 0.04088646604451311,
+        "Recall@20": 0.06185531363381923,
+        "Recall@50": 0.1000419524450296,
+        "NDCG@5": 0.017006615254548326,
+        "NDCG@10": 0.021809967847179604,
+        "NDCG@20": 0.027137620257402073,
+        "NDCG@50": 0.03475535011680479,
+        "Precision@5": 0.005448498235458401,
+        "Precision@10": 0.004280600198034885,
+        "Precision@20": 0.0032333003275192324,
+        "Precision@50": 0.0020925686140096985,
+        "MAP@5": 0.01382727803590017,
+        "MAP@10": 0.015781214674409128,
+        "MAP@20": 0.017229472000791488,
+        "MAP@50": 0.018432881377530682
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "clothing",
+      "seed": 2026,
+      "condition": "no_text",
+      "best_epoch": 183,
+      "train_min": 21.673725712299348,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_clothing_no_text_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.024468612437993194,
+        "Recall@10": 0.03956961869217182,
+        "Recall@20": 0.06019988466100126,
+        "Recall@50": 0.09733692649375489,
+        "NDCG@5": 0.0158352374621138,
+        "NDCG@10": 0.020736133724653914,
+        "NDCG@20": 0.025964260440384492,
+        "NDCG@50": 0.03338197792840383,
+        "Precision@5": 0.0051235179120014225,
+        "Precision@10": 0.004140960215299464,
+        "Precision@20": 0.0031520552466549876,
+        "Precision@50": 0.0020412826567141446,
+        "MAP@5": 0.012807349012505536,
+        "MAP@10": 0.014802148816861791,
+        "MAP@20": 0.01620582276610547,
+        "MAP@50": 0.017380211599123792
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2024,
+      "condition": "full",
+      "best_epoch": 350,
+      "train_min": 63.77292769749959,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_full_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.036208031014866915,
+        "Recall@10": 0.06206332725837664,
+        "Recall@20": 0.09784604753472265,
+        "Recall@50": 0.16029197178589816,
+        "NDCG@5": 0.022998990383320476,
+        "NDCG@10": 0.031438978926782726,
+        "NDCG@20": 0.04063048951213669,
+        "NDCG@50": 0.05322155100374681,
+        "Precision@5": 0.00783866135393207,
+        "Precision@10": 0.0067390883428955755,
+        "Precision@20": 0.005339400177317613,
+        "Precision@50": 0.003515168808405263,
+        "MAP@5": 0.01822583594610722,
+        "MAP@10": 0.02166456109287254,
+        "MAP@20": 0.024176492335876845,
+        "MAP@50": 0.02620900667562194
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2025,
+      "condition": "full",
+      "best_epoch": 338,
+      "train_min": 61.85545870065689,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_full_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03641327653087683,
+        "Recall@10": 0.062230718047805764,
+        "Recall@20": 0.09804153887172158,
+        "Recall@50": 0.1602149216615888,
+        "NDCG@5": 0.0231730692639489,
+        "NDCG@10": 0.031568008517985975,
+        "NDCG@20": 0.04078121622556596,
+        "NDCG@50": 0.05329107604147193,
+        "Precision@5": 0.007914072292594443,
+        "Precision@10": 0.006774755678749402,
+        "Precision@20": 0.0053495908447044205,
+        "Precision@50": 0.0035110925414505397,
+        "MAP@5": 0.018364539421464487,
+        "MAP@10": 0.021766778307366397,
+        "MAP@20": 0.024300401095752724,
+        "MAP@50": 0.026312699607217077
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2026,
+      "condition": "full",
+      "best_epoch": 391,
+      "train_min": 56.824717394510905,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_full_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.0377057968883525,
+        "Recall@10": 0.06291118104279861,
+        "Recall@20": 0.09863933412145459,
+        "Recall@50": 0.16004266703142672,
+        "NDCG@5": 0.02422659106471654,
+        "NDCG@10": 0.032437762299230156,
+        "NDCG@20": 0.04164827736973009,
+        "NDCG@50": 0.05401347994834303,
+        "Precision@5": 0.008164762710309898,
+        "Precision@10": 0.0068216327487287155,
+        "Precision@20": 0.005380672380234181,
+        "Precision@50": 0.003506201021104872,
+        "MAP@5": 0.019341674394589434,
+        "MAP@10": 0.022686836996341636,
+        "MAP@20": 0.025225082678305834,
+        "MAP@50": 0.027218410758685238
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2024,
+      "condition": "no_image",
+      "best_epoch": 350,
+      "train_min": 42.06898403565089,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_image_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.036633038459715585,
+        "Recall@10": 0.06092005507290489,
+        "Recall@20": 0.09614856137825901,
+        "Recall@50": 0.15672547476958,
+        "NDCG@5": 0.02347480188481352,
+        "NDCG@10": 0.031413542246090394,
+        "NDCG@20": 0.04046629811517102,
+        "NDCG@50": 0.052674061007812925,
+        "Precision@5": 0.007946682428232226,
+        "Precision@10": 0.006613743134037848,
+        "Precision@20": 0.005240550703665583,
+        "Precision@50": 0.0034352739760926945,
+        "MAP@5": 0.018703472526526873,
+        "MAP@10": 0.021953108196688078,
+        "MAP@20": 0.024434640952628272,
+        "MAP@50": 0.02640590632981155
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2025,
+      "condition": "no_image",
+      "best_epoch": 327,
+      "train_min": 39.526084236303966,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_image_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.03556348001262349,
+        "Recall@10": 0.060772691365584386,
+        "Recall@20": 0.09580156106590697,
+        "Recall@50": 0.15591382979565882,
+        "NDCG@5": 0.022761305821893434,
+        "NDCG@10": 0.030989865822169324,
+        "NDCG@20": 0.04000326224446565,
+        "NDCG@50": 0.05214722920173907,
+        "Precision@5": 0.007685801343129962,
+        "Precision@10": 0.006603552466651041,
+        "Precision@20": 0.005225774235954712,
+        "Precision@50": 0.00342019178836022,
+        "MAP@5": 0.01814539195005214,
+        "MAP@10": 0.02149393381941045,
+        "MAP@20": 0.02396832122227602,
+        "MAP@50": 0.025940173002030074
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2026,
+      "condition": "no_image",
+      "best_epoch": 349,
+      "train_min": 41.82999143600464,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_image_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": false,
+        "has_t_feat": true,
+        "has_image_trs": false,
+        "has_text_trs": true
+      },
+      "test_result": {
+        "Recall@5": 0.0356762035386601,
+        "Recall@10": 0.060680668021515276,
+        "Recall@20": 0.09583003365371473,
+        "Recall@50": 0.1564828758594108,
+        "NDCG@5": 0.022816997992091814,
+        "NDCG@10": 0.0309798655166971,
+        "NDCG@20": 0.04001547421831846,
+        "NDCG@50": 0.05225160560886143,
+        "Precision@5": 0.00773879281354136,
+        "Precision@10": 0.0065994761996963185,
+        "Precision@20": 0.005226793302693394,
+        "Precision@50": 0.003430993895790235,
+        "MAP@5": 0.01816309540389578,
+        "MAP@10": 0.021488429159614172,
+        "MAP@20": 0.023969366256499813,
+        "MAP@50": 0.025949236951511436
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2024,
+      "condition": "no_text",
+      "best_epoch": 339,
+      "train_min": 40.59728084007899,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_text_s2024.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.03592345320631556,
+        "Recall@10": 0.06141004886406348,
+        "Recall@20": 0.09632985882590994,
+        "Recall@50": 0.15875557537617171,
+        "NDCG@5": 0.022782194149512665,
+        "NDCG@10": 0.031108999491736875,
+        "NDCG@20": 0.040057828137791,
+        "NDCG@50": 0.052658273658510946,
+        "Precision@5": 0.007795860550907479,
+        "Precision@10": 0.006684058739006817,
+        "Precision@20": 0.005252269971160412,
+        "Precision@50": 0.0034809281659855906,
+        "MAP@5": 0.018024451374098267,
+        "MAP@10": 0.021417298824395727,
+        "MAP@20": 0.023857078231931506,
+        "MAP@50": 0.025897744966296512
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2025,
+      "condition": "no_text",
+      "best_epoch": 360,
+      "train_min": 43.5467538634936,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_text_s2025.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.036422751425197186,
+        "Recall@10": 0.0617792785806319,
+        "Recall@20": 0.09649539184615462,
+        "Recall@50": 0.16008125283008345,
+        "NDCG@5": 0.023337713402717605,
+        "NDCG@10": 0.03162124087000312,
+        "NDCG@20": 0.04052862774884967,
+        "NDCG@50": 0.053342044247972675,
+        "Precision@5": 0.007893690957820828,
+        "Precision@10": 0.00671564980790592,
+        "Precision@20": 0.005256855771484476,
+        "Precision@50": 0.0035094620346686504,
+        "MAP@5": 0.018603502079462292,
+        "MAP@10": 0.02197714836522554,
+        "MAP@20": 0.024416226977146998,
+        "MAP@50": 0.026480403097742963
+      }
+    },
+    {
+      "model": "freedom",
+      "dataset": "microlens",
+      "seed": 2026,
+      "condition": "no_text",
+      "best_epoch": 332,
+      "train_min": 40.28578930695851,
+      "ckpt_path": "/workspace/MechInterp/results/phase_holdout/_scratch/ckpts/hold_freedom_microlens_no_text_s2026.pt",
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": false,
+        "has_image_trs": true,
+        "has_text_trs": false
+      },
+      "test_result": {
+        "Recall@5": 0.03531147874410315,
+        "Recall@10": 0.06012912241269811,
+        "Recall@20": 0.09604758480498576,
+        "Recall@50": 0.15843335757861535,
+        "NDCG@5": 0.022516996805323954,
+        "NDCG@10": 0.030615286223805854,
+        "NDCG@20": 0.03983522757505994,
+        "NDCG@50": 0.052409912327118835,
+        "Precision@5": 0.007693953877039409,
+        "Precision@10": 0.0065464847292849215,
+        "Precision@20": 0.00523596490334152,
+        "Precision@50": 0.003476444272335395,
+        "MAP@5": 0.017870733648791104,
+        "MAP@10": 0.021167104418607904,
+        "MAP@20": 0.023695089458373796,
+        "MAP@50": 0.02571967753774174
+      }
+    }
+  ]
+}

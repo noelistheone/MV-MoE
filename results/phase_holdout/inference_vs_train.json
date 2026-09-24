@@ -1,0 +1,35 @@
+{
+  "baby": {
+    "inf_img": -0.0002897060083997538,
+    "inf_txt": 0.002533170666366852,
+    "train_img": -0.003185864983563623,
+    "train_txt": -0.02393514803887007,
+    "n_train_seeds": 8,
+    "admissible": true
+  },
+  "sports": {
+    "inf_img": -2.356561854285899e-05,
+    "inf_txt": -0.0095397503159175,
+    "train_img": -0.0012954123069157594,
+    "train_txt": -0.023009917513646654,
+    "n_train_seeds": 8,
+    "admissible": true
+  },
+  "clothing": {
+    "inf_img": -0.0002158072460456545,
+    "inf_txt": -0.010755845232956973,
+    "train_img": -0.0023041239434814665,
+    "train_txt": -0.03121641613077556,
+    "n_train_seeds": 8,
+    "admissible": true
+  },
+  "microlens": {
+    "inf_img": -0.0008731746985092097,
+    "inf_txt": -0.006591572755436141,
+    "train_img": -0.0027100552877527655,
+    "train_txt": -0.001724623119180927,
+    "n_train_seeds": 8,
+    "admissible": false
+  },
+  "_note": "8-seed training deltas (patience 20). Supersedes the 09-06 file, which mixed 3- and 8-seed values. MicroLens training arm is INADMISSIBLE (text control failed); its ratios are not interpretable."
+}
