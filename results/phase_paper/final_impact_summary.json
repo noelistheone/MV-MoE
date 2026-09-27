@@ -1,0 +1,1745 @@
+{
+ "arch_table": {
+  "paper_now_defective": {
+   "lattice/baby/image": {
+    "pct": 1.35,
+    "verdict": "within noise",
+    "x_F_level": 0.7796401106110419,
+    "x_F_paired": 0.760901619089137,
+    "p": 0.0035477840783160923,
+    "n": 8,
+    "judged": true
+   },
+   "lattice/baby/text": {
+    "pct": -2.81,
+    "verdict": "beyond noise",
+    "x_F_level": 1.6240951958095355,
+    "x_F_paired": 1.6051426774129278,
+    "p": 4.0267894285529756e-05,
+    "n": 8,
+    "judged": true
+   },
+   "lattice/sports/image": {
+    "pct": 1.5,
+    "verdict": "marginal",
+    "x_F_level": 0.8585909240078651,
+    "x_F_paired": 1.3580387665474822,
+    "p": 0.00011796308224929462,
+    "n": 8,
+    "judged": true
+   },
+   "lattice/sports/text": {
+    "pct": -3.83,
+    "verdict": "beyond noise",
+    "x_F_level": 2.1925941791682537,
+    "x_F_paired": 2.6099178221479513,
+    "p": 1.5654545533894116e-06,
+    "n": 8,
+    "judged": true
+   },
+   "lattice/clothing/image": {
+    "pct": 1.53,
+    "verdict": "marginal",
+    "x_F_level": 0.5126618790094813,
+    "x_F_paired": 1.5096374474132972,
+    "p": 5.9936251481456126e-05,
+    "n": 8,
+    "judged": true
+   },
+   "lattice/clothing/text": {
+    "pct": -5.4,
+    "verdict": "beyond noise",
+    "x_F_level": 1.8117512993076803,
+    "x_F_paired": 2.496531364205693,
+    "p": 2.11722328561224e-06,
+    "n": 8,
+    "judged": true
+   },
+   "damrs/baby/image": {
+    "pct": 3.32,
+    "verdict": "beyond noise",
+    "x_F_level": 2.048556220750268,
+    "x_F_paired": 2.121051287312849,
+    "p": 6.36372531839551e-06,
+    "n": 8,
+    "judged": true
+   },
+   "damrs/baby/text": {
+    "pct": 0.31,
+    "verdict": "within noise",
+    "x_F_level": 0.18973892557461725,
+    "x_F_paired": 0.12241123346745333,
+    "p": 0.51095765902831,
+    "n": 8,
+    "judged": true
+   },
+   "damrs/sports/image": {
+    "pct": 1.42,
+    "verdict": "marginal",
+    "x_F_level": 0.7697173824989672,
+    "x_F_paired": 1.3616751794357607,
+    "p": 0.0001159799143127964,
+    "n": 8,
+    "judged": true
+   },
+   "damrs/sports/text": {
+    "pct": -0.09,
+    "verdict": "within noise",
+    "x_F_level": 0.04983718151785155,
+    "x_F_paired": 0.10667714220186235,
+    "p": 0.5652379085808129,
+    "n": 8,
+    "judged": true
+   },
+   "damrs/clothing/image": {
+    "pct": 0.57,
+    "verdict": "within noise",
+    "x_F_level": 0.11988037227987779,
+    "x_F_paired": 0.6967932126186905,
+    "p": 0.010244136558212035,
+    "n": 7,
+    "judged": true
+   },
+   "damrs/clothing/text": {
+    "pct": -4.29,
+    "verdict": "marginal",
+    "x_F_level": 0.9006991980359785,
+    "x_F_paired": 2.319966807409474,
+    "p": 1.779956004684778e-05,
+    "n": 7,
+    "judged": true
+   },
+   "vbpr/baby/image": {
+    "pct": -0.04,
+    "verdict": "within noise",
+    "x_F_level": 0.021195413858425067,
+    "x_F_paired": 0.089303941439996,
+    "p": 0.6289463342616308,
+    "n": 8,
+    "judged": true
+   },
+   "vbpr/baby/text": {
+    "pct": 0.04,
+    "verdict": "within noise",
+    "x_F_level": 0.019499780749749278,
+    "x_F_paired": 0.0723039633264831,
+    "p": 0.6947545046088653,
+    "n": 8,
+    "judged": true
+   },
+   "vbpr/sports/image": {
+    "pct": 0.08,
+    "verdict": "within noise",
+    "x_F_level": 0.01984578863654118,
+    "x_F_paired": 0.1216446771464825,
+    "p": 0.5135233086889781,
+    "n": 8,
+    "judged": true
+   },
+   "vbpr/sports/text": {
+    "pct": 0.05,
+    "verdict": "within noise",
+    "x_F_level": 0.013611652014088439,
+    "x_F_paired": 0.5364969220493485,
+    "p": 0.01898333709653208,
+    "n": 8,
+    "judged": true
+   },
+   "vbpr/clothing/image": {
+    "pct": -0.01,
+    "verdict": "within noise",
+    "x_F_level": 0.00407657959217857,
+    "x_F_paired": 0.03922150304340671,
+    "p": 0.8307487546906286,
+    "n": 8,
+    "judged": true
+   },
+   "vbpr/clothing/text": {
+    "pct": 0.01,
+    "verdict": "within noise",
+    "x_F_level": 0.002445947755307677,
+    "x_F_paired": 0.05550662947336073,
+    "p": 0.7626770646286339,
+    "n": 8,
+    "judged": true
+   },
+   "mentor/baby/image": {
+    "pct": 0.01,
+    "verdict": "within noise",
+    "x_F_level": 0.009913101598175402,
+    "x_F_paired": 0.008984926440653062,
+    "p": 0.9608837725934755,
+    "n": 8,
+    "judged": true
+   },
+   "mentor/baby/text": {
+    "pct": -0.68,
+    "verdict": "within noise",
+    "x_F_level": 0.45759883914870264,
+    "x_F_paired": 0.43363728715961053,
+    "p": 0.043912187515341865,
+    "n": 8,
+    "judged": true
+   },
+   "mentor/sports/image": {
+    "pct": 1.43,
+    "verdict": "beyond noise",
+    "x_F_level": 1.6616990039091013,
+    "x_F_paired": 1.1304687533377602,
+    "p": 0.0003690698723244167,
+    "n": 8,
+    "judged": true
+   },
+   "mentor/sports/text": {
+    "pct": 0.24,
+    "verdict": "within noise",
+    "x_F_level": 0.28515481212409877,
+    "x_F_paired": 0.2269889674368646,
+    "p": 0.23999028789338248,
+    "n": 8,
+    "judged": true
+   },
+   "mentor/clothing/image": {
+    "pct": 0.23,
+    "verdict": "within noise",
+    "x_F_level": 0.004969418659821684,
+    "x_F_paired": 0.19791112724825724,
+    "p": 0.29984248158196997,
+    "n": 8,
+    "judged": true
+   },
+   "mentor/clothing/text": {
+    "pct": -3.48,
+    "verdict": "within noise",
+    "x_F_level": 0.07437035602585877,
+    "x_F_paired": 0.5482237672894702,
+    "p": 0.017292637615489343,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/baby/image": {
+    "pct": -8.91,
+    "verdict": "beyond noise",
+    "x_F_level": 7.95550749562637,
+    "x_F_paired": 5.859102291166185,
+    "p": 5.893181611845428e-09,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/baby/text": {
+    "pct": -9.72,
+    "verdict": "beyond noise",
+    "x_F_level": 8.677048053526196,
+    "x_F_paired": 2.3871798735051057,
+    "p": 2.8684028526116862e-06,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/sports/image": {
+    "pct": -7.42,
+    "verdict": "beyond noise",
+    "x_F_level": 7.241239944402738,
+    "x_F_paired": 5.462370477721538,
+    "p": 9.598688722018933e-09,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/sports/text": {
+    "pct": -13.27,
+    "verdict": "beyond noise",
+    "x_F_level": 12.953584850772497,
+    "x_F_paired": 10.14889787400471,
+    "p": 1.2762964361137636e-10,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/clothing/image": {
+    "pct": -15.67,
+    "verdict": "beyond noise",
+    "x_F_level": 11.264269114515887,
+    "x_F_paired": 5.907674126977143,
+    "p": 5.564059846736074e-09,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/clothing/text": {
+    "pct": -19.95,
+    "verdict": "beyond noise",
+    "x_F_level": 14.345176944030941,
+    "x_F_paired": 9.242795101167337,
+    "p": 2.452853494096833e-10,
+    "n": 8,
+    "judged": true
+   },
+   "lgmrec/baby/image": {
+    "pct": -3.03,
+    "verdict": "marginal",
+    "x_F_level": 1.2202444450725274,
+    "x_F_paired": 0.708439502517524,
+    "p": 0.005140368203023993,
+    "n": 8,
+    "judged": true
+   },
+   "lgmrec/baby/text": {
+    "pct": -7.11,
+    "verdict": "beyond noise",
+    "x_F_level": 2.864203234645191,
+    "x_F_paired": 2.2255917942356604,
+    "p": 4.604855795205158e-06,
+    "n": 8,
+    "judged": true
+   },
+   "lgmrec/sports/image": {
+    "pct": -2.43,
+    "verdict": "beyond noise",
+    "x_F_level": 1.7696229839931992,
+    "x_F_paired": 1.0012902312191387,
+    "p": 0.001832747709817142,
+    "n": 7,
+    "judged": true
+   },
+   "lgmrec/sports/text": {
+    "pct": -9.37,
+    "verdict": "beyond noise",
+    "x_F_level": 6.827002999362083,
+    "x_F_paired": 4.264103290736182,
+    "p": 4.96026126163971e-07,
+    "n": 7,
+    "judged": true
+   },
+   "lgmrec/clothing/image": {
+    "pct": -2.44,
+    "verdict": "beyond noise",
+    "x_F_level": 1.486371419336849,
+    "x_F_paired": 1.542709109076328,
+    "p": 5.21011740417268e-05,
+    "n": 8,
+    "judged": true
+   },
+   "lgmrec/clothing/text": {
+    "pct": -11.8,
+    "verdict": "beyond noise",
+    "x_F_level": 7.200004990246767,
+    "x_F_paired": 9.411549153200962,
+    "p": 2.161671710543513e-10,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/baby/image": {
+    "pct": -3.78,
+    "verdict": "within noise",
+    "x_F_level": 0.6828596598392823,
+    "x_F_paired": 0.5453396717906442,
+    "p": 0.017693032439353492,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/baby/text": {
+    "pct": -5.84,
+    "verdict": "marginal",
+    "x_F_level": 1.0565375508433852,
+    "x_F_paired": 0.5889488073929645,
+    "p": 0.012563520635255385,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/sports/image": {
+    "pct": -8.03,
+    "verdict": "beyond noise",
+    "x_F_level": 1.2304204205502434,
+    "x_F_paired": 1.1460025897409087,
+    "p": 0.00033959725464213346,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/sports/text": {
+    "pct": -25.87,
+    "verdict": "beyond noise",
+    "x_F_level": 3.9620881467037723,
+    "x_F_paired": 2.926819821507265,
+    "p": 7.159783941587641e-07,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/clothing/image": {
+    "pct": -14.99,
+    "verdict": "beyond noise",
+    "x_F_level": 3.126338127143552,
+    "x_F_paired": 1.1771704122009303,
+    "p": 0.00028809624611278917,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/clothing/text": {
+    "pct": -21.2,
+    "verdict": "beyond noise",
+    "x_F_level": 4.423331462408448,
+    "x_F_paired": 2.8687518883373673,
+    "p": 8.211927434605483e-07,
+    "n": 8,
+    "judged": true
+   },
+   "mgcn/baby/image": {
+    "pct": 1.27,
+    "verdict": "marginal",
+    "x_F_level": 0.5590838438417662,
+    "x_F_paired": 1.7153979759368914,
+    "p": 2.6075992252978753e-05,
+    "n": 8,
+    "judged": true
+   },
+   "mgcn/baby/text": {
+    "pct": -3.88,
+    "verdict": "beyond noise",
+    "x_F_level": 1.7087532281677813,
+    "x_F_paired": 2.2539161167536803,
+    "p": 4.228629395074668e-06,
+    "n": 8,
+    "judged": true
+   },
+   "mgcn/sports/image": {
+    "pct": 0.47,
+    "verdict": "within noise",
+    "x_F_level": 0.5510458348200188,
+    "x_F_paired": 0.9317603294432225,
+    "p": 0.0011595695196262297,
+    "n": 8,
+    "judged": true
+   },
+   "mgcn/sports/text": {
+    "pct": -2.7,
+    "verdict": "beyond noise",
+    "x_F_level": 3.1615062983701785,
+    "x_F_paired": 1.982939463366906,
+    "p": 9.986032781783763e-06,
+    "n": 8,
+    "judged": true
+   },
+   "mgcn/clothing/image": {
+    "pct": 0.73,
+    "verdict": "within noise",
+    "x_F_level": 0.25801282161882544,
+    "x_F_paired": 0.7635588420585702,
+    "p": 0.0034829984981795997,
+    "n": 8,
+    "judged": true
+   },
+   "mgcn/clothing/text": {
+    "pct": -6.26,
+    "verdict": "beyond noise",
+    "x_F_level": 2.21888697161123,
+    "x_F_paired": 3.8248834529875,
+    "p": 1.1359692536156856e-07,
+    "n": 8,
+    "judged": true
+   },
+   "smore/baby/image": {
+    "pct": -4.22,
+    "verdict": "beyond noise",
+    "x_F_level": 1.6926724350291575,
+    "x_F_paired": 1.9292735556623029,
+    "p": 1.1989122457751611e-05,
+    "n": 8,
+    "judged": true
+   },
+   "smore/baby/text": {
+    "pct": -4.05,
+    "verdict": "beyond noise",
+    "x_F_level": 1.6267541039194113,
+    "x_F_paired": 1.844373105699794,
+    "p": 1.6163996218814982e-05,
+    "n": 8,
+    "judged": true
+   },
+   "smore/sports/image": {
+    "pct": -0.41,
+    "verdict": "within noise",
+    "x_F_level": 0.25806033242170945,
+    "x_F_paired": 0.3458028235325727,
+    "p": 0.09133548332458477,
+    "n": 8,
+    "judged": true
+   },
+   "smore/sports/text": {
+    "pct": -0.46,
+    "verdict": "within noise",
+    "x_F_level": 0.28522146331210596,
+    "x_F_paired": 0.31564593236665084,
+    "p": 0.11733668180717965,
+    "n": 8,
+    "judged": true
+   },
+   "smore/clothing/image": {
+    "pct": -4.25,
+    "verdict": "beyond noise",
+    "x_F_level": 2.9626428196175,
+    "x_F_paired": 2.683137105088346,
+    "p": 1.2965662059598013e-06,
+    "n": 8,
+    "judged": true
+   },
+   "smore/clothing/text": {
+    "pct": -4.46,
+    "verdict": "beyond noise",
+    "x_F_level": 3.113514504638173,
+    "x_F_paired": 2.4874086703020235,
+    "p": 2.1704959705722163e-06,
+    "n": 8,
+    "judged": true
+   },
+   "gume/baby/image": {
+    "pct": 0.12,
+    "verdict": "within noise",
+    "x_F_level": 0.04507754520216943,
+    "x_F_paired": 0.257153567866444,
+    "p": 0.18908418041708505,
+    "n": 8,
+    "judged": true
+   },
+   "gume/baby/text": {
+    "pct": -2.3,
+    "verdict": "within noise",
+    "x_F_level": 0.8331065844196296,
+    "x_F_paired": 0.6953866569133834,
+    "p": 0.005648791464272657,
+    "n": 8,
+    "judged": true
+   },
+   "gume/sports/image": {
+    "pct": 0.06,
+    "verdict": "within noise",
+    "x_F_level": 0.03786976868310902,
+    "x_F_paired": 0.16379173787694534,
+    "p": 0.3849941394866648,
+    "n": 8,
+    "judged": true
+   },
+   "gume/sports/text": {
+    "pct": -0.37,
+    "verdict": "within noise",
+    "x_F_level": 0.2248875798434373,
+    "x_F_paired": 0.4155330826255253,
+    "p": 0.05104163787064485,
+    "n": 8,
+    "judged": true
+   },
+   "gume/clothing/image": {
+    "pct": -0.03,
+    "verdict": "within noise",
+    "x_F_level": 0.023387502875801946,
+    "x_F_paired": 0.21847819982132424,
+    "p": 0.2563576034414655,
+    "n": 8,
+    "judged": true
+   },
+   "gume/clothing/text": {
+    "pct": -0.69,
+    "verdict": "within noise",
+    "x_F_level": 0.5350149456572508,
+    "x_F_paired": 0.8799180955310684,
+    "p": 0.0016053869052252332,
+    "n": 8,
+    "judged": true
+   }
+  },
+  "repaired": {
+   "lattice/baby/image": {
+    "pct": 1.35,
+    "verdict": "within noise",
+    "x_F_level": 0.7796401106110419,
+    "x_F_paired": 0.760901619089137,
+    "p": 0.0035477840783160923,
+    "n": 8,
+    "judged": true
+   },
+   "lattice/baby/text": {
+    "pct": -2.81,
+    "verdict": "beyond noise",
+    "x_F_level": 1.6240951958095355,
+    "x_F_paired": 1.6051426774129278,
+    "p": 4.0267894285529756e-05,
+    "n": 8,
+    "judged": true
+   },
+   "lattice/sports/image": {
+    "pct": 1.5,
+    "verdict": "marginal",
+    "x_F_level": 0.8585909240078651,
+    "x_F_paired": 1.3580387665474822,
+    "p": 0.00011796308224929462,
+    "n": 8,
+    "judged": true
+   },
+   "lattice/sports/text": {
+    "pct": -3.83,
+    "verdict": "beyond noise",
+    "x_F_level": 2.1925941791682537,
+    "x_F_paired": 2.6099178221479513,
+    "p": 1.5654545533894116e-06,
+    "n": 8,
+    "judged": true
+   },
+   "lattice/clothing/image": {
+    "pct": 1.53,
+    "verdict": "marginal",
+    "x_F_level": 0.5126618790094813,
+    "x_F_paired": 1.5096374474132972,
+    "p": 5.9936251481456126e-05,
+    "n": 8,
+    "judged": true
+   },
+   "lattice/clothing/text": {
+    "pct": -5.4,
+    "verdict": "beyond noise",
+    "x_F_level": 1.8117512993076803,
+    "x_F_paired": 2.496531364205693,
+    "p": 2.11722328561224e-06,
+    "n": 8,
+    "judged": true
+   },
+   "lattice/microlens/image": {
+    "pct": -1.65,
+    "verdict": "beyond noise",
+    "x_F_level": 2.1056764955344263,
+    "x_F_paired": 2.3180896297169014,
+    "p": 0.0004887639093842719,
+    "n": 5,
+    "judged": true
+   },
+   "lattice/microlens/text": {
+    "pct": -1.14,
+    "verdict": "beyond noise",
+    "x_F_level": 1.450771927625305,
+    "x_F_paired": 1.333382125977208,
+    "p": 0.003971359913897545,
+    "n": 5,
+    "judged": true
+   },
+   "damrs/baby/image": {
+    "pct": 1.87,
+    "verdict": "marginal",
+    "x_F_level": 0.6073480925109173,
+    "x_F_paired": 1.4927839005625412,
+    "p": 6.443623846500651e-05,
+    "n": 8,
+    "judged": true
+   },
+   "damrs/baby/text": {
+    "pct": -1.06,
+    "verdict": "within noise",
+    "x_F_level": 0.3442078250889075,
+    "x_F_paired": 0.7553616387877019,
+    "p": 0.003687155608828743,
+    "n": 8,
+    "judged": true
+   },
+   "damrs/sports/image": {
+    "pct": 1.48,
+    "verdict": "within noise",
+    "x_F_level": 0.9688813183924838,
+    "x_F_paired": 0.8856239982775226,
+    "p": 0.00154802517649053,
+    "n": 8,
+    "judged": true
+   },
+   "damrs/sports/text": {
+    "pct": 0.28,
+    "verdict": "within noise",
+    "x_F_level": 0.18492485440147569,
+    "x_F_paired": 0.2774267579505336,
+    "p": 0.16055324688311928,
+    "n": 8,
+    "judged": true
+   },
+   "damrs/clothing/image": {
+    "pct": 0.09,
+    "verdict": "within noise",
+    "x_F_level": 0.07460308784140439,
+    "x_F_paired": 0.09199094550259782,
+    "p": 0.6188476882989083,
+    "n": 8,
+    "judged": true
+   },
+   "damrs/clothing/text": {
+    "pct": -3.92,
+    "verdict": "beyond noise",
+    "x_F_level": 3.4004061342979393,
+    "x_F_paired": 2.8356330672812087,
+    "p": 8.890447940930588e-07,
+    "n": 8,
+    "judged": true
+   },
+   "damrs/microlens/image": {
+    "pct": -0.12,
+    "verdict": "within noise",
+    "x_F_level": 0.11491960893426496,
+    "x_F_paired": 0.21692422285815455,
+    "p": 0.38692397248171495,
+    "n": 5,
+    "judged": true
+   },
+   "damrs/microlens/text": {
+    "pct": -0.7,
+    "verdict": "within noise",
+    "x_F_level": 0.6706311918209282,
+    "x_F_paired": 0.5475120630167855,
+    "p": 0.07055548231050306,
+    "n": 5,
+    "judged": true
+   },
+   "vbpr/baby/image": {
+    "pct": -0.04,
+    "verdict": "within noise",
+    "x_F_level": 0.021195413858425067,
+    "x_F_paired": 0.089303941439996,
+    "p": 0.6289463342616308,
+    "n": 8,
+    "judged": true
+   },
+   "vbpr/baby/text": {
+    "pct": 0.04,
+    "verdict": "within noise",
+    "x_F_level": 0.019499780749749278,
+    "x_F_paired": 0.0723039633264831,
+    "p": 0.6947545046088653,
+    "n": 8,
+    "judged": true
+   },
+   "vbpr/sports/image": {
+    "pct": 0.08,
+    "verdict": "within noise",
+    "x_F_level": 0.01984578863654118,
+    "x_F_paired": 0.1216446771464825,
+    "p": 0.5135233086889781,
+    "n": 8,
+    "judged": true
+   },
+   "vbpr/sports/text": {
+    "pct": 0.05,
+    "verdict": "within noise",
+    "x_F_level": 0.013611652014088439,
+    "x_F_paired": 0.5364969220493485,
+    "p": 0.01898333709653208,
+    "n": 8,
+    "judged": true
+   },
+   "vbpr/clothing/image": {
+    "pct": -0.01,
+    "verdict": "within noise",
+    "x_F_level": 0.00407657959217857,
+    "x_F_paired": 0.03922150304340671,
+    "p": 0.8307487546906286,
+    "n": 8,
+    "judged": true
+   },
+   "vbpr/clothing/text": {
+    "pct": 0.01,
+    "verdict": "within noise",
+    "x_F_level": 0.002445947755307677,
+    "x_F_paired": 0.05550662947336073,
+    "p": 0.7626770646286339,
+    "n": 8,
+    "judged": true
+   },
+   "vbpr/microlens/image": {
+    "pct": 0.0,
+    "verdict": "within noise",
+    "x_F_level": 0.0005742893845852404,
+    "x_F_paired": 0.04385290096535146,
+    "p": 0.8540797033781717,
+    "n": 5,
+    "judged": true
+   },
+   "vbpr/microlens/text": {
+    "pct": -0.01,
+    "verdict": "within noise",
+    "x_F_level": 0.0034457363075114425,
+    "x_F_paired": 0.33541019662496846,
+    "p": 0.208,
+    "n": 5,
+    "judged": true
+   },
+   "mentor/baby/image": {
+    "pct": 0.01,
+    "verdict": "within noise",
+    "x_F_level": 0.009913101598175402,
+    "x_F_paired": 0.008984926440653062,
+    "p": 0.9608837725934755,
+    "n": 8,
+    "judged": true
+   },
+   "mentor/baby/text": {
+    "pct": -0.68,
+    "verdict": "within noise",
+    "x_F_level": 0.45759883914870264,
+    "x_F_paired": 0.43363728715961053,
+    "p": 0.043912187515341865,
+    "n": 8,
+    "judged": true
+   },
+   "mentor/sports/image": {
+    "pct": 1.43,
+    "verdict": "beyond noise",
+    "x_F_level": 1.6616990039091013,
+    "x_F_paired": 1.1304687533377602,
+    "p": 0.0003690698723244167,
+    "n": 8,
+    "judged": true
+   },
+   "mentor/sports/text": {
+    "pct": 0.24,
+    "verdict": "within noise",
+    "x_F_level": 0.28515481212409877,
+    "x_F_paired": 0.2269889674368646,
+    "p": 0.23999028789338248,
+    "n": 8,
+    "judged": true
+   },
+   "mentor/clothing/image": {
+    "pct": 0.23,
+    "verdict": "within noise",
+    "x_F_level": 0.004969418659821684,
+    "x_F_paired": 0.19791112724825724,
+    "p": 0.29984248158196997,
+    "n": 8,
+    "judged": true
+   },
+   "mentor/clothing/text": {
+    "pct": -3.48,
+    "verdict": "within noise",
+    "x_F_level": 0.07437035602585877,
+    "x_F_paired": 0.5482237672894702,
+    "p": 0.017292637615489343,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/baby/image": {
+    "pct": -8.91,
+    "verdict": "beyond noise",
+    "x_F_level": 7.95550749562637,
+    "x_F_paired": 5.859102291166185,
+    "p": 5.893181611845428e-09,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/baby/text": {
+    "pct": -9.72,
+    "verdict": "beyond noise",
+    "x_F_level": 8.677048053526196,
+    "x_F_paired": 2.3871798735051057,
+    "p": 2.8684028526116862e-06,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/sports/image": {
+    "pct": -7.42,
+    "verdict": "beyond noise",
+    "x_F_level": 7.241239944402738,
+    "x_F_paired": 5.462370477721538,
+    "p": 9.598688722018933e-09,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/sports/text": {
+    "pct": -13.27,
+    "verdict": "beyond noise",
+    "x_F_level": 12.953584850772497,
+    "x_F_paired": 10.14889787400471,
+    "p": 1.2762964361137636e-10,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/clothing/image": {
+    "pct": -15.67,
+    "verdict": "beyond noise",
+    "x_F_level": 11.264269114515887,
+    "x_F_paired": 5.907674126977143,
+    "p": 5.564059846736074e-09,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/clothing/text": {
+    "pct": -19.95,
+    "verdict": "beyond noise",
+    "x_F_level": 14.345176944030941,
+    "x_F_paired": 9.242795101167337,
+    "p": 2.452853494096833e-10,
+    "n": 8,
+    "judged": true
+   },
+   "cohesion/microlens/image": {
+    "pct": -0.81,
+    "verdict": "marginal",
+    "x_F_level": 0.7850815808207044,
+    "x_F_paired": 2.11196009863113,
+    "p": 0.0007007614570148622,
+    "n": 5,
+    "judged": true
+   },
+   "cohesion/microlens/text": {
+    "pct": -4.57,
+    "verdict": "beyond noise",
+    "x_F_level": 4.401866392725618,
+    "x_F_paired": 3.0059802840505365,
+    "p": 0.00017713043960120264,
+    "n": 5,
+    "judged": true
+   },
+   "lgmrec/baby/image": {
+    "pct": -3.03,
+    "verdict": "marginal",
+    "x_F_level": 1.2202444450725274,
+    "x_F_paired": 0.708439502517524,
+    "p": 0.005140368203023993,
+    "n": 8,
+    "judged": true
+   },
+   "lgmrec/baby/text": {
+    "pct": -7.11,
+    "verdict": "beyond noise",
+    "x_F_level": 2.864203234645191,
+    "x_F_paired": 2.2255917942356604,
+    "p": 4.604855795205158e-06,
+    "n": 8,
+    "judged": true
+   },
+   "lgmrec/sports/image": {
+    "pct": -2.43,
+    "verdict": "beyond noise",
+    "x_F_level": 1.7696229839931992,
+    "x_F_paired": 1.0012902312191387,
+    "p": 0.001832747709817142,
+    "n": 7,
+    "judged": true
+   },
+   "lgmrec/sports/text": {
+    "pct": -9.37,
+    "verdict": "beyond noise",
+    "x_F_level": 6.827002999362083,
+    "x_F_paired": 4.264103290736182,
+    "p": 4.96026126163971e-07,
+    "n": 7,
+    "judged": true
+   },
+   "lgmrec/clothing/image": {
+    "pct": -2.44,
+    "verdict": "beyond noise",
+    "x_F_level": 1.486371419336849,
+    "x_F_paired": 1.542709109076328,
+    "p": 5.21011740417268e-05,
+    "n": 8,
+    "judged": true
+   },
+   "lgmrec/clothing/text": {
+    "pct": -11.8,
+    "verdict": "beyond noise",
+    "x_F_level": 7.200004990246767,
+    "x_F_paired": 9.411549153200962,
+    "p": 2.161671710543513e-10,
+    "n": 8,
+    "judged": true
+   },
+   "lgmrec/microlens/image": {
+    "pct": -5.41,
+    "verdict": "beyond noise",
+    "x_F_level": 3.8142597665819347,
+    "x_F_paired": 3.600367900935456,
+    "p": 8.701971012298787e-05,
+    "n": 5,
+    "judged": true
+   },
+   "lgmrec/microlens/text": {
+    "pct": -2.47,
+    "verdict": "beyond noise",
+    "x_F_level": 1.74326612700514,
+    "x_F_paired": 1.4082978342662393,
+    "p": 0.003248118505035083,
+    "n": 5,
+    "judged": true
+   },
+   "mmgcn/baby/image": {
+    "pct": -3.78,
+    "verdict": "within noise",
+    "x_F_level": 0.6828596598392823,
+    "x_F_paired": 0.5453396717906442,
+    "p": 0.017693032439353492,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/baby/text": {
+    "pct": -5.84,
+    "verdict": "marginal",
+    "x_F_level": 1.0565375508433852,
+    "x_F_paired": 0.5889488073929645,
+    "p": 0.012563520635255385,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/sports/image": {
+    "pct": -8.03,
+    "verdict": "beyond noise",
+    "x_F_level": 1.2304204205502434,
+    "x_F_paired": 1.1460025897409087,
+    "p": 0.00033959725464213346,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/sports/text": {
+    "pct": -25.87,
+    "verdict": "beyond noise",
+    "x_F_level": 3.9620881467037723,
+    "x_F_paired": 2.926819821507265,
+    "p": 7.159783941587641e-07,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/clothing/image": {
+    "pct": -14.99,
+    "verdict": "beyond noise",
+    "x_F_level": 3.126338127143552,
+    "x_F_paired": 1.1771704122009303,
+    "p": 0.00028809624611278917,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/clothing/text": {
+    "pct": -21.2,
+    "verdict": "beyond noise",
+    "x_F_level": 4.423331462408448,
+    "x_F_paired": 2.8687518883373673,
+    "p": 8.211927434605483e-07,
+    "n": 8,
+    "judged": true
+   },
+   "mmgcn/microlens/image": {
+    "pct": -12.22,
+    "verdict": "beyond noise",
+    "x_F_level": 3.775834718798495,
+    "x_F_paired": 4.673671794431359,
+    "p": 3.0964200141749464e-05,
+    "n": 5,
+    "judged": true
+   },
+   "mmgcn/microlens/text": {
+    "pct": -1.6,
+    "verdict": "marginal",
+    "x_F_level": 0.49318630530263247,
+    "x_F_paired": 1.3777622111305607,
+    "p": 0.0035215597979461897,
+    "n": 5,
+    "judged": true
+   },
+   "mgcn/baby/image": {
+    "pct": 1.27,
+    "verdict": "marginal",
+    "x_F_level": 0.5590838438417662,
+    "x_F_paired": 1.7153979759368914,
+    "p": 2.6075992252978753e-05,
+    "n": 8,
+    "judged": true
+   },
+   "mgcn/baby/text": {
+    "pct": -3.88,
+    "verdict": "beyond noise",
+    "x_F_level": 1.7087532281677813,
+    "x_F_paired": 2.2539161167536803,
+    "p": 4.228629395074668e-06,
+    "n": 8,
+    "judged": true
+   },
+   "mgcn/sports/image": {
+    "pct": 0.47,
+    "verdict": "within noise",
+    "x_F_level": 0.5510458348200188,
+    "x_F_paired": 0.9317603294432225,
+    "p": 0.0011595695196262297,
+    "n": 8,
+    "judged": true
+   },
+   "mgcn/sports/text": {
+    "pct": -2.7,
+    "verdict": "beyond noise",
+    "x_F_level": 3.1615062983701785,
+    "x_F_paired": 1.982939463366906,
+    "p": 9.986032781783763e-06,
+    "n": 8,
+    "judged": true
+   },
+   "mgcn/clothing/image": {
+    "pct": 0.73,
+    "verdict": "within noise",
+    "x_F_level": 0.25801282161882544,
+    "x_F_paired": 0.7635588420585702,
+    "p": 0.0034829984981795997,
+    "n": 8,
+    "judged": true
+   },
+   "mgcn/clothing/text": {
+    "pct": -6.26,
+    "verdict": "beyond noise",
+    "x_F_level": 2.21888697161123,
+    "x_F_paired": 3.8248834529875,
+    "p": 1.1359692536156856e-07,
+    "n": 8,
+    "judged": true
+   },
+   "smore/baby/image": {
+    "pct": -4.22,
+    "verdict": "beyond noise",
+    "x_F_level": 1.6926724350291575,
+    "x_F_paired": 1.9292735556623029,
+    "p": 1.1989122457751611e-05,
+    "n": 8,
+    "judged": true
+   },
+   "smore/baby/text": {
+    "pct": -4.05,
+    "verdict": "beyond noise",
+    "x_F_level": 1.6267541039194113,
+    "x_F_paired": 1.844373105699794,
+    "p": 1.6163996218814982e-05,
+    "n": 8,
+    "judged": true
+   },
+   "smore/sports/image": {
+    "pct": -0.41,
+    "verdict": "within noise",
+    "x_F_level": 0.25806033242170945,
+    "x_F_paired": 0.3458028235325727,
+    "p": 0.09133548332458477,
+    "n": 8,
+    "judged": true
+   },
+   "smore/sports/text": {
+    "pct": -0.46,
+    "verdict": "within noise",
+    "x_F_level": 0.28522146331210596,
+    "x_F_paired": 0.31564593236665084,
+    "p": 0.11733668180717965,
+    "n": 8,
+    "judged": true
+   },
+   "smore/clothing/image": {
+    "pct": -4.25,
+    "verdict": "beyond noise",
+    "x_F_level": 2.9626428196175,
+    "x_F_paired": 2.683137105088346,
+    "p": 1.2965662059598013e-06,
+    "n": 8,
+    "judged": true
+   },
+   "smore/clothing/text": {
+    "pct": -4.46,
+    "verdict": "beyond noise",
+    "x_F_level": 3.113514504638173,
+    "x_F_paired": 2.4874086703020235,
+    "p": 2.1704959705722163e-06,
+    "n": 8,
+    "judged": true
+   },
+   "smore/microlens/image": {
+    "pct": 0.76,
+    "verdict": "marginal",
+    "x_F_level": 0.8769917400421229,
+    "x_F_paired": 1.0903206568550523,
+    "p": 0.008183812881019305,
+    "n": 5,
+    "judged": true
+   },
+   "smore/microlens/text": {
+    "pct": 0.69,
+    "verdict": "marginal",
+    "x_F_level": 0.7941743688303737,
+    "x_F_paired": 1.3861001677621863,
+    "p": 0.0034441746469150263,
+    "n": 5,
+    "judged": true
+   },
+   "gume/baby/image": {
+    "pct": 0.12,
+    "verdict": "within noise",
+    "x_F_level": 0.04507754520216943,
+    "x_F_paired": 0.257153567866444,
+    "p": 0.18908418041708505,
+    "n": 8,
+    "judged": true
+   },
+   "gume/baby/text": {
+    "pct": -2.3,
+    "verdict": "within noise",
+    "x_F_level": 0.8331065844196296,
+    "x_F_paired": 0.6953866569133834,
+    "p": 0.005648791464272657,
+    "n": 8,
+    "judged": true
+   },
+   "gume/sports/image": {
+    "pct": 0.06,
+    "verdict": "within noise",
+    "x_F_level": 0.03786976868310902,
+    "x_F_paired": 0.16379173787694534,
+    "p": 0.3849941394866648,
+    "n": 8,
+    "judged": true
+   },
+   "gume/sports/text": {
+    "pct": -0.37,
+    "verdict": "within noise",
+    "x_F_level": 0.2248875798434373,
+    "x_F_paired": 0.4155330826255253,
+    "p": 0.05104163787064485,
+    "n": 8,
+    "judged": true
+   },
+   "gume/clothing/image": {
+    "pct": -0.03,
+    "verdict": "within noise",
+    "x_F_level": 0.023387502875801946,
+    "x_F_paired": 0.21847819982132424,
+    "p": 0.2563576034414655,
+    "n": 8,
+    "judged": true
+   },
+   "gume/clothing/text": {
+    "pct": -0.69,
+    "verdict": "within noise",
+    "x_F_level": 0.5350149456572508,
+    "x_F_paired": 0.8799180955310684,
+    "p": 0.0016053869052252332,
+    "n": 8,
+    "judged": true
+   },
+   "gume/microlens/image": {
+    "pct": -0.54,
+    "verdict": "marginal",
+    "x_F_level": 0.7923543309221701,
+    "x_F_paired": 1.044699663817803,
+    "p": 0.009503869423670258,
+    "n": 5,
+    "judged": true
+   },
+   "gume/microlens/text": {
+    "pct": -1.06,
+    "verdict": "beyond noise",
+    "x_F_level": 1.564490244514366,
+    "x_F_paired": 1.1161837856096657,
+    "p": 0.0075344387901069175,
+    "n": 5,
+    "judged": true
+   }
+  }
+ },
+ "counts": {
+  "paper_now_defective": {
+   "baby+sports only (as in the current paper)": {
+    "scope baby+sports": {
+     "image_cells": 20,
+     "image_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "damrs/baby",
+      "lgmrec/sports",
+      "mentor/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_cells": 20,
+     "text_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "lattice/baby",
+      "lattice/sports",
+      "lgmrec/baby",
+      "lgmrec/sports",
+      "mgcn/baby",
+      "mgcn/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_beyond_architectures": [
+      "cohesion",
+      "lattice",
+      "lgmrec",
+      "mgcn",
+      "mmgcn",
+      "smore"
+     ],
+     "image_bh": 14,
+     "image_holm": 11,
+     "image_bh_gains": 7,
+     "image_bh_within_noise": [
+      "lattice/baby",
+      "mgcn/sports",
+      "mmgcn/baby"
+     ],
+     "family_m": 40
+    },
+    "scope all in family": {
+     "image_cells": 20,
+     "image_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "damrs/baby",
+      "lgmrec/sports",
+      "mentor/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_cells": 20,
+     "text_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "lattice/baby",
+      "lattice/sports",
+      "lgmrec/baby",
+      "lgmrec/sports",
+      "mgcn/baby",
+      "mgcn/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_beyond_architectures": [
+      "cohesion",
+      "lattice",
+      "lgmrec",
+      "mgcn",
+      "mmgcn",
+      "smore"
+     ],
+     "image_bh": 14,
+     "image_holm": 11,
+     "image_bh_gains": 7,
+     "image_bh_within_noise": [
+      "lattice/baby",
+      "mgcn/sports",
+      "mmgcn/baby"
+     ],
+     "family_m": 40
+    }
+   },
+   "registered: all admitted datasets ['baby', 'sports', 'clothing']": {
+    "scope baby+sports": {
+     "image_cells": 20,
+     "image_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "damrs/baby",
+      "lgmrec/sports",
+      "mentor/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_cells": 20,
+     "text_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "lattice/baby",
+      "lattice/sports",
+      "lgmrec/baby",
+      "lgmrec/sports",
+      "mgcn/baby",
+      "mgcn/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_beyond_architectures": [
+      "cohesion",
+      "lattice",
+      "lgmrec",
+      "mgcn",
+      "mmgcn",
+      "smore"
+     ],
+     "image_bh": 14,
+     "image_holm": 11,
+     "image_bh_gains": 7,
+     "image_bh_within_noise": [
+      "lattice/baby",
+      "mgcn/sports",
+      "mmgcn/baby"
+     ],
+     "family_m": 60
+    },
+    "scope all in family": {
+     "image_cells": 30,
+     "image_beyond": [
+      "cohesion/baby",
+      "cohesion/clothing",
+      "cohesion/sports",
+      "damrs/baby",
+      "lgmrec/clothing",
+      "lgmrec/sports",
+      "mentor/sports",
+      "mmgcn/clothing",
+      "mmgcn/sports",
+      "smore/baby",
+      "smore/clothing"
+     ],
+     "text_cells": 30,
+     "text_beyond": [
+      "cohesion/baby",
+      "cohesion/clothing",
+      "cohesion/sports",
+      "lattice/baby",
+      "lattice/clothing",
+      "lattice/sports",
+      "lgmrec/baby",
+      "lgmrec/clothing",
+      "lgmrec/sports",
+      "mgcn/baby",
+      "mgcn/clothing",
+      "mgcn/sports",
+      "mmgcn/clothing",
+      "mmgcn/sports",
+      "smore/baby",
+      "smore/clothing"
+     ],
+     "text_beyond_architectures": [
+      "cohesion",
+      "lattice",
+      "lgmrec",
+      "mgcn",
+      "mmgcn",
+      "smore"
+     ],
+     "image_bh": 21,
+     "image_holm": 16,
+     "image_bh_gains": 10,
+     "image_bh_within_noise": [
+      "damrs/clothing",
+      "lattice/baby",
+      "mgcn/clothing",
+      "mgcn/sports",
+      "mmgcn/baby"
+     ],
+     "family_m": 60
+    }
+   }
+  },
+  "repaired": {
+   "baby+sports only (as in the current paper)": {
+    "scope baby+sports": {
+     "image_cells": 20,
+     "image_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "lgmrec/sports",
+      "mentor/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_cells": 20,
+     "text_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "lattice/baby",
+      "lattice/sports",
+      "lgmrec/baby",
+      "lgmrec/sports",
+      "mgcn/baby",
+      "mgcn/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_beyond_architectures": [
+      "cohesion",
+      "lattice",
+      "lgmrec",
+      "mgcn",
+      "mmgcn",
+      "smore"
+     ],
+     "image_bh": 14,
+     "image_holm": 11,
+     "image_bh_gains": 7,
+     "image_bh_within_noise": [
+      "damrs/sports",
+      "lattice/baby",
+      "mgcn/sports",
+      "mmgcn/baby"
+     ],
+     "family_m": 40
+    },
+    "scope all in family": {
+     "image_cells": 20,
+     "image_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "lgmrec/sports",
+      "mentor/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_cells": 20,
+     "text_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "lattice/baby",
+      "lattice/sports",
+      "lgmrec/baby",
+      "lgmrec/sports",
+      "mgcn/baby",
+      "mgcn/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_beyond_architectures": [
+      "cohesion",
+      "lattice",
+      "lgmrec",
+      "mgcn",
+      "mmgcn",
+      "smore"
+     ],
+     "image_bh": 14,
+     "image_holm": 11,
+     "image_bh_gains": 7,
+     "image_bh_within_noise": [
+      "damrs/sports",
+      "lattice/baby",
+      "mgcn/sports",
+      "mmgcn/baby"
+     ],
+     "family_m": 40
+    }
+   },
+   "registered: all admitted datasets ['baby', 'sports', 'clothing', 'microlens']": {
+    "scope baby+sports": {
+     "image_cells": 20,
+     "image_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "lgmrec/sports",
+      "mentor/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_cells": 20,
+     "text_beyond": [
+      "cohesion/baby",
+      "cohesion/sports",
+      "lattice/baby",
+      "lattice/sports",
+      "lgmrec/baby",
+      "lgmrec/sports",
+      "mgcn/baby",
+      "mgcn/sports",
+      "mmgcn/sports",
+      "smore/baby"
+     ],
+     "text_beyond_architectures": [
+      "cohesion",
+      "lattice",
+      "lgmrec",
+      "mgcn",
+      "mmgcn",
+      "smore"
+     ],
+     "image_bh": 14,
+     "image_holm": 9,
+     "image_bh_gains": 7,
+     "image_bh_within_noise": [
+      "damrs/sports",
+      "lattice/baby",
+      "mgcn/sports",
+      "mmgcn/baby"
+     ],
+     "family_m": 76
+    },
+    "scope all in family": {
+     "image_cells": 38,
+     "image_beyond": [
+      "cohesion/baby",
+      "cohesion/clothing",
+      "cohesion/sports",
+      "lattice/microlens",
+      "lgmrec/clothing",
+      "lgmrec/microlens",
+      "lgmrec/sports",
+      "mentor/sports",
+      "mmgcn/clothing",
+      "mmgcn/microlens",
+      "mmgcn/sports",
+      "smore/baby",
+      "smore/clothing"
+     ],
+     "text_cells": 38,
+     "text_beyond": [
+      "cohesion/baby",
+      "cohesion/clothing",
+      "cohesion/microlens",
+      "cohesion/sports",
+      "damrs/clothing",
+      "gume/microlens",
+      "lattice/baby",
+      "lattice/clothing",
+      "lattice/microlens",
+      "lattice/sports",
+      "lgmrec/baby",
+      "lgmrec/clothing",
+      "lgmrec/microlens",
+      "lgmrec/sports",
+      "mgcn/baby",
+      "mgcn/clothing",
+      "mgcn/sports",
+      "mmgcn/clothing",
+      "mmgcn/sports",
+      "smore/baby",
+      "smore/clothing"
+     ],
+     "text_beyond_architectures": [
+      "cohesion",
+      "damrs",
+      "gume",
+      "lattice",
+      "lgmrec",
+      "mgcn",
+      "mmgcn",
+      "smore"
+     ],
+     "image_bh": 26,
+     "image_holm": 18,
+     "image_bh_gains": 10,
+     "image_bh_within_noise": [
+      "damrs/sports",
+      "lattice/baby",
+      "mgcn/clothing",
+      "mgcn/sports",
+      "mmgcn/baby"
+     ],
+     "family_m": 76
+    }
+   }
+  }
+ },
+ "screen": {
+  "basis_cells": 32,
+  "clears_old": 13,
+  "clears_repaired": 12,
+  "note": "Electronics cells never clear (FACTS 21j); DAMRS cells from screen_g11.json"
+ },
+ "screen_vs_retest_baby_sports": {
+  "old": {
+   "judgeable": 16,
+   "agree": 14,
+   "disagree": [
+    "damrs/sports",
+    "mentor/sports"
+   ]
+  },
+  "repaired": {
+   "judgeable": 16,
+   "agree": 14,
+   "disagree": [
+    "damrs/baby",
+    "mentor/sports"
+   ]
+  }
+ },
+ "averaging_table": {
+  "old_total": {
+   "cells": 36,
+   "equal": 14,
+   "flipped": 7,
+   "across": 7
+  },
+  "old_damrs": {
+   "cells": 3,
+   "equal": 0,
+   "flipped": 1,
+   "across": 1
+  },
+  "repaired_total": {
+   "cells": 36,
+   "equal": 14,
+   "flipped": 7,
+   "across": 6
+  },
+  "repaired_damrs": {
+   "cells": 3,
+   "equal": 0,
+   "flipped": 1,
+   "across": 0
+  },
+  "repaired_baby_img_eq_both": true
+ },
+ "noise": null,
+ "mentor_clothing_sensitivity": {
+  "image": {
+   "registered_all_8": {
+    "n": 8,
+    "mean_base_R20": 0.06899749826810152,
+    "mean_delta": 0.0001605935364218502,
+    "rel_delta_pct": 0.2327526945945731,
+    "F_level": 0.03231636282132299,
+    "F_paired": 0.0008114426846773687,
+    "x_F_level": 0.004969418659821684,
+    "x_F_paired": 0.19791112724825724,
+    "verdict": "BELOW",
+    "t": 1.1195544011961311,
+    "p": 0.29984248158196997,
+    "ci95": [
+     -0.00017859799412498026,
+     0.0004997850669686806
+    ],
+    "n_negative": 3
+   },
+   "sensitivity_late_peak_only": {
+    "n": 5,
+    "mean_base_R20": 0.0806687606619056,
+    "mean_delta": 0.00018728683745058983,
+    "rel_delta_pct": 0.23216773868082086,
+    "F_level": 0.003269213301270989,
+    "F_paired": 0.00051817573864819,
+    "x_F_level": 0.05728804461237734,
+    "x_F_paired": 0.3614349794515298,
+    "verdict": "BELOW",
+    "t": 1.6163863669997205,
+    "p": 0.18131650821936895,
+    "ci95": [
+     -0.00013441324226046028,
+     0.0005089869171616399
+    ],
+    "n_negative": 1
+   }
+  },
+  "text": {
+   "registered_all_8": {
+    "n": 8,
+    "mean_base_R20": 0.06899749826810152,
+    "mean_delta": -0.0024033794084826164,
+    "rel_delta_pct": -3.483284856421717,
+    "F_level": 0.03231636282132299,
+    "F_paired": 0.004383938734297152,
+    "x_F_level": 0.07437035602585877,
+    "x_F_paired": 0.5482237672894702,
+    "verdict": "BELOW",
+    "t": -3.101221947664161,
+    "p": 0.017292637615489343,
+    "ci95": [
+     -0.004235911658990264,
+     -0.000570847157974969
+    ],
+    "n_negative": 8
+   },
+   "sensitivity_late_peak_only": {
+    "n": 5,
+    "mean_base_R20": 0.0806687606619056,
+    "mean_delta": -0.0008555155375172153,
+    "rel_delta_pct": -1.0605289216017635,
+    "F_level": 0.003269213301270989,
+    "F_paired": 0.0005074994075306921,
+    "x_F_level": 0.2616885038319806,
+    "x_F_paired": 1.6857468694985147,
+    "verdict": "MARGINAL",
+    "t": -7.538889186112292,
+    "p": 0.0016581442562752767,
+    "ci95": [
+     -0.0011705874092375157,
+     -0.0005404436657969149
+    ],
+    "n_negative": 5
+   }
+  }
+ }
+}

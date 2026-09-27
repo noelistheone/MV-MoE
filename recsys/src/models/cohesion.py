@@ -213,9 +213,9 @@ class COHESION(MultimodalRecommender):
         return values
 
     def get_norm_adj_mat(self):
-        # NOTE: the source populates a dok_matrix via `A._update(data_dict)`. In
-        # scipy>=1.14 dok_matrix no longer subclasses dict and `_update`/`.update`/
-        # raw `dict.update(A, ...)` all FAIL SILENTLY (leave A all-zero -> the U-I
+        # NOTE: the source populates a dok_matrix via `A._update(data_dict)`, which current
+        # scipy (checked on 1.17.1) no longer has, and the workaround `dict.update(A, ...)`
+        # SILENTLY leaves A all-zero (-> the U-I
         # GCN propagates an empty adjacency -> the model collapses to its layer-0
         # ego embeddings, i.e. ~LightGCN). We populate the SAME symmetric bipartite
         # A via lil assignment, which yields the identical D^{-1/2} A D^{-1/2}.

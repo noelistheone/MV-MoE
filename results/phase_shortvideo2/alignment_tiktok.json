@@ -1,0 +1,1098 @@
+{
+  "generated": "2026-09-24 02:34:26 PDT",
+  "device": "cpu",
+  "metric": "||f(x)-f(y)||^2, f=L2-normalize (Wang&Isola alignment, =2-2cos)",
+  "headline": "absolute gap = mean_dist(random) - mean_dist(co-consumed); higher=more predictive",
+  "config": {
+    "n_pairs": 20000,
+    "n_rand": 20000,
+    "B_boot": 2000,
+    "B_perm": 2000,
+    "pair_seed": 0,
+    "boot_seed": 1234,
+    "perm_seed": 5678
+  },
+  "leakage_check": {
+    "train_rows_x_label_0": 59541,
+    "train_users_len": 59541,
+    "n_pairs": 5791,
+    "pairs_not_training_cointeractions": 0,
+    "valid_test_rows_excluded": 9181
+  },
+  "checkpoint_note": "propagated streams from the converged TikTok full checkpoint hold_p100e3000_freedom_tiktok_full_s2024.pt (seed 2024, logged R@20 0.077814, best epoch 274). Baby (alignment_stats.json) and MicroLens (alignment_microlens.json) used default-patience checkpoints; raw-stream numbers do not depend on any checkpoint.",
+  "nulls": {
+    "uniform": {
+      "dataset": "tiktok",
+      "n_copurchase_pairs": 5791,
+      "null_distribution": "uniform",
+      "checkpoint": "hold_p100e3000_freedom_tiktok_full_s2024.pt",
+      "checkpoint_pinned": true,
+      "image_weight": 0.1,
+      "feature_note": "TikTok (MMSSL/DiffMM release): 'raw_image_cnn' = 128-d video key-frame feature of undocumented encoder, 'raw_text_bert' = 768-d Sentence-BERT caption feature; the keys are the legacy Amazon names, NOT the encoders used here.",
+      "streams": {
+        "raw_image_cnn": {
+          "dim": 128,
+          "align_copurchased": 0.2709985673427582,
+          "align_random": 0.29046836495399475,
+          "gap_abs": 0.019469797611236572,
+          "gap_rel": 0.06702897788652563,
+          "gap_abs_ci95": [
+            0.016765959560871124,
+            0.022271618247032166
+          ],
+          "gap_rel_ci95": [
+            0.057889387011528015,
+            0.07649024575948715
+          ],
+          "gap_abs_boot_std": 0.0014070977922528982,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 5791,
+          "n_rand": 19996,
+          "significant_gap>0": true,
+          "null": "uniform"
+        },
+        "raw_text_bert": {
+          "dim": 768,
+          "align_copurchased": 0.5677009224891663,
+          "align_random": 0.5777226686477661,
+          "gap_abs": 0.010021746158599854,
+          "gap_rel": 0.017346984465845927,
+          "gap_abs_ci95": [
+            0.005499543156474829,
+            0.01460923720151186
+          ],
+          "gap_rel_ci95": [
+            0.009547674097120762,
+            0.025210367515683174
+          ],
+          "gap_abs_boot_std": 0.002375093987211585,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 5791,
+          "n_rand": 19996,
+          "significant_gap>0": true,
+          "null": "uniform"
+        },
+        "h_img_graph": {
+          "dim": 64,
+          "align_copurchased": 1.9051302671432495,
+          "align_random": 1.9726042747497559,
+          "gap_abs": 0.06747400760650635,
+          "gap_rel": 0.03420554668273042,
+          "gap_abs_ci95": [
+            0.05272265151143074,
+            0.08319665491580963
+          ],
+          "gap_rel_ci95": [
+            0.02679426223039627,
+            0.0420655757188797
+          ],
+          "gap_abs_boot_std": 0.007873700931668282,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 5791,
+          "n_rand": 19996,
+          "significant_gap>0": true,
+          "null": "uniform"
+        },
+        "h_txt_graph": {
+          "dim": 64,
+          "align_copurchased": 1.8514238595962524,
+          "align_random": 1.9814423322677612,
+          "gap_abs": 0.1300184726715088,
+          "gap_rel": 0.06561809574478134,
+          "gap_abs_ci95": [
+            0.12053202092647552,
+            0.1399427205324173
+          ],
+          "gap_rel_ci95": [
+            0.0609109029173851,
+            0.07050114870071411
+          ],
+          "gap_abs_boot_std": 0.004940037149935961,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 5791,
+          "n_rand": 19996,
+          "significant_gap>0": true,
+          "null": "uniform"
+        },
+        "cf": {
+          "dim": 64,
+          "align_copurchased": 1.28688645362854,
+          "align_random": 1.9845775365829468,
+          "gap_abs": 0.6976910829544067,
+          "gap_rel": 0.35155647491389724,
+          "gap_abs_ci95": [
+            0.6854462623596191,
+            0.7104090452194214
+          ],
+          "gap_rel_ci95": [
+            0.3459501564502716,
+            0.3572224974632263
+          ],
+          "gap_abs_boot_std": 0.00633177300915122,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 5791,
+          "n_rand": 19996,
+          "significant_gap>0": true,
+          "null": "uniform"
+        },
+        "fused": {
+          "dim": 64,
+          "align_copurchased": 1.3867191076278687,
+          "align_random": 2.0003578662872314,
+          "gap_abs": 0.6136387586593628,
+          "gap_rel": 0.3067644889953158,
+          "gap_abs_ci95": [
+            0.6037766337394714,
+            0.6241424679756165
+          ],
+          "gap_rel_ci95": [
+            0.3021642565727234,
+            0.3116157352924347
+          ],
+          "gap_abs_boot_std": 0.005261627957224846,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 5791,
+          "n_rand": 19996,
+          "significant_gap>0": true,
+          "null": "uniform"
+        }
+      },
+      "ordering_tests": {
+        "raw: image_cnn < text_bert (CIs separate)": false,
+        "raw: text_bert < cf? (n/a - cf is graph)": null,
+        "graph: h_img < h_txt (CIs separate)": true,
+        "graph: h_txt < cf (CIs separate)": true,
+        "graph: h_img < cf (CIs separate)": true,
+        "CNN-vs-CLIP image CIs OVERLAP (sign-flip is within noise)": null,
+        "image_cnn gap < image_clip gap (point est)": null,
+        "graph: h_img > h_txt  [INVERSION, CIs separate]": false,
+        "raw: image > text  [INVERSION, CIs separate]": true
+      }
+    },
+    "popularity_matched": {
+      "dataset": "tiktok",
+      "n_copurchase_pairs": 5791,
+      "null_distribution": "user-uniform co-consumption marginal p*(i) ~ sum_{u:i in H_u,d_u>=2} 1/d_u",
+      "checkpoint": "hold_p100e3000_freedom_tiktok_full_s2024.pt",
+      "checkpoint_pinned": true,
+      "image_weight": 0.1,
+      "feature_note": "TikTok (MMSSL/DiffMM release): 'raw_image_cnn' = 128-d video key-frame feature of undocumented encoder, 'raw_text_bert' = 768-d Sentence-BERT caption feature; the keys are the legacy Amazon names, NOT the encoders used here.",
+      "streams": {
+        "raw_image_cnn": {
+          "dim": 128,
+          "align_copurchased": 0.2709985673427582,
+          "align_random": 0.2825441360473633,
+          "gap_abs": 0.011545568704605103,
+          "gap_rel": 0.04086288558708471,
+          "gap_abs_ci95": [
+            0.008802459575235844,
+            0.014416852965950966
+          ],
+          "gap_rel_ci95": [
+            0.03121079131960869,
+            0.05091852694749832
+          ],
+          "gap_abs_boot_std": 0.0014134816592559218,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 5791,
+          "n_rand": 19945,
+          "significant_gap>0": true,
+          "null": "user-uniform co-consumption marginal (sum 1/d_u)"
+        },
+        "raw_text_bert": {
+          "dim": 768,
+          "align_copurchased": 0.5677009224891663,
+          "align_random": 0.5741890072822571,
+          "gap_abs": 0.00648808479309082,
+          "gap_rel": 0.011299562880522787,
+          "gap_abs_ci95": [
+            0.0020758763421326876,
+            0.01102274190634489
+          ],
+          "gap_rel_ci95": [
+            0.0036205770447850227,
+            0.01921766810119152
+          ],
+          "gap_abs_boot_std": 0.0023037223145365715,
+          "perm_p_value": 0.005497251374312844,
+          "n_co": 5791,
+          "n_rand": 19945,
+          "significant_gap>0": true,
+          "null": "user-uniform co-consumption marginal (sum 1/d_u)"
+        },
+        "h_img_graph": {
+          "dim": 64,
+          "align_copurchased": 1.9051302671432495,
+          "align_random": 1.9789108037948608,
+          "gap_abs": 0.07378053665161133,
+          "gap_rel": 0.03728340686711396,
+          "gap_abs_ci95": [
+            0.05808866769075394,
+            0.08969908207654953
+          ],
+          "gap_rel_ci95": [
+            0.029409261420369148,
+            0.04520312324166298
+          ],
+          "gap_abs_boot_std": 0.008010179735720158,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 5791,
+          "n_rand": 19945,
+          "significant_gap>0": true,
+          "null": "user-uniform co-consumption marginal (sum 1/d_u)"
+        },
+        "h_txt_graph": {
+          "dim": 64,
+          "align_copurchased": 1.8514238595962524,
+          "align_random": 1.9657902717590332,
+          "gap_abs": 0.11436641216278076,
+          "gap_rel": 0.05817833865890644,
+          "gap_abs_ci95": [
+            0.10507943481206894,
+            0.12396759539842606
+          ],
+          "gap_rel_ci95": [
+            0.05350082367658615,
+            0.06292112916707993
+          ],
+          "gap_abs_boot_std": 0.004825088195502758,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 5791,
+          "n_rand": 19945,
+          "significant_gap>0": true,
+          "null": "user-uniform co-consumption marginal (sum 1/d_u)"
+        },
+        "cf": {
+          "dim": 64,
+          "align_copurchased": 1.28688645362854,
+          "align_random": 1.739450454711914,
+          "gap_abs": 0.452564001083374,
+          "gap_rel": 0.2601764251792542,
+          "gap_abs_ci95": [
+            0.44093531370162964,
+            0.46405115723609924
+          ],
+          "gap_rel_ci95": [
+            0.2537655532360077,
+            0.26627209782600403
+          ],
+          "gap_abs_boot_std": 0.005982957314699888,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 5791,
+          "n_rand": 19945,
+          "significant_gap>0": true,
+          "null": "user-uniform co-consumption marginal (sum 1/d_u)"
+        },
+        "fused": {
+          "dim": 64,
+          "align_copurchased": 1.3867191076278687,
+          "align_random": 1.7975759506225586,
+          "gap_abs": 0.41085684299468994,
+          "gap_rel": 0.2285616042272912,
+          "gap_abs_ci95": [
+            0.4010297954082489,
+            0.42088761925697327
+          ],
+          "gap_rel_ci95": [
+            0.2234037220478058,
+            0.23381465673446655
+          ],
+          "gap_abs_boot_std": 0.005250917747616768,
+          "perm_p_value": 0.0004997501249375312,
+          "n_co": 5791,
+          "n_rand": 19945,
+          "significant_gap>0": true,
+          "null": "user-uniform co-consumption marginal (sum 1/d_u)"
+        }
+      },
+      "ordering_tests": {
+        "raw: image_cnn < text_bert (CIs separate)": false,
+        "raw: text_bert < cf? (n/a - cf is graph)": null,
+        "graph: h_img < h_txt (CIs separate)": true,
+        "graph: h_txt < cf (CIs separate)": true,
+        "graph: h_img < cf (CIs separate)": true,
+        "CNN-vs-CLIP image CIs OVERLAP (sign-flip is within noise)": null,
+        "image_cnn gap < image_clip gap (point est)": null,
+        "graph: h_img > h_txt  [INVERSION, CIs separate]": false,
+        "raw: image > text  [INVERSION, CIs separate]": false
+      }
+    }
+  },
+  "side_by_side": {
+    "uniform": {
+      "baby": {
+        "source": "results/phase_align/alignment_stats.json",
+        "checkpoint": null,
+        "streams": {
+          "raw_image_cnn": {
+            "gap_abs": 0.035610198974609375,
+            "gap_abs_ci95": [
+              0.03169145807623863,
+              0.0396968349814415
+            ],
+            "gap_rel": 0.022955968221292092,
+            "gap_rel_ci95": [
+              0.020472338423132896,
+              0.025560157373547554
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "raw_text_bert": {
+            "gap_abs": 0.06547749042510986,
+            "gap_abs_ci95": [
+              0.06087859719991684,
+              0.07005113363265991
+            ],
+            "gap_rel": 0.04441933684893584,
+            "gap_rel_ci95": [
+              0.04133201390504837,
+              0.04743093624711037
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "h_img_graph": {
+            "gap_abs": 0.09134244918823242,
+            "gap_abs_ci95": [
+              0.083225317299366,
+              0.09934595227241516
+            ],
+            "gap_rel": 0.04585563967945888,
+            "gap_rel_ci95": [
+              0.04183373227715492,
+              0.04982016608119011
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "h_txt_graph": {
+            "gap_abs": 0.19722115993499756,
+            "gap_abs_ci95": [
+              0.1894615739583969,
+              0.20476895570755005
+            ],
+            "gap_rel": 0.09865813543446413,
+            "gap_rel_ci95": [
+              0.09494432806968689,
+              0.1023344174027443
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "cf": {
+            "gap_abs": 0.529778003692627,
+            "gap_abs_ci95": [
+              0.522687554359436,
+              0.537083625793457
+            ],
+            "gap_rel": 0.26628186487542016,
+            "gap_rel_ci95": [
+              0.2630388140678406,
+              0.269643098115921
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "fused": {
+            "gap_abs": 0.36872565746307373,
+            "gap_abs_ci95": [
+              0.3615115284919739,
+              0.37601223587989807
+            ],
+            "gap_rel": 0.1846380489067471,
+            "gap_rel_ci95": [
+              0.1812000274658203,
+              0.18810047209262848
+            ],
+            "perm_p_value": 0.0004997501249375312
+          }
+        }
+      },
+      "microlens": {
+        "source": "results/phase_micro/alignment_microlens.json",
+        "checkpoint": "freedom_microlens_20260620_180853.pt",
+        "streams": {
+          "raw_image_cnn": {
+            "gap_abs": 0.1472930908203125,
+            "gap_abs_ci95": [
+              0.14206789433956146,
+              0.15249179303646088
+            ],
+            "gap_rel": 0.14955984220239765,
+            "gap_rel_ci95": [
+              0.14454211294651031,
+              0.15444190800189972
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "raw_text_bert": {
+            "gap_abs": 0.052332520484924316,
+            "gap_abs_ci95": [
+              0.0490654893219471,
+              0.05550400912761688
+            ],
+            "gap_rel": 0.04236041568685423,
+            "gap_rel_ci95": [
+              0.03976375609636307,
+              0.044903241097927094
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "h_img_graph": {
+            "gap_abs": 0.3194931745529175,
+            "gap_abs_ci95": [
+              0.31005460023880005,
+              0.32949623465538025
+            ],
+            "gap_rel": 0.16171373039205866,
+            "gap_rel_ci95": [
+              0.15711304545402527,
+              0.16646303236484528
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "h_txt_graph": {
+            "gap_abs": 0.2173839807510376,
+            "gap_abs_ci95": [
+              0.21042391657829285,
+              0.22456613183021545
+            ],
+            "gap_rel": 0.10979985712854384,
+            "gap_rel_ci95": [
+              0.10636869072914124,
+              0.11328297108411789
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "cf": {
+            "gap_abs": 0.6342308521270752,
+            "gap_abs_ci95": [
+              0.6262586116790771,
+              0.6419160962104797
+            ],
+            "gap_rel": 0.31696375697606777,
+            "gap_rel_ci95": [
+              0.31333133578300476,
+              0.3205920159816742
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "fused": {
+            "gap_abs": 0.5149850845336914,
+            "gap_abs_ci95": [
+              0.507282555103302,
+              0.5228489637374878
+            ],
+            "gap_rel": 0.25790271867766834,
+            "gap_rel_ci95": [
+              0.2543916404247284,
+              0.2615923583507538
+            ],
+            "perm_p_value": 0.0004997501249375312
+          }
+        }
+      },
+      "tiktok": {
+        "source": "this file",
+        "checkpoint": "hold_p100e3000_freedom_tiktok_full_s2024.pt",
+        "streams": {
+          "raw_image_cnn": {
+            "gap_abs": 0.019469797611236572,
+            "gap_abs_ci95": [
+              0.016765959560871124,
+              0.022271618247032166
+            ],
+            "gap_rel": 0.06702897788652563,
+            "gap_rel_ci95": [
+              0.057889387011528015,
+              0.07649024575948715
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "raw_text_bert": {
+            "gap_abs": 0.010021746158599854,
+            "gap_abs_ci95": [
+              0.005499543156474829,
+              0.01460923720151186
+            ],
+            "gap_rel": 0.017346984465845927,
+            "gap_rel_ci95": [
+              0.009547674097120762,
+              0.025210367515683174
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "h_img_graph": {
+            "gap_abs": 0.06747400760650635,
+            "gap_abs_ci95": [
+              0.05272265151143074,
+              0.08319665491580963
+            ],
+            "gap_rel": 0.03420554668273042,
+            "gap_rel_ci95": [
+              0.02679426223039627,
+              0.0420655757188797
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "h_txt_graph": {
+            "gap_abs": 0.1300184726715088,
+            "gap_abs_ci95": [
+              0.12053202092647552,
+              0.1399427205324173
+            ],
+            "gap_rel": 0.06561809574478134,
+            "gap_rel_ci95": [
+              0.0609109029173851,
+              0.07050114870071411
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "cf": {
+            "gap_abs": 0.6976910829544067,
+            "gap_abs_ci95": [
+              0.6854462623596191,
+              0.7104090452194214
+            ],
+            "gap_rel": 0.35155647491389724,
+            "gap_rel_ci95": [
+              0.3459501564502716,
+              0.3572224974632263
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "fused": {
+            "gap_abs": 0.6136387586593628,
+            "gap_abs_ci95": [
+              0.6037766337394714,
+              0.6241424679756165
+            ],
+            "gap_rel": 0.3067644889953158,
+            "gap_rel_ci95": [
+              0.3021642565727234,
+              0.3116157352924347
+            ],
+            "perm_p_value": 0.0004997501249375312
+          }
+        }
+      }
+    },
+    "popularity_matched": {
+      "baby": {
+        "source": "results/phase_micro/alignment_degreematched.json",
+        "checkpoint": "freedom_baby_20260523_000823.pt",
+        "streams": {
+          "raw_image_cnn": {
+            "gap_abs": 0.02780306339263916,
+            "gap_abs_ci95": [
+              0.023862984031438828,
+              0.0320514440536499
+            ],
+            "gap_rel": 0.01801379088542916,
+            "gap_rel_ci95": [
+              0.01548960991203785,
+              0.020737482234835625
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "raw_text_bert": {
+            "gap_abs": 0.05764162540435791,
+            "gap_abs_ci95": [
+              0.05284037068486214,
+              0.06240028887987137
+            ],
+            "gap_rel": 0.039312533720290775,
+            "gap_rel_ci95": [
+              0.03609316423535347,
+              0.04253830015659332
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "h_img_graph": {
+            "gap_abs": 0.09227025508880615,
+            "gap_abs_ci95": [
+              0.08484230190515518,
+              0.10021524131298065
+            ],
+            "gap_rel": 0.04629985045036865,
+            "gap_rel_ci95": [
+              0.04259011894464493,
+              0.05020082741975784
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "h_txt_graph": {
+            "gap_abs": 0.18831467628479004,
+            "gap_abs_ci95": [
+              0.1809362769126892,
+              0.19567470252513885
+            ],
+            "gap_rel": 0.09462433426841646,
+            "gap_rel_ci95": [
+              0.09102649241685867,
+              0.09819269925355911
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "cf": {
+            "gap_abs": 0.37473952770233154,
+            "gap_abs_ci95": [
+              0.3669653832912445,
+              0.382840096950531
+            ],
+            "gap_rel": 0.20427339158267377,
+            "gap_rel_ci95": [
+              0.20041775703430176,
+              0.20822924375534058
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "fused": {
+            "gap_abs": 0.29388535022735596,
+            "gap_abs_ci95": [
+              0.28632357716560364,
+              0.30133411288261414
+            ],
+            "gap_rel": 0.15289180956912388,
+            "gap_rel_ci95": [
+              0.14924679696559906,
+              0.15662798285484314
+            ],
+            "perm_p_value": 0.0004997501249375312
+          }
+        }
+      },
+      "microlens": {
+        "source": "results/phase_micro/alignment_degreematched.json",
+        "checkpoint": "freedom_microlens_20260620_180853.pt",
+        "streams": {
+          "raw_image_cnn": {
+            "gap_abs": 0.11559295654296875,
+            "gap_abs_ci95": [
+              0.11045563220977783,
+              0.12090703099966049
+            ],
+            "gap_rel": 0.12127547464220406,
+            "gap_rel_ci95": [
+              0.116139255464077,
+              0.12652093172073364
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "raw_text_bert": {
+            "gap_abs": 0.04171442985534668,
+            "gap_abs_ci95": [
+              0.0384056381881237,
+              0.04482408985495567
+            ],
+            "gap_rel": 0.034058355468646204,
+            "gap_rel_ci95": [
+              0.03139287233352661,
+              0.036562997847795486
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "h_img_graph": {
+            "gap_abs": 0.3297837972640991,
+            "gap_abs_ci95": [
+              0.32008782029151917,
+              0.339699387550354
+            ],
+            "gap_rel": 0.16605746310083594,
+            "gap_rel_ci95": [
+              0.16134212911128998,
+              0.17084132134914398
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "h_txt_graph": {
+            "gap_abs": 0.22845840454101562,
+            "gap_abs_ci95": [
+              0.22209113836288452,
+              0.23574058711528778
+            ],
+            "gap_rel": 0.11475162768807667,
+            "gap_rel_ci95": [
+              0.1116325855255127,
+              0.11834724992513657
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "cf": {
+            "gap_abs": 0.5866621732711792,
+            "gap_abs_ci95": [
+              0.5786505341529846,
+              0.59562748670578
+            ],
+            "gap_rel": 0.3003305401511722,
+            "gap_rel_ci95": [
+              0.2966160476207733,
+              0.30446597933769226
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "fused": {
+            "gap_abs": 0.49668335914611816,
+            "gap_abs_ci95": [
+              0.4890868663787842,
+              0.5050460696220398
+            ],
+            "gap_rel": 0.2510381540478955,
+            "gap_rel_ci95": [
+              0.24747347831726074,
+              0.2548772394657135
+            ],
+            "perm_p_value": 0.0004997501249375312
+          }
+        }
+      },
+      "tiktok": {
+        "source": "this file",
+        "checkpoint": "hold_p100e3000_freedom_tiktok_full_s2024.pt",
+        "streams": {
+          "raw_image_cnn": {
+            "gap_abs": 0.011545568704605103,
+            "gap_abs_ci95": [
+              0.008802459575235844,
+              0.014416852965950966
+            ],
+            "gap_rel": 0.04086288558708471,
+            "gap_rel_ci95": [
+              0.03121079131960869,
+              0.05091852694749832
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "raw_text_bert": {
+            "gap_abs": 0.00648808479309082,
+            "gap_abs_ci95": [
+              0.0020758763421326876,
+              0.01102274190634489
+            ],
+            "gap_rel": 0.011299562880522787,
+            "gap_rel_ci95": [
+              0.0036205770447850227,
+              0.01921766810119152
+            ],
+            "perm_p_value": 0.005497251374312844
+          },
+          "h_img_graph": {
+            "gap_abs": 0.07378053665161133,
+            "gap_abs_ci95": [
+              0.05808866769075394,
+              0.08969908207654953
+            ],
+            "gap_rel": 0.03728340686711396,
+            "gap_rel_ci95": [
+              0.029409261420369148,
+              0.04520312324166298
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "h_txt_graph": {
+            "gap_abs": 0.11436641216278076,
+            "gap_abs_ci95": [
+              0.10507943481206894,
+              0.12396759539842606
+            ],
+            "gap_rel": 0.05817833865890644,
+            "gap_rel_ci95": [
+              0.05350082367658615,
+              0.06292112916707993
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "cf": {
+            "gap_abs": 0.452564001083374,
+            "gap_abs_ci95": [
+              0.44093531370162964,
+              0.46405115723609924
+            ],
+            "gap_rel": 0.2601764251792542,
+            "gap_rel_ci95": [
+              0.2537655532360077,
+              0.26627209782600403
+            ],
+            "perm_p_value": 0.0004997501249375312
+          },
+          "fused": {
+            "gap_abs": 0.41085684299468994,
+            "gap_abs_ci95": [
+              0.4010297954082489,
+              0.42088761925697327
+            ],
+            "gap_rel": 0.2285616042272912,
+            "gap_rel_ci95": [
+              0.2234037220478058,
+              0.23381465673446655
+            ],
+            "perm_p_value": 0.0004997501249375312
+          }
+        }
+      }
+    }
+  },
+  "t4_comparison": {
+    "uniform": {
+      "raw": {
+        "gap_abs": {
+          "tiktok_text_minus_image": -0.009448051452636719,
+          "tiktok_ci95_paired_bootstrap": [
+            -0.014735192060470581,
+            -0.004152779001742601
+          ],
+          "microlens_text_minus_image_stored": -0.09496057033538818,
+          "microlens_source": "results/phase_micro/alignment_microlens.json",
+          "tiktok_minus_microlens": 0.08551251888275146,
+          "t4_holds_point_estimate": false,
+          "microlens_cpu_replica_text_minus_image": -0.09537023305892944,
+          "microlens_cpu_replica_ci95": [
+            -0.10077935457229614,
+            -0.08972274512052536
+          ],
+          "tiktok_minus_microlens_replica": 0.08592218160629272,
+          "tiktok_minus_microlens_ci95": [
+            0.07826784253120422,
+            0.09344721585512161
+          ],
+          "t4_excess_resolved": "TikTok text-image exceeds MicroLens (CI > 0)"
+        },
+        "gap_rel": {
+          "tiktok_text_minus_image": -0.04968199320137501,
+          "tiktok_ci95_paired_bootstrap": [
+            -0.061895810067653656,
+            -0.03779158741235733
+          ],
+          "microlens_text_minus_image_stored": -0.10719942651554343,
+          "microlens_source": "results/phase_micro/alignment_microlens.json",
+          "tiktok_minus_microlens": 0.05751743331416842,
+          "t4_holds_point_estimate": false,
+          "microlens_cpu_replica_text_minus_image": -0.10745932906866074,
+          "microlens_cpu_replica_ci95": [
+            -0.1124657690525055,
+            -0.1022273600101471
+          ],
+          "tiktok_minus_microlens_replica": 0.05777733586728573,
+          "tiktok_minus_microlens_ci95": [
+            0.04468409717082977,
+            0.07064108550548553
+          ],
+          "t4_excess_resolved": "TikTok text-image exceeds MicroLens (CI > 0)"
+        }
+      },
+      "propagated": {
+        "gap_abs": {
+          "tiktok_text_minus_image": 0.06254446506500244,
+          "tiktok_ci95_paired_bootstrap": [
+            0.04341071471571922,
+            0.07990708202123642
+          ],
+          "microlens_text_minus_image_stored": -0.10210919380187988,
+          "microlens_source": "results/phase_micro/alignment_microlens.json",
+          "tiktok_minus_microlens": 0.16465365886688232,
+          "t4_holds_point_estimate": false,
+          "microlens_cpu_replica_text_minus_image": -0.1005716323852539,
+          "microlens_cpu_replica_ci95": [
+            -0.10979536175727844,
+            -0.0912998765707016
+          ],
+          "tiktok_minus_microlens_replica": 0.16311609745025635,
+          "tiktok_minus_microlens_ci95": [
+            0.14272838830947876,
+            0.18318253755569458
+          ],
+          "t4_excess_resolved": "TikTok text-image exceeds MicroLens (CI > 0)"
+        },
+        "gap_rel": {
+          "tiktok_text_minus_image": 0.03141254931688309,
+          "tiktok_ci95_paired_bootstrap": [
+            0.0218669306486845,
+            0.0401090644299984
+          ],
+          "microlens_text_minus_image_stored": -0.05191387326351482,
+          "microlens_source": "results/phase_micro/alignment_microlens.json",
+          "tiktok_minus_microlens": 0.08332642258039791,
+          "t4_holds_point_estimate": false,
+          "microlens_cpu_replica_text_minus_image": -0.05119261145591736,
+          "microlens_cpu_replica_ci95": [
+            -0.05561508610844612,
+            -0.04679436981678009
+          ],
+          "tiktok_minus_microlens_replica": 0.08260516077280045,
+          "tiktok_minus_microlens_ci95": [
+            0.07228443026542664,
+            0.09265246987342834
+          ],
+          "t4_excess_resolved": "TikTok text-image exceeds MicroLens (CI > 0)"
+        }
+      },
+      "microlens_cpu_replica_vs_stored_gap_abs": {
+        "raw_image_cnn": {
+          "cpu_replica": 0.14663678407669067,
+          "stored_gpu": 0.1472930908203125,
+          "stored_ci95": [
+            0.14206789433956146,
+            0.15249179303646088
+          ],
+          "replica_inside_stored_ci": true
+        },
+        "raw_text_bert": {
+          "cpu_replica": 0.05126655101776123,
+          "stored_gpu": 0.052332520484924316,
+          "stored_ci95": [
+            0.0490654893219471,
+            0.05550400912761688
+          ],
+          "replica_inside_stored_ci": true
+        },
+        "h_img_graph": {
+          "cpu_replica": 0.3207312822341919,
+          "stored_gpu": 0.3194931745529175,
+          "stored_ci95": [
+            0.31005460023880005,
+            0.32949623465538025
+          ],
+          "replica_inside_stored_ci": true
+        },
+        "h_txt_graph": {
+          "cpu_replica": 0.220159649848938,
+          "stored_gpu": 0.2173839807510376,
+          "stored_ci95": [
+            0.21042391657829285,
+            0.22456613183021545
+          ],
+          "replica_inside_stored_ci": true
+        }
+      }
+    },
+    "popularity_matched": {
+      "raw": {
+        "gap_abs": {
+          "tiktok_text_minus_image": -0.005057483911514282,
+          "tiktok_ci95_paired_bootstrap": [
+            -0.010345609858632088,
+            0.00034542777575552464
+          ],
+          "microlens_text_minus_image_stored": -0.07387852668762207,
+          "microlens_source": "results/phase_micro/alignment_degreematched.json",
+          "tiktok_minus_microlens": 0.06882104277610779,
+          "t4_holds_point_estimate": false,
+          "microlens_cpu_replica_text_minus_image": -0.07384520769119263,
+          "microlens_cpu_replica_ci95": [
+            -0.07928701490163803,
+            -0.0680595263838768
+          ],
+          "tiktok_minus_microlens_replica": 0.06878772377967834,
+          "tiktok_minus_microlens_ci95": [
+            0.06085493043065071,
+            0.0764600858092308
+          ],
+          "t4_excess_resolved": "TikTok text-image exceeds MicroLens (CI > 0)"
+        },
+        "gap_rel": {
+          "tiktok_text_minus_image": -0.029563321731984615,
+          "tiktok_ci95_paired_bootstrap": [
+            -0.04181284457445145,
+            -0.017048174515366554
+          ],
+          "microlens_text_minus_image_stored": -0.08721711917355786,
+          "microlens_source": "results/phase_micro/alignment_degreematched.json",
+          "tiktok_minus_microlens": 0.05765379744157324,
+          "t4_holds_point_estimate": false,
+          "microlens_cpu_replica_text_minus_image": -0.08731173723936081,
+          "microlens_cpu_replica_ci95": [
+            -0.0925121009349823,
+            -0.08180147409439087
+          ],
+          "tiktok_minus_microlens_replica": 0.057748415507376194,
+          "tiktok_minus_microlens_ci95": [
+            0.04457343369722366,
+            0.07112651318311691
+          ],
+          "t4_excess_resolved": "TikTok text-image exceeds MicroLens (CI > 0)"
+        }
+      },
+      "propagated": {
+        "gap_abs": {
+          "tiktok_text_minus_image": 0.040585875511169434,
+          "tiktok_ci95_paired_bootstrap": [
+            0.022078778594732285,
+            0.059196438640356064
+          ],
+          "microlens_text_minus_image_stored": -0.1013253927230835,
+          "microlens_source": "results/phase_micro/alignment_degreematched.json",
+          "tiktok_minus_microlens": 0.14191126823425293,
+          "t4_holds_point_estimate": false,
+          "microlens_cpu_replica_text_minus_image": -0.09458649158477783,
+          "microlens_cpu_replica_ci95": [
+            -0.10386514663696289,
+            -0.08538252860307693
+          ],
+          "tiktok_minus_microlens_replica": 0.13517236709594727,
+          "tiktok_minus_microlens_ci95": [
+            0.11437024176120758,
+            0.155142679810524
+          ],
+          "t4_excess_resolved": "TikTok text-image exceeds MicroLens (CI > 0)"
+        },
+        "gap_rel": {
+          "tiktok_text_minus_image": 0.020894933491945267,
+          "tiktok_ci95_paired_bootstrap": [
+            0.011670559644699097,
+            0.030245386064052582
+          ],
+          "microlens_text_minus_image_stored": -0.051305835412759265,
+          "microlens_source": "results/phase_micro/alignment_degreematched.json",
+          "tiktok_minus_microlens": 0.07220076890470453,
+          "t4_holds_point_estimate": false,
+          "microlens_cpu_replica_text_minus_image": -0.04836902767419815,
+          "microlens_cpu_replica_ci95": [
+            -0.05276011675596237,
+            -0.044047098606824875
+          ],
+          "tiktok_minus_microlens_replica": 0.06926396116614342,
+          "tiktok_minus_microlens_ci95": [
+            0.058883264660835266,
+            0.0790771096944809
+          ],
+          "t4_excess_resolved": "TikTok text-image exceeds MicroLens (CI > 0)"
+        }
+      },
+      "microlens_cpu_replica_vs_stored_gap_abs": {
+        "raw_image_cnn": {
+          "cpu_replica": 0.11650174856185913,
+          "stored_gpu": 0.11559295654296875,
+          "stored_ci95": [
+            0.11045563220977783,
+            0.12090703099966049
+          ],
+          "replica_inside_stored_ci": true
+        },
+        "raw_text_bert": {
+          "cpu_replica": 0.042656540870666504,
+          "stored_gpu": 0.04171442985534668,
+          "stored_ci95": [
+            0.0384056381881237,
+            0.04482408985495567
+          ],
+          "replica_inside_stored_ci": true
+        },
+        "h_img_graph": {
+          "cpu_replica": 0.3275080919265747,
+          "stored_gpu": 0.3297837972640991,
+          "stored_ci95": [
+            0.32008782029151917,
+            0.339699387550354
+          ],
+          "replica_inside_stored_ci": true
+        },
+        "h_txt_graph": {
+          "cpu_replica": 0.23292160034179688,
+          "stored_gpu": 0.22845840454101562,
+          "stored_ci95": [
+            0.22209113836288452,
+            0.23574058711528778
+          ],
+          "replica_inside_stored_ci": true
+        }
+      }
+    }
+  },
+  "seconds": 42.524747371673584
+}

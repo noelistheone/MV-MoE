@@ -1,0 +1,27 @@
+{
+ "baby": {
+  "test_interactions": 21682,
+  "warm_share": 0.9996771515542847,
+  "cold_test_interactions": 7
+ },
+ "sports": {
+  "test_interactions": 40029,
+  "warm_share": 0.9995753079017712,
+  "cold_test_interactions": 17
+ },
+ "clothing": {
+  "test_interactions": 41189,
+  "warm_share": 0.9992230935443929,
+  "cold_test_interactions": 32
+ },
+ "microlens": {
+  "test_interactions": 103989,
+  "warm_share": 0.9999807671965304,
+  "cold_test_interactions": 2
+ },
+ "tiktok": {
+  "test_interactions": 6130,
+  "warm_share": 0.9267536704730832,
+  "cold_test_interactions": 449
+ }
+}

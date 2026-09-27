@@ -1,0 +1,255 @@
+{
+  "task": "second short-video dataset for RQ2 + MicroLens raw-content assessment",
+  "date": "2026-09-23/24",
+  "chosen": "tiktok (MMSSL/DiffMM preprocessed; HKUDS/DiffMM repo)",
+  "chosen_path": "/workspace/MechInterp/data/tiktok",
+  "why": [
+    "only candidate that is reachable this week, is short-video from a different platform than MicroLens, has image(visual)+text features, and is widely used (MMSSL, DiffMM, LightGT/MMGCN-family variants, IIMRec 2607.24607, MURAL 2609.04574)",
+    "FREEDOM is reported on this exact TikTok version by at least two papers: IIMRec arXiv 2607.24607 (R@20 0.0900, N@20 0.0398) and MURAL arXiv 2609.04574 (R@20 0.1100, N@20 0.0458)",
+    "Zhou et al.'s dataset (DY/NineRec) is NOT reachable (Drive 403), so the ideal choice is unavailable"
+  ],
+  "candidates": [
+    {
+      "name": "DY (Douyin) from NineRec - the dataset Zhou et al. (2508.05377) used",
+      "source": "github.com/westlake-repl/NineRec -> Google Drive 15RlthgPczrFbP4U7l6QflSImK5wSGP5K (downstream), 1fR5XB-dC0CDsyZ4BvtUJJn7i3OnWJa-9 (source)",
+      "reachable": "NO: both Drive files return HTTP 403 on /view and 404 on uc download (other public Drive files tested from the same host return 200, so it is not our network); no alternative host found (recsys.westlake.edu.cn has no NineRec; HF search empty); GitHub issue #3 reports download errors",
+      "size": "unknown (not reachable)",
+      "license": "none in repo (GitHub license=null; issue #4 asking for license unanswered)",
+      "modalities": "raw covers (300x400) + Chinese/English titles; Zhou extracted ResNet image + sentence-transformer text features",
+      "stats": "17,876 users / 5,200 items / 124,418 interactions (Zhou et al. Table 2)",
+      "freedom_reported": "Zhou et al. Table 5/6: FREEDOM DY R@10 0.2162 original, w/o V 0.2119, w/o T 0.2228, interaction-only 0.2226 (single run, 8:1:1 random split)",
+      "verdict": "ideal but unreachable; request from NineRec corresponding author by email"
+    },
+    {
+      "name": "TikTok (MMSSL/DiffMM preprocessed)",
+      "source": "https://github.com/HKUDS/DiffMM/tree/main/Datasets/tiktok (commit 1337447)",
+      "reachable": "YES: all 6 files downloaded via raw.githubusercontent.com (HTTP 200). MMSSL's own Drive folders: 1AB1Rsn... requires sign-in, 1hLvoS7... 404",
+      "size": "~24.2 MB total source (features f16 + 3 pkl)",
+      "license": "none (DiffMM & MMSSL repos license=null); original ICME'19 ByteDance challenge site returns 502 - terms unverifiable",
+      "modalities": "visual 128-d (video-frame features from challenge release, encoder undocumented, no raw images), acoustic 128-d, text 768-d Sentence-BERT of captions; no raw content",
+      "stats": "9,308 users (papers say 9,319) / 6,710 items / 68,722 interactions (train 59,541 / valid 3,051 / test 6,130); valid & test are exactly 1 item per user",
+      "freedom_reported": "yes: IIMRec 2607.24607 R@20 0.0900; MURAL 2609.04574 R@20 0.1100",
+      "verdict": "CHOSEN"
+    },
+    {
+      "name": "TikTok (MMGCN original version)",
+      "source": "github.com/weiyinwei/MMGCN (toy sample only; full via ai-lab-challenge.bytedance.com)",
+      "reachable": "toy sample only (Drive 1NoisyVDFW... 200); official site HTTP 502",
+      "size": "n/a",
+      "license": "README: copyright restrictions, contact owners",
+      "modalities": "V128/A128/T128",
+      "stats": "36,656 users / 76,085 items / 726,065 interactions (MMGCN README)",
+      "freedom_reported": "not checked",
+      "verdict": "not reachable in full"
+    },
+    {
+      "name": "Kwai (MMGCN)",
+      "source": "https://www.kuaishou.com/activity/uimc (2019 challenge page, alive but download via defunct Kesci platform)",
+      "reachable": "NO: no download link on the page; MMGCN README says full data not redistributable",
+      "size": "n/a",
+      "license": "challenge terms; not redistributable per MMGCN",
+      "modalities": "visual 2048-d, textual 100-d, no acoustic; no raw content",
+      "stats": "22,611 users / 329,510 items / 1,664,305 interactions (MMGCN README)",
+      "freedom_reported": "not checked",
+      "verdict": "unreachable"
+    },
+    {
+      "name": "MicroLens-100k raw (covers + titles)",
+      "source": "https://recsys.westlake.edu.cn/MicroLens-100k-Dataset/",
+      "reachable": "YES (HEAD 200 on all files; range GET works; server 403s the Python-urllib UA)",
+      "size": "covers zip 685,706,907 B (19,738 jpg); title_en.csv 1,500,488 B; pairs.csv 18,940,682 B; extracted_modality_features.zip 717,084,588 B",
+      "license": "none in repo; README forbids secondary redistribution of modified data",
+      "modalities": "raw cover jpg (640x360), English titles, comments, frames/videos; official features CLIP-RN50 image, BGE-M3 title text, VideoMAE video",
+      "stats": "100,000 users / 19,738 items / 719,405 interactions (our MMRec subset: 98,129 / 17,228 / 705,174)",
+      "freedom_reported": "our own runs; not a second dataset (same platform as current RQ2)",
+      "verdict": "not a second dataset, but raw content fully available for re-encoding (see microlens_raw)"
+    },
+    {
+      "name": "MicroLens-1M",
+      "source": "https://recsys.westlake.edu.cn/MicroLens-1M-Dataset/",
+      "reachable": "YES (MicroLens-1M_pairs.csv downloaded to scratch, HTTP 200)",
+      "size": "pairs.csv 252,575,737 B; covers split zip 1,044,533,243 + 2x1,073,741,824 B; titles 9,326,382 B",
+      "license": "none in repo",
+      "modalities": "raw covers + titles (+videos); no MMRec-style features shipped (MMCTR variant has item_emb.parquet)",
+      "stats": "1,000,000 users / 91,402 items / 9,095,620 interactions (counted from pairs.csv)",
+      "freedom_reported": "not checked",
+      "verdict": "same platform as MicroLens and ~13x more interactions -> 8 seeds x 3 conditions not feasible this week; not a second platform"
+    },
+    {
+      "name": "PixelRec (Pixel200K/1M/8M/PixelRec50K)",
+      "source": "github.com/westlake-repl/PixelRec -> Google Drive",
+      "reachable": "YES (Drive file views 200: cover.tar.gz, image_feature.json, text_feature.json, dataset.tar.gz); not downloaded",
+      "size": "not measured (Drive view pages do not expose size without download)",
+      "license": "MIT (repo)",
+      "modalities": "raw cover images + text attributes; released image/text feature vectors",
+      "stats": "PixelRec50K: 50,000 users / 82,865 items / 989,494 interactions (README)",
+      "freedom_reported": "not checked",
+      "verdict": "README itself says it is an IMAGE recommendation dataset, not short video -> does not answer RQ2"
+    }
+  ],
+  "tiktok_conversion": {
+    "script": "scripts/convert_tiktok_mmrec.py",
+    "manifest": "data/tiktok/conversion_manifest.json",
+    "split": "source trnMat/valMat/tstMat kept -> x_label 0/1/2; ids unchanged; features float16->float32 same row order",
+    "harness_loading": "scripts/recsys_extra_datasets.py install() makes Config fall back to configs/datasets_extra/<name>.yaml (absolute data_path) when Recsys has no yaml for that name; Recsys untouched",
+    "loader_check": "RecDataset: n_users=9308 n_items=6710 n_train=59541 n_valid=3051 n_test=6130; v_feat (6710,128) t_feat (6710,768)"
+  },
+  "feature_geometry_mean_pairwise_cos": {
+    "tiktok_image": 0.856,
+    "tiktok_text": 0.711,
+    "microlens_image": 0.508,
+    "microlens_text": 0.382,
+    "baby_image": 0.224,
+    "baby_text": 0.263,
+    "note": "200k random pairs, seed 0; Baby/MicroLens image values reproduce the paper's 0.22/0.51"
+  },
+  "smoke_test": {
+    "note": "GPU shared with the running patience-control campaign (~96% util, 4 procs) -> timings are upper bounds",
+    "30_epochs_all_conditions": [
+      {
+        "condition": "full",
+        "epochs_run": 30,
+        "best_epoch": 29,
+        "sec_per_epoch_incl_valid": 1.066,
+        "train_epoch_s_mean": 0.669,
+        "valid_epoch_s_mean": 0.161,
+        "peak_gpu_mem_reserved_MiB": 326.0,
+        "modality_presence": {
+          "has_v_feat": true,
+          "has_t_feat": true,
+          "has_image_trs": true,
+          "has_text_trs": true
+        },
+        "test": {
+          "Recall@10": 0.0395,
+          "Recall@20": 0.0615,
+          "NDCG@10": 0.0212,
+          "NDCG@20": 0.0267
+        }
+      },
+      {
+        "condition": "no_image",
+        "epochs_run": 30,
+        "best_epoch": 29,
+        "sec_per_epoch_incl_valid": 1.075,
+        "train_epoch_s_mean": 0.745,
+        "valid_epoch_s_mean": 0.219,
+        "peak_gpu_mem_reserved_MiB": 444.0,
+        "modality_presence": {
+          "has_v_feat": false,
+          "has_t_feat": true,
+          "has_image_trs": false,
+          "has_text_trs": true
+        },
+        "test": {
+          "Recall@10": 0.0395,
+          "Recall@20": 0.0594,
+          "NDCG@10": 0.0211,
+          "NDCG@20": 0.0262
+        }
+      },
+      {
+        "condition": "no_text",
+        "epochs_run": 30,
+        "best_epoch": 29,
+        "sec_per_epoch_incl_valid": 0.943,
+        "train_epoch_s_mean": 0.729,
+        "valid_epoch_s_mean": 0.19,
+        "peak_gpu_mem_reserved_MiB": 496.0,
+        "modality_presence": {
+          "has_v_feat": true,
+          "has_t_feat": false,
+          "has_image_trs": true,
+          "has_text_trs": false
+        },
+        "test": {
+          "Recall@10": 0.0476,
+          "Recall@20": 0.0728,
+          "NDCG@10": 0.0223,
+          "NDCG@20": 0.0286
+        }
+      }
+    ],
+    "200_epochs_full": {
+      "condition": "full",
+      "epochs_run": 200,
+      "best_epoch": 198,
+      "sec_per_epoch_incl_valid": 1.385,
+      "train_epoch_s_mean": 0.759,
+      "valid_epoch_s_mean": 0.154,
+      "peak_gpu_mem_reserved_MiB": 326.0,
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "test": {
+        "Recall@10": 0.0483,
+        "Recall@20": 0.0765,
+        "NDCG@10": 0.0268,
+        "NDCG@20": 0.0339
+      },
+      "valid_recall20_every10": [
+        0.0161,
+        0.0469,
+        0.0583,
+        0.0623,
+        0.0685,
+        0.0701,
+        0.0754,
+        0.0767,
+        0.078,
+        0.078,
+        0.0787,
+        0.0796,
+        0.079,
+        0.079,
+        0.077,
+        0.0777,
+        0.078,
+        0.0783,
+        0.0796,
+        0.08
+      ],
+      "valid_still_improving_at_cap": true
+    },
+    "files": [
+      "results/phase_shortvideo2/smoke30_freedom_tiktok.json",
+      "results/phase_shortvideo2/smoke200_freedom_tiktok.json",
+      "results/phase_shortvideo2/probe_freedom_tiktok.json"
+    ]
+  },
+  "cost_estimate_8seeds_3conds": {
+    "assumptions": "sec/epoch 0.94-1.38 measured under contention (incl. valid + per-epoch pre-processing); best epoch UNKNOWN (val R@20 still rising at epoch 200); per-run = (best_epoch+100 patience)*sec/epoch; best-epoch range assumed 300-1000 by analogy to converged Baby (52-493) and MicroLens (541-944)",
+    "per_run_min": "~7-25 min (vs Baby ~17, MicroLens ~106)",
+    "total_24_runs_gpu_hours": "~3-10 h sequential",
+    "wall_if_4_parallel": "~1-3 h (each run <0.5 GB GPU memory), subject to contention with the running campaign",
+    "unverified": "no converged TikTok run yet; first converged seed will pin this down"
+  },
+  "microlens_raw": {
+    "id_mapping": "Recsys/data/microlens/i_id_mapping.csv (asin = raw video id); verified 705,174/705,174 inter rows match raw pairs with identical timestamps; the .tsv mappings are a different 14,079-item subset",
+    "covers": "all 17,228 our items present in MicroLens-100k_covers.zip (<raw_id>.jpg, 640x360 RGB); our subset 600.7 MB compressed; 8 covers range-fetched and decoded",
+    "titles": "all 17,228 items have an English title",
+    "released_feature_encoders": "IDENTIFIED: Recsys microlens image_feat/text_feat/video_feat are bit-identical (17,228/17,228 rows, max|diff|=0) to official MicroLens-100k CLIP-RN50 image / BGE-M3 title_en text / VideoMAE video features (row = raw_id-1); re-encoding 8 covers with open_clip RN50 gives cos 0.990-0.999 (others 0.49-0.67); 8 titles with bge-m3 CLS gives cos 1.0000",
+    "clip_reencode_feasible_in_a_day": "YES: download ~601 MB at 7.2 MB/s (~1.5 min); CPU RN50 measured ~1.0 s/image under contention (~5 h for 17,228 on CPU); a GPU pass would take minutes but was not run (campaign occupies GPU)",
+    "files": [
+      "results/phase_shortvideo2/microlens_cover_probe.json",
+      "results/phase_shortvideo2/microlens_feature_provenance_check.json",
+      "results/phase_shortvideo2/microlens_clip_verify.json",
+      "results/phase_shortvideo2/microlens_bgem3_verify.json",
+      "data/microlens_raw/README.provenance.md"
+    ]
+  },
+  "open_issues": [
+    "TikTok does not test Zhou et al.'s DY single-run claim directly (DY unreachable); email NineRec authors",
+    "TikTok license/terms unverifiable (no repo license; challenge site down) -> do not redistribute in anonymous release",
+    "TikTok 'image' is a 128-d video-frame feature from an undocumented encoder, not a cover picture; no raw content to re-encode",
+    "TikTok valid/test are 1 item per user over 3,051/6,130 users -> Recall@20 = HR@20; binomial SE at p~0.08 is ~0.0035 (~4% relative), floors likely wider than on Baby",
+    "User count 9,308 vs 9,319 reported by papers - unexplained",
+    "TikTok image features are highly anisotropic (mean pairwise cos 0.856); FREEDOM's kNN image graph may be degenerate - check before interpreting a null",
+    "FREEDOM hyperparameters untuned for TikTok (same single config); 200-epoch test R@20 0.0765 vs 0.090/0.110 reported elsewhere (not converged)",
+    "Converged per-run cost not measured (would exceed the 10-min GPU test budget)",
+    "Paper text says MicroLens image encoder is undocumented - now identified as CLIP-RN50 (text BGE-M3); paper caveat should be updated"
+  ]
+}

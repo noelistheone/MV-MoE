@@ -1,0 +1,235 @@
+{
+  "generated": "2026-09-24 02:35:13 PDT",
+  "builder": "src.data.graph_utils.build_knn_graph (CPU)",
+  "datasets": {
+    "tiktok": {
+      "knn_k": 10,
+      "n_users": 9308,
+      "n_items": 6710,
+      "n_train_interactions": 59541,
+      "image": {
+        "n_items": 6710,
+        "dim": 128,
+        "mean_pairwise_cosine": 0.8556050109271325,
+        "directed": {
+          "in_degree_gini": 0.5723566312263877,
+          "in_degree_max": 241,
+          "in_degree_mean": 10.0,
+          "share_items_in_degree_0": 0.10104321907600596,
+          "share_edges_into_top1pct_items": 0.08216095380029806,
+          "top1pct_n_items": 67
+        },
+        "symmetrized_freedom": {
+          "degree_gini": 0.26870854679155154,
+          "degree_max": 241,
+          "degree_mean": 16.74754098360656,
+          "n_undirected_edges": 56188
+        }
+      },
+      "text": {
+        "n_items": 6710,
+        "dim": 768,
+        "mean_pairwise_cosine": 0.711269638140401,
+        "directed": {
+          "in_degree_gini": 0.4384591007926868,
+          "in_degree_max": 92,
+          "in_degree_mean": 10.0,
+          "share_items_in_degree_0": 0.030253353204172877,
+          "share_edges_into_top1pct_items": 0.05380029806259314,
+          "top1pct_n_items": 67
+        },
+        "symmetrized_freedom": {
+          "degree_gini": 0.21023775867161132,
+          "degree_max": 95,
+          "degree_mean": 15.560655737704918,
+          "n_undirected_edges": 52206
+        }
+      },
+      "image_text_overlap": {
+        "shared_undirected_edges": 320,
+        "share_of_image_edges_in_text_graph": 0.00569516622766427,
+        "share_of_text_edges_in_image_graph": 0.006129563651687545,
+        "jaccard": 0.0029609341747321278
+      },
+      "co_interaction": {
+        "definition": "undirected edge (i,j) counts if some user has both i and j in the TRAINING split",
+        "image_edges": 0.21184238627464938,
+        "text_edges": 0.18645366432977054,
+        "image_edges_not_in_text_graph": 0.2108004582229541,
+        "edges_in_both_graphs": 0.39375,
+        "random_pairs_reference": 0.1760240439672546,
+        "random_pairs_n": 199967,
+        "image_lift_over_random": 1.203485509707174,
+        "text_lift_over_random": 1.0592511121063446
+      },
+      "co_interaction_without_top1pct_users": {
+        "user_degree_cut_99pct": 352.05999755859375,
+        "n_users_removed": 93,
+        "image_edges": 0.033904036449063854,
+        "text_edges": 0.026855150748956058,
+        "random_pairs_reference": 0.02351387979016538,
+        "image_lift_over_random": 1.441873342537208,
+        "text_lift_over_random": 1.1420978157840271
+      },
+      "training_degree_context": {
+        "user_degree_max": 603,
+        "user_degree_median": 2.0,
+        "user_degree_mean": 6.403635025024414,
+        "share_items_without_training_interaction": 0.06929955290611028
+      }
+    },
+    "microlens": {
+      "knn_k": 10,
+      "n_users": 98129,
+      "n_items": 17228,
+      "n_train_interactions": 500064,
+      "image": {
+        "n_items": 17228,
+        "dim": 1024,
+        "mean_pairwise_cosine": 0.507784112252794,
+        "directed": {
+          "in_degree_gini": 0.5165411162405422,
+          "in_degree_max": 144,
+          "in_degree_mean": 10.0,
+          "share_items_in_degree_0": 0.07093104248897145,
+          "share_edges_into_top1pct_items": 0.06520780125377293,
+          "top1pct_n_items": 172
+        },
+        "symmetrized_freedom": {
+          "degree_gini": 0.23974482075994263,
+          "degree_max": 144,
+          "degree_mean": 16.46412816345484,
+          "n_undirected_edges": 141822
+        }
+      },
+      "text": {
+        "n_items": 17228,
+        "dim": 1024,
+        "mean_pairwise_cosine": 0.3822440706011786,
+        "directed": {
+          "in_degree_gini": 0.5592698445718978,
+          "in_degree_max": 253,
+          "in_degree_mean": 10.0,
+          "share_items_in_degree_0": 0.07133735778964477,
+          "share_edges_into_top1pct_items": 0.08789760854423033,
+          "top1pct_n_items": 172
+        },
+        "symmetrized_freedom": {
+          "degree_gini": 0.2671309522077321,
+          "degree_max": 253,
+          "degree_mean": 16.479219874622707,
+          "n_undirected_edges": 141952
+        }
+      },
+      "image_text_overlap": {
+        "shared_undirected_edges": 4758,
+        "share_of_image_edges_in_text_graph": 0.03354909675508736,
+        "share_of_text_edges_in_image_graph": 0.03351837240757439,
+        "jaccard": 0.01705278550334031
+      },
+      "co_interaction": {
+        "definition": "undirected edge (i,j) counts if some user has both i and j in the TRAINING split",
+        "image_edges": 0.10437026695435123,
+        "text_edges": 0.08617701758340848,
+        "image_edges_not_in_text_graph": 0.09240208953481585,
+        "edges_in_both_graphs": 0.4491382934005885,
+        "random_pairs_reference": 0.010030551680342418,
+        "random_pairs_n": 199989,
+        "image_lift_over_random": 10.405236948122507,
+        "text_lift_over_random": 8.591453424470728
+      },
+      "co_interaction_without_top1pct_users": {
+        "user_degree_cut_99pct": 20.0,
+        "n_users_removed": 869,
+        "image_edges": 0.08498681445755947,
+        "text_edges": 0.07286265779981965,
+        "random_pairs_reference": 0.007475411147613118,
+        "image_lift_over_random": 11.368848184985191,
+        "text_lift_over_random": 9.74697663593855
+      },
+      "training_degree_context": {
+        "user_degree_max": 163,
+        "user_degree_median": 4.0,
+        "user_degree_mean": 5.0959858894348145,
+        "share_items_without_training_interaction": 5.8045042953331786e-05
+      }
+    },
+    "baby": {
+      "knn_k": 10,
+      "n_users": 19445,
+      "n_items": 7050,
+      "n_train_interactions": 118551,
+      "image": {
+        "n_items": 7050,
+        "dim": 4096,
+        "mean_pairwise_cosine": 0.2238522307468752,
+        "directed": {
+          "in_degree_gini": 0.5073217081635732,
+          "in_degree_max": 669,
+          "in_degree_mean": 10.0,
+          "share_items_in_degree_0": 0.05290780141843972,
+          "share_edges_into_top1pct_items": 0.12645390070921986,
+          "top1pct_n_items": 70
+        },
+        "symmetrized_freedom": {
+          "degree_gini": 0.2379486288627719,
+          "degree_max": 669,
+          "degree_mean": 15.843971631205674,
+          "n_undirected_edges": 55850
+        }
+      },
+      "text": {
+        "n_items": 7050,
+        "dim": 384,
+        "mean_pairwise_cosine": 0.2625713696786959,
+        "directed": {
+          "in_degree_gini": 0.3856264533977165,
+          "in_degree_max": 52,
+          "in_degree_mean": 10.0,
+          "share_items_in_degree_0": 0.025815602836879434,
+          "share_edges_into_top1pct_items": 0.03885106382978724,
+          "top1pct_n_items": 70
+        },
+        "symmetrized_freedom": {
+          "degree_gini": 0.17722212283275418,
+          "degree_max": 54,
+          "degree_mean": 14.339007092198582,
+          "n_undirected_edges": 50545
+        }
+      },
+      "image_text_overlap": {
+        "shared_undirected_edges": 5836,
+        "share_of_image_edges_in_text_graph": 0.10449418084153984,
+        "share_of_text_edges_in_image_graph": 0.115461469977248,
+        "jaccard": 0.05803558110164182
+      },
+      "co_interaction": {
+        "definition": "undirected edge (i,j) counts if some user has both i and j in the TRAINING split",
+        "image_edges": 0.04139659803043867,
+        "text_edges": 0.09239291720249283,
+        "image_edges_not_in_text_graph": 0.03007157995761187,
+        "edges_in_both_graphs": 0.13845099383139137,
+        "random_pairs_reference": 0.018492404012521627,
+        "random_pairs_n": 199974,
+        "image_lift_over_random": 2.2385730920873295,
+        "text_lift_over_random": 4.99626317594681
+      },
+      "co_interaction_without_top1pct_users": {
+        "user_degree_cut_99pct": 25.0,
+        "n_users_removed": 180,
+        "image_edges": 0.03511190689346464,
+        "text_edges": 0.0814917400336334,
+        "random_pairs_reference": 0.014721913848800344,
+        "image_lift_over_random": 2.3850096702152506,
+        "text_lift_over_random": 5.535403947515559
+      },
+      "training_degree_context": {
+        "user_degree_max": 100,
+        "user_degree_median": 4.0,
+        "user_degree_mean": 6.096734523773193,
+        "share_items_without_training_interaction": 0.000425531914893617
+      }
+    }
+  },
+  "seconds": 17.624648094177246
+}

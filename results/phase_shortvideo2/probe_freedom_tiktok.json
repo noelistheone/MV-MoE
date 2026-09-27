@@ -1,0 +1,61 @@
+{
+  "note": "GPU shared with a concurrent training campaign (4 procs, ~96% util) -> timings are upper bounds for an idle GPU",
+  "runs": [
+    {
+      "model": "freedom",
+      "dataset": "tiktok",
+      "seed": 2024,
+      "condition": "full",
+      "epochs_cap": 10,
+      "stopping_step": 100,
+      "epochs_run": 10,
+      "best_epoch": 2,
+      "setup_s": 1.0484490394592285,
+      "fit_wall_s": 23.23765254020691,
+      "train_epoch_s_mean": 0.6381146669387817,
+      "train_epoch_s_median": 0.5515798330307007,
+      "valid_epoch_s_mean": 0.12751989364624022,
+      "sec_per_epoch_incl_valid": 2.323765254020691,
+      "peak_gpu_mem_allocated_MiB": 281.9306640625,
+      "peak_gpu_mem_reserved_MiB": 326.0,
+      "modality_presence": {
+        "has_v_feat": true,
+        "has_t_feat": true,
+        "has_image_trs": true,
+        "has_text_trs": true
+      },
+      "valid_curve_recall20": [
+        0.016060308095706327,
+        0.0386758439855785,
+        0.046542117338577514,
+        0.04523107177974434,
+        0.04424778761061947,
+        0.04031465093411996,
+        0.04195345788266142,
+        0.0429367420517863,
+        0.04588659455916093,
+        0.046542117338577514
+      ],
+      "test_result": {
+        "Recall@5": 0.016802610114192495,
+        "Recall@10": 0.02756933115823817,
+        "Recall@20": 0.04600326264274062,
+        "Recall@50": 0.08058727569331159,
+        "NDCG@5": 0.010537007206699913,
+        "NDCG@10": 0.014036506001291827,
+        "NDCG@20": 0.018708873827527776,
+        "NDCG@50": 0.025467739262908014,
+        "Precision@5": 0.0033605220228384992,
+        "Precision@10": 0.002756933115823817,
+        "Precision@20": 0.0023001631321370314,
+        "Precision@50": 0.0016117455138662318,
+        "MAP@5": 0.008488308863512779,
+        "MAP@10": 0.009943033221989176,
+        "MAP@20": 0.011230549252104918,
+        "MAP@50": 0.012273755428365072
+      },
+      "n_users": 9308,
+      "n_items": 6710
+    }
+  ]
+}

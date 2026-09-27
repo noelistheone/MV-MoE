@@ -1,0 +1,21 @@
+{
+ "2030": {
+  "best_epoch": 446,
+  "valid_logged_at_best": 0.08757907236085315,
+  "valid_rebuilt_cpu": 0.09217254424048545,
+  "test_logged": 0.08717119620082527,
+  "test_rebuilt_cpu": 0.09147519062973401,
+  "gpu_scorer_baseline": 0.091475191,
+  "gpu_guard": "refused"
+ },
+ "2029": {
+  "best_epoch": 453,
+  "valid_logged_at_best": 0.08681951548506503,
+  "valid_rebuilt_cpu": 0.09144329151945878,
+  "test_logged": 0.0849470516619576,
+  "test_rebuilt_cpu": 0.09047062905696465,
+  "gpu_scorer_baseline": "equal to logged (exact guard passed)",
+  "gpu_guard": "accepted"
+ },
+ "_doc": "read-only probe (script not shipped); NOTES_DAMRS_GRAPH.md explains why its first reading was wrong"
+}

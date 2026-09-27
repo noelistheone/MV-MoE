@@ -1,0 +1,162 @@
+{
+  "created": "2026-09-23 23:47:35",
+  "script": "scripts/noise_holdout_aux_check.py",
+  "baby_directed_hubness": {
+    "ye_seed42": {
+      "noise_seed": 42,
+      "image_4096": {
+        "max_indegree": 981,
+        "gini_indegree": 0.8343017246102586,
+        "frac_indegree_ge_50": 0.04695035460992908
+      },
+      "text_384": {
+        "max_indegree": 568,
+        "gini_indegree": 0.8077875287204873,
+        "frac_indegree_ge_50": 0.04283687943262411
+      }
+    },
+    "derived_s2024": {
+      "noise_seed": 581762980,
+      "image_4096": {
+        "max_indegree": 890,
+        "gini_indegree": 0.8383614842450418,
+        "frac_indegree_ge_50": 0.04695035460992908
+      },
+      "text_384": {
+        "max_indegree": 675,
+        "gini_indegree": 0.8028746932709573,
+        "frac_indegree_ge_50": 0.04397163120567376
+      }
+    },
+    "derived_s2025": {
+      "noise_seed": 852843999,
+      "image_4096": {
+        "max_indegree": 913,
+        "gini_indegree": 0.8413983335469779,
+        "frac_indegree_ge_50": 0.04581560283687943
+      },
+      "text_384": {
+        "max_indegree": 2270,
+        "gini_indegree": 0.8205144863218468,
+        "frac_indegree_ge_50": 0.03829787234042553
+      }
+    },
+    "derived_s2026": {
+      "noise_seed": 2585606139,
+      "image_4096": {
+        "max_indegree": 1164,
+        "gini_indegree": 0.8542493332005325,
+        "frac_indegree_ge_50": 0.04354609929078014
+      },
+      "text_384": {
+        "max_indegree": 1155,
+        "gini_indegree": 0.8051060579263588,
+        "frac_indegree_ge_50": 0.04326241134751773
+      }
+    }
+  },
+  "keepw_noop_analysis": {
+    "verdict": "NOT a no-op; implemented",
+    "evidence_code": [
+      "graph_utils.build_knn_graph: binary symmetrized kNN, D^-1/2 A D^-1/2 per modality",
+      "freedom.py:87-93: mixed = w*img + (1-w)*txt (coalesce sums duplicates); no renormalization after mixing",
+      "freedom.py:94-96: single-modality branch returns the normalized graph at weight 1",
+      "freedom.py:142-155: h = mm_adj @ item_id_embedding (n_mm_layers=1); item repr = LightGCN-mean(E) + h, the same E feeds both terms, so a scalar on mm_adj changes the function and cannot be absorbed by E"
+    ],
+    "evidence_smoke": "results/phase_noise/_smoke/smoke_check.json checks.keepw_vs_removal: same init as removal, epoch losses differ from epoch 0",
+    "scales": {
+      "no_image_keepw": "text graph x 0.9",
+      "no_text_keepw": "image graph x 0.1"
+    },
+    "mmrec_reference": "Ye's MMRec FREEDOM (results/phase_novelty/_code/MKF4MMRec/src/models/freedom.py:64-77) behaves the same way: single-modality graph at weight 1 when the other feature is None, mixed graph w*img+(1-w)*txt without renormalization."
+  },
+  "cost_estimate": {
+    "baby": {
+      "existing_mean_train_min": {
+        "full": 16.794622726241748,
+        "no_image": 14.050839317838351,
+        "no_text": 10.277321445445219
+      },
+      "n_existing_runs": 24,
+      "est_min_per_run_proxy": {
+        "noise_image": 16.794622726241748,
+        "noise_text": 16.794622726241748,
+        "no_image_keepw": 14.050839317838351,
+        "no_text_keepw": 10.277321445445219
+      },
+      "est_hours_8_seeds": {
+        "noise_image": 2.2392830301655664,
+        "noise_text": 2.2392830301655664,
+        "no_image_keepw": 1.873445242378447,
+        "no_text_keepw": 1.3703095260593625
+      },
+      "est_hours_all4x8": 7.722320828768942
+    },
+    "sports": {
+      "existing_mean_train_min": {
+        "full": 38.53978642821312,
+        "no_image": 26.401438981791337,
+        "no_text": 27.932642124096553
+      },
+      "n_existing_runs": 24,
+      "est_min_per_run_proxy": {
+        "noise_image": 38.53978642821312,
+        "noise_text": 38.53978642821312,
+        "no_image_keepw": 26.401438981791337,
+        "no_text_keepw": 27.932642124096553
+      },
+      "est_hours_8_seeds": {
+        "noise_image": 5.1386381904284155,
+        "noise_text": 5.1386381904284155,
+        "no_image_keepw": 3.520191864238845,
+        "no_text_keepw": 3.7243522832128737
+      },
+      "est_hours_all4x8": 17.52182052830855
+    },
+    "clothing": {
+      "existing_mean_train_min": {
+        "full": 86.34344125092029,
+        "no_image": 37.808353170752525,
+        "no_text": 40.46146452774604
+      },
+      "n_existing_runs": 24,
+      "est_min_per_run_proxy": {
+        "noise_image": 86.34344125092029,
+        "noise_text": 86.34344125092029,
+        "no_image_keepw": 37.808353170752525,
+        "no_text_keepw": 40.46146452774604
+      },
+      "est_hours_8_seeds": {
+        "noise_image": 11.512458833456039,
+        "noise_text": 11.512458833456039,
+        "no_image_keepw": 5.041113756100336,
+        "no_text_keepw": 5.394861937032805
+      },
+      "est_hours_all4x8": 33.46089336004522
+    },
+    "microlens": {
+      "existing_mean_train_min": {
+        "full": 104.12675046672423,
+        "no_image": 99.10547118932008,
+        "no_text": 87.78834948589405
+      },
+      "n_existing_runs": 24,
+      "est_min_per_run_proxy": {
+        "noise_image": 104.12675046672423,
+        "noise_text": 104.12675046672423,
+        "no_image_keepw": 99.10547118932008,
+        "no_text_keepw": 87.78834948589405
+      },
+      "est_hours_8_seeds": {
+        "noise_image": 13.883566728896565,
+        "noise_text": 13.883566728896565,
+        "no_image_keepw": 13.214062825242678,
+        "no_text_keepw": 11.705113264785872
+      },
+      "est_hours_all4x8": 52.68630954782168
+    },
+    "note": "proxy: noise_* ~ full (same architecture); keepw ~ plain removal. train_min excludes data loading/graph build/test eval; measured while other jobs may have shared the GPU."
+  },
+  "hubness_note": "Directed top-10 in-degree, self excluded, float32 cosine. For seed 42 this gives Gini 0.834 / max 981 (image), whereas results/phase_novelty/noise_graph_check.json reports 0.757 / 923 for Ye's Baby image noise; the convention behind that earlier number was not re-checked here, so the two Ginis are not claimed comparable. Derived per-run seeds give the same hub regime as seed 42.",
+  "timing_note": "One smoke CLI call (2 runs x 2 epochs) was killed by a 500 s timeout while a 1-epoch rerun of the same run took 23 s and the 2-epoch rerun 30 s; load average was ~16.6 with 5 other training/scoring processes; cause of the stall not determined."
+}

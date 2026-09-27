@@ -1,0 +1,36 @@
+[
+  {
+    "model": "lightgcn",
+    "dataset": "tiktok",
+    "seed": 2024,
+    "best_epoch": 85,
+    "train_min": 2.0613640944163003,
+    "ckpt_path": "/workspace/MechInterp/results/phase_shortvideo2/_scratch/ckpts/pat100e3000_lightgcn_tiktok_s2024.pt",
+    "overrides": {
+      "stopping_step": 100,
+      "epochs": 3000
+    },
+    "test_result": {
+      "Recall@5": 0.03931484502446982,
+      "Recall@10": 0.053507340946166396,
+      "Recall@20": 0.08613376835236541,
+      "Recall@50": 0.14469820554649265,
+      "NDCG@5": 0.027800531610099353,
+      "NDCG@10": 0.03230785775822217,
+      "NDCG@20": 0.04046335892284325,
+      "NDCG@50": 0.051950504196378575,
+      "Precision@5": 0.007862969004893965,
+      "Precision@10": 0.00535073409461664,
+      "Precision@20": 0.004306688417618271,
+      "Precision@50": 0.0028939641109298536,
+      "MAP@5": 0.023972267536704728,
+      "MAP@10": 0.02578465263212408,
+      "MAP@20": 0.02797241374350981,
+      "MAP@50": 0.029764476574897454
+    },
+    "condition": "full",
+    "stopping_step": 100,
+    "epochs_cap": 3000,
+    "hit_cap": false
+  }
+]

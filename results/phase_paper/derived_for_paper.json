@@ -1,0 +1,108 @@
+{
+ "_doc": "Derived numbers quoted in the SAC 2027 draft that no other script stores.\n\nReads only finished artifacts; writes results/phase_paper/derived_for_paper.json.\n (1) Ye et al. (IJMIR 2026, Tables 5 and 8) FREEDOM/Sports baseline and image-noise knockout at\n     @10 against our eight converged full runs and our eight noise_image runs.\n (2) Baby keep-weight shares and the (unregistered) paired contrast no_image_keepw - no_image.\n (3) Baby image-only models (retrained without text) vs one converged LightGCN seed.\n (4) Clothing keep-weight (registered N3, text only) and Clothing image-only models vs one converged\n     LightGCN seed, computed exactly as (2) and (3).\nPooling follows scripts/holdout_verdicts.py: records filtered on stopping_step 100 / epochs_cap 3000.\n",
+ "ye_sports": {
+  "ye": {
+   "source": "Ye et al., IJMIR 15(2):14, 2026, Table 5 (baseline) and Table 8 (image knockout with noise)",
+   "baseline": {
+    "Recall@10": 0.0735,
+    "NDCG@10": 0.0403
+   },
+   "image_noise": {
+    "Recall@10": 0.0698,
+    "NDCG@10": 0.0379
+   }
+  },
+  "ours": {
+   "Recall@10": {
+    "full_mean": 0.07138158092749994,
+    "full_sd": 0.0011125078814660807,
+    "n": 8,
+    "ye_baseline_minus_our_mean_pct": 2.9677390791493825,
+    "ye_baseline_z": 1.9041834289824278,
+    "ye_noise_minus_our_noise_mean_pct": -2.066089961136002,
+    "ye_noise_change_pct": -5.03401360544217,
+    "our_noise_change_pct_ratio_of_means": -0.1527366303620781,
+    "our_noise_per_seed_change_pct_min": -1.3162218867709954,
+    "our_noise_per_seed_change_pct_max": 2.8352802220764968
+   },
+   "NDCG@10": {
+    "full_mean": 0.03839038935198355,
+    "full_sd": 0.0007769426698150593,
+    "n": 8,
+    "ye_baseline_minus_our_mean_pct": 4.974189322510183,
+    "ye_baseline_z": 2.4578527119266202,
+    "ye_noise_minus_our_noise_mean_pct": -1.060845136822848,
+    "ye_noise_change_pct": -5.955334987593051,
+    "our_noise_change_pct_ratio_of_means": -0.2188518444816159,
+    "our_noise_per_seed_change_pct_min": -2.0054445227945843,
+    "our_noise_per_seed_change_pct_max": 3.1249687423431762
+   }
+  }
+ },
+ "baby_keepweight": {
+  "no_image_keepw": -1.3206261922950044,
+  "no_text_keepw": -20.771300054513173,
+  "noise_image": -0.5521492397583535,
+  "noise_text": -31.154865204582766,
+  "no_image": -2.9796524611494934,
+  "no_text": -26.5559885978233,
+  "share_image_cost_removed_by_keepw": 0.5567851588350905,
+  "share_text_cost_removed_by_keepw": 0.21782990763086404,
+  "contrast_no_image_keepw_minus_no_image": {
+   "registered": false,
+   "n": 8,
+   "mean": 0.001560225366473763,
+   "pct_of_full": 1.6590262688544855,
+   "x_F_level": 0.7761955249586436,
+   "x_F_paired": 1.150470949052419,
+   "p_two_sided": 0.00033161562130843683,
+   "n_positive": 8,
+   "verdict": "MARGINAL"
+  }
+ },
+ "baby_image_only_vs_lightgcn": {
+  "lightgcn_s2024_R20": 0.07366422240940111,
+  "image_only_keepw_0.1": {
+   "mean": 0.07451034967218433,
+   "pct_vs_lightgcn": 1.1486271559084973,
+   "n_above_lightgcn": 7,
+   "n": 8
+  },
+  "image_only_weight1": {
+   "mean": 0.06907015986213723,
+   "pct_vs_lightgcn": -6.236490927348177,
+   "n_above_lightgcn": 0,
+   "n": 8
+  }
+ },
+ "clothing_keepweight": {
+  "no_text": -34.68117610638134,
+  "no_text_keepw": -46.29788596365774,
+  "contrast_no_text_keepw_minus_no_text": {
+   "registered": "N3 (PREREG_NOISE.md), predicted > 0",
+   "n": 8,
+   "mean": -0.010961897326529055,
+   "pct_of_full": -11.6167098572764,
+   "x_F_level": 9.697871752699198,
+   "x_F_paired": 6.468719153359845,
+   "p_two_sided": 2.957854943571671e-09,
+   "n_negative": 8,
+   "verdict": "SIGNIFICANT"
+  },
+  "image_only_vs_lightgcn": {
+   "lightgcn_s2024_R20": 0.05320609773347986,
+   "image_only_keepw_0.1": {
+    "mean": 0.05067502481481079,
+    "pct_vs_lightgcn": -4.757110606659658,
+    "n_above_lightgcn": 0,
+    "n": 8
+   },
+   "image_only_weight1": {
+    "mean": 0.06163692214133984,
+    "pct_vs_lightgcn": 15.845598093082653,
+    "n_above_lightgcn": 8,
+    "n": 8
+   }
+  }
+ }
+}

@@ -63,6 +63,15 @@ def train_one(model_name: str, dataset_name: str, seed: int, device: str,
     model = build_model(model_name, cfg, dataset, norm_adj, device)
     trainer = Trainer(cfg, model, train_loader, valid_loader, test_loader,
                       run_name=f"{run_prefix}_{model_name}_{dataset_name}_s{seed}")
+    # Record the per-epoch validation curve (logging only; identical wrapper to
+    # exp_modality_holdout.train_holdout -- it calls the original and does not change training).
+    curve = []
+    _orig_valid = trainer._valid_epoch
+    def _recording_valid():
+        res = _orig_valid()
+        curve.append([len(curve), float(res.get(cfg.get("valid_metric", "Recall@20"), float("nan")))])
+        return res
+    trainer._valid_epoch = _recording_valid
     t0 = time.time()
     result = trainer.fit()
     ckpt = scratch / "ckpts" / f"{run_prefix}_{model_name}_{dataset_name}_s{seed}.pt"
@@ -72,6 +81,7 @@ def train_one(model_name: str, dataset_name: str, seed: int, device: str,
         "train_min": (time.time() - t0) / 60.0,
         "ckpt_path": str(ckpt) if ckpt.is_file() else None,
         "overrides": extra_overrides or {},
+        "valid_curve": curve,
         "test_result": {k: float(v) for k, v in result["test_result"].items()},
     }
 

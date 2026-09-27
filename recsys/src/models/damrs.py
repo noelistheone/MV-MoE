@@ -18,7 +18,10 @@ VERBATIM from the official implementation. Only the framework glue differs:
   * MultimodalRecommender base (self.v_feat / self.t_feat / self.n_users /
     self.n_items), dict-form interactions, config.get for HP.
   * The bipartite norm-adj is rebuilt with DA-MRS's own get_norm_adj_mat from the
-    train edges (verbatim), not reused from the framework.
+    train edges, not reused from the framework. Its normalization is verbatim; the
+    adjacency FILL is not (fix, 2026-09): the ported source's `dict.update(A, ...)` on a
+    dok_matrix leaves the matrix empty in current scipy (checked on 1.15.3 and 1.17.1),
+    which left the graph empty in every run before the fix. It is now built by COO assignment and its nnz is asserted.
   * The per-item top-k neighbor graph (the source np.load's item_graph_dict2.npy)
     is built VECTORIZED inside __init__ from item-item co-occurrence C_ii = R^T @ R
     (shared-user counts, zero diagonal) and stored in the exact
@@ -288,15 +291,28 @@ class DAMRS(MultimodalRecommender):
                (1 - p1) * torch.log(1 - p1) - (1 - p1) * torch.log(1 - p2)
 
     def get_norm_adj_mat(self):
-        A = sp.dok_matrix((self.n_users + self.n_items,
-                           self.n_users + self.n_items), dtype=np.float32)
-        inter_M = self.interaction_matrix
-        inter_M_t = self.interaction_matrix.transpose()
-        data_dict = dict(zip(zip(inter_M.row, inter_M.col + self.n_users),
-                             [1] * inter_M.nnz))
-        data_dict.update(dict(zip(zip(inter_M_t.row + self.n_users, inter_M_t.col),
-                                  [1] * inter_M_t.nnz)))
-        dict.update(A, data_dict)
+        # FIX (2026-09): the ported source fills a dok_matrix with
+        # `dict.update(A, data_dict)`. dok_matrix keeps its entries in a private `_dict`,
+        # so in current scipy (checked on 1.15.3 and 1.17.1) that call is a SILENT NO-OP: A stayed
+        # all-zero and the LightGCN user-item propagation was disabled in every DA-MRS run
+        # before this fix (same bug class as the one fixed in cohesion.py). We now build the
+        # same symmetric binary bipartite A = [[0, R], [R^T, 0]] (one entry of value 1 per
+        # unique train (u, i) pair, exactly what the dict build intended) by COO assignment,
+        # as src/data/graph_utils.build_norm_adj does. COO instead of cohesion.py's lil slice
+        # assignment because scipy 1.15 densifies R inside lil slice assignment (6.8 GB for
+        # MicroLens); the resulting A is identical. The normalization below is unchanged.
+        n_nodes = self.n_users + self.n_items
+        R = sp.csr_matrix(self.interaction_matrix, dtype=np.float32)
+        R.sum_duplicates()
+        R.data[:] = 1.0
+        R = R.tocoo()
+        nnz_train = int(R.nnz)
+        rows = np.concatenate([R.row.astype(np.int64), R.col.astype(np.int64) + self.n_users])
+        cols = np.concatenate([R.col.astype(np.int64) + self.n_users, R.row.astype(np.int64)])
+        A = sp.coo_matrix((np.ones(rows.shape[0], dtype=np.float32), (rows, cols)),
+                          shape=(n_nodes, n_nodes)).tocsr()
+        assert nnz_train > 0 and A.nnz == 2 * nnz_train, (
+            f"DA-MRS user-item adjacency has nnz={A.nnz}, expected 2*nnz(train)={2 * nnz_train}")
         # norm adj matrix
         sumArr = (A > 0).sum(axis=1)
         # add epsilon to avoid Devide by zero Warning
@@ -311,7 +327,12 @@ class DAMRS(MultimodalRecommender):
         i = torch.LongTensor(np.array([row, col]))
         data = torch.FloatTensor(L.data)
 
-        return torch.sparse_coo_tensor(i, data, torch.Size((self.n_nodes, self.n_nodes))).coalesce()
+        norm_adj = torch.sparse_coo_tensor(i, data, torch.Size((self.n_nodes, self.n_nodes))).coalesce()
+        # Fail loudly if the propagation graph is ever empty/partial again.
+        assert norm_adj._nnz() == 2 * nnz_train, (
+            f"DA-MRS norm_adj has nnz={norm_adj._nnz()}, expected 2*nnz(train)={2 * nnz_train}")
+        self.n_train_pairs = nnz_train
+        return norm_adj
 
     def forward(self):
         ego_embeddings = torch.cat((self.user_embedding.weight, self.item_id_embedding.weight), dim=0)

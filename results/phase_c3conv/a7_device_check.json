@@ -1,0 +1,251 @@
+{
+ "checkpoint": "/workspace/MechInterp/results/phase0/_scratch/ckpts/pat100e3000_cohesion_microlens_s2024.pt",
+ "cpu_device": {
+  "device": "cpu",
+  "gpu_cap_gb": null,
+  "torch": "2.12.0+cu126"
+ },
+ "gpu_device": {
+  "device": "cuda:0",
+  "gpu_cap_gb": 12,
+  "torch": "2.12.0+cu126"
+ },
+ "baseline_R20": {
+  "cpu": 0.1128343632315445,
+  "gpu": 0.1128343632315445,
+  "logged": 0.11276302855983684
+ },
+ "guard": {
+  "cpu": true,
+  "gpu": true,
+  "gpu_G2": {
+   "mode": "distributional",
+   "draw_mean": 0.11278544802808782,
+   "draw_sd": 2.4869311780377583e-05,
+   "z_logged": 0.9014913017683442,
+   "ok": true
+  }
+ },
+ "deltas": {
+  "image": {
+   "Recall@10": {
+    "cpu": -0.0007354460938518853,
+    "gpu": -0.0007354460938518853,
+    "abs_diff": 0.0
+   },
+   "Recall@20": {
+    "cpu": -0.0009241358192738636,
+    "gpu": -0.0009241358192738636,
+    "abs_diff": 0.0
+   },
+   "NDCG@10": {
+    "cpu": -0.0003648758283509926,
+    "gpu": -0.0003648758283509926,
+    "abs_diff": 0.0
+   },
+   "NDCG@20": {
+    "cpu": -0.0004063499324742578,
+    "gpu": -0.0004063499324742578,
+    "abs_diff": 0.0
+   }
+  },
+  "text": {
+   "Recall@10": {
+    "cpu": -0.004588493571872604,
+    "gpu": -0.004588493571872604,
+    "abs_diff": 0.0
+   },
+   "Recall@20": {
+    "cpu": -0.0056399482853436295,
+    "gpu": -0.0056399482853436295,
+    "abs_diff": 0.0
+   },
+   "NDCG@10": {
+    "cpu": -0.002907394137739709,
+    "gpu": -0.002907394137739709,
+    "abs_diff": 0.0
+   },
+   "NDCG@20": {
+    "cpu": -0.0031938883892084283,
+    "gpu": -0.0031938883892084283,
+    "abs_diff": 0.0
+   }
+  },
+  "both": {
+   "Recall@10": {
+    "cpu": -0.07535891586529014,
+    "gpu": -0.07535891586529014,
+    "abs_diff": 0.0
+   },
+   "Recall@20": {
+    "cpu": -0.11150402821901564,
+    "gpu": -0.11150402821901564,
+    "abs_diff": 0.0
+   },
+   "NDCG@10": {
+    "cpu": -0.0397654160115387,
+    "gpu": -0.0397654160115387,
+    "abs_diff": 0.0
+   },
+   "NDCG@20": {
+    "cpu": -0.04909636084727187,
+    "gpu": -0.04909636084727187,
+    "abs_diff": 0.0
+   }
+  }
+ },
+ "max_abs_diff_R20": 0.0,
+ "generated": "2026-09-27T08:41:39-0700",
+ "gpu_row": {
+  "model": "cohesion",
+  "architecture": "cohesion",
+  "dataset": "microlens",
+  "seed": 2024,
+  "run_source": "table_rerun.json",
+  "ckpt": "/workspace/MechInterp/results/phase0/_scratch/ckpts/pat100e3000_cohesion_microlens_s2024.pt",
+  "best_epoch_logged": 341,
+  "R@20_logged": 0.11276302855983684,
+  "logged_metrics": {
+   "Recall@10": 0.07598886895425126,
+   "Recall@20": 0.11276302855983684,
+   "NDCG@10": 0.04005172444281362,
+   "NDCG@20": 0.04954217423784251
+  },
+  "run_device": {
+   "device": "cuda:0",
+   "gpu_cap_gb": 12,
+   "torch": "2.12.0+cu126"
+  },
+  "ckpt_size": 244066372,
+  "ckpt_mtime": 1789879430.0680363,
+  "ckpt_fingerprint_head_tail_8MiB": "3e497664156a4d28999ff0fd031f060da545997ff21a8c1525e78d7b93404665",
+  "config_diff_vs_training": {},
+  "missing_keys": [],
+  "taxonomy_class": "C1+C2",
+  "exactness": "EXACT",
+  "recon_source": "exact_ko.cohesion.recon_error",
+  "recon_error": 9.5367431640625e-06,
+  "recon_tol": 1e-05,
+  "score_scale_max_abs": 40.229801177978516,
+  "recon_error_rel": 2.3705668148523787e-07,
+  "recon_rel_tol": 1e-06,
+  "baseline": {
+   "Recall@10": 0.07595829695209085,
+   "Recall@20": 0.1128343632315445,
+   "NDCG@10": 0.0400350773114078,
+   "NDCG@20": 0.049550782677423195
+  },
+  "arms": {
+   "image": {
+    "arm": "image_knockout",
+    "arm_exactness": "EXACT",
+    "metrics": {
+     "Recall@10": 0.07522285085823896,
+     "Recall@20": 0.11191022741227064,
+     "NDCG@10": 0.039670201483056805,
+     "NDCG@20": 0.04914443274494894
+    },
+    "delta": {
+     "Recall@10": -0.0007354460938518853,
+     "Recall@20": -0.0009241358192738636,
+     "NDCG@10": -0.0003648758283509926,
+     "NDCG@20": -0.0004063499324742578
+    },
+    "ranking_change": {
+     "overlap@20": 0.9271624999999999,
+     "rbo": 0.7928015158655409,
+     "n_sampled": 4000
+    }
+   },
+   "text": {
+    "arm": "text_knockout",
+    "arm_exactness": "EXACT",
+    "metrics": {
+     "Recall@10": 0.07136980338021824,
+     "Recall@20": 0.10719441494620087,
+     "NDCG@10": 0.03712768317366809,
+     "NDCG@20": 0.04635689428821477
+    },
+    "delta": {
+     "Recall@10": -0.004588493571872604,
+     "Recall@20": -0.0056399482853436295,
+     "NDCG@10": -0.002907394137739709,
+     "NDCG@20": -0.0031938883892084283
+    },
+    "ranking_change": {
+     "overlap@20": 0.5807875000000001,
+     "rbo": 0.4219215511948011,
+     "n_sampled": 4000
+    }
+   },
+   "both": {
+    "arm": "both_knockout",
+    "arm_exactness": "EXACT",
+    "metrics": {
+     "Recall@10": 0.0005993810868007079,
+     "Recall@20": 0.0013303350125288592,
+     "NDCG@10": 0.0002696612998690998,
+     "NDCG@20": 0.00045442183015132945
+    },
+    "delta": {
+     "Recall@10": -0.07535891586529014,
+     "Recall@20": -0.11150402821901564,
+     "NDCG@10": -0.0397654160115387,
+     "NDCG@20": -0.04909636084727187
+    },
+    "ranking_change": {
+     "overlap@20": 0.0020625,
+     "rbo": 0.0007849547532602417,
+     "n_sampled": 4000
+    }
+   }
+  },
+  "guard": {
+   "ok": true,
+   "reason": null,
+   "G1": {
+    "ckpt_epoch": 341,
+    "snapshot_seed": 2024,
+    "snapshot_stopping_step": 100,
+    "snapshot_epochs": 3000,
+    "ok": true
+   },
+   "G2": {
+    "base_R20": 0.1128343632315445,
+    "logged_R20": 0.11276302855983684,
+    "diff": 7.133467170765406e-05,
+    "mode": "distributional",
+    "why": "user-user graph re-sampled (np.random) in pre_epoch_processing",
+    "draws": [
+     0.11275283789245004,
+     0.11280379122938408,
+     0.11278340989461047,
+     0.11279360056199728,
+     0.11274264722506323,
+     0.11276302855983684,
+     0.11279360056199728,
+     0.11281398189677089,
+     0.11279360056199728,
+     0.11281398189677089
+    ],
+    "draw_mean": 0.11278544802808782,
+    "draw_sd": 2.4869311780377583e-05,
+    "z_logged": 0.9014913017683442,
+    "z_tol": 4.0,
+    "logged_within_draw_range": true,
+    "z_paired_baseline": 1.9668901129493175,
+    "ok": true
+   }
+  },
+  "guard_mode": "distributional",
+  "timing_s": {
+   "identity+hash": 0.32237863540649414,
+   "load": 63.018940448760986,
+   "recon+variants": 5.660898685455322,
+   "eval": 11.994098901748657,
+   "stochastic_guard": 83.92440605163574,
+   "total": 164.9207227230072
+  },
+  "gpu_peak_GB": 3.907578468322754
+ }
+}

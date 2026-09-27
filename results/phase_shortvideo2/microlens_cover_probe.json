@@ -1,0 +1,123 @@
+{
+  "url": "https://recsys.westlake.edu.cn/MicroLens-100k-Dataset/MicroLens-100k_covers.zip",
+  "archive_bytes": 685706907,
+  "n_members": 19738,
+  "member_ext_counts": {
+    ".jpg": 19738
+  },
+  "example_members": [
+    "1.jpg",
+    "10.jpg",
+    "100.jpg",
+    "1000.jpg",
+    "10000.jpg"
+  ],
+  "our_items": 17228,
+  "our_items_with_cover": 17228,
+  "our_items_missing_cover": [],
+  "our_covers_compressed_bytes": 600706323,
+  "our_covers_uncompressed_bytes": 604636066,
+  "central_directory_bytes_fetched": 1785138,
+  "total_bytes_fetched": 2309426,
+  "http_range_requests": 12,
+  "samples": [
+    {
+      "itemID": 0,
+      "raw_video_id": "9580",
+      "in_zip": true,
+      "member": "9580.jpg",
+      "bytes": 52056,
+      "size_wh": [
+        640,
+        360
+      ],
+      "mode": "RGB"
+    },
+    {
+      "itemID": 1,
+      "raw_video_id": "14631",
+      "in_zip": true,
+      "member": "14631.jpg",
+      "bytes": 49148,
+      "size_wh": [
+        640,
+        360
+      ],
+      "mode": "RGB"
+    },
+    {
+      "itemID": 2,
+      "raw_video_id": "7315",
+      "in_zip": true,
+      "member": "7315.jpg",
+      "bytes": 41056,
+      "size_wh": [
+        640,
+        360
+      ],
+      "mode": "RGB"
+    },
+    {
+      "itemID": 5742,
+      "raw_video_id": "3072",
+      "in_zip": true,
+      "member": "3072.jpg",
+      "bytes": 37229,
+      "size_wh": [
+        640,
+        360
+      ],
+      "mode": "RGB"
+    },
+    {
+      "itemID": 8614,
+      "raw_video_id": "10502",
+      "in_zip": true,
+      "member": "10502.jpg",
+      "bytes": 25185,
+      "size_wh": [
+        640,
+        360
+      ],
+      "mode": "RGB"
+    },
+    {
+      "itemID": 11485,
+      "raw_video_id": "6314",
+      "in_zip": true,
+      "member": "6314.jpg",
+      "bytes": 15230,
+      "size_wh": [
+        640,
+        338
+      ],
+      "mode": "RGB"
+    },
+    {
+      "itemID": 17226,
+      "raw_video_id": "9110",
+      "in_zip": true,
+      "member": "9110.jpg",
+      "bytes": 15711,
+      "size_wh": [
+        640,
+        360
+      ],
+      "mode": "RGB"
+    },
+    {
+      "itemID": 17227,
+      "raw_video_id": "13385",
+      "in_zip": true,
+      "member": "13385.jpg",
+      "bytes": 11764,
+      "size_wh": [
+        640,
+        360
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "wall_s": 16.324437379837036,
+  "accessed": "2026-09-23 23:37:13 PDT"
+}

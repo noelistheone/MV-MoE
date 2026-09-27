@@ -1,0 +1,481 @@
+{
+  "created": "2026-09-23",
+  "scope": "Full-text extraction of prior modality audits vs paper/sac2027/main.tex (lines 94-101, 150-178, 430-445, 647-671)",
+  "sources_local": {
+    "ye_arxiv_v3_lncs": "results/phase_novelty/_pdfs/2508.07399.pdf (arXiv v3, 16 Jan 2026, LNCS format, 16 pp)",
+    "ye_arxiv_v1_v2": "results/phase_novelty/_pdfs/2508.07399v1.pdf, 2508.07399v2.pdf (ACM format with full appendix Tables 6-13)",
+    "ye_code": "results/phase_novelty/_code/MKF4MMRec (github GAIR-Lab/MKF4MMRec @812e94e, 2026-01-24; Appendix.pdf = same tables renumbered 4-11)",
+    "zhou_arxiv_v1": "results/phase_novelty/_pdfs/2508.05377.pdf (only version)",
+    "pomo_arxiv_v1": "results/phase_novelty/_pdfs/2508.04571.pdf (11 pp, carries CIKM'25 header; Crossref pages 2377-2387 = 11 pp)",
+    "pomo_code": "results/phase_novelty/_code/pomo_code (github sisinflab/A-Comprehensive-Analysis-on-Multimodal-Representations-for-Recommendation @47d755e; http://split.to/mmrs redirects here)",
+    "zheng_arxiv_v1": "results/phase_novelty/_pdfs/2608.05655.pdf",
+    "ckd_arxiv_v1": "results/phase_novelty/_pdfs/2408.06360.pdf",
+    "freedom_paper": "results/phase_novelty/_pdfs/freedom_2211.06924.pdf (Table 4 rendered)",
+    "sun_keynote": "results/phase_novelty/_pdfs/ceur4188_paper7.pdf (CEUR Vol-4188 paper7: keynote abstract summarising Zhou et al.; no new experiments)"
+  },
+  "not_accessed": [
+    "Springer ECIR chapter PDF (paywall/JS challenge); arXiv v3 (LNCS, 16 pp, Jan 2026) matches Crossref page range 66-81 (16 pp) so it is presumably the camera-ready, but byte-identity with the Springer version is UNVERIFIED",
+    "ACM DL PDF of Pomo et al. (Cloudflare challenge); arXiv v1 already carries the CIKM'25 header and the same 11-page length"
+  ],
+  "papers": {
+    "modalitybenefit": {
+      "title": "Are Multimodal Embeddings Truly Beneficial for Recommendation? A Deep Dive into Whole vs. Individual Modalities",
+      "venue": "ECIR 2026, LNCS 16485, pp. 66-81, doi 10.1007/978-3-032-21324-2_5",
+      "versions": {
+        "v1": "arXiv 10 Aug 2025, ACM format, main text + appendix Tables 6-13 (full numbers incl. FREEDOM), LLaVA-caption experiment (Table 5)",
+        "v2": "arXiv 12 Sep 2025, adds 'Concurrent work' paragraph (Pomo, Zhou); appendix unchanged; FREEDOM numbers identical to v1",
+        "v3": "arXiv 16 Jan 2026, LNCS (ECIR camera-ready form): appendix and LLaVA section dropped; adds Sec 6.2 ViT encoder swap in prose; FREEDOM numbers in text: dual knockout NDCG@10 -29.5% Baby, text knockout NDCG@10 -28.0% Baby; FREEDOM image-knockout numbers appear ONLY as unlabeled bars in Fig. 1",
+        "consequence": "The exact FREEDOM image-knockout percentages we cite (Baby <1%, Sports 5-6%) are in arXiv v1/v2 appendix Table 9 and in the repo's Appendix.pdf Table 7, not in the ECIR text."
+      },
+      "datasets": "Amazon Baby 19,445/7,050/160,792; Sports 35,598/18,357/296,337; Clothing 39,387/23,033/278,677 (MMRec 5-core statistics). Split: per-user random 80/10/10 (split_data_v4). No short-video dataset (a microlens.yaml config exists in the repo but no MicroLens result is reported).",
+      "models": "14: VBPR, BM3 (G1); GRCN, DualGNN, SLMRec, MMGCN, LGMRec (G2); LATTICE, FREEDOM, MGCN, DA-MRS, SMORE (G3); DRAGON, PGL (G4). MMRec toolbox implementations.",
+      "instrument": {
+        "name": "Modality Knockout: replace the modality's feature file during BOTH training and inference; architecture unchanged",
+        "noise_recipe": "preprocessing-knockout-method.py::extract_noise_features: np.random.seed(42); np.random.normal(loc=1, scale=0.1, size=(n_items, dim)); image dim 4096, text dim 384; per-item i.i.d.; generated once and saved to image_feat.npy/text_feat.npy (fixed across training and across all models/runs, not resampled). Paper text says only 'Gaussian noise'; mean 1 / sd 0.1 appear only in code.",
+        "constant_recipe": "all-ones (np.full(...,1)); zeros tried for dual knockout (FREEDOM dual identical for ones and zeros)",
+        "single_modality_detail": "The released script writes noise for BOTH modalities into one directory; how the single-modality (image-only / text-only) knockout directories were assembled is not in the code (UNVERIFIED).",
+        "what_it_does_to_FREEDOM": "Our CPU check (results/phase_novelty/noise_graph_check.json): N(1,0.1) 4096-d vectors have mean pairwise cosine 0.990; their FREEDOM top-10 cosine graph shares 0.03-0.13% of neighbours with the real image graph or the text graph (chance level, like a uniform random graph) but is strongly hub-concentrated (in-degree Gini 0.76 Baby / 0.79 Sports, max in-degree 923 / 1577, ~4% of items with in-degree >= 50; uniform random graph: Gini 0.17, max 26). So Ye's image knockout = FREEDOM with its image kNN graph replaced by a random HUB graph kept at weight 0.1 (mm_image_weight) plus a BPR auxiliary on noise features; text knockout = the same hub graph at weight 0.9. This differs from removal (image graph dropped, text graph weight 1.0).",
+        "caveat_split": "Run as the README says (default --step all), the knockout script re-runs 5-core filtering and split_data_v4, whose df.sample(frac=1) is unseeded, into the knockout directory; unless the authors copied the baseline .inter file, baseline and knockout runs used different random splits (UNVERIFIED what they did).",
+        "caveat_graph_cache": "MMRec FREEDOM caches mm_adj_freedomdsp_{k}_{w}.pt in the dataset directory and reloads it if present; if a knockout directory inherited a cached graph, the frozen graph would not reflect the knockout (UNVERIFIED; no evidence either way)."
+      },
+      "seeds_variance_significance": "Single seed: overall.yaml seed [999]. Hyperparameter grid per condition (FREEDOM: dropout {0.8,0.9} x reg_weight {0,1e-5,1e-4,1e-3} = 8 runs); utils/quick_start.py lines 85-88 keeps the config with the best TEST value of valid_metric (NDCG@5; the duplicate key valid_metric in overall.yaml resolves to NDCG@5 under PyYAML, confirmed). No variance, no significance test, no repeated runs reported anywhere.",
+      "training_protocol": "MMRec defaults: epochs 1000, stopping_step 20 (eval every epoch) on validation NDCG@5, Adam lr 1e-3, batch 2048, emb 64; paper: 'All models are trained to converge on the training set'. FREEDOM: knn_k 10, mm_image_weight 0.1, n_mm_layers 1, n_ui_layers 2.",
+      "features": "Paper: image 'ResNet-50 pre-extracted vectors provided in the benchmark'; text all-MiniLM-L6-v2 (384-d). Code: image read from image_features_{dataset}.b with image_dim=4096, i.e. the 4096-d McAuley CNN features that MMRec ships (Zhou et al. and Zhang et al. describe the same files as 4,096-d). The 'ResNet-50' description looks inconsistent with the code (4096-d is not a ResNet-50 pooled dimension). ViT features for the encoder swap (Sec 6.2; appendix Table 12). LLaVA captions (v1/v2 only, appendix Table 13).",
+      "freedom_numbers": {
+        "baseline_table6": {
+          "Baby": {
+            "NDCG@5": 0.0252,
+            "NDCG@10": 0.0329,
+            "Recall@5": 0.0383,
+            "Recall@10": 0.0617,
+            "P@5": 0.0083,
+            "P@10": 0.0067
+          },
+          "Clothing": {
+            "NDCG@5": 0.0249,
+            "NDCG@10": 0.032,
+            "Recall@5": 0.0381,
+            "Recall@10": 0.0598,
+            "P@5": 0.0079,
+            "P@10": 0.0062
+          },
+          "Sports": {
+            "NDCG@5": 0.0318,
+            "NDCG@10": 0.0403,
+            "Recall@5": 0.0476,
+            "Recall@10": 0.0735,
+            "P@5": 0.0104,
+            "P@10": 0.0081
+          }
+        },
+        "image_knockout_noise_table9": {
+          "Baby": "NDCG@5 0.0250 (-0.8%), NDCG@10 0.0326 (-0.9%), R@5 0.0383 (+0.0%), R@10 0.0615 (-0.3%), P@5 0.0084 (+1.2%), P@10 0.0067 (+0.0%)",
+          "Clothing": "NDCG@5 0.0247 (-0.8%), NDCG@10 0.0320 (+0.0%), R@5 0.0375 (-1.6%), R@10 0.0602 (+0.7%), P@5 0.0077 (-2.5%), P@10 0.0062 (+0.0%)",
+          "Sports": "NDCG@5 0.0294 (-7.5%), NDCG@10 0.0379 (-6.0%), R@5 0.0439 (-7.8%), R@10 0.0698 (-5.0%), P@5 0.0096 (-7.7%), P@10 0.0077 (-4.9%)"
+        },
+        "text_knockout_noise_table8": {
+          "Baby": "NDCG@5 0.0180 (-28.6%), NDCG@10 0.0237 (-28.0%), R@5 0.0273 (-28.7%), R@10 0.0446 (-27.7%), P@5 0.0060 (-27.7%), P@10 0.0049 (-26.9%)",
+          "Clothing": "NDCG@5 0.0115 (-53.8%), NDCG@10 0.0148 (-53.8%), R@5 0.0180 (-52.8%), R@10 0.0282 (-52.8%), P@5 0.0038 (-51.9%), P@10 0.0029 (-53.2%)",
+          "Sports": "NDCG@5 0.0222 (-30.2%), NDCG@10 0.0282 (-30.0%), R@5 0.0337 (-29.2%), R@10 0.0520 (-29.3%), P@5 0.0074 (-28.8%), P@10 0.0058 (-28.4%)"
+        },
+        "dual_knockout_noise_table7": {
+          "Baby": "NDCG@10 0.0232 (-29.5%), R@10 0.0436 (-29.3%)",
+          "Clothing": "NDCG@10 0.0136 (-57.5%), R@10 0.0258 (-56.9%)",
+          "Sports": "NDCG@10 0.0274 (-32.0%), R@10 0.0500 (-32.0%)"
+        },
+        "dual_knockout_constant_one_and_zero_tables10_11": {
+          "Baby": "NDCG@10 0.0248 (-24.6%), R@10 0.0466 (-24.5%)",
+          "Clothing": "NDCG@10 0.0167 (-47.8%), R@10 0.0309 (-48.3%)",
+          "Sports": "NDCG@10 0.0308 (-23.6%), R@10 0.0568 (-22.7%)"
+        },
+        "vit_image_encoder_table12_vs_baseline": {
+          "Baby": "NDCG@10 -0.9%, R@10 -0.8%",
+          "Clothing": "NDCG@10 +1.9%, R@10 +2.5%",
+          "Sports": "NDCG@10 -0.7%, R@10 -0.5%"
+        },
+        "llava_captions_table13_v1v2_only": {
+          "Baby": "NDCG@10 -2.4%, R@10 -1.9%",
+          "Clothing": "NDCG@10 -1.2%, R@10 -0.3%",
+          "Sports": "NDCG@10 -0.5%, R@10 -0.3%"
+        },
+        "ecir_text_mentions": "Sec 5.1: FREEDOM NDCG@10 -29.5% (dual, Baby); Sec 5.2: FREEDOM NDCG@10 -28.0% (text knockout, Baby). Fig. 1 bars only for image knockout.",
+        "cutoffs": "@5 and @10 only; no @20 anywhere"
+      },
+      "key_claims_quoted": [
+        "RQ2 answer (v3 p.9): 'they operate in a state of textual dominance. The textual signal is easier to learn and consequently overshadows the visual signal during training, leaving the latter largely underutilized.'",
+        "Sec 6.1: 'this drop stems not just from the presence of image features, but more fundamentally from the models' architectural reliance on them'; image-sensitive models = GRCN, LGMRec, MMGCN (Table 2 v3).",
+        "Sec 6.2 (v3): 'visual modality utility is architecture and mechanism dependent'.",
+        "Sec 6.3: constant/noise inputs can outperform real features in VBPR (instrument artifact)."
+      ],
+      "short_video": "none",
+      "code": "https://github.com/GAIR-Lab/MKF4MMRec (released; includes knockout preprocessing, MMRec fork, Appendix.pdf)"
+    },
+    "multimodalcritical": {
+      "title": "Does Multimodality Improve Recommender Systems as Expected? A Critical Analysis and Future Directions",
+      "venue": "arXiv 2508.05377 v1 (7 Aug 2025), 'Manuscript submitted to ACM', 25 pp; no peer-reviewed version found (web search 2026-09-23); a CEUR keynote abstract by A. Sun (DaQuaMRec@RecSys'25, CEUR Vol-4188) summarises it without new experiments",
+      "datasets": "Amazon Baby/Sports/Clothing (19,445/7,050/160,792 etc., MMRec stats) + Art + Beauty + Taobao (12,539/8,735/83,648) + DY short video (17,876 users/5,200 items/124,418 inter; from NineRec, Zhang et al. TPAMI 2024). Uniform setup: random 8:1:1 split on Baby, Taobao, DY.",
+      "models": "19 in Table 6 (VBPR, MMGCN, GRCN, DualGNN, LATTICE, MICRO, SLMRec*, BM3, FREEDOM, MMSSL*, LightGT, MGCN, MGCL*, MCLN, MGCE*, LGMRec*, GUME*, DiffMM*, MENTOR*) + KNN/SLIM/TopPop baselines",
+      "instrument": "Retrain variants with a modality removed (w/o T, w/o V) or both removed (Interaction Only); for the models marked * the modality is 'replaced with a randomly initialized input' instead. FREEDOM is NOT starred, so its variants are removal. Implementation details (how removal is coded, graph weights) are not given; no code released for the study itself.",
+      "seeds_variance_significance": "Not stated; single numbers only; no variance, no significance test.",
+      "training_protocol": "Not stated beyond 'strictly follow the provided instructions like the optimal hyperparameters or search space'.",
+      "features": "Amazon: 384-d sentence-transformers text, 4096-d visual features 'following [LATTICE]'. DY: 'similar pipeline, except image features are extracted using ResNet'. Art/Beauty/Taobao: provided features.",
+      "freedom_numbers": {
+        "table3_8:1:1_original_setting": "Baby R@10 0.0627, N@10 0.0330, R@20 0.0992, N@20 0.0424; Sports 0.0717/0.0385/0.1089/0.0481; Clothing 0.0629/0.0341/0.0941/0.0420 -- all 12 identical to FREEDOM paper Table 4 (verified by rendering FREEDOM Table 4); the LATTICE row is also identical to the FREEDOM paper's LATTICE column. Whether these were re-run or copied is UNVERIFIABLE.",
+        "table5_uniform": "Baby as above; Taobao R@10 0.0439, N@10 0.0187, R@20 0.0776, N@20 0.0271; DY R@10 0.2162, N@10 0.1299, R@20 0.2874, N@20 0.1481 (UserKNN on DY R@10 0.2953)",
+        "table6_recall@10_ablation": {
+          "Baby": {
+            "w/o T": 0.0501,
+            "w/o V": 0.0622,
+            "Original": 0.0627,
+            "Interaction Only": 0.0443,
+            "rel": "w/o V -0.8%, w/o T -20.1%, ID-only -29.3%"
+          },
+          "Taobao": {
+            "w/o V": 0.0412,
+            "Original": 0.0439,
+            "rel": "w/o V -6.2%"
+          },
+          "DY": {
+            "w/o T": 0.2228,
+            "w/o V": 0.2119,
+            "Original": 0.2162,
+            "Interaction Only": 0.2226,
+            "rel": "w/o V -2.0%, w/o T +3.1%, ID-only +3.0%"
+          }
+        },
+        "cutoff_note": "the ablation reports Recall@10 only",
+        "baseline_caveat": "Table 6 'Original' Baby 0.0627 equals the FREEDOM paper's reported value, so the Baby deltas may compare a paper-reported number with re-run variants (UNVERIFIABLE)."
+      },
+      "key_claims_quoted": [
+        "Abstract: 'text features are more useful in e-commerce and visual features are more effective in short-video recommendations'",
+        "Sec 4: 'In the DY dataset, 11 out of 19 models using only image features outperform their original multimodal versions.'",
+        "Sec 3.2: 'on the DY dataset, just 3 out of 19 models show superior performance [over their ablated variants]'"
+      ],
+      "short_video": "DY (Douyin) from NineRec; image features ResNet (extracted by the authors, not released); text presumably sentence-transformers ('similar pipeline')",
+      "code": "No study code found (paper links only to each model's original repo); DY features not released"
+    },
+    "pomo2025leverage": {
+      "title": "Do Recommender Systems Really Leverage Multimodal Content? A Comprehensive Analysis on Multimodal Representations for Recommendation",
+      "venue": "CIKM 2025, pp. 2377-2387, doi 10.1145/3746252.3761398; arXiv 2508.04571 v1 (6 Aug 2025) is the camera-ready (CIKM header, 11 pp)",
+      "datasets": "Amazon Reviews 2023 (not the 2014 MMRec data): Baby 108,897 users/17,836 items/330,771 (5-core); Pets 461,828/61,060/1,772,584 (5-core); Clothing 398,796/75,616/2,109,975 (10-core); items need text + >=1 image; 80/10/10 split (provided in repo); test relevance_threshold 4 in configs",
+      "models": "Item-kNN, BPR-MF, LightGCN, Attribute Item-kNN; MMRSs VBPR, LATTICE, BM3, FREEDOM (Elliot re-implementations)",
+      "instrument": {
+        "feature_swap": "Each run feeds one feature set: RNet50 (visual only), ViT (visual only), RNet50-Sbert (two modalities, visual+textual), CLIP (image and text embeddings concatenated), Qwen2-VL / Phi-3.5-VI [EOS] embeddings (single multimodal-by-design input). There is NO explicit 'without text' or 'without image' ablation; RNet50 vs RNet50-Sbert is the closest pair.",
+        "code_detail_image_only_freedom": "config_files/*_r50_multimodal.yml sets modalities ('visual',) but keeps mw (0.1,0.9); FREEDOMModel.py builds mm_adj = mm_weight[0] * Sim[first modality], so the image-only FREEDOM uses its image kNN graph at weight 0.1 (official FREEDOM would use weight 1.0 for a single modality). Removing text therefore also shrinks the item-item graph 10x.",
+        "noise_recipe": "data/{clothing,pets}/make_garbage.py: gaussian = np.random.normal(0,1,size=embs.shape) (unseeded, per item, fixed file); multivariate = multivariate_normal(mean, cov of the LVLM [EOS] embeddings); dimension = LVLM [EOS] embedding dimension. Paper: '(i) pure Gaussian noise matching the dimensionality of standard item embeddings; (ii) multivariate noise ... mean and variance of real embeddings'. The noise replaces the only content input (Fig. 3 compares Gaussian vs Multivariate vs R50)."
+      },
+      "seeds_variance_significance": "Single seed (seed 123 in all 78 multimodal-model config entries; baseline configs use random_seed 42). No seed variance. Table 2 marks with a star p<0.05 for best vs second-best extractor per model; the test is not named in the paper and no test configuration is in the released configs (UNVERIFIABLE which test; not across seeds).",
+      "training_protocol": "Elliot; epochs 200 fixed; validation every 10 epochs; best epoch/config chosen on validation Recall@20; grid lr {1e-4,5e-4,1e-3,5e-3,1e-2} x reg {1e-2,1e-1} x dim {64,128,256} = 30 configs per model/extractor; >7,000 runs; A100.",
+      "features": "Ducho: ResNet50 final pooling layer; ViT vit-base-patch16-224 [CLS]; Sbert all-mpnet-base-v2 (mean pooling); CLIP clip-vit-large-patch14 projections; Qwen2-VL-7B-Instruct and Phi-3.5-vision-instruct [EOS] of generated 5-keyword descriptions",
+      "freedom_numbers": {
+        "table2_top20_percent": {
+          "RNet50-Sbert": {
+            "Baby": [
+              7.81,
+              3.42,
+              8.27
+            ],
+            "Pets": [
+              9.47,
+              4.32,
+              10.3
+            ],
+            "Clothing": [
+              4.22,
+              1.87,
+              4.99
+            ]
+          },
+          "RNet50": {
+            "Baby": [
+              7.47,
+              3.2,
+              7.92
+            ],
+            "Pets": [
+              8.73,
+              3.89,
+              9.51
+            ],
+            "Clothing": [
+              3.77,
+              1.63,
+              4.47
+            ]
+          },
+          "ViT": {
+            "Baby": [
+              7.42,
+              3.19,
+              7.86
+            ],
+            "Pets": [
+              8.84,
+              3.94,
+              9.62
+            ],
+            "Clothing": [
+              3.9,
+              1.7,
+              4.62
+            ]
+          },
+          "CLIP": {
+            "Baby": [
+              6.23,
+              2.52,
+              6.62
+            ],
+            "Pets": [
+              7.74,
+              3.38,
+              8.43
+            ],
+            "Clothing": [
+              2.91,
+              1.21,
+              3.45
+            ]
+          },
+          "Qwen2-VL": {
+            "Baby": [
+              7.78,
+              3.4,
+              8.24
+            ],
+            "Pets": [
+              9.12,
+              4.07,
+              9.9
+            ],
+            "Clothing": [
+              4.13,
+              1.81,
+              4.88
+            ]
+          },
+          "Phi-3.5-VI": {
+            "Baby": [
+              7.53,
+              3.22,
+              7.98
+            ],
+            "Pets": [
+              8.95,
+              3.98,
+              9.74
+            ],
+            "Clothing": [
+              4.02,
+              1.75,
+              4.76
+            ]
+          },
+          "order": "[Recall@20, nDCG@20, HR@20] in %"
+        },
+        "derived_image_only_vs_image_plus_text_recall@20": "Baby -4.35% (7.81->7.47), Pets -7.81% (9.47->8.73), Clothing -10.66% (4.22->3.77); nDCG@20 Baby -6.4%, Clothing -12.8%. These are OUR computations; Pomo do not present them as a text ablation.",
+        "fig3_recall@20_percent": {
+          "Baby": {
+            "Gaussian": 6.6,
+            "Multivariate": 6.52,
+            "R50": 8.73
+          },
+          "Pets": {
+            "Gaussian": 8.3,
+            "Multivariate": 8.2,
+            "R50": 8.73
+          },
+          "Clothing": {
+            "Gaussian": 3.21,
+            "Multivariate": 2.99,
+            "R50": 3.77
+          }
+        },
+        "internal_inconsistency": "Fig. 3(a) Baby R50 bars (VBPR 9.07, LATTICE 8.82, BM3 9.93, FREEDOM 8.73) equal Table 2's PETS RNet50 values, not Table 2's Baby RNet50 values (7.40, 7.24, 7.64, 7.47)."
+      },
+      "key_claims_quoted": [
+        "Conclusion: MMRS effectiveness 'is primarily influenced by the semantic content of multimodal inputs rather than solely by the increased model complexity'",
+        "For FREEDOM, 'RNet50 - Sbert consistently delivers the best results across all datasets'"
+      ],
+      "short_video": "none",
+      "code": "https://github.com/sisinflab/A-Comprehensive-Analysis-on-Multimodal-Representations-for-Recommendation (released; configs, splits, noise scripts)"
+    },
+    "zheng2026audit": {
+      "title": "Is Personalized Modality Weighting Actually Personalized? A Controlled Audit of Per-User Weighting Claims in Multimodal Recommenders",
+      "venue": "arXiv 2608.05655 v1 (6 Aug 2026)",
+      "datasets": "Tsinghua ShortVideo, KuaiRand-27K, MicroLens-100K (1,024-d CLIP-RN50 visual + 1,024-d BGE-M3 text, L2-normalised), Amazon-Baby replication (FREEDOM preprocessed release, users >=10 inter: 4,382/6,883/67,060); chronological thirds split; Recall/NDCG@20 against 99 sampled negatives + PairAcc",
+      "models": "Their own MF backbone with six per-user weighting heads (PUM, ATT, MWN, LRG, ATTd, MWNd) + BPR (no content) + GM (global weight); not published architectures' code",
+      "instrument": "Utility gap real-GM and identifiability gap real-shuf (eval-time permutation of user weights within activity deciles); content gain GM-BPR = removing all content",
+      "seeds_variance_significance": "Five seeds per configuration, paired t-tests on per-seed aggregates, Benjamini-Hochberg across six heads per metric/dataset",
+      "freedom_numbers": "none (FREEDOM only as the source of preprocessed Amazon-Baby features)",
+      "code": "https://github.com/ziyi0227/personalized-modality-weighting-audit (stated in paper; not cloned)",
+      "relevance": "Closest in statistical protocol (seeds + paired tests + BH) and uses MicroLens-100K; different question (per-user weighting, not modality removal in published architectures)."
+    },
+    "ckd": {
+      "title": "Modality-Balanced Learning for Multimedia Recommendation",
+      "venue": "ACM MM 2024, pp. 7551-7560, doi 10.1145/3664647.3680626; arXiv 2408.06360",
+      "datasets": "Amazon Baby, Sports, Clothing, Beauty (5-core, 4,096-d published visual features, 1,024-d sentence-transformer text), 80/10/10 per user",
+      "models": "VBPR, DeepStyle, MMGCN, GRCN, EgoGCN, MGCN (no FREEDOM)",
+      "instrument": "Uni-modal models: other modality replaced by its average feature vector during training; uni-modal performance of trained multimodal models: other modality replaced by the average at inference (Sec 2.3, Fig. 1 dashed lines, Table 2) -- i.e. test-time averaging",
+      "seeds_variance_significance": "'All improvements are significant with p-value <= 0.05' (Table 1); no seed variance",
+      "key_claims_quoted": [
+        "Sec 2.3: weak modality (visual) under-optimized; text-only VBPR outperforms multimodal VBPR (Clothing pilot)"
+      ],
+      "freedom_numbers": "none"
+    }
+  },
+  "our_side_for_comparison": {
+    "file": "results/phase_novelty/prior_audit_floor_scale.json (scripts/novelty_prior_audit_floors.py, 8 converged seeds, patience 100 cap 3000)",
+    "sports_no_image_ours_pct": {
+      "Recall@10": -0.18,
+      "NDCG@10": -0.05,
+      "Precision@10": -0.09,
+      "Recall@20": -0.21
+    },
+    "baby_no_image_ours_pct": {
+      "Recall@10": -1.47,
+      "NDCG@10": -0.68,
+      "Precision@10": -1.33,
+      "Recall@20": -2.98
+    },
+    "our_top10_floors_pct": {
+      "Baby": "R@10 level 1.83 / paired 3.53; N@10 1.63 / 3.35",
+      "Sports": "R@10 3.12 / 3.87; N@10 4.05 / 5.03",
+      "Clothing": "R@10 1.23 / 2.71; N@10 1.68 / 3.22"
+    },
+    "ye_sports_image_on_our_scale": "Ye's single-run Sports deltas (-4.9 to -6.0%) are 1.5-1.6x our Sports top-10 level floor and 1.2-1.3x our paired floor",
+    "text_knockout_gap": "Ye's text-noise losses exceed our text-removal losses: Sports ~29-30% vs 20-21%; Clothing ~53-54% vs 34-36% (top-10); consistent with (not proof of) the noise hub graph at weight 0.9 hurting beyond removal"
+  },
+  "claim_checks": [
+    {
+      "claim": "main.tex:96-97 Audits retraining FREEDOM without a modality's real features find it loses far less without images than text on shopping data [Ye, Zhou], but none compares this with retraining noise.",
+      "status": "CORRECT",
+      "evidence": "Ye arXiv App. Tables 8/9 (Baby/Clothing/Sports); Zhou Table 6 (Baby). Neither reports seeds or variance."
+    },
+    {
+      "claim": "main.tex:157-158 Ye et al. by noise replacement ... Zhou et al. by leaving it out.",
+      "status": "IMPRECISE",
+      "evidence": "Ye: noise (and constant for dual) in training+inference, single-modality results only with noise. Zhou Table 6: removal for unstarred models incl. FREEDOM, but 'randomly initialized input' for 8 starred models.",
+      "correct_statement": "Zhou et al. by leaving it out (random inputs for some models; removal for FREEDOM)."
+    },
+    {
+      "claim": "main.tex:159-160 For FREEDOM on Amazon Baby, removing images costs under 1% of both audits' top-10 accuracy, against 20-28% for text.",
+      "status": "CORRECT",
+      "evidence": "Ye arXiv v1/v2 App. Table 9: N@10 -0.9%, R@10 -0.3%, P@10 0.0%; Table 8 text: N@10 -28.0%, R@10 -27.7%, P@10 -26.9%. Zhou Table 6 R@10: w/o V 0.0622 vs 0.0627 (-0.8%), w/o T 0.0501 (-20.1%). Caveats: Ye's image numbers are in the arXiv/GitHub appendix, not the ECIR text (ECIR v3 only gives text -28.0% and bars); Zhou's 'Original' equals the FREEDOM paper's published value."
+    },
+    {
+      "claim": "main.tex:160-161 Ye et al. and Pomo et al. also swap image encoders.",
+      "status": "CORRECT",
+      "evidence": "Ye v3 Sec 6.2 ResNet-50 -> ViT (FREEDOM R@10 -0.8/+2.5/-0.5% Baby/Clothing/Sports, arXiv Table 12). Pomo Table 2: RNet50, ViT, CLIP, Qwen2-VL, Phi-3.5-VI on FREEDOM. Note Ye's 'ResNet-50' baseline features are, per their code, the 4096-d McAuley CNN features."
+    },
+    {
+      "claim": "main.tex:161-163 Ye et al. find image reliance architecture-dependent and, like Zhang et al. (test-time averaging), blame modality imbalance.",
+      "status": "CORRECT",
+      "evidence": "Ye v3 Sec 6.1 (GRCN/LGMRec/MMGCN image-sensitive; 'architectural reliance'), Sec 6.2 ('architecture and mechanism dependent'), RQ2 answer p.9 ('textual signal is easier to learn and consequently overshadows the visual signal during training'). Ye call it 'textual dominance', not 'modality imbalance'. CKD Sec 2.3 uses averaged features at inference and names the modal imbalance problem."
+    },
+    {
+      "claim": "main.tex:163-164 None reports seed variance.",
+      "status": "CORRECT",
+      "evidence": "Ye: seed [999], single run per condition (best of 8 configs chosen on test NDCG@5). Zhou: no seeds/variance stated. Pomo: seed 123, single run. Caveat: Pomo (Table 2 stars) and Zhang et al. (Table 1) report p<0.05 for method comparisons (test unnamed / not across seeds); FREEDOM's own paper used 5 seeds + paired t-test for FREEDOM vs LATTICE.",
+      "correct_statement": "Safer: 'None reports variance across training seeds (Pomo et al. mark p<0.05 between extractors, from single-seed runs).'"
+    },
+    {
+      "claim": "main.tex:164 a concurrent audit tests significance of per-user modality weighting on a shared backbone, not removal in published architectures [Zheng].",
+      "status": "CORRECT",
+      "evidence": "Zheng: six heads on one MF backbone; five seeds, paired t, BH; also MicroLens-100K and Amazon-Baby. It does measure a content-removal gain (GM-BPR) but on its own backbone."
+    },
+    {
+      "claim": "main.tex:166-167 without images on Sports, Ye et al.'s FREEDOM loses 5-6% of top-10 accuracy and ours at most 0.2% per metric.",
+      "status": "CORRECT",
+      "evidence": "Ye arXiv App. Table 9 Sports: N@10 0.0403->0.0379 (-6.0%), R@10 0.0735->0.0698 (-5.0%), P@10 0.0081->0.0077 (-4.9%); (@5: -7.5 to -7.8%). Ours: R@10 -0.18, N@10 -0.05, P@10 -0.09, R@20 -0.21%. Source is the arXiv/GitHub appendix, not the ECIR chapter."
+    },
+    {
+      "claim": "main.tex:167-168 without text on Baby and Clothing, Pomo et al.'s loses 4-11% of Recall@20 and ours 27-35%.",
+      "status": "IMPRECISE",
+      "evidence": "Pomo Table 2 FREEDOM R@20: RNet50-Sbert 7.81 vs RNet50 7.47 (Baby, -4.35%); 4.22 vs 3.77 (Clothing, -10.66%). But Pomo never frame this as a text ablation; it compares two extractor configurations on Amazon Reviews 2023 data (Baby 108,897 users; Clothing 10-core), Sbert all-mpnet-base-v2 text, single seed; and in their code the image-only FREEDOM keeps mw (0.1,0.9) so its image graph is scaled to 0.1. Ours 26.6% / 34.7% -> '27-35%' ok.",
+      "correct_statement": "Pomo et al.'s FREEDOM fed ResNet-50 features alone instead of ResNet-50 plus Sentence-BERT scores 4-11% lower Recall@20 on their (2023) Baby and Clothing data; this pairing also rescales FREEDOM's item graph and uses different data versions."
+    },
+    {
+      "claim": "main.tex:168-169 Untested causes: noise versus removal, graph reweighting, feature versions, training length.",
+      "status": "IMPRECISE",
+      "evidence": "List misses causes found in the code: dataset version (Pomo uses Amazon 2023), hyperparameter selection on test across 8 configs (Ye, MMRec quick_start), split regeneration (Ye script), relevance threshold 4 (Pomo), cutoffs (@10 vs @20), and that Ye's noise produces a hub graph (noise_graph_check.json).",
+      "correct_statement": "Add dataset version and selection protocol (Ye picks the best of 8 configs by test NDCG@5; Pomo fixes 200 epochs, single seed)."
+    },
+    {
+      "claim": "main.tex:170-172 our Baby image-retraining cost (3.0% of Recall@20; 1.5% at top 10) exceeds both audits' ...",
+      "status": "IMPRECISE",
+      "evidence": "Ours R@10 -1.47% > Ye -0.3%, Zhou -0.8%; P@10 -1.33% > Ye 0.0%. But NDCG@10: ours -0.68% < Ye -0.9%.",
+      "correct_statement": "Specify Recall@10: '1.5% of Recall@10'."
+    },
+    {
+      "claim": "main.tex:100 Short video, where images reportedly matter more [Zhou].",
+      "status": "CORRECT",
+      "evidence": "Zhou abstract and Sec 4: on DY 11/19 models' image-only variants beat the original."
+    },
+    {
+      "claim": "main.tex:437-438 On another short-video dataset, Zhou et al. report that FREEDOM likewise loses accuracy without images but gains without text, in runs without variance.",
+      "status": "CORRECT",
+      "evidence": "Zhou Table 6 DY Recall@10: Original 0.2162, w/o V 0.2119 (-2.0%), w/o T 0.2228 (+3.1%), Interaction-only 0.2226 (+3.0%); single numbers, Recall@10 only, no seeds. Context worth adding: on DY FREEDOM without any content matches FREEDOM without text, and FREEDOM trails UserKNN (0.2162 vs 0.2953 R@10)."
+    },
+    {
+      "claim": "main.tex:670-671 retraining-based ablations [Ye, Zhou] avoid this [inference-time pitfalls].",
+      "status": "CORRECT",
+      "evidence": "Ye replace features during both training and inference; Zhou retrain variants. Note Ye's noise instrument has its own pitfall (hub graph)."
+    },
+    {
+      "claim": "main.tex:129 Test-time averaging [ckd].",
+      "status": "CORRECT",
+      "evidence": "CKD Sec 2.3: 'During the inference phase ... uni-modal performances ... obtained by ablating the input of other modality' with the average feature vector."
+    }
+  ],
+  "overlap_with_our_contributions": [
+    "C2 (direction, shopping): all three audits already show FREEDOM loses far more without text than without images on Amazon Baby/Clothing(/Sports) (Ye text 28-54% vs image <=1% Baby/Clothing; Zhou 20.1% vs 0.8%; Pomo 4-11% for image-only vs image+text).",
+    "C2 (short-video flip): Zhou et al. already report FREEDOM loses without images (-2.0%) but gains without text (+3.1%) on DY, and that images are more useful on short video in general.",
+    "C3 (architecture dependence): Ye et al. name image-sensitive architectures (GRCN, LGMRec, MMGCN; 14 models); Zhou et al. ablate 19 models; both conclude utility depends on architecture/integration.",
+    "RQ1 encoder control: Ye (ResNet/4096-d -> ViT, FREEDOM changes <=2.5%) and Pomo (6 extractors on FREEDOM) already swap image encoders.",
+    "C4 (instrument artifacts): Ye show constant/noise inputs can beat real features in VBPR; CKD uses inference-time averaging (the instrument we critique).",
+    "C1 statistics: the concurrent Zheng et al. audit already uses 5 seeds, paired t-tests and BH (on MicroLens-100K and Amazon-Baby), albeit for per-user weighting on its own backbone."
+  ],
+  "unique_to_us": [
+    "Seed-noise floors (level + paired) from 8 converged seeds applied to modality removal; all three audits are single-run (Ye seed 999, Pomo seed 123, Zhou unstated).",
+    "Deletion (inference-time, exact) and retraining-without-a-modality on the SAME trained models, with their disagreement quantified against floors (none of the audits runs an inference-time instrument; CKD runs averaging but never compares it with retraining).",
+    "Test-time averaging vs deletion across 36 cells with four code-level causes.",
+    "Training-length/protocol dependence of verdicts (converged patience-100 vs default); audits use patience 20 on NDCG@5 (Ye), fixed 200 epochs (Pomo), unstated (Zhou).",
+    "FREEDOM on MicroLens with seed floors and significance, including the text/image verdict swap across protocols (Zhou's DY is single-run; Zheng's MicroLens work does not remove modalities from published architectures).",
+    "Behavioral-alignment explanation (co-purchase prediction gap) for why image matters on short video but not Amazon.",
+    "Per-cell deletion verdicts with multiple-testing correction across 11 published architectures.",
+    "New from this check (not yet in the paper): Ye's noise recipe turns FREEDOM's image graph into a random hub graph (Gini 0.76-0.79 vs 0.17 for a uniform random graph); Pomo's image-only FREEDOM scales the item graph to 0.1; Ye's released pipeline selects hyperparameters on test and may regenerate splits unseeded."
+  ],
+  "experiments_this_week": [
+    {
+      "name": "E1 Ye-noise on FREEDOM under our protocol (explains the Sports 5-6% vs 0.2% gap)",
+      "design": "FREEDOM, Baby + Sports (+Clothing if time), seeds 2024-2031, patience 100 cap 3000, reuse existing full arms. Arms: (a) image -> Ye's exact file N(1,0.1) 4096-d np.random.seed(42), graph weight 0.1 kept; (b) image kNN graph replaced by a uniform random 10-NN graph (no hubs), real image features kept for the BPR aux term or also noised; (c) (a) but with the hub graph degree-normalised/randomised. Pre-register: if (a) is significant on Sports and (b) is not, the audit's Sports loss is a hub-graph artifact of the noise instrument, not image content.",
+      "cost": "Baby ~14 min/run, Sports ~26-38 min/run (from our p100 logs): (a) alone 8 Baby + 8 Sports ~= 5.5 GPU-h; each extra arm similar. Must wait for / share the GPU with the running exp_patience_control campaign."
+    },
+    {
+      "name": "E2 Ye's selection protocol on Sports",
+      "design": "Re-run Ye's exact MMRec protocol (seed 999; dropout {0.8,0.9} x reg {0,1e-5,1e-4,1e-3}; patience 20 on NDCG@5; best config by TEST NDCG@5) for real vs noise image on Sports, and repeat for 3-5 seeds to measure how much best-of-8-on-test plus single seed can manufacture a 5% gap.",
+      "cost": "16 runs x ~10 min (short patience) per seed ~= 3 GPU-h per seed"
+    },
+    {
+      "name": "E3 Text-noise vs text-removal (sanity on Ye's larger text losses)",
+      "design": "Arm: text -> Ye N(1,0.1) 384-d (graph weight 0.9 kept) on Sports/Clothing, 8 seeds; compare with our no_text removal (20-21% / 35%) and Ye's 29-30% / 53-54%.",
+      "cost": "~4-6 GPU-h"
+    },
+    {
+      "name": "E4 Zhou's DY with seed floors",
+      "design": "Download NineRec downstream archive (Google Drive link in westlake-repl/NineRec README; whether it contains DY with 17,876/5,200/124,418 is UNVERIFIED), reproduce Zhou's stats, extract ResNet-50 image (Zhou) and all-MiniLM-L6-v2 text, random 8:1:1 split; FREEDOM full / no_image / no_text / ID-only x 8 seeds converged; report floors, paired t, and Recall@10 to match Zhou Table 6.",
+      "cost": "data+features ~0.5-1 day (5,200 images; CPU ok); training ~Baby-sized, 4 arms x 8 seeds x ~15 min ~= 8 GPU-h. Risk: DY availability/licence and Zhou's unreleased preprocessing."
+    },
+    {
+      "name": "E5 Graph-reweighting control (Pomo's configuration)",
+      "design": "FREEDOM no_text with image graph at weight 0.1 (Pomo code) vs 1.0 (official/ours), Baby + Clothing, 8 seeds; directly tests our own caveat that retraining without text 'upweights the image graph'.",
+      "cost": "2 arms x 8 seeds x (10-40 min) ~= 4-6 GPU-h"
+    },
+    {
+      "name": "E0 (done, CPU) noise-graph structure",
+      "design": "results/phase_novelty/noise_graph_check.json and prior_audit_floor_scale.json",
+      "cost": "minutes, CPU"
+    }
+  ]
+}

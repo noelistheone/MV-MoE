@@ -2,7 +2,7 @@
 
 Supports the two variants that dominate current practice:
   - "topk":  TopK SAE (Gao et al. 2024 / EleutherAI) with AuxK dead-feature revival.
-  - "relu":  classic L1-penalised ReLU SAE (Anthropic "Towards Monosemanticity").
+  - "relu":  classic L1-penalised ReLU SAE (Bricken et al. 2023, "Towards Monosemanticity").
 
 It trains on ANY ``[N, d_in]`` activation tensor, so it works equally on a
 language-model residual stream, a CLIP embedding, or a recommender's user/item
@@ -141,7 +141,7 @@ class SAE(nn.Module):
     def set_decoder_norm_grad_zero(self) -> None:
         """Remove the component of the decoder gradient parallel to each atom.
 
-        Keeps unit-norm atoms stable under gradient descent (Anthropic trick).
+        Keeps unit-norm atoms stable under gradient descent (a standard SAE training trick).
         Call between ``backward()`` and ``step()`` for the L1 variant.
         """
         if self.W_dec.grad is None:

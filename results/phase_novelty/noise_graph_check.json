@@ -1,0 +1,107 @@
+{
+  "script": "scripts/novelty_noise_graph_check.py",
+  "k": 10,
+  "created": "2026-09-23 23:27:15",
+  "recipes": {
+    "ye_noise": "np.random.seed(42); N(mean=1, sd=0.1), 4096-d, per item, fixed",
+    "pomo_gauss": "N(0,1), 4096-d here (Pomo match the dim of their LVLM EOS embeddings), per item, fixed"
+  },
+  "datasets": {
+    "baby": {
+      "n_items": 7050,
+      "mean_pairwise_cos": {
+        "real_image": 0.222028911113739,
+        "text": 0.26329803466796875,
+        "ye_noise": 0.9900949001312256,
+        "pomo_gauss": -1.5139833521971013e-05
+      },
+      "neighbour_overlap_with_real_image": {
+        "text": 0.11671867612292605,
+        "ye_noise": 0.0013081166272655611,
+        "pomo_gauss": 0.0014657210401891223,
+        "uniform_random": 0.0013049645390070899
+      },
+      "neighbour_overlap_with_text": {
+        "real_image": 0.11669030732859983,
+        "ye_noise": 0.0009141055949566576,
+        "pomo_gauss": 0.0012450748620961365,
+        "uniform_random": 0.0012907801418439693
+      },
+      "indegree": {
+        "real_image": {
+          "max_indegree": 572,
+          "gini_indegree": 0.4570981419445702,
+          "frac_items_indegree_ge_50": 0.0035460992907801418
+        },
+        "text": {
+          "max_indegree": 46,
+          "gini_indegree": 0.34928661133745786,
+          "frac_items_indegree_ge_50": 0.0
+        },
+        "ye_noise": {
+          "max_indegree": 923,
+          "gini_indegree": 0.7570275298023238,
+          "frac_items_indegree_ge_50": 0.04070921985815603
+        },
+        "pomo_gauss": {
+          "max_indegree": 26,
+          "gini_indegree": 0.169006621397314,
+          "frac_items_indegree_ge_50": 0.0
+        },
+        "uniform_random": {
+          "max_indegree": 26,
+          "gini_indegree": 0.17452599366229063,
+          "frac_items_indegree_ge_50": 0.0
+        }
+      }
+    },
+    "sports": {
+      "n_items": 18357,
+      "mean_pairwise_cos": {
+        "real_image": 0.22034713625907898,
+        "text": 0.20921485126018524,
+        "ye_noise": 0.9900998473167419,
+        "pomo_gauss": -1.7096133888117038e-05
+      },
+      "neighbour_overlap_with_real_image": {
+        "text": 0.11582502587567835,
+        "ye_noise": 0.0003450091699805701,
+        "pomo_gauss": 0.0004963289813755568,
+        "uniform_random": 0.0005338562946015134
+      },
+      "neighbour_overlap_with_text": {
+        "real_image": 0.11580565693981977,
+        "ye_noise": 0.0004539594341849605,
+        "pomo_gauss": 0.000605279245579947,
+        "uniform_random": 0.0005120662417606354
+      },
+      "indegree": {
+        "real_image": {
+          "max_indegree": 597,
+          "gini_indegree": 0.4273111865643771,
+          "frac_items_indegree_ge_50": 0.002179005284087814
+        },
+        "text": {
+          "max_indegree": 91,
+          "gini_indegree": 0.37030684918711465,
+          "frac_items_indegree_ge_50": 0.001252928038350493
+        },
+        "ye_noise": {
+          "max_indegree": 1577,
+          "gini_indegree": 0.7870563459791282,
+          "frac_items_indegree_ge_50": 0.040257122623522365
+        },
+        "pomo_gauss": {
+          "max_indegree": 24,
+          "gini_indegree": 0.16741699046460248,
+          "frac_items_indegree_ge_50": 0.0
+        },
+        "uniform_random": {
+          "max_indegree": 25,
+          "gini_indegree": 0.17692761732778547,
+          "frac_items_indegree_ge_50": 0.0
+        }
+      }
+    }
+  }
+}

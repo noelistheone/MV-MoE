@@ -6,7 +6,7 @@ This reloads results/phase_exact/exact_crossarch.json, re-reads every floor thro
 phase1_knockout.load_mde (which prefers the estimate built from the most seeds and now also
 returns the seed count), and rewrites the MDE / significance / reliability fields in place.
 
-Run after every floor lands, then regenerate paper/revision/FACTS.md.
+Run after every floor lands, then regenerate results/FACTS.md.
 """
 from __future__ import annotations
 

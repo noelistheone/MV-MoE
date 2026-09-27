@@ -1,0 +1,78 @@
+{
+  "model": "BAAI/bge-m3 (transformers, CLS pooling)",
+  "raw_video_ids": [
+    9580,
+    14631,
+    7315,
+    3072,
+    10502,
+    6314,
+    9110,
+    13385
+  ],
+  "titles": [
+    " the best place to destroy the most wonderful team with the fastest speed",
+    " # King Glory national Service Dharma being sprayed vegetable is really like this",
+    " # King glory country serve Damo old table play Lv Bu",
+    " once the fire Su has awakened how many lost souls # su # music hall # Nan Yan ",
+    " wrong type on the cover... GTR original Sound wave VS Modified sound wave",
+    " if tears are the most valuable",
+    " # Fan Seung-cheng really has a reassuring mouth # variety # crackle",
+    " What are the moments that made you cry? #charlotte #Clannad # your name"
+  ],
+  "model_load_s": 215.76913404464722,
+  "official_row_norms": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "title_as_is": {
+    "cos_same_item": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "cos_other_item": [
+      0.2856299877166748,
+      0.32822999358177185,
+      0.5717599987983704,
+      0.4246099889278412,
+      0.2978599965572357,
+      0.30281001329421997,
+      0.43867000937461853,
+      0.40178999304771423
+    ]
+  },
+  "title_stripped": {
+    "cos_same_item": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "cos_other_item": [
+      0.2856299877166748,
+      0.32822999358177185,
+      0.5717599987983704,
+      0.4246099889278412,
+      0.2978599965572357,
+      0.30281001329421997,
+      0.43867000937461853,
+      0.40178999304771423
+    ]
+  }
+}

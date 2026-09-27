@@ -1,0 +1,393 @@
+{
+  "script": "scripts/novelty_prior_audit_floors.py",
+  "ours": {
+    "baby": {
+      "Recall@10": {
+        "n_full": 8,
+        "full_mean": 0.060802227774939266,
+        "F_level_pct": 1.8330433526336873,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -1.4663101221047392,
+          "F_paired_pct": 3.5305986825589906
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -26.942110820191026,
+          "F_paired_pct": 4.107495494227542
+        }
+      },
+      "NDCG@10": {
+        "n_full": 8,
+        "full_mean": 0.03235410769344466,
+        "F_level_pct": 1.633007755326013,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -0.6780967919713108,
+          "F_paired_pct": 3.350039666581441
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -25.126115173309202,
+          "F_paired_pct": 3.9364383919331583
+        }
+      },
+      "Precision@10": {
+        "n_full": 8,
+        "full_mean": 0.006723450758549756,
+        "F_level_pct": 1.9793447538264313,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -1.3289989482742015,
+          "F_paired_pct": 3.1179465540108384
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -25.49956974854192,
+          "F_paired_pct": 4.326831333478179
+        }
+      },
+      "Recall@20": {
+        "n_full": 8,
+        "full_mean": 0.09404464508877597,
+        "F_level_pct": 2.137381903796572,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -2.97965246114949,
+          "F_paired_pct": 3.2508150036782455
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -26.555988597823294,
+          "F_paired_pct": 4.833278725743081
+        }
+      }
+    },
+    "sports": {
+      "Recall@10": {
+        "n_full": 8,
+        "full_mean": 0.07138158092749994,
+        "F_level_pct": 3.1170726874094323,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -0.18310124170470324,
+          "F_paired_pct": 3.869858672854599
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -21.337332443418894,
+          "F_paired_pct": 4.227296631611171
+        }
+      },
+      "NDCG@10": {
+        "n_full": 8,
+        "full_mean": 0.03839038935198355,
+        "F_level_pct": 4.047589425007571,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -0.052063752689125296,
+          "F_paired_pct": 5.030749194047992
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -20.339745332484345,
+          "F_paired_pct": 6.137036353439277
+        }
+      },
+      "Precision@10": {
+        "n_full": 8,
+        "full_mean": 0.007849457834709816,
+        "F_level_pct": 3.2093477278619003,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -0.0939429184933385,
+          "F_paired_pct": 3.779285749852465
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -20.19325400375771,
+          "F_paired_pct": 4.495158265087376
+        }
+      },
+      "Recall@20": {
+        "n_full": 8,
+        "full_mean": 0.10790359661056399,
+        "F_level_pct": 2.079789570030965,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -0.20984500958829877,
+          "F_paired_pct": 3.026840985635981
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -21.581492377562334,
+          "F_paired_pct": 3.177207374404053
+        }
+      }
+    },
+    "clothing": {
+      "Recall@10": {
+        "n_full": 8,
+        "full_mean": 0.06341293416851343,
+        "F_level_pct": 1.2281504234450789,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -0.5889237577108383,
+          "F_paired_pct": 2.712755891253287
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -34.78005712046871,
+          "F_paired_pct": 1.61065567982688
+        }
+      },
+      "NDCG@10": {
+        "n_full": 8,
+        "full_mean": 0.034341738611358544,
+        "F_level_pct": 1.6819440642767916,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -0.6532971965724922,
+          "F_paired_pct": 3.2248365105337213
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -35.87109094054303,
+          "F_paired_pct": 1.5073422129370855
+        }
+      },
+      "Precision@10": {
+        "n_full": 8,
+        "full_mean": 0.006585929367557824,
+        "F_level_pct": 1.2308593496815894,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -0.5059753276792648,
+          "F_paired_pct": 2.5426428013556976
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -34.32922127987665,
+          "F_paired_pct": 1.5320749905839863
+        }
+      },
+      "Recall@20": {
+        "n_full": 8,
+        "full_mean": 0.09436318425102795,
+        "F_level_pct": 1.1978617735425439,
+        "no_image": {
+          "n": 8,
+          "delta_pct": -0.661440125098754,
+          "F_paired_pct": 2.1911349729479626
+        },
+        "no_text": {
+          "n": 8,
+          "delta_pct": -34.68117610638134,
+          "F_paired_pct": 1.0129221820993168
+        }
+      }
+    }
+  },
+  "audit_on_our_scale": [
+    {
+      "audit": "ye",
+      "dataset": "baby",
+      "condition": "no_image",
+      "metric": "NDCG@10",
+      "audit_delta_pct": -0.9,
+      "our_delta_pct": -0.68,
+      "audit_over_our_F_level": 0.55,
+      "audit_over_our_F_paired": 0.27
+    },
+    {
+      "audit": "ye",
+      "dataset": "baby",
+      "condition": "no_image",
+      "metric": "Recall@10",
+      "audit_delta_pct": -0.3,
+      "our_delta_pct": -1.47,
+      "audit_over_our_F_level": 0.16,
+      "audit_over_our_F_paired": 0.08
+    },
+    {
+      "audit": "ye",
+      "dataset": "baby",
+      "condition": "no_image",
+      "metric": "Precision@10",
+      "audit_delta_pct": 0.0,
+      "our_delta_pct": -1.33,
+      "audit_over_our_F_level": 0.0,
+      "audit_over_our_F_paired": 0.0
+    },
+    {
+      "audit": "ye",
+      "dataset": "sports",
+      "condition": "no_image",
+      "metric": "NDCG@10",
+      "audit_delta_pct": -6.0,
+      "our_delta_pct": -0.05,
+      "audit_over_our_F_level": 1.48,
+      "audit_over_our_F_paired": 1.19
+    },
+    {
+      "audit": "ye",
+      "dataset": "sports",
+      "condition": "no_image",
+      "metric": "Recall@10",
+      "audit_delta_pct": -5.0,
+      "our_delta_pct": -0.18,
+      "audit_over_our_F_level": 1.6,
+      "audit_over_our_F_paired": 1.29
+    },
+    {
+      "audit": "ye",
+      "dataset": "sports",
+      "condition": "no_image",
+      "metric": "Precision@10",
+      "audit_delta_pct": -4.9,
+      "our_delta_pct": -0.09,
+      "audit_over_our_F_level": 1.53,
+      "audit_over_our_F_paired": 1.3
+    },
+    {
+      "audit": "ye",
+      "dataset": "clothing",
+      "condition": "no_image",
+      "metric": "NDCG@10",
+      "audit_delta_pct": 0.0,
+      "our_delta_pct": -0.65,
+      "audit_over_our_F_level": 0.0,
+      "audit_over_our_F_paired": 0.0
+    },
+    {
+      "audit": "ye",
+      "dataset": "clothing",
+      "condition": "no_image",
+      "metric": "Recall@10",
+      "audit_delta_pct": 0.7,
+      "our_delta_pct": -0.59,
+      "audit_over_our_F_level": 0.57,
+      "audit_over_our_F_paired": 0.26
+    },
+    {
+      "audit": "ye",
+      "dataset": "clothing",
+      "condition": "no_image",
+      "metric": "Precision@10",
+      "audit_delta_pct": 0.0,
+      "our_delta_pct": -0.51,
+      "audit_over_our_F_level": 0.0,
+      "audit_over_our_F_paired": 0.0
+    },
+    {
+      "audit": "ye",
+      "dataset": "baby",
+      "condition": "no_text",
+      "metric": "NDCG@10",
+      "audit_delta_pct": -28.0,
+      "our_delta_pct": -25.13,
+      "audit_over_our_F_level": 17.15,
+      "audit_over_our_F_paired": 7.11
+    },
+    {
+      "audit": "ye",
+      "dataset": "baby",
+      "condition": "no_text",
+      "metric": "Recall@10",
+      "audit_delta_pct": -27.7,
+      "our_delta_pct": -26.94,
+      "audit_over_our_F_level": 15.11,
+      "audit_over_our_F_paired": 6.74
+    },
+    {
+      "audit": "ye",
+      "dataset": "baby",
+      "condition": "no_text",
+      "metric": "Precision@10",
+      "audit_delta_pct": -26.9,
+      "our_delta_pct": -25.5,
+      "audit_over_our_F_level": 13.59,
+      "audit_over_our_F_paired": 6.22
+    },
+    {
+      "audit": "ye",
+      "dataset": "sports",
+      "condition": "no_text",
+      "metric": "NDCG@10",
+      "audit_delta_pct": -30.0,
+      "our_delta_pct": -20.34,
+      "audit_over_our_F_level": 7.41,
+      "audit_over_our_F_paired": 4.89
+    },
+    {
+      "audit": "ye",
+      "dataset": "sports",
+      "condition": "no_text",
+      "metric": "Recall@10",
+      "audit_delta_pct": -29.3,
+      "our_delta_pct": -21.34,
+      "audit_over_our_F_level": 9.4,
+      "audit_over_our_F_paired": 6.93
+    },
+    {
+      "audit": "ye",
+      "dataset": "sports",
+      "condition": "no_text",
+      "metric": "Precision@10",
+      "audit_delta_pct": -28.4,
+      "our_delta_pct": -20.19,
+      "audit_over_our_F_level": 8.85,
+      "audit_over_our_F_paired": 6.32
+    },
+    {
+      "audit": "ye",
+      "dataset": "clothing",
+      "condition": "no_text",
+      "metric": "NDCG@10",
+      "audit_delta_pct": -53.8,
+      "our_delta_pct": -35.87,
+      "audit_over_our_F_level": 31.99,
+      "audit_over_our_F_paired": 35.69
+    },
+    {
+      "audit": "ye",
+      "dataset": "clothing",
+      "condition": "no_text",
+      "metric": "Recall@10",
+      "audit_delta_pct": -52.8,
+      "our_delta_pct": -34.78,
+      "audit_over_our_F_level": 42.99,
+      "audit_over_our_F_paired": 32.78
+    },
+    {
+      "audit": "ye",
+      "dataset": "clothing",
+      "condition": "no_text",
+      "metric": "Precision@10",
+      "audit_delta_pct": -53.2,
+      "our_delta_pct": -34.33,
+      "audit_over_our_F_level": 43.22,
+      "audit_over_our_F_paired": 34.72
+    },
+    {
+      "audit": "zhou",
+      "dataset": "baby",
+      "condition": "no_image",
+      "metric": "Recall@10",
+      "audit_delta_pct": -0.8,
+      "our_delta_pct": -1.47,
+      "audit_over_our_F_level": 0.44,
+      "audit_over_our_F_paired": 0.23
+    },
+    {
+      "audit": "zhou",
+      "dataset": "baby",
+      "condition": "no_text",
+      "metric": "Recall@10",
+      "audit_delta_pct": -20.1,
+      "our_delta_pct": -26.94,
+      "audit_over_our_F_level": 10.96,
+      "audit_over_our_F_paired": 4.89
+    }
+  ]
+}
